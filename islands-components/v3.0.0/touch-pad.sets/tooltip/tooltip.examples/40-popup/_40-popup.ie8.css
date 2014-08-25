@@ -1,0 +1,553 @@
+/* 40-popup.ie.css begin */
+/* 40-popup.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/tooltip/tooltip.examples/40-popup.blocks/example/example.css begin */
+.example
+{
+    padding: 100px;
+}
+
+/* ../../../../common.blocks/tooltip/tooltip.examples/40-popup.blocks/example/example.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    pointer-events: none;
+}
+
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css begin */
+.button_pressed_yes
+{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/button/_size/button_size_m.css begin */
+.button_size_m
+{
+    font-size: 15px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_m
+    {
+        line-height: 32px;
+    }
+}
+
+.button_size_m .button__text
+{
+    padding: 0 15px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_m.button_arrow_down .button__text:after
+{
+    right: 10px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_m.button.button_arrow_down .button__text
+{
+    padding-right: 31px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_m.css end */
+/* ../../../../common.blocks/popup/popup.css begin */
+.popup
+{
+    position: absolute;
+    z-index: 32700;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1px;
+}
+
+/* ../../../../common.blocks/popup/popup.css end */
+/* ../../../../common.blocks/popup/__content/popup__content.css begin */
+.popup__content
+{
+    position: relative;
+    z-index: 10;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+/* ../../../../common.blocks/popup/__content/popup__content.css end */
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+.popup_theme_ffffff,
+.popup_theme_ffffff .popup__tail:after
+{
+    background: #fff;
+}
+
+.popup_theme_ffffff .popup__tail
+{
+    background: rgba(0,0,0,.15);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, rgba(0,0,0,.15)), color-stop(50%, rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+    background:         linear-gradient(to top right, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+}
+
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css begin */
+.popup_visibility_visible
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css begin */
+.popup_visibility_outside
+{
+    top: -99999px;
+    left: -99999px;
+
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css end */
+/* ../../../../common.blocks/popup/__under/popup__under.css begin */
+.popup__under
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/popup/__under/popup__under.css end */
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css begin */
+.popup__under_color_white
+{
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css end */
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    position: fixed;
+    z-index: 32000;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    opacity: .3;
+    background: #000;
+}
+
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../common.blocks/popup/__tail/popup__tail.css begin */
+.popup__tail
+{
+    position: absolute;
+    z-index: 9;
+
+    display: block;
+
+    width: 17px;
+    height: 17px;
+
+    font: 0/0 a;
+}
+
+.popup__tail:after
+{
+    position: absolute;
+
+    width: 17px;
+    height: 17px;
+
+    content: '';
+}
+
+.popup_to_top .popup__tail
+{
+    top: 100%;
+
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+}
+
+.popup_to_left .popup__tail
+{
+    left: 100%;
+
+    margin-top: 24.04px; /* 17 * sqrt(2)*/
+
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+}
+
+.popup_to_top .popup__tail:after,
+.popup_to_left .popup__tail:after
+{
+    bottom: 1px;
+    left: 1px;
+}
+
+.popup_to_bottom .popup__tail
+{
+    bottom: 100%;
+
+    margin-left: -17px;
+
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+
+.popup_to_right .popup__tail
+{
+    right: 100%;
+
+    margin-top: 7.04px; /* ( 17*sqrt(2) - 17) */
+
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+
+.popup_to_bottom .popup__tail:after,
+.popup_to_right .popup__tail:after
+{
+    bottom: 1px;
+    left: 1px;
+}
+
+/* ../../../../common.blocks/popup/__tail/popup__tail.css end */
+/* ../../../../common.blocks/tooltip/tooltip.examples/40-popup.blocks/tooltip-owner/tooltip-owner.css begin */
+.tooltip-owner
+{
+    text-align: center;
+}
+
+/* ../../../../common.blocks/tooltip/tooltip.examples/40-popup.blocks/tooltip-owner/tooltip-owner.css end */
+/* ../../../../common.blocks/tooltip/tooltip.css begin */
+.tooltip
+{
+    cursor: pointer;
+}
+
+/* ../../../../common.blocks/tooltip/tooltip.css end */
+/* ../../../../common.blocks/tooltip/__tail/tooltip__tail.css begin */
+.tooltip__tail
+{
+    position: absolute;
+
+    overflow: hidden;
+
+    font: 0/0 a;
+}
+
+.tooltip__tail:after
+{
+    position: absolute;
+
+    content: '';
+
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.tooltip.popup_to_top .tooltip__tail
+{
+    top: 100%;
+    left: 50%;
+}
+
+.tooltip.popup_to_top .tooltip__tail:after
+{
+    right: 0;
+
+    -webkit-transform-origin: 100% 0;
+        -ms-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+}
+
+.tooltip.popup_to_left .tooltip__tail
+{
+    top: 50%;
+    left: 100%;
+}
+
+.tooltip.popup_to_left .tooltip__tail:after
+{
+    -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+}
+
+.tooltip.popup_to_bottom .tooltip__tail
+{
+    bottom: 100%;
+    left: 50%;
+}
+
+.tooltip.popup_to_bottom .tooltip__tail:after
+{
+    bottom: 0;
+
+    -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+
+.tooltip.popup_to_right .tooltip__tail
+{
+    top: 50%;
+    right: 100%;
+}
+
+.tooltip.popup_to_right .tooltip__tail:after
+{
+    right: 0;
+    bottom: 0;
+
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+
+/* ../../../../common.blocks/tooltip/__tail/tooltip__tail.css end */
+/* ../../../../common.blocks/tooltip/_size/tooltip_size_m.css begin */
+.tooltip_size_m .popup__content
+{
+    padding: 0 10px;
+
+    font-size: 15px;
+    line-height: 32px;
+}
+
+.tooltip_size_m .tooltip__tail
+{
+    width: 7px;
+    height: 7px;
+}
+
+.tooltip_size_m .tooltip__tail:after
+{
+    width: 10px;    /* 7 × √2 ≈ размеры квадрата, который нужно повернуть на 45deg, чтобы получился */
+    height: 10px;   /* хвостик с заданными размерами 14×7 (tailWidth × tailHeight) */
+}
+
+.tooltip_size_m.popup_to_right .tooltip__tail,
+.tooltip_size_m.popup_to_left .tooltip__tail
+{
+    height: 14px;
+    margin-top: -7px;
+}
+
+.tooltip_size_m.popup_to_top .tooltip__tail,
+.tooltip_size_m.popup_to_bottom .tooltip__tail
+{
+    width: 14px;
+    margin-left: -7px;
+}
+
+/* ../../../../common.blocks/tooltip/_size/tooltip_size_m.css end */
+/* ../../../../common.blocks/tooltip/_theme/tooltip_theme_success.css begin */
+.tooltip_theme_success.popup_theme_success,
+.tooltip_theme_success .tooltip__tail:after
+{
+    background: rgba(108,186,104,.9);
+}
+
+.tooltip_theme_success.popup_theme_success
+{
+    color: #fff;
+}
+
+/* ../../../../common.blocks/tooltip/_theme/tooltip_theme_success.css end */
+
+/* 40-popup.css end */
+
+/* 40-popup.ie.css end */

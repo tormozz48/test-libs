@@ -1,0 +1,57 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>image</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок image</span></div><div class="block__title">Абстрактная картинка</div><div class="block__description static-text"><div class="b-text__p">Блок представляет собой однопиксельный gif для вставки картинок</div><h2 id="-">Описание</h2>
+<p>Блок <code>image</code> – абстрактная картинка. Создает контейнер для размещения изображения на веб-странице. Реализован посредством BEMHTML-шаблона, формирующего HTML-тэг <code>&lt;img атрибуты&gt;</code>.</p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования блока:</p>
+<pre><code class="lang-js">{
+    block: &#39;image&#39;
+}</code></pre>
+<p>По умолчанию блок без параметров выведет на веб-странице тэг <code>&lt;img&gt;</code> с однопиксельным прозрачным gif-файлом, путь к которому задан в атрибуте <code>src</code>, и пустым атрибутом <code>alt</code>.</p>
+<h3 id="-">Атрибуты блока</h3>
+<p><code>url</code>, <code>alt</code>, <code>width</code>, <code>height</code> – опциональные. Объявляются в одноименных полях входного BEMJSON блока.
+В BEMHTML-шаблоне <code>url</code> преобразуется в атрибут <code>src</code>, остальные – в одноименные атрибуты тэга  <code>&lt;img&gt;</code> с соответствующими значениями.</p>
+<h3 id="-">Варианты использования блока</h3>
+<p>В блоке путь к изображению задается двумя способами:</p>
+<ul>
+<li><a href="#iurl">c помощью поля url</a>;</li>
+<li><a href="#imod">с помощью модификатора</a>.</li>
+</ul>
+<p><a name="iurl"></a></p>
+<h4 id="-url">Задание изображения с помощью url</h4>
+<p>Этот способ рекомендуется для добавления одиночных изображений.</p>
+<p>Путь к изображению указываем в поле <code>url</code> входного BEMJSON блока:</p>
+<pre><code class="lang-js">{
+    block: &#39;image&#39;,      // имя блока
+    url: &#39;my-image.png&#39;, // путь к изображению
+    alt: &#39;My image&#39;      // альтернативный текст для изображения
+}</code></pre>
+<p>Также изображению можно задать необходимую высоту и ширину.</p>
+<!-- %%image.examples/10-image/10-image%% -->
+
+<p><a name="imod"></a></p>
+<h4 id="-">Задание изображения с помощью добавления модификатора</h4>
+<p>Этот способ рекомендуется при использовании спрайтов.</p>
+<p>Добавляем блоку модификатор в виде произвольной пары «ключ:значение», BEMJSON:</p>
+<pre><code class="lang-js">{
+    block: &#39;image&#39;,
+    mods: {type: &#39;simple&#39;}, // добавление нового модификатора
+    alt: &#39;My image&#39;
+}</code></pre>
+<p>В CSS модификатора в стилевом свойстве <code>background: url(...)</code> задаем размеры изображения и путь к нему:</p>
+<pre><code class="lang-css">.image_type_simple
+{
+    width: 16px;
+    height: 16px;
+    background: no-repeat -50px 0 url(image-sprite.png);
+}</code></pre>
+<p>Этот способ подходит и для задания одиночных изображений:</p>
+<pre><code class="lang-css">.image_type_simple
+{
+    background: no-repeat url(image-sprite.png);
+}</code></pre>
+<h3 id="-">Значения по умолчанию</h3>
+<p>По умолчанию тэгу <code>&lt;img&gt;</code> добавляются атрибуты:</p>
+<ul>
+<li><code>src</code>: &#39;//yastatic.net/lego/_/La6qi18Z8LwgnZdsAr1qy1GwCwo.gif&#39; (путь к прозрачному, однопиксельному gif-файлу);</li>
+<li><code>alt</code>: пустая строка.</li>
+</ul>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="image:examples:10-image:10-image"><a class="example__title" href="image.examples/10-image/10-image.html" target="_blank">Пример с иконкой серпа</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="image.examples/10-image/10-image.bemjson.js"></iframe><iframe class="example__live" src="image.examples/10-image/10-image.html"></iframe></div></div></div></div></body></html>

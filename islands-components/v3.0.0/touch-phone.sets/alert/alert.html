@@ -1,0 +1,47 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>alert</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок alert</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>alert</code> применяется для вывода сообщений пользователю на тачфонах. Сообщения могут быть 3-х типов: информационное, об ошибке или блокирующее.</p>
+<p><code>alert</code> генерируется и добавляется в DOM-дерево блоком-контроллером <a href="/.alert-controller.html"><code>alert-controller</code></a>. </p>
+<p>При наступлении одного из событий, когда нужно показать сообщение, блок <code>alert-controller</code> генерирует блок <code>alert</code>, основанный на блоке <a href="./popup.html"><code>popup</code></a> (всплывающее окно). </p>
+<p>В результате отобразится окно с сообщением. Скрывается сообщение при нажатии на окно или при помощи жеста <code>swipe</code> в любом направлении. По умолчанию при скрытии окно с сообщением <code>alert</code> улетает вправо.</p>
+<p>В блоке выполняется проверка поддержки браузером СSS-свойства анимации трансформацией <code>transition</code> и его аппаратного ускорения. 
+При поддержке – свойства применяются для анимации скрытия и перемещения окна с сообщением. </p>
+<p>Блокирующее сообщение отображается в модальном окне, содержит кнопку  и располагается строго по центру страницы. Окно сообщения об ошибке и информационное отображается под шапкой страницы. </p>
+<h3 id="-">Элемент блока</h3>
+<p>Элемент блока <code>message</code> – cодержит текст сообщения.<br>Текст по умолчанию для каждого типа сообщения нужно задавать в JS-параметрах входного BEMJSON блока <code>alert-controller</code>:</p>
+<pre><code class="lang-js">{
+    block: &#39;alert-controller&#39;,
+    js: {
+        message: { //текст по умолчанию для каждого типа сообщения
+            error: &#39;Упс, что-то пошло не так&amp;hellip; &lt;br/&gt; Попробуйте поискать снова&#39;,
+            block: &#39;Все сломалось!&#39;,
+            info: &#39;Все суперпупер круто, &lt;br/&gt; продолжайте в том же духе&#39; 
+        },
+        buttonTxt: &#39;Обновить&#39; 
+    }
+}</code></pre>
+<p>При необходимости, можно переопределить текст сообщения по умолчанию, передав кастомные значения в параметрах блока <code>alert-message</code> следующим образом:</p>
+<p><code>button_message_block.js</code></p>
+<pre><code class="lang-js">// переопределяем дефолтный текст кастомным для блокирующего сообщения
+this.bindTo(&#39;tap&#39;, function() {
+    this.findBlockOn(&#39;alert-message&#39;).trigger(&#39;alertBlock&#39;,
+        {
+            message: &#39;Что-то пошло не так. &lt;br/&gt; Попробуйте обновить страницу.&#39;,
+            buttonTxt: &#39;Обновить&#39;
+        }
+    );
+});</code></pre>
+<p><a href="https://github.yandex-team.ru/lego/islands-components/tree/dev/touch-phone.blocks/alert/alert.examples">Пример видов сообщений</a>.</p>
+<h3 id="-">Модификаторы</h3>
+<p>Модификатор блока <code>type</code> задает тип сообщения. Допустимые значения:</p>
+<ul>
+<li><code>info</code> – информационное сообщение;</li>
+<li><code>error</code> – сообщение об ошибке;</li>
+<li><code>block</code> – сообщение, блокирующее работу всей страницы (блокирующее сообщение).</li>
+</ul>
+<p>Каждое значение содержит только CSS-стили визуального оформления соответствующего типа сообщения.     </p>
+<div class="b-text__p">Блок служит для вывода оповещений пользователю. Оповещения могут быть 3х типов: info - информационное сообщение error - сообщение об ошибке block - блокирующее сообщение</div></div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="alert:examples:10-simple:10-simple"><a class="example__title" href="alert.examples/10-simple/10-simple.html" target="_blank">Виды сообщений
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="alert.examples/10-simple/10-simple.bemjson.js"></iframe><iframe class="example__live" src="alert.examples/10-simple/10-simple.html"></iframe></div></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">type</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">block</th><td class="block__mod-val-title">Сообщение, блокирующее работу всей страницы
+</td></tr><tr><th class="block__mod-val-name">error</th><td class="block__mod-val-title">Сообщение об ошибке
+</td></tr><tr><th class="block__mod-val-name">info</th><td class="block__mod-val-title">Информационное сообщение
+</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">message</h4><div class="block__elem-title">Текст сообщения
+</div></div></div></div></body></html>

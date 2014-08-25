@@ -1,0 +1,12 @@
+@import url(00-all.css);
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css);
+@import url(../../../../desktop.blocks/button/button.ie.css);
+@import url(../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css);
+@import url(../../../../desktop.blocks/button/_size/button_size_m.ie.css);
+@import url(../../../../desktop.blocks/button/_size/button_size_xs.ie.css);
+@import url(../../../../desktop.blocks/button/_size/button_size_s.ie.css);
+@import url(../../../../desktop.blocks/button/_size/button_size_l.ie.css);
+@import url(../../../../desktop.blocks/button/_only-icon/button_only-icon_yes.ie.css);
+@import url(../../../../desktop.blocks/button/_round/button_round_yes.ie.css);
+@import url(../../../../desktop.blocks/button/_side/button_side_left.ie.css);
+@import url(../../../../desktop.blocks/button/_side/button_side_right.ie.css);

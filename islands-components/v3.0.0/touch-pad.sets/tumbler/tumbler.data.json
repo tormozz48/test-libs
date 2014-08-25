@@ -1,0 +1,225 @@
+{
+  "name": "tumbler",
+  "elems": [
+    {
+      "name": "box",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Элемент рисующий тумблер (нативный чекбокс скрыт)"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Плавающий переключатель"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Радиокнопка"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Текст метки к тумблеру"
+        }
+      ]
+    },
+    {
+      "name": "option",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Метка к тумблеру"
+        }
+      ]
+    },
+    {
+      "name": "sticker",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Наклейка на тумблере"
+        }
+      ]
+    },
+    {
+      "name": "sticker-label",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Надпись на наклейке тумблера"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "checked",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Состояние тумблера — активное (переключатель с правой стороны)"
+        }
+      ]
+    },
+    {
+      "name": "disabled",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Неактивное состояние"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 15px"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 13px"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычный тумблер"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Тема"
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>tumbler</code> («тумблер») служит для выбора одного из двух предложенных вариантов. Визуально представлен переключателем с двумя положениями «Вкл/Выкл». Текст, расположенный на тумблере «Вкл/Выкл» – неизменяемый и локализованный (значение устанавливается из <a href=\"https://lego.yandex-team.ru/doc/concept/localization.wiki#Tanker\">Танкера</a>).\nФункциональность тумблера основана на двух нативных радиокнопках <code>&lt;input type=&quot;radio&quot; атрибуты&gt;</code>, которые скрыты.</p>\n<p>В MSIE 7-8 блок отображается простыми прямоугольниками со сплошной заливкой. При выключенном JS – деградирует в две нативные радиокнопки.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для использования тумблера:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;tumbler&#39;,  // имя блока\n    name: &#39;color&#39;,     // имя для идентификации блока. Не обязательное\n    mods: {size: &#39;s&#39;}, // модификаторы блока. Модификатор размера – обязательный\n    content: [ // левая и правая метки тумблера. Не обязательное поле\n        { //создание метки для левой радио-кнопки\n            elem: &#39;option&#39;,\n            side: &#39;left&#39;,      // левая метка\n            content: &#39;серый&#39;,  // текст метки слева\n            value: &#39;gray&#39;      // значение для левой радиокнопки. Не обязательное\n        }\n        { //создание метки для правой радио-кнопки\n            elem: &#39;option&#39;,\n            side: &#39;right&#39;,      // правая метка\n            content: &#39;желтый&#39;,  // текст метки справа\n            value: &#39;yellow&#39;     // значение для правой радиокнопки. Не обязательное\n        }\n    ]\n}</code></pre>\n<p>В простейшем случае (тумблер без меток со <a href=\"#default\">значениями по умолчанию</a>):</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;tumbler&#39;,   // имя блока\n    mods: {size: &#39;s&#39;}, // модификаторы блока. Модификатор размера – обязательный\n}</code></pre>\n<!-- %%tumbler.examples/22-alone/22-alone%% -->\n\n<h3 id=\"-\">Атрибуты блока</h3>\n<p>Атрибуты тумблера аналогичны атрибутам нативной радиокнопки:</p>\n<ul>\n<li><p><code>{String} name</code> — имя для идентификации. Задается в одноименном поле блока.\nВ HTML для каждой радиокнопки сформируется одинаковый атрибут <code>name</code> с заданным значением.\nПо умолчанию значение <code>name</code> генерируется случайным образом.</p>\n</li>\n<li><p><code>{String} value</code> – значение, отправляемое на сервер, уникальное для каждой радиокнопки (элемент блока <code>option</code>). Задается в поле элемента <code>option</code>.\nЕсли для <code>option</code> явно не задано <code>value</code>, то для левой радиокнопки одноимённый атрибут примет значение <code>false</code>, а для правой — <code>true</code>.</p>\n</li>\n</ul>\n<p><code>name</code>, <code>value</code> – преобразуются в соответствующие атрибуты нативных радиокнопок.</p>\n<!-- %%tumbler.examples/25-server/25-server%% -->\n\n<h3 id=\"-\">Содержимое блока</h3>\n<ul>\n<li><code>{Array} content</code> – используется для создания текстовых меток тумблера, расположенных слева и/или справа от контрола. Тумблер можно переключить (включить/выключить) нажатием левой кнопки мыши на метку.\nМетки создаются в поле <code>content</code> соответствующего элемента блока <code>option</code> (левой или правой радиокнопки) следующим образом:</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;tumbler&#39;,\n    name: &#39;color&#39;,  // имя для идентификации блока. Не обязательное\n    mods: {size: &#39;s&#39;},\n    content: [\n        { //создание метки для левой радио-кнопки\n            elem: &#39;option&#39;,\n            side: &#39;left&#39;,      // левая радиокнопка (side:&#39;right&#39; - для правой)\n            content: &#39;серый&#39;,  // текст метки слева\n            value: &#39;gray&#39;      // значение для левой радиокнопки. Не обязательное\n        }\n    ]\n}</code></pre>\n<p>В результате будет создана метка слева от тумблера.</p>\n<p>По умолчанию метки отсутствуют. В HTML преобразуются в тэг <code>&lt;span&gt;</code> (в отличии от радиокнопок – <code>&lt;label&gt;</code>).</p>\n<!-- %%tumbler.examples/20-single/20-single%% -->\n\n<!-- %%tumbler.examples/10-text/10-text.html%% -->\n\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Темы оформления</h4>\n<p>Тумблер имеет единственную, стандартную тему оформления – обычную (модификатор <code>theme</code> со значением <code>normal</code>). Используется по умолчанию.</p>\n<h4 id=\"-\">Размеры</h4>\n<p>Для тумблера реализованы два размера - <code>s</code> и <code>m</code>, которые определяют размеры блока и  шрифта. Модификатор размера <code>size</code> – обязательный при объявлении блока, по умолчанию не определен.\nЕсли во входных данных не установлен – контрол на веб-странице не отобразится.</p>\n<p>Таблица размеров тумблера</p>\n<table>\n<thead>\n<tr>\n<th>Размер</th>\n<th>Размер шрифта</th>\n<th>Размеры блока (WxH)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>s</td>\n<td>13px</td>\n<td>72x28</td>\n</tr>\n<tr>\n<td>m</td>\n<td>15px</td>\n<td>82x32</td>\n</tr>\n</tbody>\n</table>\n<p>Если необходим другой размер, его можно доопределить на проекте. <a href=\"../button/button.html#customsize\">Кастомный размер</a>.</p>\n<!-- %%tumbler.examples/05-simple/05-simple%% -->\n\n\n<h4 id=\"-\">Состояния тумблера</h4>\n<ul>\n<li><p><strong>Активен</strong>, модификатор блока <code>checked</code> со значением <code>yes</code>. Переключатель с правой стороны (Вкл).\nТумблер может быть <strong>включен/выключен</strong> — переключатель находится справа/слева, т.е. выбирается правая или левая радиокнопка (в HTML будет добавлен атрибут <code>checked</code> для соответствующей радиокнопки).</p>\n</li>\n<li><p><strong>Не активен</strong>, модификатор блока <code>disabled</code> со значением <code>yes</code>. Тумблер не доступен для действий пользователя (в нативных радиокнопках будет выставлен атрибут <code>disabled</code>). Метки тумблера, при наличии, тоже будут не активны.</p>\n</li>\n</ul>\n<p>По умолчанию тумблер создается в состоянии <strong>активен</strong> и выключен — переключатель с левой стороны (атрибут <code>checked</code> установлен для левой радиокнопки).</p>\n<p>Переключить тумблер можно с помощью клавиш <code>Space</code> и <code>[ ←, ↑, →, ↓ ]</code>.</p>\n<!-- %%tumbler.examples/15-disabled/15-disabled%% -->\n\n<p><a name=\"default\"></a></p>\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li><strong>Тема оформления</strong>: обычная, модификатор <code>theme</code> со значением <code>normal</code>.</li>\n<li><strong>Состояние тумблера</strong>: <strong>активен</strong> и выключен (переключатель с левой стороны).</li>\n<li>Текст на тумблере «Вкл/Выкл» – неизменяемый и устанавливается из Танкера.</li>\n<li>Если не были явно заданы:<ul>\n<li><code>name</code> — значение сгенерируется случайным образом;</li>\n<li><code>value</code> – для левой радиокнопки примет значение <code>false</code>, а для правой — <code>true</code>.</li>\n</ul>\n</li>\n</ul>\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Тумблер"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "tumbler.examples/05-simple/05-simple",
+          "title": "Тумблер размера S и M"
+        },
+        {
+          "url": "tumbler.examples/10-text/10-text",
+          "title": "Тумблер в тексте"
+        },
+        {
+          "url": "tumbler.examples/15-disabled/15-disabled",
+          "title": "Неактивный тумблер"
+        },
+        {
+          "url": "tumbler.examples/20-single/20-single",
+          "title": "Тумблер с одним лейблом"
+        },
+        {
+          "url": "tumbler.examples/22-alone/22-alone",
+          "title": "Тумблер без лейблов"
+        },
+        {
+          "url": "tumbler.examples/25-server/25-server",
+          "title": "Тумблер с заданным именем и значениями радиокнопок"
+        },
+        {
+          "url": "tumbler.examples/30-events/30-events",
+          "title": "События тумблера"
+        }
+      ]
+    }
+  ]
+}

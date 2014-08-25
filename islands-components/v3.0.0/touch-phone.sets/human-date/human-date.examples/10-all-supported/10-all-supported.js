@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/human-date/human-date.examples/10-all-supported/10-all-supported.ru.js

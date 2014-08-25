@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/desktop.sets/tabs/tabs.examples/30-go-deeper/30-go-deeper.ru.js

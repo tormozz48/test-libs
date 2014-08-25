@@ -1,0 +1,425 @@
+{
+  "name": "slider",
+  "elems": [
+    {
+      "name": "allowed-range",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Область допустимых значений"
+        }
+      ]
+    },
+    {
+      "name": "click",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Элемент ловит клики на слайдере"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "mods": [
+        {
+          "name": "preset",
+          "vals": [
+            {
+              "name": "inline",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Элементы title, input, unit в строку"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Дефолтные настройки для расположения элементов"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Содержит информационные элементы (заголовок, инпуты, единицы измерения и т.д.)"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Инпут, как элемент слайдера"
+        }
+      ]
+    },
+    {
+      "name": "math",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Описывает логику преобразований координат слайдера (служебный)\n"
+        }
+      ]
+    },
+    {
+      "name": "range",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Отрезки шкалы"
+        }
+      ]
+    },
+    {
+      "name": "runner",
+      "mods": [
+        {
+          "name": "focused",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Состояние фокуса"
+            }
+          ]
+        },
+        {
+          "name": "state",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Положение ползунка в крайнем левом/правом значениях"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Бегунок"
+        }
+      ]
+    },
+    {
+      "name": "scale",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Шкала"
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Текст внутри бегунка"
+        }
+      ]
+    },
+    {
+      "name": "title",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Заголовок"
+        }
+      ]
+    },
+    {
+      "name": "ui",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Описывает процесс построения элементов слайдера (служебный)\n"
+        }
+      ]
+    },
+    {
+      "name": "unit",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Единица измерения"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "animation",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включена"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Анимация"
+        }
+      ]
+    },
+    {
+      "name": "disabled",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Неактивное состояние"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "vals": [
+        {
+          "name": "hidden",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Скрыты"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Инпуты слайдера"
+        }
+      ]
+    },
+    {
+      "name": "interactive",
+      "vals": [
+        {
+          "name": "no",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Не выводить\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Модификатор отвечает за выведения значений на ползунке\n"
+        }
+      ]
+    },
+    {
+      "name": "orientation",
+      "vals": [
+        {
+          "name": "horiz",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Горизонтальная\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Ориентация слайдера\n"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 15px"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 13px"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер для горизонтального слайдера"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычная"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Темы для горизонтального слайдера"
+        }
+      ]
+    },
+    {
+      "name": "type",
+      "vals": [
+        {
+          "name": "range",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Слайдер, для выбора диапазона значений"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Тип"
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>slider</code> («слайдер») —  управляющий элемент интерфейса для удобного и наглядного выбора диапазона значений.\nПозволяет создавать следующие разновидности слайдеров:</p>\n<ul>\n<li><strong>с одним ползунком</strong> — для выбора одного значения из диапазона.</li>\n<li><strong>с двумя ползунками</strong> — для выбора диапазона значений.</li>\n<li><strong>с равномерной шкалой</strong> — движение ползунка по шкале происходит равномерно с постоянным шагом.</li>\n<li><strong>с неравномерной шкалой</strong> — движение ползунка по шкале происходит неравномерно с изменяющимся значением шага.</li>\n</ul>\n<p>Поля ввода и ползунки связаны – значения полей <code>input</code> синхронно изменяются при перетягивании ползунков.\nБлок предоставляет возможность настройки визуального отображения слайдера.</p>\n<p>Примеры использования:</p>\n<ul>\n<li>В интернет-магазинах — выбор цен.</li>\n<li>При поиске автомобилей — выбор диапазона [пробег, год выпуска, объем двигателя].</li>\n</ul>\n<p>В MSIE8 и ниже <code>input</code>-ы (элементы блока <code>slider</code>) деградируют до нативных полей ввода.</p>\n<p><strong>Примечание</strong>: реализация блока разнесена на отдельные компоненты в элементы:\n<code>math</code> — функции для расчетов и <code>ui</code> — отрисовка внешнего вида.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для использования слайдера:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;slider&#39;, // имя блока\n    /* модификаторы. Модификаторы theme, size, orientation – обязательные*/\n    mods: {theme: &#39;normal&#39;, size: &#39;m&#39;, orientation: &#39;horiz&#39;},\n    js: {\n        /* [min, max] – область допустимых значений (не обязательные параметры)*/\n        min: 10,  // минимальное значение диапазона\n        max: 300, // максимальное  значение диапазона\n        scale: [  // шкала слайдера (состоит из отрезков)\n            {value: 0, step: 10, label: &#39;0&#39;},  // начальное значение, шаг, метка\n            {value: 10, step: 5, label: &#39;10&#39;, percent: 10},\n            {value: 40, step: 10, percent: 40}, // промежуточное значение\n            {value: 300, step: 20, label: &#39;300&#39;, percent: 80},\n            {value: 500, label: &#39;500&#39;} // конечное значение, метка\n        ]\n    },\n    content: {\n        elem: &#39;info&#39;, // информационные элементы слайдера: title, input, unit\n        elemMods: {preset: &#39;inline&#39;}, // расположение элементов в одну линию\n        content: [\n            {\n                elem: &#39;title&#39;, // заголовок\n                content: &#39;Цена&#39;\n            },\n            {\n                block: &#39;input&#39;, // поле ввода, связанное с ползунком\n                mods: {size: &#39;m&#39;},\n                content: {elem: &#39;control&#39;},\n                value: 40 // значение в инпуте, задает начальное положение\n            },\n            {\n                elem: &#39;unit&#39;, // единица измерения\n                content: &#39;руб.&#39;\n            }\n        ]\n    }\n}</code></pre>\n<p>Входные данные блока для настройки слайдера:</p>\n<h3 id=\"-\">Ползунки</h3>\n<ul>\n<li><strong>количество ползунков</strong> задается во входных данных количеством блоков <a href=\"../input/input.html\">input</a>.</li>\n<li><strong>положение ползунков</strong>  задается значением <code>value</code> блока <code>input</code>.</li>\n<li><strong>слайдер с двумя ползунками</strong> – для выбора диапазона значений. Во входных данных слайдера должен быть модификатор <code>type</code> со значением <code>range</code>.</li>\n</ul>\n<!-- %%slider.examples/10-slider/10-slider%% -->\n\n<h3 id=\"-\">Область допустимых значений</h3>\n<ul>\n<li>Элемент слайдера <code>allowed-range</code> — область допустимых значений (в HTML находится всегда).</li>\n<li>Необязательные JS-параметры слайдера [<code>min</code>, <code>max</code>] — динамические ограничения для области допустимых значений (диапазон):<ul>\n<li><code>{Number} min</code> – минимальное значение диапазона.</li>\n<li><code>{Number} max</code> – максимальное значение диапазона.</li>\n</ul>\n</li>\n</ul>\n<p>Интервал, расположенный в области допустимых значений, визуально выделяется другим цветом (серый), нежели основная шкала (светло-серый).</p>\n<p><em><strong>Примечание</strong>: сейчас ползунки выходят за область допустимых значений. На данный момент договорились, что область допустимых значений просто подсказка для пользователя, а не ограничение. Планируется сделать параметр, который будет управлять этой функциональностью.</em></p>\n<h3 id=\"-\">Построение шкалы и ее параметры</h3>\n<p>Шкала слайдера (элемент <code>scale</code>) строится из отрезков (в HTML — элемент блока <code>range</code>).\nКоличество отрезков шкалы слайдера <code>range</code> = (количество ползунков + 1).</p>\n<p>JS-параметры, отвечающие за построение и внешний вид шкалы:</p>\n<ul>\n<li><p><code>{Number} value</code> — значение, обязательный параметр.</p>\n</li>\n<li><p><code>{Number} step</code> — шаг от текущего значения до следующего. Обязателен для всех значений, кроме последнего.</p>\n</li>\n<li><p><code>{Number} percent</code> — процент от общей ширины шкалы. Если на шкале есть промежуточные значения, то для них параметр <code>percent</code> обязателен.</p>\n<ul>\n<li><code>percent</code> = 0% (всегда для первого значения).</li>\n<li><code>percent</code> = 100% (всегда для последнего значения).</li>\n</ul>\n</li>\n<li><p><code>{String} label</code> — отвечает за визуальное отображение значений, необязательный параметр (BEMJSON). Границы отрезков слайдера можно обозначить «рисочками», с использованием параметра <code>label: &#39; &#39;</code>.</p>\n</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;slider&#39;,\n    mods: {theme: &#39;normal&#39;,  size: &#39;m&#39;, orientation: &#39;horiz&#39;},\n    js: {\n        min: 10,\n        max: 300,\n        scale: [\n            {value: 0, step: 10, label: &#39; &#39;},\n            {value: 10, step: 5, label: &#39; &#39;, percent: 10},\n            {value: 40, step: 10, label: &#39; &#39;, percent: 40},\n            {value: 300, step: 20, label: &#39; &#39;, percent: 80},\n            {value: 500, label: &#39; &#39;}\n        ]\n   },\n   content: {...}\n}</code></pre>\n<!-- %%slider.examples/05-slider-simple/05-slider-simple%% -->\n\n<!-- %%slider.examples/12-slider/12-slider%% -->\n\n<p>Шкала со <a href=\"#defscale\">значениями по умолчанию</a></p>\n<pre><code class=\"lang-js\">{ // слайдер со значениями по умолчанию для шкалы\n    block: &#39;slider&#39;,\n    mods: {theme: &#39;normal&#39;,  size: &#39;m&#39;, orientation: &#39;horiz&#39;},\n    js: true,\n    content: {...}\n}</code></pre>\n<h3 id=\"-\">Информационные элементы</h3>\n<p>Элемент <code>info</code> — содержит информационные элементы слайдера:</p>\n<ul>\n<li><code>title</code> – заголовок.</li>\n<li><code>input</code> – поля вввода.</li>\n<li><code>unit</code> – единицы измерения.</li>\n</ul>\n<p>Для удобного изменения расположения элементов внутри элемента <code>info</code> стили по умолчанию были вынесены в модификатор — <code>preset</code>.\nМодификатор элемента <code>preset</code> со значением <code>inline</code> выведет элементы <code>title</code>, <code>input</code> и <code>unit</code> в одну строку. Можно задать и свое расположение элементов.</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;slider&#39;,\n    mods: {theme: &#39;normal&#39;,  size: &#39;m&#39;, orientation: &#39;horiz&#39;},\n    content: {\n        elem: &#39;info&#39;, // информационные элементы слайдера: title, input, unit\n        elemMods: {preset: &#39;inline&#39;}, // расположение элементов в одну линию\n        content: [/* массив информационных элементов */]\n    }\n}</code></pre>\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Типы слайдеров</h4>\n<p>Для выбора диапазона значений используется <strong>слайдер с двумя ползунками</strong>. Для этого во входных данных должен быть обязательно выставлен модификатор <code>type</code> со значением <code>range</code>.\nИнтервал между бегунками визуально выделяется желтой подсветкой.</p>\n<!-- %%slider.examples/20-range/20-range%% -->\n\n<h4 id=\"-\">Ориентация шкалы</h4>\n<p>Модификатор <code>orientation</code> – определяет ориентацию шкалы слайдера для движения ползунка. Может принимать значения <code>horiz</code> (горизонтальный слайдер).\nМодификатор <code>orientation</code> – обязательный при объявлении блока (по умолчанию не определен).</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;slider&#39;,\n    mods: {type: &#39;range&#39;, theme: &#39;normal&#39;, size: &#39;m&#39;, orientation: &#39;horiz&#39;},\n    ...\n}</code></pre>\n<h4 id=\"-\">Темы оформления</h4>\n<p>Для блока <code>slider</code> реализована одна тема оформления – обычная (модификатор <code>theme</code> со значением <code>normal</code>) для горизонтального слайдера.\nМодификатор темы <code>theme</code> – обязательный (по умолчанию не определен).</p>\n<h4 id=\"-\">Размеры</h4>\n<p>Для горизонтального слайдера реализован модификатор размера <code>size</code>. Может принимать значения <code>s</code> и <code>m</code>, которые определяют размер шрифта информационных элементов, размеры бегунка, и поля ввода (элемент <code>input</code>). Высота поля ввода зависит о размера шрифта и <code>line-height</code>.  Модификатор размера – обязательный (по умолчанию не определен).\nЕсли в инпуте явно не задан модификатор размера, то ему будет выставлено значение модификатора <code>size</code> из слайдера.</p>\n<p>Таблица размеров блока</p>\n<table>\n<thead>\n<tr>\n<th>Размер блока</th>\n<th>Размер шрифта</th>\n<th>Высота инпута</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>s</td>\n<td>13px</td>\n<td>28px</td>\n</tr>\n<tr>\n<td>m</td>\n<td>15px</td>\n<td>32px</td>\n</tr>\n</tbody>\n</table>\n<p>При необходимости размеры блока можно доопределить на проекте.</p>\n<p>Высота блока <code>slider</code> соответствует высоте <a href=\"../button/button.html\">кнопки</a>.</p>\n<!-- %%slider.examples/30-size/30-size%% -->\n\n<h4 id=\"-\">Отображение значения на ползунке</h4>\n<p>Модификатор слайдера <code>interactive</code> со значением <code>no</code> – не отображает значения на ползунке. Текст внутри бегунка содержится в элементе блока <code>text</code>.</p>\n<h4 id=\"-\">Скрытие инпута</h4>\n<p>Модификатор <code>input</code> со значением <code>hidden</code> – инпуты и информационные элементы слайдера будут скрыты.</p>\n<!-- %%slider.examples/15-input-hidden/15-input-hidden%% -->\n\n<h4 id=\"-\">Анимация</h4>\n<p>Модификатор <code>animation</code> со значением <code>yes</code> переместит ползунок по щелчку мыши на шкале плавно с анимацией в указанное место. Если модификатор не выставлен – перемещение ползунка выполнится моментально.</p>\n<h4 id=\"-\">Состояния слайдера</h4>\n<p>Слайдер может находиться в состоянии:</p>\n<ul>\n<li><strong>Не активен</strong>, модификатор <code>disabled</code> со значением <code>yes</code>. Все вложенные блоки и элементы слайдера будут недоступны.</li>\n</ul>\n<p>Состояния ползунка (элемент <code>runner</code>):</p>\n<ul>\n<li><strong>В фокусе</strong>, модификатор элемента <code>focused</code> со значением <code>yes</code>. Ползунок находится в фокусе. Перемещается ползунок в фокусе клавишами <code>[ ←, ↑, →, ↓ ]</code>.</li>\n</ul>\n<!-- %%slider.examples/40-disabled/40-disabled%% -->\n\n\n<p><a name=\"defscale\"> </a></p>\n<h3 id=\"-\">Значения по умолчанию</h3>\n<p>Параметры шкалы:</p>\n<pre><code class=\"lang-js\">scale: [\n    {percent: 0, value: 0, step: 1, label: &#39;&#39;},\n    {percent: 100, value: 100, step: 1, label: &#39;&#39;}\n]</code></pre>\n<ul>\n<li>минимальное значение шкалы – 0;</li>\n<li>максимальное значение шкалы – 100;</li>\n<li>шаг – 1.</li>\n</ul>\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Слайдер"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "slider.examples/05-slider-simple/05-slider-simple",
+          "title": "С одним бегунком и равномерной шкалой\n"
+        },
+        {
+          "url": "slider.examples/10-slider/10-slider",
+          "title": "С заданным диапазоном, неравномерной шкалой и собственной функцией определения допустимых значений\n"
+        },
+        {
+          "url": "slider.examples/12-slider/12-slider",
+          "title": "С рисочками\n"
+        },
+        {
+          "url": "slider.examples/15-input-hidden/15-input-hidden",
+          "title": "Со скрытыми инпутами"
+        },
+        {
+          "url": "slider.examples/20-range/20-range",
+          "title": "Для указания диапазона"
+        },
+        {
+          "url": "slider.examples/30-size/30-size",
+          "title": "Реализованые размеры"
+        },
+        {
+          "url": "slider.examples/40-disabled/40-disabled",
+          "title": "Неактивные слайдеры"
+        },
+        {
+          "url": "slider.examples/60-form/60-form",
+          "title": "С другими контролами"
+        }
+      ]
+    }
+  ]
+}

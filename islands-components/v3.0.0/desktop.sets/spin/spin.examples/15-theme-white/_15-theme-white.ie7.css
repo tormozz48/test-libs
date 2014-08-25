@@ -1,0 +1,275 @@
+/* 15-theme-white.ie.css begin */
+/* 15-theme-white.css begin */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../common.blocks/spin/spin.examples/15-theme-white.blocks/b-page/b-page.css begin */
+.b-page
+{
+    padding: 10px 20px;
+
+    background-color: #0d3349;
+}
+
+/* ../../../../common.blocks/spin/spin.examples/15-theme-white.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/spin/spin.examples/15-theme-white.blocks/example-text/example-text.css begin */
+.example-text
+{
+    margin: 20px 0 10px;
+
+    color: #fff;
+}
+
+/* ../../../../common.blocks/spin/spin.examples/15-theme-white.blocks/example-text/example-text.css end */
+/* ../../../../common.blocks/spin/spin.css begin */
+.spin
+{
+    display: none;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    font: 0/0 a;
+}
+
+@-webkit-keyframes islands-spin
+{
+    0%
+    {
+        -webkit-transform: rotate(0);
+    }
+    100%
+    {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes islands-spin
+{
+    0%
+    {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    100%
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+/* ../../../../common.blocks/spin/spin.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-32.css begin */
+.spin_theme_gray-32 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 31px 31px 0 0;
+
+    opacity: .4;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_gray-32 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/nP4IZopD-Ls1QX5OEc8fM7074KM.png");
+}
+
+.spin_theme_gray-32 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/rtFfcs_d3_1Z8S7_0-At2O9LUcc.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_gray-32.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/7krsYYRdn6RrDWcFpaGoGrpJ5ew.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-32.css end */
+/* ../../../../common.blocks/spin/_progress/spin_progress_yes.css begin */
+.spin_progress_yes
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/spin/_progress/spin_progress_yes.css end */
+/* ../../../../common.blocks/spin/__icon/spin__icon.css begin */
+.spin__icon
+{
+    border: 0;
+
+    -webkit-backface-visibility: hidden; /* облегчаем анимацию */
+       -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+}
+
+/* ../../../../common.blocks/spin/__icon/spin__icon.css end */
+/* ../../../../common.blocks/image/image.css begin */
+.image
+{
+    font: 0/0 a;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/image/image.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-16.css begin */
+.spin_theme_white-16 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 15px 15px 0 0;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_white-16 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/aZ8U0fyEd0zRMPW1k5CIXfyDv8U.png");
+}
+
+.spin_theme_white-16 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/R8rz3dZ72QrhjuoocsIitNtefBk.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_white-16.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/GiFj5aGyggZim9efhd6F8UDg594.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-16.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-24.css begin */
+.spin_theme_white-24 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 23px 23px 0 0;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_white-24 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/c5nBfVm6geYcApVNKfL5nNzMFcg.png");
+}
+
+.spin_theme_white-24 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/au0gAJ3JhdMtF-zSgH60WbxnL7I.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_white-24.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/fhYqyZdzwWzvsUsUcSuCY2C0vpk.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-24.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-32.css begin */
+.spin_theme_white-32 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 31px 31px 0 0;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_white-32 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/G5g9_lHXB1AMQHES-DVw5UIi9Xg.png");
+}
+
+.spin_theme_white-32 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/1CvptTv7Upr3PuxicS4PzH5cMvE.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_white-32.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/8_XnPEgMY0iizgqzExfceGTL2b8.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-32.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-48.css begin */
+.spin_theme_white-48 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 47px 47px 0 0;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_white-48 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/HQTzEsnKXvYfsFikCjxYsOkWKsk.png");
+}
+
+.spin_theme_white-48 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/U-eh7VBo-5O7PgSRt2_RGMDo-04.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_white-48.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/lIFem4h6kDHfQGKzJ0ZdUmTFCd4.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_white-48.css end */
+
+/* 15-theme-white.css end */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */
+
+/* 15-theme-white.ie.css end */

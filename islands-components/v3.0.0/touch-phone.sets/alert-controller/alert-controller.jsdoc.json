@@ -1,0 +1,45 @@
+{
+    "blockName": "alert-controller",
+    "description": "<p>Контроллер для связи блоков, от которых нужно показать сообщение, с блоком <code>alert</code>.\nСвязь выполняется с помощью блока <code>alert-message</code>, который подмешивается к блоку-источнику сообщения.</p>\n<p>Сообщения могут быть трех типов:</p>\n<ol>\n<li><code>info</code>  - информационное сообщение;</li>\n<li><code>error</code> - сообщение об ошибке;</li>\n<li><code>block</code> - блокирующее сообщение.</li>\n</ol>",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "show",
+            "description": "<p>Генерирует и показывает попап (блок <code>popup</code>) с сообщением в блоке <code>alert</code>.\nПеред показом скрывается саджест, положение попапа и время его показа зависит от типа сообщения.</p>\n",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "<p>Тип сообщения, возможные значения <code>info|error|block</code>.</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params",
+                    "description": "<p>Передаваемые данные.</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.message",
+                    "description": "<p>Сообщение для отображения.</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

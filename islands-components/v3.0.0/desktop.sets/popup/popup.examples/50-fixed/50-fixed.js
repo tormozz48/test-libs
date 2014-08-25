@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/desktop.sets/popup/popup.examples/50-fixed/50-fixed.ru.js

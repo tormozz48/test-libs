@@ -1,0 +1,29 @@
+{
+  "name": "icon",
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Абстрактная иконка"
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>icon</code> – абстрактная иконка.\nИспользуется внутри других блоков в качестве контейнера для декоративных изображений.\nПредставляет собой HTML-тэг <code>&lt;i&gt;</code> с фоновой картикой, заданной через <code>background-image</code>.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для использования блока:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;icon&#39;\n}</code></pre>\n<h3 id=\"-\">Варианты использования блока</h3>\n<p>Путь к изображению, ширина и высота иконки задаются с помощью css-свойств\n<code>background-image</code>, <code>width</code> и <code>height</code> соответственно.</p>\n<p>Свойства иконки можно задать в модификаторе блока <code>icon</code>:</p>\n<pre><code class=\"lang-css\">.icon_type_active\n{\n    width: 16px;\n    height: 16px;\n\n    background-position: -16px 0;\n\n    backgroun-image: url(image-sprite.png);\n}</code></pre>\n<p>Также можно задать свойства иконки каскадом в родительском блоке или его элементе:</p>\n<pre><code class=\"lang-css\">.button_icon_comment .icon\n{\n    width: 16px;\n\n    background-image: url(icon-comment.png);\n}</code></pre>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "icon.examples/10-icon/10-icon",
+          "title": "Кнопки с иконками"
+        }
+      ]
+    }
+  ]
+}

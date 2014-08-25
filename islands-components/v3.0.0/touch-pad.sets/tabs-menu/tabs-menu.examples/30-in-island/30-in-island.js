@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-pad.sets/tabs-menu/tabs-menu.examples/30-in-island/30-in-island.ru.js

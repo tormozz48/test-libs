@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-pad.sets/link/link.examples/40-link-pseudo/40-link-pseudo.ru.js

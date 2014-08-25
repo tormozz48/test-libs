@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/share-dropdown/share-dropdown.examples/10-share/10-share.ru.js

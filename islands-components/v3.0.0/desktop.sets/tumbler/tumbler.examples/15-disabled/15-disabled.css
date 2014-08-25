@@ -1,0 +1,14 @@
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css);
+@import url(../../../../common.blocks/tumbler/tumbler.css);
+@import url(../../../../common.blocks/tumbler/__box/tumbler__box.css);
+@import url(../../../../common.blocks/tumbler/__button/tumbler__button.css);
+@import url(../../../../common.blocks/tumbler/__label/tumbler__label.css);
+@import url(../../../../common.blocks/tumbler/__input/tumbler__input.css);
+@import url(../../../../common.blocks/tumbler/__sticker/tumbler__sticker.css);
+@import url(../../../../common.blocks/tumbler/__sticker-label/tumbler__sticker-label.css);
+@import url(../../../../common.blocks/tumbler/_theme/tumbler_theme_normal.css);
+@import url(../../../../desktop.blocks/tumbler/_theme/tumbler_theme_normal.css);
+@import url(../../../../common.blocks/tumbler/_size/tumbler_size_s.css);
+@import url(../../../../common.blocks/tumbler/_size/tumbler_size_m.css);
+@import url(../../../../common.blocks/tumbler/_disabled/tumbler_disabled_yes.css);
+@import url(../../../../desktop.blocks/tumbler/_disabled/tumbler_disabled_yes.css);

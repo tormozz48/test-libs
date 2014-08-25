@@ -1,0 +1,48 @@
+/* 10-simple.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css begin */
+.b-page_theme_normal
+{
+    background-color: #f6f5f3;
+}
+
+/* ../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css end */
+/* ../../../../libs/islands-romochka/touch-phone.blocks/b-page/_theme/b-page_theme_normal.css begin */
+.b-page_theme_normal
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(42%, #fff), to(rgba(255,255,255,0)));
+    background-image: -webkit-linear-gradient(top, #fff 42%, rgba(255,255,255,0));
+    background-image:         linear-gradient(top, #fff 42%, rgba(255,255,255,0));
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 195px;
+            background-size: 100% 195px;
+}
+
+/* ../../../../libs/islands-romochka/touch-phone.blocks/b-page/_theme/b-page_theme_normal.css end */
+/* ../../../../common.blocks/a11y-hidden/a11y-hidden.css begin */
+.a11y-hidden
+{
+    position: absolute;
+    left: -32767px;
+}
+
+/* ../../../../common.blocks/a11y-hidden/a11y-hidden.css end */
+
+/* 10-simple.css end */

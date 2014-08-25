@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/tooltip/tooltip.examples/20-autoclosable/20-autoclosable.ru.js

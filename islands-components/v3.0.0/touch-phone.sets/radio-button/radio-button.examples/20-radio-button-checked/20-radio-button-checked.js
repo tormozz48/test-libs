@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/radio-button/radio-button.examples/20-radio-button-checked/20-radio-button-checked.ru.js

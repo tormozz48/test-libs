@@ -1,0 +1,90 @@
+/* 40-link-pseudo.ie.css begin */
+/* 40-link-pseudo.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.css begin */
+.i-ua_js_yes .link_pseudo_yes
+{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.i-ua_js_yes .link_pseudo_yes .link__inner
+{
+    text-decoration: none;
+
+    color: inherit;
+    border-bottom: 1px dotted;
+}
+
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.css end */
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css begin */
+.link_disabled_yes,
+.link_disabled_yes:hover,
+.link_disabled_yes:hover .link__inner,
+a.link_disabled_yes:link,
+a.link_disabled_yes:visited
+{
+    cursor: default !important;
+
+    color: #ddd !important;
+    outline: 0;
+}
+
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css end */
+/* ../../../../touch.blocks/link/_disabled/link_disabled_yes.css begin */
+.link_disabled_yes
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/link/_disabled/link_disabled_yes.css end */
+
+/* 40-link-pseudo.css end */
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.ie.css begin */
+.i-ua_js_yes .link_pseudo_yes
+{
+    zoom: 1;
+}
+
+.i-ua_js_yes .link_pseudo_yes,
+.i-ua_js_yes .link_pseudo_yes .link__inner
+{
+    position: relative;
+}
+
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.ie.css end */
+
+/* 40-link-pseudo.ie.css end */

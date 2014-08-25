@@ -1,0 +1,13 @@
+@import url(../../../../libs/bem-bl/blocks-touch/b-page/b-page.css);
+@import url(../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css);
+@import url(../../../../common.blocks/tumbler/tumbler.css);
+@import url(../../../../touch.blocks/tumbler/tumbler.css);
+@import url(../../../../common.blocks/tumbler/__box/tumbler__box.css);
+@import url(../../../../common.blocks/tumbler/__button/tumbler__button.css);
+@import url(../../../../common.blocks/tumbler/__label/tumbler__label.css);
+@import url(../../../../common.blocks/tumbler/__input/tumbler__input.css);
+@import url(../../../../common.blocks/tumbler/__sticker/tumbler__sticker.css);
+@import url(../../../../common.blocks/tumbler/__sticker-label/tumbler__sticker-label.css);
+@import url(../../../../common.blocks/tumbler/_theme/tumbler_theme_normal.css);
+@import url(../../../../common.blocks/tumbler/_size/tumbler_size_s.css);
+@import url(../../../../common.blocks/tumbler/_size/tumbler_size_m.css);

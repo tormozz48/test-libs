@@ -1,0 +1,134 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>checkbox</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок checkbox</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>checkbox</code> («чекбокс») – независимый переключатель. Позволяет управлять параметром с двумя состояниями – включено и выключено. Группа чекбоксов используется для выбора более одного варианта из списка.
+Блок создает контейнер, содержащий нативный контрол «чекбокс» <code>&lt;input type=&quot;checkbox&quot; name=&quot;имя&quot; атрибуты&gt;</code>.  Сам нативный контрол скрыт внутри контейнера, используется только его функциональность. Нестандартное островное оформление чекбокса задается контейнеру.
+В MSIE8 и ниже <code>checkbox</code> деградирует до нативного чекбокса <code>&lt;input type=&quot;checkbox&quot; атрибуты&gt;</code>.</p>
+<h3 id="-">Элементы блока</h3>
+<ul>
+<li><code>box</code> – добавляется в BEMHTML-шаблоне блока и трансформируется в тэг <code>&lt;span&gt;</code>. Используется для отрисовки чекбокса (нативный чекбокс скрыт).</li>
+<li><code>control</code> – добавляется на уровне шаблонизатора блока к содержимому <code>checkbox</code>. В HTML преобразуется в нативный контрол чекбокс <code>&lt;input type=&quot;checkbox&quot; name=&quot;имя&quot; атрибуты&gt;</code>. Служит для использования функциональности нативного чекбокса.</li>
+<li><code>tick</code> – элемент для отображения «галочки» в поле чекбокса.
+В HTML трансформируется в тэг <code>&lt;i&gt;</code>. В CSS-свойстве элемента <code>background</code> находится векторное изображение «галочки» в формате svg.</li>
+</ul>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования блока:</p>
+<pre><code class="lang-JavaScript">{
+    block: &#39;checkbox&#39;, // имя блока
+    mods: {size: &#39;m&#39;},  // поле модификаторов. Модификатор размера - обязательный
+    checkboxAttrs: {id: &#39;nn&#39;, value: &#39;val&#39;, name: &#39;text&#39;, tabindex: 1}, // атрибуты чекбокса
+     content: {elem: &#39;label&#39;, content: &#39;label&#39;} // метка чекбокса
+}</code></pre>
+<p><code>checkboxAttrs</code>, <code>content</code> – не обязательные поля BEMJSON блока.</p>
+<p>BEMHTML-шаблон трансформирует <code>checkbox</code> в HTML-тэг <code>&lt;span&gt;</code>, реализующий кастомный чекбокс, внутри которого будет находиться нативный чекбокс <code>&lt;input type=&quot;checkbox&quot; атрибуты&gt;</code>.</p>
+<h3 id="-">Атрибуты блока</h3>
+<ul>
+<li><code>{Object} checkboxAttrs</code> – поле атрибутов.
+Допустимые атрибуты: <code>name</code>, <code>value</code>, <code>accesskey</code>, <code>tabindex</code>, <code>id</code>, <code>autofocus</code>.
+Совпадают с HTML-атрибутами нативного чекбокса, который лежит в основе реализации блока <code>checkbox</code>.<ul>
+<li><code>{String} name</code> – имя контрола для идентификации обработчиком формы. У чекбоксов, объединенных в группу, имена должны совпадать.</li>
+<li><code>{String} value</code> – значение, отправляемое на сервер при передаче формы.</li>
+<li><code>{String} id</code> – уникальный идентификатор чекбокса. Если <code>id</code> явно не задан во входных данных <code>checkboxAttrs:{id: &#39;nnn&#39;}</code>, то будет сгенерирован автоматически. Служит для связи с меткой.</li>
+<li><code>{Number} tabindex</code> – определяет последовательность перехода между элементами при нажатии на кнопку <code>Tab</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">Содержимое блока</h3>
+<ul>
+<li><code>{Object} content</code> – содержимое чекбокса (метка).
+Для создания метки (текста) контрола служит элемент блока <code>checkbox</code> – <code>label</code>. Не обязательный элемент. Текст метки задается в контенте элемента <code>label</code>.</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;checkbox&#39;,
+    mods: {size: &#39;m&#39;},
+    content: {elem: &#39;label&#39;, content: &#39;текст метки&#39;} //добавление метки чекбоксу
+}</code></pre>
+<p>BEMHTML-шаблон преобразует <code>label</code> в HTML-тэг <code>&lt;label&gt;</code>, который устанавливает связь между меткой и чекбоксом. Такая связь используется для изменения состояния чекбокса при нажатии курсором мыши или пробелом на метку. Чекбокс связывается с меткой идентификатором <code>id</code> внутри  нативного чекбокса и указанием его значения в атрибуте <code>for</code> тэга <code>&lt;label&gt;</code>.</p>
+<!-- %%checkbox.examples/20-label/20-label%% -->
+
+<!-- %%checkbox.examples/25-label-id/25-label-id%% -->
+
+<h3 id="-checkbox">Варианты использования checkbox</h3>
+<ul>
+<li>Для управления одним параметром.</li>
+</ul>
+<pre><code class="lang-JavaScript">{
+    block: &#39;checkbox&#39;,
+    mods: {size: &#39;m&#39;},
+    checkboxAttrs: {id: &#39;login&#39;},
+    content: {elem: &#39;label&#39;, content: &#39;запомнить меня&#39;}
+}</code></pre>
+<ul>
+<li>Группа чекбоксов. Значение атрибута <code>name</code> у чекбоксов в группе должно быть одинаковое.</li>
+</ul>
+<pre><code class="lang-JavaScript">{
+    block: &#39;checkbox&#39;,
+    mods: {size: &#39;m&#39;},
+    checkboxAttrs: {id: &#39;nnn&#39;, value: &#39;val_1&#39;, accesskey: &#39;kj&#39;, name: &#39;text&#39;, tabindex: 1}
+},
+{
+    block: &#39;checkbox&#39;,
+    mods: {size: &#39;m&#39;, checked: &#39;yes&#39;},
+    checkboxAttrs: {value: &#39;val_2&#39;,  name: &#39;text&#39;, tabindex: 2}
+},
+{
+     block: &#39;checkbox&#39;,
+    mods: {size: &#39;m&#39;, disabled: &#39;yes&#39;, checked: &#39;yes&#39;},
+     checkboxAttrs: {id: &#39;nn&#39;, value: &#39;val_3&#39;, name: &#39;text&#39;, tabindex: 3},
+     content: {elem: &#39;label&#39;, content: &#39;label&#39;}
+}</code></pre>
+<h3 id="-">Модификаторы</h3>
+<h4 id="-">Темы оформления</h4>
+<p>По умолчанию для чекбокса реализована одна тема оформления – <strong>обычная</strong> (модификатор <code>theme</code> со значением <code>normal</code>).</p>
+<h4 id="-">Размеры</h4>
+<p>Для чекбокса реализованы два размера – <code>s</code> и <code>m</code>, которые определяют размер шрифта метки и поля для проставления галочки.
+Модификатор размера <code>size</code> – обязателен при объявлении блока, по умолчанию не задан.</p>
+<hr>
+<p><strong>NB</strong> Если модификатор размера не указан во входных данных блока – чекбокс не отобразится на странице.</p>
+<hr>
+<p>Таблица размеров блока</p>
+<table>
+<thead>
+<tr>
+<th>Размер блока</th>
+<th>Размер шрифта</th>
+<th>Размеры поля чекбокса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s</td>
+<td>13px</td>
+<td>width: 12px; height: 12px;</td>
+</tr>
+<tr>
+<td>m</td>
+<td>15px</td>
+<td>width: 14px; height: 14px;</td>
+</tr>
+</tbody>
+</table>
+<p>При необходимости вы можете доопределить нужный размер на уровне проекта. <a href="../button/button.html#customsize">Кастомный размер</a>.</p>
+<!-- %%checkbox.examples/10-state/10-state%% -->
+
+<h4 id="-">Состояния</h4>
+<p>Модификаторы состояния чекбокса:</p>
+<ul>
+<li><strong>Выбран</strong>  <code>checked</code> – характеризует активное (выбранное) состояние чекбокса.</li>
+<li><strong>Не активен</strong>  <code>disabled</code> – чекбокс отключен.</li>
+<li><strong>В фокусе</strong> <code>focused</code> – чекбокс находится в фокусе.</li>
+</ul>
+<p>Если во входных данных не задан модификатор состояния блока, то <code>checkbox</code> по умолчанию будет активен (можно нажать на чекбокс) и не выбран.
+В состоянии <strong>не активен</strong> (модификатор <code>disabled</code> со значением <code>yes</code>) чекбокс и метка будут недоступны для действий пользователя.
+Чекбокс может находиться одновременно в нескольких состояниях. Например, <strong>не активен</strong> и <strong>выбран</strong>.
+В состоянии <strong>в фокусе</strong>  реагирует только на клик левой кнопки мыши или на нажатие пробела. Переход по чекбоксам осуществляется клавишей <code>Tab</code>, установка состояния <strong>выбран/не выбран</strong> – <code>Space</code>.</p>
+<pre><code class="lang-javascript">{
+    block: &#39;checkbox&#39;,
+    mods: {size: &#39;m&#39;, disabled: &#39;yes&#39;, checked: &#39;yes&#39;},
+    content: {elem: &#39;label&#39;, content: &#39;label&#39;}
+}</code></pre>
+<h3 id="-">Значения по умолчанию</h3>
+<ul>
+<li><strong>Тема оформления</strong>: обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>
+<li><strong>Состояние</strong>: активен, не выбран.</li>
+<li>Атрибут <code>id</code> генерируется по умолчанию, если явно не задан в BEMJSON.</li>
+</ul>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="checkbox:examples:10-state:10-state"><a class="example__title" href="checkbox.examples/10-state/10-state.html" target="_blank">Все состояния</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="checkbox.examples/10-state/10-state.bemjson.js"></iframe><iframe class="example__live" src="checkbox.examples/10-state/10-state.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="checkbox:examples:15-pseudo:15-pseudo"><a class="example__title" href="checkbox.examples/15-pseudo/15-pseudo.html" target="_blank">Все состояния псевдо-чекбокса</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="checkbox.examples/15-pseudo/15-pseudo.bemjson.js"></iframe><iframe class="example__live" src="checkbox.examples/15-pseudo/15-pseudo.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="checkbox:examples:20-label:20-label"><a class="example__title" href="checkbox.examples/20-label/20-label.html" target="_blank">С label</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="checkbox.examples/20-label/20-label.bemjson.js"></iframe><iframe class="example__live" src="checkbox.examples/20-label/20-label.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="checkbox:examples:25-label-id:25-label-id"><a class="example__title" href="checkbox.examples/25-label-id/25-label-id.html" target="_blank">С label и генерацией случайного id</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="checkbox.examples/25-label-id/25-label-id.bemjson.js"></iframe><iframe class="example__live" src="checkbox.examples/25-label-id/25-label-id.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="checkbox:examples:30-complex:30-complex"><a class="example__title" href="checkbox.examples/30-complex/30-complex.html" target="_blank">В тексте</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="checkbox.examples/30-complex/30-complex.bemjson.js"></iframe><iframe class="example__live" src="checkbox.examples/30-complex/30-complex.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="checkbox:examples:35-api:35-api"><a class="example__title" href="checkbox.examples/35-api/35-api.html" target="_blank">API</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="checkbox.examples/35-api/35-api.bemjson.js"></iframe><iframe class="example__live" src="checkbox.examples/35-api/35-api.html"></iframe></div></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">checked</h4><div class="block__mod-title">Состояние чекбокса — активное (галочка нажата)</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">disabled</h4><div class="block__mod-title">Неактивное состояние. Нажать на чекбокс нельзя.</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">focused</h4><div class="block__mod-title">Состояние фокуса</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">size</h4><div class="block__mod-title">Размер</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">m</th><td class="block__mod-val-title">Размер шрифта 15px</td></tr><tr><th class="block__mod-val-name">s</th><td class="block__mod-val-title">Размер шрифта 13px</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">theme</h4><div class="block__mod-title">Темы</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">normal</th><td class="block__mod-val-title">Обычный чекбокс</td></tr><tr><th class="block__mod-val-name">pseudo</th><td class="block__mod-val-title">Обычный чекбокс</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">box</h4><div class="block__elem-title">Элемент рисующий чекбокс (нативный чекбокс скрыт)</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">control</h4><div class="block__elem-title">Нативный чекбокс</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">label</h4><div class="block__elem-title">Метка к чекбоксу</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">tick</h4><div class="block__elem-title">Галочка</div></div></div></div></body></html>

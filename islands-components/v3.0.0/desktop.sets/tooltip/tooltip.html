@@ -1,0 +1,91 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>tooltip</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок tooltip</span></div><div class="block__title">Всплывающая подсказка-указатель (tooltip)
+</div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>toolip</code> предназначен для создания всплывающих подсказок.</p>
+<p>Подсказка всегда указывает на некоторый элемент страницы <code>owner</code>. <code>owner</code> задается из JavaScript.</p>
+<p>Подсказка скрывается по клику на ней.</p>
+<h3 id="-">Варианты использования</h3>
+<h4 id="-">Объявление блока на странице</h4>
+<p>BEMJSON блока:</p>
+<pre><code class="lang-js">{
+    block: &#39;tooltip&#39;,
+    mods: {
+        size: &#39;xs&#39;,
+        theme: &#39;success&#39;
+    },
+    content: &#39;Содержимое подсказки&#39;
+}</code></pre>
+<h4 id="-javascript">Использование в JavaScript</h4>
+<pre><code class="lang-js">var tooltip = this.findBlockInside(&#39;tooltip&#39;),
+    tooltipOwner = this.findBlockInside(&#39;tooltip-owner&#39;);
+
+tooltip
+    .setOwner(tooltipOwner)    // задать объект на который будет указывать подсказка
+    .setMod(&#39;shown&#39;, &#39;yes&#39;);   // показать подсказку</code></pre>
+<h2 id="-">Техническое описание</h2>
+<p>Блок представляет собой обвязку над блоком <a href="/libs/islands-components/v2.2.0/desktop.sets/popup/"><code>popup</code></a>.</p>
+<h3 id="-">Элементы</h3>
+<p>Элемент <code>tail</code> — хвостик подсказки. Реализован в технологии <code>css</code>. Размер хвостика определяется в модификаторе <code>size</code>.</p>
+<h3 id="-">Модификаторы</h3>
+<h4 id="-">Тема оформления</h4>
+<p>Модификатор <code>theme</code> (обязательный, темы по умолчанию нет). Темы реализованы в технологии <code>css</code>.</p>
+<p>У подсказки реализованы несколько тем:</p>
+<ul>
+<li><code>normal</code></li>
+<li><code>error</code></li>
+<li><code>success</code></li>
+</ul>
+<!-- %%tooltip.examples/10-simple/10-simple%% -->
+
+<h4 id="-">Размер</h4>
+<p>Модификатор <code>size</code>. Обязательный, размера по умолчанию нет. Размеры реализованы в технологиях <code>css</code> и <code>bemhtml</code>.</p>
+<p>У подсказки реализован следующий набор размеров:</p>
+<ul>
+<li><code>xs</code></li>
+<li><code>s</code></li>
+<li><code>m</code></li>
+<li><code>l</code></li>
+</ul>
+<p>Размерная сетка соответствует размерам кнопки из <code>v3.0.0</code> 
+(<a href="/libs/islands-components/v3.0.0-alpha3/desktop.sets/button/">button</a>).</p>
+<h4 id="-">Самозакрытие</h4>
+<p>Модификатор <code>autoclosable</code>. </p>
+<p>Опциональный модификатор, реализован в технологии <code>js</code>. Позволяет закрывать подсказку по клику во вне ее 
+или по нажатию клавиши <code>ESC</code>.</p>
+<p>Допустимое значение:</p>
+<ul>
+<li><code>yes</code></li>
+</ul>
+<!-- %%tooltip.examples/20-autoclosable/20-autoclosable%% -->
+
+<h4 id="-">Состояния подсказки</h4>
+<ul>
+<li><p>Модификатор <code>shown</code>.</p>
+<ul>
+<li>Показывает / скрывает подсказку. Допустимое значение: <code>yes</code>.<br/>
+<em>Обратите внимание</em>, прежде чем подсказка может быть показана, у нее должен быть задан <code>owner</code>. В противном случае, 
+подсказка кидает JavaScript-ошибку.</li>
+</ul>
+</li>
+<li><p>Модификатор <code>hovered</code>.</p>
+<ul>
+<li>При наведении курсора подсказка меняет прозрачность. Модификатор реализован только на уровне <code>desktop.blocks</code> 
+в технологии <code>css</code>. Подключается по умолчанию. Допустимое значение: <code>yes</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="js-">JS-параметры</h3>
+<p><code>{Number} offset</code> – определяет отступ подсказки от элемента на который она указывает.
+Отступ учитывает размер хвостика <code>__tail</code>.</p>
+<!-- %%tooltip.examples/30-offset/30-offset%% -->
+</div><div class="block__examples"></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">autoclosable</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Автоматически закрывающаяся при клике во вне
+</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">size</h4><div class="block__mod-title">Размер
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">l</th><td class="block__mod-val-title">Размер шрифта в 16px
+</td></tr><tr><th class="block__mod-val-name">m</th><td class="block__mod-val-title">Размер шрифта в 15px
+</td></tr><tr><th class="block__mod-val-name">s</th><td class="block__mod-val-title">Размер шрифта в 13px
+</td></tr><tr><th class="block__mod-val-name">xs</th><td class="block__mod-val-title">Размер шрифта в 13px с уменьшеными отступами
+</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">theme</h4><div class="block__mod-title">Темы
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">error</th><td class="block__mod-val-title">Ошибка
+</td></tr><tr><th class="block__mod-val-name">normal</th><td class="block__mod-val-title">Обычная
+</td></tr><tr><th class="block__mod-val-name">success</th><td class="block__mod-val-title">Успех
+</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">tail</h4><div class="block__elem-title">Хвостик
+</div></div></div></div></body></html>

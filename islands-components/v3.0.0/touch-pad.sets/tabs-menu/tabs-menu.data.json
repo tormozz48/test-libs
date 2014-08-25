@@ -1,0 +1,149 @@
+{
+  "name": "tabs-menu",
+  "elems": [
+    {
+      "name": "tab",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Элемент, реализующий таб. Является блоком `link` с примешанным к нему элементом `tabs-menu__tab`.\n"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "counter",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включены\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Счетчики на ссылках\n"
+        }
+      ]
+    },
+    {
+      "name": "layout",
+      "vals": [
+        {
+          "name": "horiz",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Горизонтальный\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Лейаут\n"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Средний\n"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Маленький\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер\n"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Нормальная островная\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Тема\n"
+        }
+      ]
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Меню из табиков\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "tabs-menu.examples/10-simple/10-simple",
+          "title": "Простое меню из табиков\n"
+        },
+        {
+          "url": "tabs-menu.examples/20-sizes/20-sizes",
+          "title": "Размеры\n"
+        },
+        {
+          "url": "tabs-menu.examples/30-in-island/30-in-island",
+          "title": "Применение в острове\n"
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h4 id=\"-api\">Внимание! Блок имеет нестабильное API</h4>\n<p>Блок, реализующий меню в виде табиков.</p>\n<p>Может выполнять роль простого меню, без js-поведения. Для этого просто не нужно устанавливать BEMJSON-параметр <code>js</code>.</p>\n<!-- %%tabs-menu.examples/10-simple/10-simple%% -->\n\n<p>Имеет размеры <code>s</code> и <code>m</code>.</p>\n<!-- %%tabs-menu.examples/20-sizes/20-sizes%% -->\n\n<p>Дружит с блоком <code>island</code>.</p>\n<!-- %%tabs-menu.examples/30-in-island/30-in-island%% -->\n\n<p>Если добавить BEMJSON-параметр <code>js: true</code>, то блок приобретает js-функциональность. Подробнее в <a href=\"tabs-menu.jsdoc.html\">API</a>.</p>\n<!-- %%tabs-menu.examples/40-api/40-api%% -->\n\n<p>Модификаторы <code>_size</code>, <code>_theme</code>, <code>layout</code> <strong>по умолчанию не выставляются</strong>, нужно самостоятельно позаботьтся о них и их\nзависимостях.</p>\n"
+    }
+  ]
+}

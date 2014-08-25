@@ -1,0 +1,13 @@
+@import url(../../../../libs/bem-bl/blocks-touch/b-page/b-page.css);
+@import url(../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css);
+@import url(../../../../common.blocks/checkbox/checkbox.examples/12-disabled.blocks/example/example.css);
+@import url(../../../../common.blocks/checkbox/checkbox.css);
+@import url(../../../../touch.blocks/checkbox/checkbox.css);
+@import url(../../../../common.blocks/checkbox/__box/checkbox__box.css);
+@import url(../../../../common.blocks/checkbox/__control/checkbox__control.css);
+@import url(../../../../common.blocks/checkbox/__tick/checkbox__tick.css);
+@import url(../../../../common.blocks/checkbox/_theme/checkbox_theme_normal.css);
+@import url(../../../../common.blocks/checkbox/_theme/checkbox_theme_pseudo.css);
+@import url(../../../../common.blocks/checkbox/_checked/checkbox_checked_yes.css);
+@import url(../../../../common.blocks/checkbox/_disabled/checkbox_disabled_yes.css);
+@import url(../../../../common.blocks/checkbox/_size/checkbox_size_s.css);

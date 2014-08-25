@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-pad.sets/spin/spin.examples/20-progress/20-progress.ru.js

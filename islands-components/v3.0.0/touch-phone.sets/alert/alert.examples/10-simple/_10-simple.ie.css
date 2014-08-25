@@ -1,0 +1,482 @@
+/* 10-simple.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../touch-phone.blocks/alert/alert.css begin */
+/* уточнение селектора для перекрытия стилей попапа */
+.popup.alert
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    padding: 0 8px;
+
+    -webkit-user-select: none; /* для предотвращения затормаживаний при выделении текста */
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+
+    font-size: 16px;
+
+    color: #fff;
+
+    -webkit-backface-visibility: hidden; /* снимаем нагрузку с анимации */
+        -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.alert.popup
+{
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.alert .alert__popup
+{
+    -webkit-box-shadow: 0 0 7px rgba(0,0,0,.3),
+                        inset 0 1px rgba(255,255,255,.27);
+            box-shadow: 0 0 7px rgba(0,0,0,.3),
+                        inset 0 1px rgba(255,255,255,.27);
+}
+
+/* ../../../../touch-phone.blocks/alert/alert.css end */
+/* ../../../../touch-phone.blocks/alert/__message/alert__message.css begin */
+.alert__message
+{
+    padding: 12px 12px 16px;
+
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #fff;
+}
+
+/* ../../../../touch-phone.blocks/alert/__message/alert__message.css end */
+/* ../../../../touch-phone.blocks/alert/_type/alert_type_error.css begin */
+.alert_type_error .alert__message
+{
+    background: #ec3c48;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fc5b60), to(#ec3c48));
+    background: -webkit-linear-gradient(top, #fc5b60, #ec3c48);
+    background:         linear-gradient(to bottom, #fc5b60, #ec3c48);
+}
+
+/* ../../../../touch-phone.blocks/alert/_type/alert_type_error.css end */
+/* ../../../../touch-phone.blocks/alert/_type/alert_type_block.css begin */
+.alert_type_block.popup
+{
+    padding: 0 18px;
+}
+
+.alert_type_block .alert__popup
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+    background: #ec3c48;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fc5b60), to(#ec3c48));
+    background: -webkit-linear-gradient(top, #fc5b60, #ec3c48);
+    background:         linear-gradient(to bottom, #fc5b60, #ec3c48);
+}
+
+/* кнопка */
+.alert_type_block .alert__button
+{
+    margin-top: 6px;
+
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.alert_type_block .button.button_theme_pseudo
+{
+    border: 1px solid;
+    border-top-color: #b73f37;
+    border-right-color: #b7463e;
+    border-bottom-color: #b64c44;
+    border-left-color: #b7463e;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4646c), to(#f04650));
+    background: -webkit-linear-gradient(top, #f4646c, #f04650);
+    background:         linear-gradient(to bottom, #f4646c, #f04650);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.alert_type_block .button_theme_pseudo.i-pressed-controller_pressed_yes
+{
+    background: -webkit-gradient(linear, left top, left bottom, from(#f88086), to(#ed404b));
+    background: -webkit-linear-gradient(top, #f88086, #ed404b);
+    background:         linear-gradient(to bottom, #f88086, #ed404b);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.82),
+                        0 0 0 1px rgba(40,40,40,.14);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.82),
+                        0 0 0 1px rgba(40,40,40,.14);
+}
+
+.alert_type_block .button_theme_pseudo
+{
+    padding: 4px 24px;
+
+    color: #fff !important;
+}
+
+.alert_type_block .button__text
+{
+    font-size: 16px;
+}
+
+/* ../../../../touch-phone.blocks/alert/_type/alert_type_block.css end */
+/* ../../../../touch-phone.blocks/alert/_type/alert_type_info.css begin */
+.alert_type_info .alert__message
+{
+    background: #5eaee6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#69b7ed), to(#5eaee6));
+    background: -webkit-linear-gradient(top, #69b7ed, #5eaee6);
+    background:         linear-gradient(to bottom, #69b7ed, #5eaee6);
+}
+
+/* ../../../../touch-phone.blocks/alert/_type/alert_type_info.css end */
+/* ../../../../common.blocks/popup/popup.css begin */
+.popup
+{
+    position: absolute;
+    z-index: 32700;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1px;
+}
+
+/* ../../../../common.blocks/popup/popup.css end */
+/* ../../../../common.blocks/popup/__content/popup__content.css begin */
+.popup__content
+{
+    position: relative;
+    z-index: 10;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+/* ../../../../common.blocks/popup/__content/popup__content.css end */
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+.popup_theme_ffffff,
+.popup_theme_ffffff .popup__tail:after
+{
+    background: #fff;
+}
+
+.popup_theme_ffffff .popup__tail
+{
+    background: rgba(0,0,0,.15);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, rgba(0,0,0,.15)), color-stop(50%, rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+    background:         linear-gradient(to top right, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+}
+
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../touch-phone.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.i-ua_android_2 .popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+/* ../../../../touch-phone.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css begin */
+.popup_visibility_visible
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css begin */
+.popup_visibility_outside
+{
+    top: -99999px;
+    left: -99999px;
+
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css end */
+/* ../../../../common.blocks/popup/__under/popup__under.css begin */
+.popup__under
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/popup/__under/popup__under.css end */
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css begin */
+.popup__under_color_white
+{
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css end */
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    position: fixed;
+    z-index: 32000;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    opacity: .3;
+    background: #000;
+}
+
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../touch-phone.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    pointer-events: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -ms-touch-action: none;
+}
+
+/* ../../../../touch-phone.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    pointer-events: none;
+}
+
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch-phone.blocks/button/_disabled/button_disabled_yes.css begin */
+.i-ua_android_2 .button_disabled_yes.button:before
+{
+    -webkit-box-shadow: none;
+}
+
+/* ../../../../touch-phone.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css begin */
+.button_pressed_yes
+{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../touch-phone.blocks/button/_theme/button_theme_normal.css begin */
+/* Костыли для Android 2.* */
+.i-ua_android_2 .button_theme_normal:before
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
+}
+
+.i-ua_android_2 .button_theme_normal.button_pressed_yes:before
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
+}
+
+/* ../../../../touch-phone.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../touch-phone.blocks/alert/alert.examples/10-simple.blocks/button/_message/button_message_error.css begin */
+.button_message_error
+{
+    display: block;
+
+    margin: 10px 0 30px;
+}
+
+/* ../../../../touch-phone.blocks/alert/alert.examples/10-simple.blocks/button/_message/button_message_error.css end */
+/* ../../../../touch-phone.blocks/alert/alert.examples/10-simple.blocks/button/_message/button_message_block.css begin */
+.button_message_block
+{
+    display: block;
+
+    margin: 10px 0 30px;
+}
+
+/* ../../../../touch-phone.blocks/alert/alert.examples/10-simple.blocks/button/_message/button_message_block.css end */
+/* ../../../../touch-phone.blocks/alert/alert.examples/10-simple.blocks/button/_message/button_message_info.css begin */
+.button_message_info
+{
+    display: block;
+
+    margin: 10px 0 30px;
+}
+
+/* ../../../../touch-phone.blocks/alert/alert.examples/10-simple.blocks/button/_message/button_message_info.css end */
+/* ../../../../common.blocks/image/image.css begin */
+.image
+{
+    font: 0/0 a;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/image/image.css end */
+
+/* 10-simple.css end */

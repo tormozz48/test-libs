@@ -1,0 +1,5 @@
+@import url(../../../../libs/bem-bl/blocks-touch/b-page/b-page.css);
+@import url(../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css);
+@import url(../../../../common.blocks/link/link.css);
+@import url(../../../../common.blocks/link/_disabled/link_disabled_yes.css);
+@import url(../../../../touch.blocks/link/_disabled/link_disabled_yes.css);

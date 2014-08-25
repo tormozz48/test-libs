@@ -1,0 +1,87 @@
+/* 15-link-simple-outer.css begin */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../desktop.blocks/link/link.css begin */
+.link:hover,
+.link:visited:hover
+{
+    color: #d00 !important; /* Оторвать !important после того, как оторвем .i-global__hover */
+}
+
+/* ../../../../desktop.blocks/link/link.css end */
+/* ../../../../common.blocks/link/_outer/link_outer_yes.css begin */
+.link_outer_yes,
+.link_outer_yes:visited
+{
+    color: #070;
+}
+
+/* ../../../../common.blocks/link/_outer/link_outer_yes.css end */
+
+/* 15-link-simple-outer.css end */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */

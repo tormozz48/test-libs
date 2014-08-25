@@ -1,0 +1,154 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>check-button</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок check-button</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>check-button</code> («чекбаттон») – независимый переключатель («чекбокс») в виде кнопки, наследуется от блока <a href="../checkbox/checkbox.html">checkbox</a>.
+Используется по аналогии с обычным чекбоксом – для управления параметром
+с двумя состояниями – включено (кнопка вжата) и выключено (кнопка отжата) или
+для выбора нескольких вариантов из списка (группа чекбаттонов).
+В блоке <code>check-button</code> используется функциональность нативного контрола «чекбокс», который скрыт.
+В MSIE8 и ниже чекбаттон деградирует до нативного чекбокса <code>&lt;input type=&quot;checkbox&quot; атрибуты&gt;</code>.</p>
+<h3 id="-">Элементы блока</h3>
+<ul>
+<li><p><code>control</code> – добавляется по умолчанию на уровне шаблонизатора блока (мода <code>default</code>) к содержимому блока. В HTML преобразуется в нативный контрол чекбокс <code>&lt;input type=&quot;checkbox&quot; name=&quot;имя&quot; атрибуты&gt;</code>. Служит для использования функциональности нативного чекбокса.</p>
+</li>
+<li><p><code>text</code> – обрамляет текст чекбаттона, используется в нажатом состоянии кнопки для сдвига текста без смещения рядом стоящего текста. Преобразуется BEMHTML-шаблоном в тэг <code>&lt;span&gt;</code>.</p>
+</li>
+<li><p><code>icon</code> – используется для отображения иконки в чекбаттоне, рядом с текстом или самостоятельно (требует указания модификатора <code>only-icon</code>).</p>
+</li>
+</ul>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования блока:</p>
+<pre><code class="lang-javascript">{
+    block: &#39;check-button&#39;, // имя блока
+    name: &#39;test&#39;,          // имя контрола для его идентификации обработчиком формы
+    value: &#39;1&#39;,            // значение, отправляемое на сервер при выборе контрола
+    mods: {size: &#39;s&#39;},   // модификаторы блока. Модификатор размера – обязательный
+    content: &#39;1&#39;           // текст кнопки
+}</code></pre>
+<p>В результате BEMHTML-преобразований блок трансформируется в <code>&lt;label&gt;</code>, реализующий кастомный чекбокс, внутри которого будет находиться нативный чекбокс с заданными значениями атрибутов.</p>
+<h3 id="-">Атрибуты блока</h3>
+<p>Допустимые атрибуты чекбаттона: <code>name</code>, <code>value</code>, <code>tabindex</code>, <code>id</code> – совпадают с HTML-атрибутами нативного чекбокса, который лежит в основе реализации блока.</p>
+<p><code>name</code>, <code>value</code>, <code>tabindex</code> – не обязательные, задаются в одноименных полях или поле <code>controlAttrs</code> входного BEMJSON блока <code>check-button</code>.</p>
+<ul>
+<li><code>{String} name</code> – имя чекбаттона для его идентификации обработчиком формы. Обязательное поле.</li>
+<li><code>{String} value</code> – значение, отправляемое на сервер при выборе контрола. Если значение <code>value</code> явно не задано и <code>content</code> не пустой – будет сгенерирован HTML-атрибут <code>value</code> со значением из <code>content</code>.</li>
+<li><p><code>{String} tabindex</code> – определяет последовательность перехода между элементами при нажатии на кнопку <code>Tab</code>.</p>
+</li>
+<li><p><code>{String} id</code> – уникальный идентификатор чекбаттона. По умолчанию значение <code>id</code> генерируется автоматически. Служит для связи <code>&lt;label&gt;</code>(метка) и нативного чекбокса <code>&lt;input type=&quot;checkbox&quot;&gt;</code>.</p>
+</li>
+</ul>
+<p>Метка <code>&lt;label for=&quot;значение_id&quot;&gt;</code> связывается с контролом <code>&lt;input type=&quot;checkbox&quot; id=&quot;значение_id&quot;&gt;</code> через свой атрибут <code>for</code> и аналогичным значением <code>id</code> у <code>input</code>.</p>
+<p>Остальные HTML-атрибуты для блока не устанавливаются (например, accesskey, autofocus).</p>
+<h3 id="-">Содержимое блока</h3>
+<ul>
+<li><code>{String} content</code> – содержимое чекбаттона (текст). На уровне BEMHTML-шаблона помещается в элемент блока <code>text</code> (преобразуемый в тэг <code>&lt;span&gt;</code>).
+Если <code>content</code> отсутствует или содержит пустое значение, кнопка отобразится без содержимого с размерами, заданными в модификаторе <code>size</code>.</li>
+</ul>
+<!-- %%check-button.examples/10-simple/10-simple%% -->
+
+<p>Кнопка чекбаттона, помимо текста, может содержать текст с иконкой или только иконку.</p>
+<p>Для отображения иконки в BEMJSON блока нужно:</p>
+<ul>
+<li>добавить модификатор <code>only-icon</code> со значением <code>yes</code> (только для иконки без текста).</li>
+<li>смиксовать элемент чекбокса <code>icon</code> с блоком иконки <code>image</code>.</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;image&#39;,
+    mix: [{block: &#39;check-button&#39;, elem: &#39;icon&#39;, mods: {&#39;16&#39;: &#39;bus&#39;}}],
+    alt: &#39;Bus&#39;
+}</code></pre>
+<p><a href="../image/image.html">image</a> – блок из библиотеки <code>islands-components</code>, служащий контейнером для изображения (преобразуется в HTML-тэг <code>&lt;img&gt;</code>).</p>
+<p>Изображение иконки задается c помощью модификатора элемента <code>icon</code> блока <code>check-button</code> (произвольная пара «ключ:значение», в CSS которого находится путь к изображению).</p>
+<!-- %%check-button.examples/40-icon/40-icon%% -->
+
+<h3 id="-">Модификаторы</h3>
+<h4 id="-">Темы оформления</h4>
+<p>Для <code>check-button</code> реализованы две темы оформления:</p>
+<ul>
+<li><strong>Обычная</strong>, модификатор <code>theme</code> со значением <code>normal</code> (используется по умолчанию).</li>
+</ul>
+<pre><code class="lang-javascript">{
+    block: &#39;check-button&#39;,
+    value: &#39;m&#39;,
+    mods: {size: &#39;m&#39;},
+    content: &#39;Размер M&#39;
+}</code></pre>
+<p><img src="http://jing.yandex-team.ru/files/gela-d/2014-03-11_1101.png" alt=""></p>
+<ul>
+<li><strong>Псевдо-чекбаттон</strong>, модификатор <code>pseudo</code> со значением <code>yes</code>.</li>
+</ul>
+<pre><code class="lang-javascript">{
+    block: &#39;check-button&#39;,
+    mods: {size: &#39;m&#39;, pseudo: &#39;yes&#39;},
+    content: &#39;Псевдо-чекбокс размером M&#39;
+}</code></pre>
+<p><img src="http://jing.yandex-team.ru/files/gela-d/2014-03-11_1101-1.png" alt=""></p>
+<p>  <strong>Псевдо-чекбаттон</strong>
+При наличии модификатора <code>pseudo</code> со значением <code>yes</code> по умолчанию устанавливается тема <strong>псевдо</strong> (модификатор <code>theme</code> со значением <code>pseudo</code>).</p>
+<p> Чекбокс-кнопкой с темой <code>pseudo</code> выглядит как прозрачная кнопка и визуально может быть вдавленной. Текст сдвигается на 1px вниз при нажатии.
+У псевдо-чекбокса кнопкой значение <code>value</code> пусто.</p>
+<p>У <strong>псевдо-кнопки</strong> (<a href="../button/button.html">кнопка</a> с темой <code>pseudo</code>) – текст не сдвигается при нажатии, кнопка не остается во вдавленном положении.</p>
+<p>  Тема псевдо (модификатор <code>theme</code> со значением <code>pseudo</code>) может использоваться и  без модификатора <code>pseudo</code>.</p>
+<!-- %%check-button.examples/50-pseudo/50-pseudo%% -->
+
+<h4 id="-">Размеры</h4>
+<p>Для <code>check-button</code> реализованы два размера – <code>s</code> и <code>m</code>. Модификатор размера <code>size</code> – обязательный при объявлении блока.
+Кнопка чекбаттона с темой псевдо (<code>pseudo</code>) по высоте меньше, чем обычная, с темой <code>normal</code>.</p>
+<p>Таблица размеров кнопки с различными темами оформления</p>
+<table>
+<thead>
+<tr>
+<th>Тема кнопки</th>
+<th>Размер кнопки</th>
+<th>Высота кнопки</th>
+<th>Размер шрифта</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Обычная</td>
+<td>s</td>
+<td>28px</td>
+<td>13px</td>
+</tr>
+<tr>
+<td></td>
+<td>m</td>
+<td>32px</td>
+<td>15px</td>
+</tr>
+<tr>
+<td>Псевдо</td>
+<td>s</td>
+<td>24px</td>
+<td>13px</td>
+</tr>
+<tr>
+<td></td>
+<td>m</td>
+<td>28px</td>
+<td>15px</td>
+</tr>
+</tbody>
+</table>
+<!-- %%check-button.examples/20-size/20-size%% -->
+
+<p>При необходимости вы можете доопределить нужный размер на уровне проекта. <a href="../button/button.html#customsize">Кастомный размер</a>.</p>
+<h3 id="-">Состояния блока</h3>
+<ul>
+<li><strong>Выбран</strong> <code>checked</code> – активное состояние чекбаттона, чекбаттон выбран (кнопка вжата).</li>
+<li><strong>Не активен</strong> <code>disabled</code> – кнопка чекбаттона не активна и нажать на нее нельзя.</li>
+<li><strong>В фокусе</strong> <code>focused</code> – кнопка чекбаттона находится в фокусе.</li>
+<li><strong>Нажат</strong> <code>pressed</code> – визуальное нажатие кнопки, чекбаттон не выбран.</li>
+</ul>
+<p>Чекбаттон может находиться одновременно в нескольких состояниях. Например, <strong>не активен</strong> + <strong>выбран</strong>.
+В нажатом состоянии текст в кнопке чекбаттона смещается на 1px вниз.</p>
+<p>Переход по чекбаттонам в группе, в состоянии <strong>в фокусе</strong> одного из них, может осуществляться клавишей <code>Tab</code>. Установка состояния <strong>выбран/не выбран</strong> – <code>Space</code>.</p>
+<!-- %%check-button.examples/30-disabled/30-disabled%% -->
+
+<h3 id="-">Значения по умолчанию</h3>
+<ul>
+<li><strong>Тема оформления кнопки чекбаттона</strong>: обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>
+<li><strong>Состояние</strong>: активен, не выбран.</li>
+<li>Атрибут <code>id</code> генерируется автоматически.</li>
+</ul>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="check-button:examples:10-simple:10-simple"><a class="example__title" href="check-button.examples/10-simple/10-simple.html" target="_blank">Чекбокс кнопкой</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="check-button.examples/10-simple/10-simple.bemjson.js"></iframe><iframe class="example__live" src="check-button.examples/10-simple/10-simple.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="check-button:examples:20-size:20-size"><a class="example__title" href="check-button.examples/20-size/20-size.html" target="_blank">Размеры S и M</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="check-button.examples/20-size/20-size.bemjson.js"></iframe><iframe class="example__live" src="check-button.examples/20-size/20-size.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="check-button:examples:30-disabled:30-disabled"><a class="example__title" href="check-button.examples/30-disabled/30-disabled.html" target="_blank">Неактивные чекбоксы</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="check-button.examples/30-disabled/30-disabled.bemjson.js"></iframe><iframe class="example__live" src="check-button.examples/30-disabled/30-disabled.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="check-button:examples:40-icon:40-icon"><a class="example__title" href="check-button.examples/40-icon/40-icon.html" target="_blank">С иконками размера M</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="check-button.examples/40-icon/40-icon.bemjson.js"></iframe><iframe class="example__live" src="check-button.examples/40-icon/40-icon.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="check-button:examples:50-pseudo:50-pseudo"><a class="example__title" href="check-button.examples/50-pseudo/50-pseudo.html" target="_blank">Псевдо чекбоксы кнопками</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="check-button.examples/50-pseudo/50-pseudo.bemjson.js"></iframe><iframe class="example__live" src="check-button.examples/50-pseudo/50-pseudo.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="check-button:examples:60-clear:60-clear"><a class="example__title" href="check-button.examples/60-clear/60-clear.html" target="_blank">Чекбоксы без рамки кнопками</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="check-button.examples/60-clear/60-clear.bemjson.js"></iframe><iframe class="example__live" src="check-button.examples/60-clear/60-clear.html"></iframe></div></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">checked</h4><div class="block__mod-title">Состояние чекбокса — активное, чекбокс вырбан (кнопка вжата)</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">disabled</h4><div class="block__mod-title">Неактивное состояние. Нажать на чекбокс-кнопку нельзя.</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">focused</h4><div class="block__mod-title">Cостояние в фокусе</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">only-icon</h4><div class="block__mod-title">Чекбокс-кнопкой только с иконкой</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">pressed</h4><div class="block__mod-title">Визуальное нажатие кнопки — чекбокс не вырбан
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">size</h4><div class="block__mod-title">Размер</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">l</th><td class="block__mod-val-title">Размер шрифта 18px</td></tr><tr><th class="block__mod-val-name">m</th><td class="block__mod-val-title">Размер шрифта 15px</td></tr><tr><th class="block__mod-val-name">s</th><td class="block__mod-val-title">Размер шрифта 13px</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">theme</h4><div class="block__mod-title">Темы</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">clear</th><td class="block__mod-val-title">Без рамки</td></tr><tr><th class="block__mod-val-name">normal</th><td class="block__mod-val-title">Обычная</td></tr><tr><th class="block__mod-val-name">pseudo</th><td class="block__mod-val-title">Псевдо</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">control</h4><div class="block__elem-title">Нативный чекбокс</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">icon</h4><div class="block__elem-title">Используется для отображения иконки в чекбоксе, рядом с текстом или самостоятельно (требует указания модификатора _only-icon)</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">text</h4><div class="block__elem-title">Обрамляет текст чекбокса-кнопкой, используется в нажатом состоянии для сдвига текста без смещения рядом стоящего текста</div></div></div></div></body></html>

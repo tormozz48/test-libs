@@ -1,0 +1,832 @@
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/input/input.examples/62-suggest-in-popup.blocks/example/example.css begin */
+.example
+{
+    padding: 30px;
+}
+.example__popup-content.popup__content
+{
+    padding: 20px;
+}
+
+/* ../../../../common.blocks/input/input.examples/62-suggest-in-popup.blocks/example/example.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    pointer-events: none;
+}
+
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css begin */
+.button_pressed_yes
+{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/button/_size/button_size_m.css begin */
+.button_size_m
+{
+    font-size: 15px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_m
+    {
+        line-height: 32px;
+    }
+}
+
+.button_size_m .button__text
+{
+    padding: 0 15px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_m.button_arrow_down .button__text:after
+{
+    right: 10px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_m.button.button_arrow_down .button__text
+{
+    padding-right: 31px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_m.css end */
+/* ../../../../common.blocks/popup/popup.css begin */
+.popup
+{
+    position: absolute;
+    z-index: 32700;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1px;
+}
+
+/* ../../../../common.blocks/popup/popup.css end */
+/* ../../../../common.blocks/popup/__content/popup__content.css begin */
+.popup__content
+{
+    position: relative;
+    z-index: 10;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+/* ../../../../common.blocks/popup/__content/popup__content.css end */
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+.popup_theme_ffffff,
+.popup_theme_ffffff .popup__tail:after
+{
+    background: #fff;
+}
+
+.popup_theme_ffffff .popup__tail
+{
+    background: rgba(0,0,0,.15);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, rgba(0,0,0,.15)), color-stop(50%, rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+    background:         linear-gradient(to top right, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+}
+
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css begin */
+.popup_visibility_visible
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css begin */
+.popup_visibility_outside
+{
+    top: -99999px;
+    left: -99999px;
+
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css end */
+/* ../../../../common.blocks/popup/__under/popup__under.css begin */
+.popup__under
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/popup/__under/popup__under.css end */
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css begin */
+.popup__under_color_white
+{
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css end */
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    position: fixed;
+    z-index: 32000;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    opacity: .3;
+    background: #000;
+}
+
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../common.blocks/popup/__tail/popup__tail.css begin */
+.popup__tail
+{
+    position: absolute;
+    z-index: 9;
+
+    display: block;
+
+    width: 17px;
+    height: 17px;
+
+    font: 0/0 a;
+}
+
+.popup__tail:after
+{
+    position: absolute;
+
+    width: 17px;
+    height: 17px;
+
+    content: '';
+}
+
+.popup_to_top .popup__tail
+{
+    top: 100%;
+
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+}
+
+.popup_to_left .popup__tail
+{
+    left: 100%;
+
+    margin-top: 24.04px; /* 17 * sqrt(2)*/
+
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+}
+
+.popup_to_top .popup__tail:after,
+.popup_to_left .popup__tail:after
+{
+    bottom: 1px;
+    left: 1px;
+}
+
+.popup_to_bottom .popup__tail
+{
+    bottom: 100%;
+
+    margin-left: -17px;
+
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+
+.popup_to_right .popup__tail
+{
+    right: 100%;
+
+    margin-top: 7.04px; /* ( 17*sqrt(2) - 17) */
+
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+
+.popup_to_bottom .popup__tail:after,
+.popup_to_right .popup__tail:after
+{
+    bottom: 1px;
+    left: 1px;
+}
+
+/* ../../../../common.blocks/popup/__tail/popup__tail.css end */
+/* ../../../../common.blocks/input/input.css begin */
+.input
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+}
+
+/* ../../../../common.blocks/input/input.css end */
+/* ../../../../common.blocks/input/_disabled/input_disabled_yes.css begin */
+.input_disabled_yes.input_type_textarea .input__control
+{
+    resize: none;
+}
+
+.input_disabled_yes .input__clear
+{
+    display: none;
+}
+
+.input_disabled_yes,
+.input_disabled_yes .input__control
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .input_disabled_yes.input .input__box
+    {
+        background: rgba(0,0,0,.08);
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+}
+
+/* ../../../../common.blocks/input/_disabled/input_disabled_yes.css end */
+/* ../../../../touch.blocks/input/_disabled/input_disabled_yes.css begin */
+.i-ua_platform_ios .input_disabled_yes,
+.i-ua_platform_ios .input_disabled_yes .input__control
+{
+    color: inherit!important; /* iOS сам добавляет прозрачность на текст*/
+}
+
+.i-ua_ios_5 .input_disabled_yes.input_type_textarea .input__control
+{
+    color: #f3f3f3!important; /* iOS5 дизэйблит по-своему */
+}
+
+/* ../../../../touch.blocks/input/_disabled/input_disabled_yes.css end */
+/* ../../../../common.blocks/input/_theme/input_theme_normal.css begin */
+.input_theme_normal,
+.input_theme_normal .input__control
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+.input_theme_normal .input__hint
+{
+    color: #999;
+}
+
+@media all and (min-width:0)
+{
+    .input_theme_normal .input__box
+    {
+        background: #fff;
+        -webkit-box-shadow: inset 0 0 0 1px #cbcbcb;
+                box-shadow: inset 0 0 0 1px #cbcbcb;
+    }
+
+    .input_theme_normal.input_focused_yes .input__box
+    {
+        -webkit-box-shadow: inset 0 0 0 1px #d0ba65, 0 0 10px #fc0;
+                box-shadow: inset 0 0 0 1px #d0ba65, 0 0 10px #fc0;
+    }
+}
+
+/* ../../../../common.blocks/input/_theme/input_theme_normal.css end */
+/* ../../../../common.blocks/input/__box/input__box.css begin */
+/* Обертка для нативного инпута (__control) и очищающего крестика (__clear). */
+.input__box
+{
+    position: relative;
+
+    display: block;
+}
+
+@media all and (min-width:0)
+{
+    .input__box
+    {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        cursor: text;
+    }
+}
+
+/* ../../../../common.blocks/input/__box/input__box.css end */
+/* ../../../../touch.blocks/input/__box/input__box.css begin */
+/* disable select __box on touch devices */
+.input__box
+{
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+}
+
+/* ../../../../touch.blocks/input/__box/input__box.css end */
+/* ../../../../common.blocks/input/__control/input__control.css begin */
+.input__control
+{
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    margin: 0;
+
+    font-size: 100%;
+
+    color: #000;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -webkit-appearance: none;
+}
+
+@media all and (min-width:0)
+{
+    .input__control
+    {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: .4em 0;
+
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* Лишние отступы у текста */
+.input__control::-webkit-search-decoration
+{
+    -webkit-appearance: none;
+}
+
+/* Нативный крестик */
+.input__control::-webkit-search-cancel-button
+{
+    display: none;
+}
+
+/* Смещение плэйсхолдера */
+.input__control::-webkit-input-placeholder
+{
+    text-indent: 0;
+}
+
+/* Сбрасываем желтый бг у инпутов при автозаполнении */
+.input__control:-webkit-autofill
+{
+    top: 1px;
+    left: 1px;
+
+    height: 1.9em;
+
+    -webkit-box-shadow: inset 0 0 0 50px #fff;
+    -webkit-text-fill-color: #000;
+}
+
+/* Скрываем нативный крестик в IE10 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+{
+    .input__control::-ms-clear
+    {
+        display: none;
+    }
+}
+
+/* ../../../../common.blocks/input/__control/input__control.css end */
+/* ../../../../touch.blocks/input/__control/input__control.css begin */
+.input__control
+{
+    -webkit-box-sizing: border-box;
+}
+
+/* ../../../../touch.blocks/input/__control/input__control.css end */
+/* ../../../../common.blocks/input/__clear/input__clear.css begin */
+/* Позиционируется относительно input__box.
+ * Важно, чтобы правая граница элемента с очищающим крестиком
+ * совпадала с правой границей input__box, иначе появляется
+ * возможность кликнуть по правому бордеру input__box. */
+.input__clear
+{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    visibility: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    background: url("../../../../../../../output/freeze/K4e4uv8u9I9wb1fi17d8-3Jnr2A.svg") 50% 50% no-repeat;
+}
+
+/* ../../../../common.blocks/input/__clear/input__clear.css end */
+/* ../../../../common.blocks/input/__clear/_visibility/input__clear_visibility_visible.css begin */
+.input__clear_visibility_visible
+{
+    visibility: visible;
+
+    cursor: pointer;
+
+    opacity: .3;
+}
+
+/* ../../../../common.blocks/input/__clear/_visibility/input__clear_visibility_visible.css end */
+/* ../../../../touch.blocks/input/__clear/_visibility/input__clear_visibility_visible.css begin */
+/* disable select __clear on touch devices */
+.input__clear_visibility_visible
+{
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+}
+
+/* ../../../../touch.blocks/input/__clear/_visibility/input__clear_visibility_visible.css end */
+/* ../../../../common.blocks/input/__hint/input__hint.css begin */
+.input__hint
+{
+    position: absolute;
+    z-index: 5;
+
+    visibility: hidden;
+    overflow: hidden;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    max-width: 100%;
+    padding: 0 1em 0 8px;
+
+    cursor: text;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+.i-ua_js_no .input__hint
+{
+    position: static;
+
+    visibility: visible;
+}
+
+/* ../../../../common.blocks/input/__hint/input__hint.css end */
+/* ../../../../touch.blocks/input/__hint/input__hint.css begin */
+.input__hint
+{
+    -webkit-box-sizing: border-box;
+}
+
+/* ../../../../touch.blocks/input/__hint/input__hint.css end */
+/* ../../../../common.blocks/input/__hint/_visibility/input__hint_visibility_visible.css begin */
+.input__hint_visibility_visible
+{
+    visibility: visible;
+}
+
+/* ../../../../common.blocks/input/__hint/_visibility/input__hint_visibility_visible.css end */
+/* ../../../../common.blocks/input/_suggest/input_suggest_yes.css begin */
+.input__popup-items .b-autocomplete-item
+{
+    position: relative;
+    z-index: 10;
+}
+
+/* ../../../../common.blocks/input/_suggest/input_suggest_yes.css end */
+/* ../../../../common.blocks/input/__popup/input__popup.css begin */
+.input__popup.popup
+{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box; /* Выставляем модель border-box для совпадения border'ов с инпутом */
+    min-width: 25em;
+    max-width: 100%;
+}
+
+.input__popup .popup__content
+{
+    padding: 0;
+
+    background: #fff;
+}
+
+.input__popup .input__popup-items
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+@media all and (min-width:0)
+{
+    .input__popup .b-autocomplete-item
+    {
+        padding: .25em .5em;
+    }
+}
+
+.input__popup.popup_to_bottom
+{
+    margin-top: -1px;
+}
+
+.input__popup.popup_to_top
+{
+    margin-top: 1px;
+}
+
+.input__popup.popup_to_left
+{
+    margin-left: 1px;
+}
+
+.input__popup.popup_to_right
+{
+    margin-left: -1px;
+}
+
+/* ../../../../common.blocks/input/__popup/input__popup.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-autocomplete-item/b-autocomplete-item.css begin */
+.b-autocomplete-item
+{
+    font-size: 16px;
+
+    padding: 7px 0 8px 8px;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    background: #fff;
+}
+
+.b-autocomplete-item.i-pressed-controller_pressed_yes
+{
+    background: #F2F8FC;
+}
+
+.b-autocomplete-item + .b-autocomplete-item {
+    border-top: 1px solid #ececec;
+}
+
+.b-autocomplete-item > .b-link
+{
+    display: block;
+
+    padding: 4px 8px;
+
+    text-decoration: none;
+
+    color: #000;
+}
+
+/* ../../../../libs/islands-romochka/touch.blocks/b-autocomplete-item/b-autocomplete-item.css end */
+/* ../../../../libs/islands-romochka/touch-pad.blocks/b-autocomplete-item/b-autocomplete-item.css begin */
+.b-autocomplete-item
+{
+    font-size: 20px;
+
+    padding: 12px 0 13px 8px;
+
+    background: white;
+}
+
+.b-autocomplete-item.b-menu__item_pos_first
+{
+    border-top: 1px solid #f0f0f0;
+}
+/* ../../../../libs/islands-romochka/touch-pad.blocks/b-autocomplete-item/b-autocomplete-item.css end */
+/* ../../../../common.blocks/input/_size/input_size_m.css begin */
+.input_size_m
+{
+    font-size: 15px;
+    line-height: 32px;
+}
+
+.input_size_m .input__clear
+{
+    width: 32px;
+}
+
+.input_size_m .input__control
+{
+    padding-left: 10px;
+}
+
+.input_size_m .input__box
+{
+    padding-right: 30px;
+}
+
+.input_size_m .input__hint
+{
+    padding-left: 11px;
+}
+
+/* ../../../../common.blocks/input/_size/input_size_m.css end */

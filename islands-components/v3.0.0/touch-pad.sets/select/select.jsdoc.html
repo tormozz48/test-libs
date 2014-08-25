@@ -1,0 +1,82 @@
+<!DOCTYPE html><html class="i-ua_js_no i-ua_css_standard"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>select</title><link rel="shortcut icon" href="/favicon.ico"/><script>;(function(d,e,c,r){e=d.documentElement;c="className";r="replace";e[c]=e[c][r]("i-ua_js_no","i-ua_js_yes");if(d.compatMode!="CSS1Compat")e[c]=e[c][r]("i-ua_css_standart","i-ua_css_quirks")})(document);</script><meta name="description" content="TODO"/><!--[if gt IE 9]><!--><link rel="stylesheet" href="../jscatalogue/_jscatalogue.css"/><!--<![endif]--><!--[if lte IE 9]><link rel="stylesheet" href="_index.ie.css"/><![endif]--><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=latin,cyrillic"/></head><body class="b-page b-page__body"><div class="jsdoc"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок select</span></div><ul class="jsdoc__toc"><li><a href="#select-desc">Описание</a><ul><li><a href="#select-methods">Методы</a><ul><li><a href="#select-method-isDisabled">isDisabled</a></li><li><a href="#select-method-isOpened">isOpened</a></li><li><a href="#select-method-open">open</a></li><li><a href="#select-method-close">close</a></li><li><a href="#select-method-val">val</a></li><li><a href="#select-method-setOptions">setOptions</a></li><li><a href="#select-method-redraw">redraw</a></li><li><a href="#select-method-destruct">destruct</a></li><li><a href="#select-method-getDefaultParams">getDefaultParams</a></li></ul></li><li><a href="#select-events">События</a><ul><li><a href="#select-event-focus">focus</a></li><li><a href="#select-event-blur">blur</a></li><li><a href="#select-event-change">change</a></li></ul></li></ul></li><li><a href="#select_layout_content-desc">Модификатор _layout_content</a><ul><li><a href="#select_layout_content-props">Свойства</a><ul><li><a href="#select_layout_content-prop-FOCUS_OFFSET_HORIZ">FOCUS_OFFSET_HORIZ</a></li></ul></li></ul></li></ul><div class="jsdoc__bem-block"><a name="select-desc"><h2 class="heading heading_level_2">Описание</h2></a><div class="jsdoc__description"><p>Блок <code>select</code>(«селект») – раскрывающийся список выбора.
+Элемент управления имеет один уровень вложенности и позволяет выбрать
+только один элемент из списка.</p>
+
+
+
+
+
+</div><div class="jsdoc__methods"><a name="select-methods"><h3 class="heading heading_level_3">Методы</h3></a><div class="jsdoc__method"><a name="select-method-isDisabled"><h4 class="heading heading_level_4">isDisabled</h4></a><div class="jsdoc__method-description"><p>Возвращает <code>true</code>, если блок заблокирован.</p>
+</div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">Boolean<div class="jsdoc__returns-description"></div></div></div></div><div class="jsdoc__method"><a name="select-method-isOpened"><h4 class="heading heading_level_4">isOpened</h4></a><div class="jsdoc__method-description"><p>Возвращает <code>true</code>, если в данный момент выпадающий список элементов
+открыт.</p>
+</div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">Boolean<div class="jsdoc__returns-description"></div></div></div></div><div class="jsdoc__method"><a name="select-method-open"><h4 class="heading heading_level_4">open</h4></a><div class="jsdoc__method-description"><p>Открывает выпадающий список.</p>
+</div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">BEM.DOM<div class="jsdoc__returns-description"></div></div></div></div><div class="jsdoc__method"><a name="select-method-close"><h4 class="heading heading_level_4">close</h4></a><div class="jsdoc__method-description"><p>Закрывает выпадающий список.</p>
+</div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">BEM.DOM<div class="jsdoc__returns-description"></div></div></div></div><div class="jsdoc__method"><a name="select-method-val"><h4 class="heading heading_level_4">val</h4></a><div class="jsdoc__method-description"><p>Устанавливает значение, если передан параметр <code>val</code> или
+возвращает текущее значение, если параметр не передан.</p>
+</div><div class="jsdoc__method-params"><h5 class="heading heading_level_5">Параметры</h5><ul class="jsdoc__params-section"><li class="jsdoc__param"><code class="jsdoc__param-name">val</code><code class="jsdoc__param-type">String</code><span class="jsdoc__param-desc"><p>устанавливаемое значение. Будет
+выбран элемент <code>__option</code> с аттрибутом <code>value</code>, равным
+этому параметру.</p></span></li></ul></div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">String, BEM.DOM<div class="jsdoc__returns-description"><p>текущее значение или сам блок, если значение устанавливалось.</p></div></div></div></div><div class="jsdoc__method"><a name="select-method-setOptions"><h4 class="heading heading_level_4">setOptions</h4></a><div class="jsdoc__method-description"><p>Устанавливает новый набор опций.</p>
+<p>Позволяет декларативно задать список новых пунктов
+или групп для блока. Каждый элемент описывается
+в виде объекта со следующими полями:</p>
+<ul>
+<li><code>item</code> - тип элемента. Принимет следующие значения:<ul>
+<li><code>option</code> - одиночный пункт.</li>
+<li><code>optgroup</code> - группа опций с дочерними элементами.</li>
+</ul>
+</li>
+<li><code>disabled</code> - если <code>true</code>, пункт (или дочерние пункты группы)
+будет заблокирован и не сможет быть выбран.</li>
+</ul>
+<p>Для одиночных пунктов также задаются следующие параметры:</p>
+<ul>
+<li><code>value</code> - значение опции (аттрибут <code>value</code> DOM-элемента).
+-<code>content</code> - отображаемое значение. Может быть как строкой, так и
+<code>bemjson</code>, при условии, что соотвествующие шаблоны доступны на клиенте.</li>
+</ul>
+<p>Дополнительные параметры для групп пунктов:</p>
+<ul>
+<li><code>label</code> - заголовок группы.</li>
+<li><code>content</code> - массив из дочерних элементов или групп.</li>
+</ul>
+<p>Примеры:</p>
+<p>Установить набор из трех опций:</p>
+<pre><code class="lang-javascript">block.setOptions([
+    {item: 'option', value: 'moscow', content: 'Москва'},
+    {item: 'option', value: 'spb', content: 'Санкт-Петербург'},
+    {item: 'option', value: 'simf', content: 'Симферополь'}
+]);
+</code></pre>
+<p>Заблокированный пункт:</p>
+<pre><code class="lang-javascript">block.setOptions([
+    {item: 'option', content: 'Нельзя выбрать', disabled: true}
+]);
+</code></pre>
+<p>Группы:</p>
+<pre><code class="lang-javascript">block.setOptions([
+    {
+        item: 'optgroup',
+        label: 'Россия',
+        content: [
+            {item: 'option', value: 'moscow', content: 'Москва'},
+            {item: 'option', value: 'spb', content: 'Санкт-Петербург'}
+        ]
+    },
+    {
+        item: 'optgroup',
+        label: 'Украина',
+        content: [
+            {item: 'option', value: 'simf', content: 'Симферополь'}
+        ]
+    }
+
+]);
+</code></pre>
+</div><div class="jsdoc__method-params"><h5 class="heading heading_level_5">Параметры</h5><ul class="jsdoc__params-section"><li class="jsdoc__param"><code class="jsdoc__param-name">data</code><code class="jsdoc__param-type">Object[]</code><span class="jsdoc__param-desc"><p>устанавливаемые опции.</p></span></li></ul></div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">BEM.DOM<div class="jsdoc__returns-description"></div></div></div></div><div class="jsdoc__method"><a name="select-method-redraw"><h4 class="heading heading_level_4">redraw</h4></a><div class="jsdoc__method-description"><p>Перерисовывает выпадающий список.</p>
+<p>Размеры списка будут подстроены под содержимое его элементов.</p>
+</div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">BEM.DOM<div class="jsdoc__returns-description"></div></div></div></div><div class="jsdoc__method"><a name="select-method-destruct"><h4 class="heading heading_level_4">destruct</h4></a><div class="jsdoc__method-description"><p>Уничтожает блок.</p>
+<p>Выпадающий список будет закрыт перед уничтожением.</p>
+</div></div><div class="jsdoc__method"><a name="select-method-getDefaultParams"><h4 class="heading heading_level_4">getDefaultParams</h4></a><div class="jsdoc__protected">PROTECTED</div><div class="jsdoc__method-description"><p>Возвращает параметры блока по умолчанию.</p>
+</div><div class="jsdoc__method-returns"><h5 class="heading heading_level_5">Возвращаемое значение</h5><div class="jsdoc__returns">Object<div class="jsdoc__returns-description"></div></div></div></div></div><div class="jsdoc__events"><a name="select-events"><h3 class="heading heading_level_3">События</h3></a><a name="select-event-focus"><h4 class="heading heading_level_4">focus</h4></a><div class="jsdoc__event-desc"><p>Генерируется, когда блок получает фокус.</p></div><a name="select-event-blur"><h4 class="heading heading_level_4">blur</h4></a><div class="jsdoc__event-desc"><p>Генерируется, когда блок теряет фокус.</p></div><a name="select-event-change"><h4 class="heading heading_level_4">change</h4></a><div class="jsdoc__event-desc"><p>Генерируется при смене выбранного пункта.</p></div><h5 class="heading heading_level_5">Параметры</h5><ul class="jsdoc__params-section"><li class="jsdoc__param"><code class="jsdoc__param-name">data</code><code class="jsdoc__param-type">Object</code><span class="jsdoc__param-desc"></span></li><li class="jsdoc__param"><code class="jsdoc__param-name">data.index</code><code class="jsdoc__param-type">Number</code><span class="jsdoc__param-desc"><p>Индекс элемента, выбранного в настоящий момент.</p></span></li><li class="jsdoc__param"><code class="jsdoc__param-name">data.prev</code><code class="jsdoc__param-type">number</code><span class="jsdoc__param-desc"><p>Индекс предыдущего выбранного элемента или -1, если
+такого элемента нет.</p></span></li></ul></div></div><div class="jsdoc__bem-mod"><a name="select_layout_content-desc"><h2 class="heading heading_level_2 heading__mod-name">Модификатор _layout_content</h2></a><div class="jsdoc__description"><p>Селект, растягивающийся на всю ширину родителя.</p></div><div class="jsdoc__properties"><a name="undefinedprops"><h3 class="heading heading_level_3">Свойства</h3></a><div class="jsdoc__property"><a name="undefinedprop-FOCUS_OFFSET_HORIZ"><h4 class="heading heading_level_4">FOCUS_OFFSET_HORIZ</h4></a><div class="jsdoc__static">STATIC</div><div class="jsdoc__prop-desc"><p>{Number} учитывам отступ появляющийся при фокусе на кнопке</p>
+</div></div></div></div></div><script src="../jscatalogue/_jscatalogue.js"></script></body></html>

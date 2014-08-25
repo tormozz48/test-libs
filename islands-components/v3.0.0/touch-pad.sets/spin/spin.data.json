@@ -1,0 +1,152 @@
+{
+  "name": "spin",
+  "elems": [
+    {
+      "name": "icon",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Картинка"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "progress",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Прелоадер запущен"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "прогресс"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "gray-16",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "серая, 16х16"
+            }
+          ]
+        },
+        {
+          "name": "gray-24",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "серая, 24х24"
+            }
+          ]
+        },
+        {
+          "name": "gray-32",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "серая, 32х32"
+            }
+          ]
+        },
+        {
+          "name": "gray-48",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "серая, 48х48"
+            }
+          ]
+        },
+        {
+          "name": "white-16",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "белая, 16х16"
+            }
+          ]
+        },
+        {
+          "name": "white-24",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "белая, 24х24"
+            }
+          ]
+        },
+        {
+          "name": "white-32",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "белая, 32х32"
+            }
+          ]
+        },
+        {
+          "name": "white-48",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "белая, 48х48"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Тема прелоадера"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": []
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>spin</code> – прелоадер (индикатор). Визуально иллюстрирует ход выполнения какого-то процесса.\nНапример, загрузки сайта или медиа-файла. Разработан для Яндекса.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для подключения прелоадера:</p>\n<pre><code class=\"lang-javascript\">{\n    block: &#39;spin&#39;, // имя блока\n    js: true,     // js-параметры блока. Обязательное поле\n    mods: {progress: &#39;yes&#39;} // модификаторы блока\n}</code></pre>\n<p>Вращается прелоадер при помощи CCS3 анимации или JS-скрипта. Когда прелоадер виден — он крутится (модификатор <code>progress</code> со значением <code>yes</code>), как только он скрывается — останавливается.</p>\n<h3 id=\"js-\">JS параметры блока</h3>\n<p><a href=\"#jsdefault\">JS-параметры поведения прелоадера по умолчанию</a>:</p>\n<ul>\n<li><code>js: true</code></li>\n</ul>\n<p>JS-параметры для настройки поведения прелоадера:</p>\n<ul>\n<li><code>{String} animation</code> – тип анимации. Допустимые значения:<ul>\n<li><code>transform</code> – анимация с использованием CSS-свойства <code>animation</code>;</li>\n<li><code>sprite</code> – анимация с использованием спрайтов.</li>\n</ul>\n</li>\n<li><code>{Number} startDelay</code> – задержка перед стартом анимации.</li>\n<li><code>{Number} frameAngle</code> – угол поворота за один кадр, только для анимации трансформациями.</li>\n<li><code>{Number} frameTime</code> – время показа одного кадра на экране.</li>\n<li><code>{Number} frames</code> – количество кадров в спрайте, только для спрайтовой анимации.</li>\n</ul>\n<pre><code class=\"lang-javascript\">{\n    block: &#39;spin&#39;,\n    js: {startDelay: 1000, frameTime: 47},\n    mods: {progress: &#39;yes&#39;}\n}</code></pre>\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Состояние работы</h4>\n<p>Состояние работы прелоадера определяется модификатором <code>progress</code>.\nПока прелоадер виден — он вращается (модификатор <code>progress</code> со значением <code>yes</code>), как только модификатор снят – прелоадер скрывается и останавливается.</p>\n<h4 id=\"-\">Темы оформления и размеры</h4>\n<p>Для прелоадера реализованы 8 стандартных тем оформления. Темы состоят из комбинаций цветов (белый и серый) и размеров (16х16, 24x24, 32x32, 48x48). Размер определяет высоту и ширину кадра прелоадера. По умолчанию используется тема <code>gray-32</code>.</p>\n<p>Список доступных тем:</p>\n<ul>\n<li><code>gray-16</code> — серая, 16х16;</li>\n<li><code>gray-24</code> — серая, 24х24;</li>\n<li><code>gray-32</code> — серая, 32х32 — тема по умолчанию;</li>\n<li><code>gray-48</code> — серая, 48х48;</li>\n<li><code>white-16</code> — белая, 16х16;</li>\n<li><code>white-24</code> — белая, 24х24;</li>\n<li><code>white-32</code> — белая, 32х32;</li>\n<li><code>white-48</code> — белая, 48х48.</li>\n</ul>\n<p>Нужная тема задается в модификаторе <code>theme</code> с соответствующим значением в поле <code>mods</code> входного BEMJSON.</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;spin&#39;,\n    js: true,\n    mods: {progress: &#39;yes&#39;, theme: &#39;gray-16&#39;}\n}</code></pre>\n<p>На уровне шаблонизатора блока, для визуализации прелоадера, элемент блока <code>icon</code> миксуется с блоком иконки <a href=\"https://github.yandex-team.ru/pages/lego/islands-media/v1-0-0/catalogue/image.html\">image</a> из библиотеки <a href=\"https://github.yandex-team.ru/pages/lego/islands-media/release/index/index.html\">islands-media</a>. <code>image</code>– позволяет размещать на странице векторные изображения с деградацией в растровые.</p>\n<p>По умолчанию используется проверка на поддержку браузером того или иного способа анимации (<code>transform</code> или <code>sprite</code>).</p>\n<p>Если браузер поддерживает CSS-свойство <code>animation</code> и формат <code>svg</code>, то будет использован <code>svg</code> прелоадер (svg-изображение вращаемое функцией трансформации).\nЕсли формат <code>svg</code> не поддерживается, для трансформации будет использовано изображение в формате <code>png</code>.\nИначе, для эффекта вращения прелоадера применится спрайт с изображениями в формате <code>png</code>.</p>\n<p>При необходимости, на уровне проекта изображение можно переопределить.</p>\n<!-- %%spin.examples/10-theme-gray/10-theme-gray%% -->\n\n<!-- %%spin.examples/15-theme-white/15-theme-white%% -->\n\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li><p><strong>Тема оформления</strong>: модификатор <code>theme</code> со значением <code>gray-32</code> (прелоадер серого цвета размером 32х32).</p>\n<p><a name=\"jsdefault\"></a></p>\n</li>\n<li><p>JS-параметры настройки поведения прелоадера (по умолчанию):</p>\n<ul>\n<li><code>startDelay: 0</code>  – задержка перед стартом анимации.</li>\n<li><code>frameAngle: 10</code> – угол поворота за один кадр, только для анимации трансформациями.</li>\n<li><code>frameTime: 27</code> – время жизни одного фрейма на экране.</li>\n<li><code>frames: 36</code> – количество фреймов в спрайте, только для спрайтовой анимации.</li>\n<li><code>animation</code> – значение по умолчанию вычисляется исходя из поддержки браузером способа анимации (\n<code>transform</code> – для анимации с использованием CSS-свойства <code>animation</code>, или\n<code>sprite</code> – для анимации с использованием спрайтов).</li>\n</ul>\n</li>\n</ul>\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Прелоадер\n"
+    }
+  ]
+}

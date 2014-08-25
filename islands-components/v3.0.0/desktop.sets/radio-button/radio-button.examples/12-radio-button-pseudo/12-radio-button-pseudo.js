@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/desktop.sets/radio-button/radio-button.examples/12-radio-button-pseudo/12-radio-button-pseudo.ru.js

@@ -1,0 +1,61 @@
+{
+    "blockName": "tabs-panes",
+    "description": "",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "findPane",
+            "description": "<p>Возвращает jQuery-коллекцию элементов панелек.</p>\n<p>Рекомендуется исаользовать именно этот метод для получения панелек, т.к. он возвращает только панельки,\nотносящиеся к текущему блоку. Если вложить tabs-panes в другой tabs-panes, то при прямом вызове\ntabsPanes.elem('pane') будут возвращены панельки внешнего и внутреннего блоков.</p>\n",
+            "params": [
+                {
+                    "name": "modName",
+                    "description": "",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "modVal",
+                    "description": "",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getSupportedControls",
+            "description": "<p>Возвращает список доступных блоков, способных работать в качестве контрола-переключателя\nдля панели. Доопределите этот метод для добавления своих блоков.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "String[]"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "static"
+        }
+    ],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

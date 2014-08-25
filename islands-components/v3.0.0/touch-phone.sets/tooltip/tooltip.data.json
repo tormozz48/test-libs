@@ -1,0 +1,147 @@
+{
+  "name": "tooltip",
+  "elems": [
+    {
+      "name": "tail",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Хвостик\n"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "autoclosable",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Автоматически закрывающаяся при клике во вне\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "l",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта в 16px\n"
+            }
+          ]
+        },
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта в 15px\n"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта в 13px\n"
+            }
+          ]
+        },
+        {
+          "name": "xs",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта в 13px с уменьшеными отступами\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер\n"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "error",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Ошибка\n"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычная\n"
+            }
+          ]
+        },
+        {
+          "name": "success",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Успех\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Темы\n"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": []
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>toolip</code> предназначен для создания всплывающих подсказок.</p>\n<p>Подсказка всегда указывает на некоторый элемент страницы <code>owner</code>. <code>owner</code> задается из JavaScript.</p>\n<p>Подсказка скрывается по клику на ней.</p>\n<h3 id=\"-\">Варианты использования</h3>\n<h4 id=\"-\">Объявление блока на странице</h4>\n<p>BEMJSON блока:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;tooltip&#39;,\n    mods: {\n        size: &#39;xs&#39;,\n        theme: &#39;success&#39;\n    },\n    content: &#39;Содержимое подсказки&#39;\n}</code></pre>\n<h4 id=\"-javascript\">Использование в JavaScript</h4>\n<pre><code class=\"lang-js\">var tooltip = this.findBlockInside(&#39;tooltip&#39;),\n    tooltipOwner = this.findBlockInside(&#39;tooltip-owner&#39;);\n\ntooltip\n    .setOwner(tooltipOwner)    // задать объект на который будет указывать подсказка\n    .setMod(&#39;shown&#39;, &#39;yes&#39;);   // показать подсказку</code></pre>\n<h2 id=\"-\">Техническое описание</h2>\n<p>Блок представляет собой обвязку над блоком <a href=\"/libs/islands-components/v2.2.0/desktop.sets/popup/\"><code>popup</code></a>.</p>\n<h3 id=\"-\">Элементы</h3>\n<p>Элемент <code>tail</code> — хвостик подсказки. Реализован в технологии <code>css</code>. Размер хвостика определяется в модификаторе <code>size</code>.</p>\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Тема оформления</h4>\n<p>Модификатор <code>theme</code> (обязательный, темы по умолчанию нет). Темы реализованы в технологии <code>css</code>.</p>\n<p>У подсказки реализованы несколько тем:</p>\n<ul>\n<li><code>normal</code></li>\n<li><code>error</code></li>\n<li><code>success</code></li>\n</ul>\n<!-- %%tooltip.examples/10-simple/10-simple%% -->\n\n<h4 id=\"-\">Размер</h4>\n<p>Модификатор <code>size</code>. Обязательный, размера по умолчанию нет. Размеры реализованы в технологиях <code>css</code> и <code>bemhtml</code>.</p>\n<p>У подсказки реализован следующий набор размеров:</p>\n<ul>\n<li><code>xs</code></li>\n<li><code>s</code></li>\n<li><code>m</code></li>\n<li><code>l</code></li>\n</ul>\n<p>Размерная сетка соответствует размерам кнопки из <code>v3.0.0</code> \n(<a href=\"/libs/islands-components/v3.0.0-alpha3/desktop.sets/button/\">button</a>).</p>\n<h4 id=\"-\">Самозакрытие</h4>\n<p>Модификатор <code>autoclosable</code>. </p>\n<p>Опциональный модификатор, реализован в технологии <code>js</code>. Позволяет закрывать подсказку по клику во вне ее \nили по нажатию клавиши <code>ESC</code>.</p>\n<p>Допустимое значение:</p>\n<ul>\n<li><code>yes</code></li>\n</ul>\n<!-- %%tooltip.examples/20-autoclosable/20-autoclosable%% -->\n\n<h4 id=\"-\">Состояния подсказки</h4>\n<ul>\n<li><p>Модификатор <code>shown</code>.</p>\n<ul>\n<li>Показывает / скрывает подсказку. Допустимое значение: <code>yes</code>.<br/>\n<em>Обратите внимание</em>, прежде чем подсказка может быть показана, у нее должен быть задан <code>owner</code>. В противном случае, \nподсказка кидает JavaScript-ошибку.</li>\n</ul>\n</li>\n<li><p>Модификатор <code>hovered</code>.</p>\n<ul>\n<li>При наведении курсора подсказка меняет прозрачность. Модификатор реализован только на уровне <code>desktop.blocks</code> \nв технологии <code>css</code>. Подключается по умолчанию. Допустимое значение: <code>yes</code>.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"js-\">JS-параметры</h3>\n<p><code>{Number} offset</code> – определяет отступ подсказки от элемента на который она указывает.\nОтступ учитывает размер хвостика <code>__tail</code>.</p>\n<!-- %%tooltip.examples/30-offset/30-offset%% -->\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Всплывающая подсказка-указатель (tooltip)\n"
+    }
+  ]
+}

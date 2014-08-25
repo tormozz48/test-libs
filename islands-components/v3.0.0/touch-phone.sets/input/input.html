@@ -1,0 +1,307 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>input</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок input</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>input</code> служит для создания различных типов текстовых полей с шириной 100%:</p>
+<ul>
+<li>простого поля ввода;</li>
+<li>поля с паролем;</li>
+<li>текстовой области.</li>
+</ul>
+<p>В MSIE8 и ниже поле ввода деградирует до нативного контрола <code>&lt;input атрибуты&gt;</code>, поле ввода с текстовой областью станет нативной текстовой областью <code>&lt;textarea атрибуты&gt;</code>.</p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON блока:</p>
+<pre><code class="lang-javascript">{
+    block: &#39;input&#39;,            // имя блока
+    mods: {size: &#39;s&#39;},         // модификаторы блока. Модификатор размера – обязательный
+    content: {elem: &#39;control&#39;} // нативный инпут. Обязательный элемент
+}</code></pre>
+<p>В результате BEMHTML-преобразований будет создано кастомное простое поле ввода с шириной 100%, внутри которого находится нативный инпут.</p>
+<!-- %%input.examples/05-input/05-input%% -->
+
+<h3 id="-">Содержимое блока</h3>
+<ul>
+<li><code>{Object|Array} content</code> – содержимое блока. Служит для добавления различных элементов инпуту, расширяющих его функциональность.</li>
+</ul>
+<p>Элемент <code>control</code> – обязательный, добавляется в <code>content</code> блока во входных данных. BEMHTML-шаблоном преобразуется в нативный контрол <code>&lt;input атрибуты&gt;</code>. По умолчанию подключает элемент блока <code>clear</code> – кнопку очистки поля ввода (крестик).</p>
+<h3 id="-">Атрибуты блока</h3>
+<p>Блоку можно установить атрибуты нативного контрола <code>&lt;input атрибуты&gt;</code> или <code>&lt;textarea атрибуты&gt;</code>, в зависимости от типа блока (т.к. один из контролов всегда будет находиться в HTML блока для реализации его функциональности).</p>
+<p>Ниже перечислены допустимые атрибуты, которые задаются в одноименных полях входного BEMJSON блока:</p>
+<ul>
+<li><code>{String} name</code> — имя для идентификации контрола обработчиком формы. Если <code>name</code> явно не задан, HTML-атрибут <code>name</code> автоматически сформируется с пустым значением.</li>
+<li><code>{String} value</code> — значение, отправляемое на сервер. По умолчанию содержит пустое значение.</li>
+<li><code>{String} id</code> — уникальный идентификатор блока. По умолчанию генерируется случайным образом, если явно не задан в BEMJSON.</li>
+</ul>
+<p>Следующие атрибуты блока <code>input</code>:
+<code>name</code>, <code>value</code>, <code>id</code>, <code>tabindex</code>, <code>spellcheck</code>, <code>accesskey</code> – можно задать в зарезервированном поле атрибутов <code>attrs</code> элемента <code>control</code>.
+Значения атрибутов, заданные в поле <code>attrs</code>, перекроют значения аналогичных атрибутов, заданных в одноименных полях BEMJSON блока.</p>
+<pre><code class="lang-javascript">{   // простое поле ввода (по умолчанию)
+    block: &#39;input&#39;,
+    mods: {size: &#39;s&#39;},
+    content: {
+        elem: &#39;control&#39;,
+        attrs: {accesskey: &#39;yes&#39;, id: &#39;newid&#39;, tabindex: &#39;1&#39;, name: &#39;test&#39;}
+    }
+}</code></pre>
+<p>Для <strong>простого поля</strong> и <strong>поля с паролем</strong> атрибуты совпадают.</p>
+<h4 id="-">Атрибуты текстовой области</h4>
+<p><code>name</code>, <code>value</code>, <code>id</code>, <code>rows</code>, <code>cols</code>, <code>readonly</code>, <code>wrap</code>, <code>maxlength</code>, <code>spellcheck</code>, <code>accesskey</code>, <code>tabindex</code> — не обязательные. Задаются аналогично атрибутам для <strong>простого поля</strong> .</p>
+<pre><code class="lang-javascript">{   // текстовая область, модификатор `type` со значением `textarea`
+    block: &#39;input&#39;,
+    mods: {type: &#39;textarea&#39;, size: &#39;s&#39;},
+    name: &#39;test&#39;,
+    content: {
+        elem: &#39;control&#39;,
+        attrs: {rows: &#39;3&#39;, readonly: &#39;yes&#39;, maxlength: &#39;100&#39;}
+    }
+}</code></pre>
+<h3 id="-">Варианты использования инпута</h3>
+<p>Добавляя различные элементы блока <code>input</code> и их модификаторы в <code>content</code> блока, можно расширить функциональность полей ввода.
+Все нижеперечисленные элементы являются не обязательными.</p>
+<ul>
+<li><code>label</code> – элемент добавляет <strong>метку полю ввода</strong> (преобразуется в HTML-тэг <code>&lt;label&gt;</code>). Связь метки с тэгом <code>&lt;input&gt;</code> устанавливается с помощью идентификатора <code>id</code>, который может генерироваться по умолчанию случайным образом. При щелчке кнопкой мыши на метку в поле ввода будет установлен фокус.</li>
+</ul>
+<!-- %%input.examples/10-label/10-label%% -->
+
+<ul>
+<li><code>hint</code> – добавляет <strong>подсказки к инпуту</strong>. В контенте содержится текст подсказки. Аналогично метке, в HTML он будет преобразован в тэг <code>&lt;label&gt;</code>. <code>id</code> для метки (если она задана) и подсказки совпадают. Подсказка в поле ввода исчезает при наборе текста.</li>
+</ul>
+<!-- %%input.examples/15-label-hint/15-label-hint%% -->
+
+
+<ul>
+<li><p><code>message</code> – добавляет <strong>сообщение об ошибке</strong>. Служит для вывода ошибок и другой дополнительной информации. Располагается под полем ввода. Текст сообщения задается в контенте элемента.</p>
+<p><strong>Модификаторы элемента</strong>:</p>
+<ul>
+<li><code>type</code> со значением <code>error</code> — задает тип сообщения (об ошибке);</li>
+<li><code>visibility</code> со значением <code>visible</code> – его видимость.</li>
+</ul>
+<p><em><strong>Примечание</strong>: В блоке реализован только тип сообщения для ошибок. Нужный тип сообщения можно доопределить у себя на проекте.</em></p>
+</li>
+</ul>
+<pre><code class="lang-javascript">{
+    block: &#39;input&#39;,
+    mods: {size: &#39;s&#39;},
+    content: [
+        {elem: &#39;label&#39;, content: &#39;Метка для инпута&#39;},
+        {elem: &#39;control&#39;}, // нативный инпут
+        {
+            elem: &#39;message&#39;,
+            elemMods: {type: &#39;error&#39;, visibility: &#39;visible&#39;},
+            content: &#39;Ошиблись, бывает&#39;
+        }
+    ]
+}</code></pre>
+ <!-- %%input.examples/20-message-error/20-message-error%% -->
+
+<ul>
+<li><code>samples</code> – <strong>поле ввода с примерами</strong>. Элемент служит для добавления примеров инпуту. Является оберткой для набора примеров поля ввода. В его контенте содержится массив элементов блока <code>sample</code>.<ul>
+<li><code>sample</code> – создает конкретный пример к полю ввода.
+Элемент миксуется с блоком <code>link</code> (ссылка) из библиотеки islands-components, для которого задан модификатор <code>mods: {pseudo: &#39;yes&#39;}</code>(псевдо-ссылка). Такая ссылка предполагает действие без перехода на другую страницу. Визуально выделяется пунктирным нижним подчеркиванием. При нажатии на ссылку с примером его значение подставляется в поле ввода.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;input&#39;,
+    mods: {size: &#39;s&#39;},
+    content: [
+        {elem: &#39;control&#39;},
+        {
+            elem: &#39;samples&#39;,
+            content: [ // массив примеров для поля ввода
+                {
+                    block: &#39;link&#39;,
+                    mods: {pseudo: &#39;yes&#39;},
+                    mix: [{block: &#39;input&#39;, elem: &#39;sample&#39;}],
+                    content: &#39;пример 1&#39;
+                },
+              ...
+            ]
+        }
+    ]
+}</code></pre>
+<!-- %%input.examples/25-samples/25-samples%% -->
+
+<!-- %%input.examples/55-in-table/55-in-table%% -->
+
+<ul>
+<li><code>clear</code> – <strong>кнопка очистки</strong> содержимого инпута («крестик»). По умолчанию элемент добавлен в BEMHTML-шаблоне элемента <code>control</code>.
+«Крестик» – векторное изображение, в формате svg.</li>
+</ul>
+<p>Если применить модификатор блока <code>clear</code> со значением <code>no</code>, то «крестик» при вводе текста отображаться не будет:</p>
+<pre><code class="lang-js">{
+    block: &#39;input&#39;,
+    mods: {size: &#39;s&#39;, clear: &#39;no&#39;},
+    content: [...]
+}</code></pre>
+<!-- %%input.examples/30-clear/30-clear%% -->
+
+
+<h3 id="-">Модификаторы</h3>
+<h3 id="-">Типы полей ввода</h3>
+<p>Поля ввода могу быть нескольких типов, которые определяют вид и характеристики инпута.
+Определяется тип инпута соответствующим значением модификатора <code>{String} type</code>.</p>
+<ul>
+<li>По умолчанию создается <strong>простое текстовое поле ввода с шириной 100%</strong>.</li>
+</ul>
+<!-- %%input.examples/05-input/05-input%% -->
+
+<ul>
+<li><code>password</code> – <strong>поле для пароля</strong> (модификатор <code>type</code> со значением <code>password</code>).
+В результате BEMHTML-преобразований трансформируется в нативное поле с паролем <code>&lt;input type=&quot;password&quot; атрибуты&gt;</code>.</li>
+</ul>
+<pre><code class="lang-javascript">{
+    block: &#39;input&#39;,
+    mods: { size: &#39;s&#39; , type: &#39;password&#39;},
+    content: { elem: &#39;control&#39; }
+}</code></pre>
+<ul>
+<li><code>textarea</code> – <strong>текстовая область</strong> (модификатор <code>type</code> со значением <code>textarea</code>). В HTML блока будет сформирован тэг <code>&lt;textarea атрибуты&gt;</code>. По умолчанию текстовая область создается с размерами: cols: 10 (ширина поля в символах), rows: 10 (высота поля в строках текста).</li>
+</ul>
+<!-- %%input.examples/40-textarea/40-textarea%% -->
+
+
+<h4 id="-">Темы оформления</h4>
+<p>Для блока <code>input</code> реализована стандартная тема оформления – <strong>обычная</strong> (модификатор <code>theme</code> со значением <code>normal</code>). Используется по умолчанию.</p>
+<h4 id="-">Размеры</h4>
+<p>Для инпута реализованы два размера — <code>s</code> и <code>m</code>, определяющие размер шрифта текста и высоту поля ввода или текстовой области.
+Модификатор размера <code>{String} size</code> – обязательный при объявлении блока. По умолчанию не определен.</p>
+<p>Таблица размеров инпута</p>
+<table>
+<thead>
+<tr>
+<th>Размер блока</th>
+<th>Размер шрифта</th>
+<th>Высота поля</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s</td>
+<td>13px</td>
+<td>28px</td>
+</tr>
+<tr>
+<td>m</td>
+<td>15px</td>
+<td>32px</td>
+</tr>
+</tbody>
+</table>
+<p>При необходимости размеры блока можно доопределить на проекте. <a href="../button/button.html#customsize">Кастомный размер</a>.</p>
+<p>По высоте блок <code>input</code> совпадает с  блоком кнопки <a href="../button/button.html">button</a>.</p>
+<!-- %%input.examples/40-textarea/40-textarea%% -->
+
+<h4 id="-">Состояния инпута</h4>
+<ul>
+<li><strong>Автофокус</strong>, модификатор <code>autofocus</code> со значением <code>yes</code> – установка  фокуса при вводе текста на странице.</li>
+</ul>
+<p>В блоке <code>input</code> есть возможность задать автофокус при загрузке страницы, для этого используется JS-параметр <code>autoFocus</code> :
+<code>js: { autoFocus: &#39;yes&#39; }</code>, вместо модификатора  автофокуса.</p>
+<ul>
+<li><p><strong>Не активен</strong>, модификатор <code>disabled</code>со значением <code>yes</code> – инпут и все его элементы недоступны для действий пользователя.</p>
+</li>
+<li><p><strong>В фокусе</strong>, модификатор <code>focused</code> со значением <code>yes</code> – поле ввода находится в фокусе.</p>
+</li>
+</ul>
+<p>Возможен переход в инпут по <code>Ctrl + ↑</code>.</p>
+<!-- %%input.examples/45-disabled/45-disabled%% -->
+
+<!-- %%input.examples/07-autofocus/07-autofocus%% -->
+
+<!-- %%input.examples/08-autofocus-keydown/08-autofocus-keydown%% -->
+
+
+<h4 id="-">Поле ввода с автоматической шириной по содержимому</h4>
+<p>Модификатор блока <code>width</code> со значением <code>content</code> служит для задания автоматической ширины инпута по размеру его содержимого. Если модификатор не указан, то по умолчанию ширина поля ввода будет 100%.</p>
+<pre><code class="lang-js">{
+    block: &#39;input&#39;,
+    mods: {size: &#39;m&#39;, width: &#39;content&#39;},
+    content: {elem: &#39;control&#39;}
+}</code></pre>
+<!-- %%input.examples/50-width-content/50-width-content%% -->
+
+<h4 id="-">Поле ввода с саджестом</h4>
+<p>Модификатор <code>suggest</code> со значением <code>yes</code> – добавляет саджест (поисковые подсказки в выпадающем окне) к инпуту.
+Содержимое саджеста обновляется по мере ввода поискового запроса. Подходящий запрос можно выбрать как мышкой, кликнув на него, так и передвигаясь при помощи клавиш «вверх/вниз».</p>
+<p><code>dataprovider</code> – предоставляет данные о подсказках для саджеста. Он получает данные с сервера и обрабатывает их специальным образом, а затем передает саджесту в формате, который тот понимает.</p>
+<p><em><strong>Примечание:</strong> <code>dataprovider</code> реализован как элемент блока <code>input</code> и является наследником блока <code>i-request_type_ajax</code>. Реализует единственный метод
+<code>getDataprovider()</code>, нормализующий процесс получения данных для автокомплита.
+Каждый пунт автокоплита — это экземпляр блока <code>b-autocomplete-item</code>.</em></p>
+<p><code>url</code> – адрес сервера данных для саджеста.</p>
+<pre><code class="lang-javascript">{
+    block: &#39;input&#39;,
+    mods: {suggest: &#39;yes&#39;, size: &#39;s&#39;},
+    js: {
+        dataprovider: {url: &#39;http://suggest.yandex.ru/suggest-ya.cgi?v=4&amp;callback=?&#39;}
+    },
+    content: {elem: &#39;control&#39;, attrs: { name: &#39;autocomplete&#39;}}
+}</code></pre>
+<!-- %%input.examples/60-suggest/60-suggest%% -->
+
+<hr>
+<p><strong>Внимание!</strong> <em>Саджеста у произвольной строки ввода нет в v1 Островов. Планируется его реализация в v2. У произвольной строки ввода появится автокомплит — по сути, тот же саджест.</em></p>
+<hr>
+<h4 id="-">Поле ввода с дополнительной подсказкой</h4>
+<p>Модификатор блока <code>tap-ahead</code> со значением <code>yes</code> дает возможность использовать <strong>дополнительные подсказки</strong> при вводе поискового запроса в инпут. То есть, по нажатию клавиши <code>Tab</code> можно дополнить вводимое слово предложенным вариантом (визуально отделяется от набираемого текста запроса серым цветом шрифта). По умолчанию подсказка появляется при вводе минимум трех символов. Это поведение можно изменить, переопределив параметр <code>showOverChars</code>.</p>
+<p>По умолчанию при инициализации блока <code>input</code> с модификатором <code>tab-ahead</code>, выставленным в значение <code>yes</code>, будет добавлен элемент блока <code>ahead</code>.
+Полный текст дополнительной подсказки состоит из невидимой и видимой части – элементов блока инпут:</p>
+<ul>
+<li><code>ahead-filler</code> – невидимая часть, необходимая для точного позиционирования видимой части.</li>
+<li><code>ahead-hint</code> – видимая часть подсказки (серого цвета).</li>
+</ul>
+<p>В HTML элемент <code>ahead</code> трансформируется в тэг <code>&lt;div&gt;</code>, служащий контейнером для показа дополнительной подсказки. Каждый из элементов <code>ahead-filler</code> и <code>ahead-hint</code> преобразуется в тэг <code>&lt;span&gt;</code>, содержащий свою часть текста подсказки.</p>
+<p>В связке с <code>tab-ahead</code> могут использоваться модификаторы:</p>
+<ul>
+<li><code>noprevent-tab</code> – не отменять нажатие <code>Tab</code>, если нечего было дополнять. В этом случае при нажатии клавиши <code>Tab</code> фокус будет установлен на следующий элемент страницы (т.е. будет снят запрет на переход по нажатию на клавишу <code>Tab</code> к следующему контролу).</li>
+<li><code>nosplit-words</code> – не разбивать подсказку по словам. Дополнять подсказки целиком,  а не по отдельным словам.</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;input&#39;,
+    mods: {
+        size: &#39;s&#39;,
+        suggest: &#39;yes&#39;,
+        &#39;tap-ahead&#39;: &#39;yes&#39;,
+        &#39;noprevent-tab&#39;: &#39;yes&#39;
+    },
+    js: {
+        dataprovider: {url: &#39;http://suggest.yandex.ru/suggest-ya.cgi?v=4&amp;callback=?&#39;}
+    },
+    content: {elem: &#39;control&#39;, attrs: {name: &#39;autocomplete&#39;}}
+}</code></pre>
+<!-- %%input.examples/100-tap-ahead/100-tap-ahead%% -->
+
+<!-- %%input.examples/105-noprevent-tab/105-noprevent-tab%% -->
+
+<!-- %%input.examples/110-nosplit-words/110-nosplit-words%% -->
+
+
+<h3 id="-">Значения по умолчанию</h3>
+<ul>
+<li><strong>Тип поля ввода</strong>: простое текстовое.</li>
+<li><strong>Ширина</strong>: 100%.</li>
+<li><strong>Тема оформления</strong>: обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>
+<li><strong>Размеры текстовой области</strong>: cols:10, rows:10.</li>
+<li>Кнопка очистки (крестик) – подключается элементом блока <code>control</code>.</li>
+</ul>
+<p>Если явно не были заданы  блоку во входном BEMJSON данные:</p>
+<ul>
+<li><code>id</code> – генерируется автоматически случайным образом;</li>
+<li>Атрибуты <code>name</code>, <code>value</code> – генерируется с пустым значением.</li>
+</ul>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:05-input:05-input"><a class="example__title" href="input.examples/05-input/05-input.html" target="_blank">Поле ввода</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/05-input/05-input.bemjson.js"></iframe><iframe class="example__live" src="input.examples/05-input/05-input.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:07-autofocus:07-autofocus"><a class="example__title" href="input.examples/07-autofocus/07-autofocus.html" target="_blank">Поле ввода с автофокусом</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/07-autofocus/07-autofocus.bemjson.js"></iframe><iframe class="example__live" src="input.examples/07-autofocus/07-autofocus.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:08-autofocus-keydown:08-autofocus-keydown"><a class="example__title" href="input.examples/08-autofocus-keydown/08-autofocus-keydown.html" target="_blank">Поле ввода с автофокусом при вводе текста на странице</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/08-autofocus-keydown/08-autofocus-keydown.bemjson.js"></iframe><iframe class="example__live" src="input.examples/08-autofocus-keydown/08-autofocus-keydown.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:10-label:10-label"><a class="example__title" href="input.examples/10-label/10-label.html" target="_blank">С меткой</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/10-label/10-label.bemjson.js"></iframe><iframe class="example__live" src="input.examples/10-label/10-label.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:15-label-hint:15-label-hint"><a class="example__title" href="input.examples/15-label-hint/15-label-hint.html" target="_blank">С меткой и подсказкой</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/15-label-hint/15-label-hint.bemjson.js"></iframe><iframe class="example__live" src="input.examples/15-label-hint/15-label-hint.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:20-message-error:20-message-error"><a class="example__title" href="input.examples/20-message-error/20-message-error.html" target="_blank">С сообщением об ошибке</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/20-message-error/20-message-error.bemjson.js"></iframe><iframe class="example__live" src="input.examples/20-message-error/20-message-error.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:25-samples:25-samples"><a class="example__title" href="input.examples/25-samples/25-samples.html" target="_blank">С примерами</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/25-samples/25-samples.bemjson.js"></iframe><iframe class="example__live" src="input.examples/25-samples/25-samples.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:30-clear:30-clear"><a class="example__title" href="input.examples/30-clear/30-clear.html" target="_blank">Поле ввода с кнопкой очистки
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/30-clear/30-clear.bemjson.js"></iframe><iframe class="example__live" src="input.examples/30-clear/30-clear.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:35-size:35-size"><a class="example__title" href="input.examples/35-size/35-size.html" target="_blank">В размерах с кнопками</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/35-size/35-size.bemjson.js"></iframe><iframe class="example__live" src="input.examples/35-size/35-size.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:40-textarea:40-textarea"><a class="example__title" href="input.examples/40-textarea/40-textarea.html" target="_blank">Поле ввода текстовой областью в размерах</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/40-textarea/40-textarea.bemjson.js"></iframe><iframe class="example__live" src="input.examples/40-textarea/40-textarea.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:45-disabled:45-disabled"><a class="example__title" href="input.examples/45-disabled/45-disabled.html" target="_blank">Неактивное состояние</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/45-disabled/45-disabled.bemjson.js"></iframe><iframe class="example__live" src="input.examples/45-disabled/45-disabled.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:50-width-content:50-width-content"><a class="example__title" href="input.examples/50-width-content/50-width-content.html" target="_blank">С автоматическим ресайзом по содержимому
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/50-width-content/50-width-content.bemjson.js"></iframe><iframe class="example__live" src="input.examples/50-width-content/50-width-content.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:55-in-table:55-in-table"><a class="example__title" href="input.examples/55-in-table/55-in-table.html" target="_blank">В таблице</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/55-in-table/55-in-table.bemjson.js"></iframe><iframe class="example__live" src="input.examples/55-in-table/55-in-table.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:60-suggest:60-suggest"><a class="example__title" href="input.examples/60-suggest/60-suggest.html" target="_blank">Простой саджест
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/60-suggest/60-suggest.bemjson.js"></iframe><iframe class="example__live" src="input.examples/60-suggest/60-suggest.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:65-suggest-foot:65-suggest-foot"><a class="example__title" href="input.examples/65-suggest-foot/65-suggest-foot.html" target="_blank">Простой саджест c элементом foot
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/65-suggest-foot/65-suggest-foot.bemjson.js"></iframe><iframe class="example__live" src="input.examples/65-suggest-foot/65-suggest-foot.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:70-big-suggest:70-big-suggest"><a class="example__title" href="input.examples/70-big-suggest/70-big-suggest.html" target="_blank">Саджест с установкой ширины по ширине большого инпута
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/70-big-suggest/70-big-suggest.bemjson.js"></iframe><iframe class="example__live" src="input.examples/70-big-suggest/70-big-suggest.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:75-suggest-fade:75-suggest-fade"><a class="example__title" href="input.examples/75-suggest-fade/75-suggest-fade.html" target="_blank">Саджест с установкой ширины по ширине инпута и фэйдингом
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/75-suggest-fade/75-suggest-fade.bemjson.js"></iframe><iframe class="example__live" src="input.examples/75-suggest-fade/75-suggest-fade.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:80-suggest-market:80-suggest-market"><a class="example__title" href="input.examples/80-suggest-market/80-suggest-market.html" target="_blank">Саджест маркета
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/80-suggest-market/80-suggest-market.bemjson.js"></iframe><iframe class="example__live" src="input.examples/80-suggest-market/80-suggest-market.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:85-suggest-serp:85-suggest-serp"><a class="example__title" href="input.examples/85-suggest-serp/85-suggest-serp.html" target="_blank">Саджест серпа
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/85-suggest-serp/85-suggest-serp.bemjson.js"></iframe><iframe class="example__live" src="input.examples/85-suggest-serp/85-suggest-serp.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:90-suggest-custom:90-suggest-custom"><a class="example__title" href="input.examples/90-suggest-custom/90-suggest-custom.html" target="_blank">Саджест с кастомными элементами (на примере Метро)
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/90-suggest-custom/90-suggest-custom.bemjson.js"></iframe><iframe class="example__live" src="input.examples/90-suggest-custom/90-suggest-custom.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:94-suggest-sticky-line:94-suggest-sticky-line"><a class="example__title" href="input.examples/94-suggest-sticky-line/94-suggest-sticky-line.html" target="_blank">Саджест для залипающей поисковой строки
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/94-suggest-sticky-line/94-suggest-sticky-line.bemjson.js"></iframe><iframe class="example__live" src="input.examples/94-suggest-sticky-line/94-suggest-sticky-line.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="input:examples:95-suggest-slovari:95-suggest-slovari"><a class="example__title" href="input.examples/95-suggest-slovari/95-suggest-slovari.html" target="_blank">Саджест с переводом слов
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="input.examples/95-suggest-slovari/95-suggest-slovari.bemjson.js"></iframe><iframe class="example__live" src="input.examples/95-suggest-slovari/95-suggest-slovari.html"></iframe></div></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">autofocus</h4><div class="block__mod-title">Получение фокуса при вводе текста на странице</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">clear</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">no</th><td class="block__mod-val-title">Инпут без крестика очистки содержимого
+</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">disabled</h4><div class="block__mod-title">Неактивное поле</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">focused</h4><div class="block__mod-title">В фокусе</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Фокус есть</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">popup</h4><div class="block__mod-title">Выпадающий попап из инпута</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">gradient</th><td class="block__mod-val-title">с градиентом</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">size</h4><div class="block__mod-title">Размер инпута</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">m</th><td class="block__mod-val-title">Размер шрифта 15px</td></tr><tr><th class="block__mod-val-name">s</th><td class="block__mod-val-title">Размер шрифта 13px</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">suggest</h4><div class="block__mod-title">Саджест</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">включен</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">theme</h4><div class="block__mod-title">Темы оформления
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">normal</th><td class="block__mod-val-title">по-умолчанию
+</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">type</h4><div class="block__mod-title">Тип</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">password</th><td class="block__mod-val-title">пароль</td></tr><tr><th class="block__mod-val-name">textarea</th><td class="block__mod-val-title">с текстовой областью</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">width</h4><div class="block__mod-title">Ширина
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">content</th><td class="block__mod-val-title">автоматическая, по размеру содержимого
+</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">box</h4><div class="block__elem-title">Элемент рисующий поля ввода (нативный инпут скрыт)</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">clear</h4><div class="block__elem-title">Кнопка - очистить</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">visibility</h4><div class="block__mod-title">Видимость крестика очистки поля ввода
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">visible</th><td class="block__mod-val-title">включено</td></tr></table></div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">dataprovider</h4><div class="block__elem-title">Дефолтный источник данных для саджеста</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">foot</h4><div class="block__elem-title">Элемент внизу саджеста</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">hint</h4><div class="block__elem-title">Подсказка в поле ввода, исчезает при наборе текста</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">visibility</h4><div class="block__mod-title">Видимость подсказки</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">visible</th><td class="block__mod-val-title">включена</td></tr></table></div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">label</h4><div class="block__elem-title">Метка над полем ввода</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">message</h4><div class="block__elem-title">Сообщения для показа ошибок, информации и т.д.</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">type</h4><div class="block__mod-title">Тип сообщения</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">error</th><td class="block__mod-val-title">сообщение об ошибке</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">visibility</h4><div class="block__mod-title">Видимость сообщения</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">visible</th><td class="block__mod-val-title">видимо</td></tr></table></div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">popup</h4><div class="block__elem-title">Попап для саджеста
+</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">fade</h4><div class="block__mod-title">Постепенное исчезновение текста попапа</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">gradient</h4><div class="block__mod-title">Попап с градиентом серого цвета</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">включен</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">size</h4><div class="block__mod-title">Размер саджеста</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">m</th><td class="block__mod-val-title">размер l</td></tr></table></div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">sample</h4><div class="block__elem-title">Пример к полю ввода</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">samples</h4><div class="block__elem-title">Обертка для примеров к полю ввода</div></div></div></div></body></html>

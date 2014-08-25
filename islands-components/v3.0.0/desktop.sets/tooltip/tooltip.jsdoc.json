@@ -1,0 +1,107 @@
+{
+    "blockName": "tooltip",
+    "description": "<p>Всплывающая подсказка-указатель.</p>\n\n",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "getOwner",
+            "description": "<p>Возвращает объект на который указывает подсказка.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM",
+                        "jQuery"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "setOwner",
+            "description": "<p>Определяет объект на который будет указывать подсказка.</p>\n<pre><code class=\"lang-js\">tooltip\n .setOwner(ownerBlock)\n .setMod('shown', 'yes');\n</code></pre>\n",
+            "params": [
+                {
+                    "name": "owner",
+                    "description": "",
+                    "optional": false,
+                    "types": [
+                        "BEM.DOM",
+                        "jQuery"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>this</p>",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "redraw",
+            "description": "<p>Перерисовывает подсказку относительно заданного <code>owner</code>, в случае если она показана.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>this</p>",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "destruct",
+            "description": "",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "click",
+            "description": "<p>Генерируется при клике по подсказке.</p>",
+            "params": []
+        },
+        {
+            "name": "show",
+            "description": "<p>Герерируется при показе подсказки.</p>",
+            "params": []
+        },
+        {
+            "name": "hide",
+            "description": "<p>Генерерируется при скрытии подсказки.</p>",
+            "params": []
+        }
+    ],
+    "mods": [
+        {
+            "name": "autoclosable",
+            "value": "yes",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": "<p>Подсказка, автоматически закрывающаяся при клике за ее пределами,\nа также по нажатию на клавишу ESC.</p>"
+        }
+    ]
+}

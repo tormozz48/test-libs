@@ -1,0 +1,80 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>alert-controller</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок alert-controller</span></div><div class="block__title"></div><div class="block__description static-text"><div class="b-text__p">Контроллер для связи блоков, от которых нужно показать сообщение, с блоком alert.</div><h2 id="-">Описание</h2>
+<p>Блок <code>alert-controller</code> – медиатор, обеспечивающий взаимосвязь между блоком источником сообщения и блоком отображающим сообщение (<a href="./alert.html"><code>alert</code></a>).  Сообщения могут быть трех типов: информационное, об ошибке и блокирующее.</p>
+<p>Связь осуществляется с помощью абстрактного блока не имеющего визуального представления <code>alert-message</code>, который является вспомогательным для вызова сообщений.</p>
+<p><code>alert-controller</code> ищет все блоки <code>alert-message</code> внутри себя расположенные на странице (блок <code>b-page</code>) и слушает(подписывается на события) кастомные БЭМ-события на всех найденных экземплярах. </p>
+<p>Блок-источник – это любой блок, из кода которого может вызываться <code>alert</code>.   </p>
+<p>Вызов выполняется следующим образом:</p>
+<ul>
+<li>К каждому блоку-источнику примисковывается блок <code>alert-message</code> (для удобства использования).</li>
+<li>Затем на блоке <code>alert-message</code> триггерится соответствующее событие, для показа нужного сообщения.</li>
+</ul>
+<p>На странице всегда отображается только одно сообщение. Поскольку перед каждым показом нового сообщения все существующие удаляются.</p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для подключения блока:</p>
+<pre><code class="lang-js">({
+    block: &#39;b-page&#39;,
+    mix: [{
+        block: &#39;i-services-request-controller&#39;,
+        js: true
+    },{
+        block: &#39;alert-controller&#39;, // блок-контроллер
+        js: { // задания текста по умолчанию для каждого типа сообщения  
+            message: {
+                error: &#39;Упс, что-то пошло не так&amp;hellip; &lt;br/&gt; Попробуйте поискать снова&#39;,
+                block: &#39;Все сломалось!&#39;,
+                info: &#39;Все суперпупер круто, &lt;br/&gt; продолжайте в том же духе&#39;
+            },
+            buttonTxt: &#39;Обновить&#39;
+        }
+    }],
+    title: &#39;заголовок&#39;,
+    head: [...],
+    content: [
+        {
+            block: &#39;button&#39;, // блок-источник сообщения
+            js: true,
+            mods: { 
+                type: &#39;simple&#39;,
+                message: &#39;error&#39; // тип сообщения.     
+            },
+            mix: [{block: &#39;alert-message&#39;}],// подмешивание блока `alert-message` 
+            content: &#39;Показать сообщение об ошибке&#39;
+        },
+        ...
+    ]
+});</code></pre>
+<h3 id="js-">JS-параметры блока</h3>
+<ul>
+<li><p><code>{Object} message</code> – предназначен для задания текста сообщения по умолчанию каждому типу сообщения:</p>
+<ul>
+<li><code>info</code> - информационное;</li>
+<li><code>error</code> - об ошибке;</li>
+<li><code>block</code> – блокирующее.</li>
+</ul>
+</li>
+<li><p><code>{String} buttonTxt</code> – текст кнопки для блокирующего сообщения.</p>
+</li>
+</ul>
+<p>На уровне проекта можно переопределить текст сообщения по умолчанию  при генерации одного из БЭМ-событий блока <code>alert-message</code>. Для этого ему передается в качестве данных объект с параметрами <code>message</code> и <code>buttonTxt</code>(только для блокирующего сообщения).</p>
+<p><a href="https://github.yandex-team.ru/lego/islands-components/blob/dev/touch-phone.blocks/alert/alert.examples/10-simple.blocks/button/_message/button_message_block.js">пример переопределния текста для блокирующего сообщения</a></p>
+<pre><code class="lang-js">BEM.DOM.decl({name: &#39;button&#39;, modName: &#39;message&#39;, modVal: &#39;block&#39;}, {
+    onSetMod: {
+        js: function() {
+            // переопределяем дефолтный текст для блокирующего типа
+            this.bindTo(&#39;tap&#39;, function() {
+                this.findBlockOn(&#39;alert-message&#39;).trigger(&#39;alertBlock&#39;,
+                    {
+                        message: &#39;Что-то пошло не так. &lt;br/&gt; Попробуйте обновить страницу.&#39;,
+                        buttonTxt: &#39;Обновить&#39;
+                    }
+                );
+            });
+        }
+    }
+});</code></pre>
+<h3 id="-">Положение и время показа сообщения</h3>
+<p>Для показа сообщения блок <code>alert-controller</code> генерирует блок <code>popup</code> c вложенным блоком <code>alert</code>, в котором отображается сообщение.</p>
+<p>Перед показом скрывается саджест, положение попапа и время его показа зависит от типа сообщения.</p>
+<p>Блокирующее сообщение отображается в модальном окне, содержит кнопку  и располагается строго по центру страницы. Скрывается только по тапу на кнопку или выполняет кастомное действие по нажатию на кнопку, если такое было задано.</p>
+<p>Окно сообщения об ошибке и информационное отображаются под шапкой страницы, если она в области видимости, иначе – сверху экрана и скрываются через 5 секунд после показа. </p>
+</div></div></div></body></html>

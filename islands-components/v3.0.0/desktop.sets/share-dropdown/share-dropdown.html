@@ -1,0 +1,86 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>share-dropdown</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок share-dropdown</span></div><div class="block__title">Блок Поделиться</div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>share-dropdown</code> служит оберткой для <a href="http://api.yandex.ru/share/">блока «Поделиться»</a> на странице в терминах БЭМ, основан на блоке <a href="../dropdown-menu/dropdown-menu.html">dropdown-menu</a>.
+Визуально представлен кнопкой «Поделиться» и выпадающим окном со списком популярных социальных сетей. <a href="#services">Сервисы, доступные в блоке</a>.</p>
+<p>Позволяет посетителям размещать ссылку на страницу сайта в коммуникационных сервисах. Ссылки открываются в новом окне, строятся в зависимости от сервиса и различных параметров, могут изменяться динамически.</p>
+<p>Текст на кнопке «Поделиться» и названия сервисов не изменяются и выводятся в виде локализованных строк из <a href="https://lego.yandex-team.ru/doc/concept/localization.wiki#Tanker">Танкера</a> (технология i18n). Язык текста блока, если не указан, определяется автоматически на основании доменной зоны сайта. <a href="https://github.yandex-team.ru/lego/islands-components/tree/v1/common.blocks/share-dropdown/share-dropdown.i18n">Список поддерживаемых локализаций</a>.</p>
+<p>Более подробное описание блока можно прочитать в <a href="http://wiki.yandex-team.ru/share/">Вики</a> и в <a href="http://api.yandex.ru/share/doc/dg/concepts/share-button-ov.xml">Руководстве разработчика</a>.</p>
+<h3 id="-">Объявление блока на страниц</h3>
+<p>BEMJSON для использования блока:</p>
+<pre><code class="lang-js">{
+    block: &#39;share-dropdown&#39;,
+    share: { // данные о странице, которой делятся
+        title: &#39;Это заголовок страницы (title)&#39;,
+        description: &#39;Это описание страницы (description)&#39;,
+        image: &#39;//yastatic.net/lego/_/X31pO5JJJKEifJ7sfvuf3mGeD_8.png&#39;
+    },
+    content: [ // список сервисов
+        {
+            elem: &#39;share-item&#39;,
+            service: &#39;facebook&#39;
+        },
+        ...
+        {
+            elem: &#39;share-item&#39;,
+            service: &#39;moimir&#39;
+        }
+   ]
+}</code></pre>
+<!-- %%share-dropdown.examples/10-share/10-share%% -->
+
+<h4 id="-">Поля блока</h4>
+<ul>
+<li><p><code>{Object} share</code> – данные, передаваемые в сервисы для публикации, о ссылке, которой делятся. В основном используются для обновления закешированной информации о странице, которая считывается автоматически: <code>url</code>, <code>title</code>, <code>description</code>, <code>image</code>. Необязательное поле. Может содержать следующие опциональные параметры:</p>
+</li>
+<li><p><code>{String} title</code> – заголовок страницы. Значение по умолчанию <code>document.title</code>.</p>
+</li>
+<li><code>{String} image</code> – дополнительная картинка (передается в Facebook, ВКонтакте, Мой Мир и Pinterest). Для Pinterest этот параметр является обязательным.</li>
+<li><code>{String} description</code> – описание ссылки (передается в Facebook, ВКонтакте, Мой Мир и Живой Журнал). Если параметр не указан, соцсети берут описания из мета-тега <code>description</code>.</li>
+</ul>
+<p>Если нужно задать <code>url</code>, его можно определить в параметрах блока <a href="https://lego.yandex-team.ru/desktop/common/blocks/i-global#i-global.10_i-global_params">i-global</a> следующим образом:</p>
+<pre><code class="lang-javascript">{
+    block: &#39;i-global&#39;,
+    params: {
+        // параметры
+        url: &#39;//haha.com&#39;  //ссылка на страницу, которой делятся. По умолчанию window.location.href
+    }
+}</code></pre>
+<p><em><strong>Примечание</strong>. В текущей реализации блока <code>share-dropdown</code> параметр <code>url</code> в ссылке на <a href="share.yandex.ru">share.yandex.ru</a> всегда берется из <code>i-global</code>.</em></p>
+<ul>
+<li><p><code>{Array} content</code> – содержит набор нужных сервисов, которые добавляются с помощью элемента блока <code>share-item</code> следующей конструкцией:</p>
+<pre><code class="lang-js">  {
+      elem: &#39;share-item&#39;,
+      service: &lt;название сервиса&gt;
+  }</code></pre>
+<p>На уровне BEMHTML-шаблона каждый элемент <code>share-item</code> преобразуется в ссылку на соответствующий сервис.</p>
+</li>
+</ul>
+<p><a name="services"></a>
+Список доступных сервисов (значения модификаторов элемента <code>share-item</code>):</p>
+<ul>
+<li><code>facebook</code> – <strong>Facebook</strong>.</li>
+<li><code>gplus</code> – <strong>Google+</strong>.</li>
+<li><code>moimir</code> – <strong>Мой Мир</strong>.</li>
+<li><code>odnoklassniki</code> – <strong>Одноклассники</strong>.</li>
+<li><code>pinterest</code> – <strong>Pinterest</strong>.</li>
+<li><code>twitter</code> – <strong>Twitter</strong>.</li>
+<li><code>vkontakte</code> – <strong>Vkontakte</strong>.</li>
+</ul>
+<p><strong>Примечание</strong>: необходимо добавить следующую <code>shouldDeps</code> – <a href="https://github.yandex-team.ru/lego/islands-components/blob/v1/common.blocks/share-dropdown/share-dropdown.examples/10-share.blocks/share-dropdown/share-dropdown.deps.js">зависимость от модификаторов сервисов</a>.</p>
+<!-- FIXIT:
+js-парметр id:  `js: { id: this.generateId() }для уникальной идентификации блока «Поделиться»,  если на странице их несколько?-->
+
+<h3 id="-">Визуальное оформление</h3>
+<p>Блок представлен на странице в виде кнопки с локализованным текстом «Поделиться» и графическим символом «шаринга».
+Кнопка (блок <a href="../button/button.html">button</a>) с обычной темой оформления (модификатор <code>theme</code> со зачением <code>normal</code>) и размером <code>m</code> (значение модификатора <code>size</code>). При нажатии на кнопку всплывает окно (блок <a href="../popup/popup.html">popup</a>) со списком ссылок с иконками на социальные сети. Иконки – векторные изображения в формате svg и размером 16х16px.</p>
+<p>Структура и текст зафиксированы в BEMHTML-шаблоне блока.</p>
+<!-- Если нужен другой вид его можно реализовать на уровне переопределения проекта-->
+
+<h3 id="-">Значения по умолчанию</h3>
+<ul>
+<li><code>title</code>: <code>document.title</code>.</li>
+<li><code>url</code>: <code>window.location.href</code>.</li>
+<li><code>id</code> – уникальный идентификатор экземпляра блока, генерируется автоматически.</li>
+</ul>
+<!-- FIXIT:
+js-парметр id:  `js: { id: this.generateId() }для уникальной идентификации блока «Поделиться»,  если на странице их несколько?-->
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="share-dropdown:examples:10-share:10-share"><a class="example__title" href="share-dropdown.examples/10-share/10-share.html" target="_blank">Поделиться</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="share-dropdown.examples/10-share/10-share.bemjson.js"></iframe><iframe class="example__live" src="share-dropdown.examples/10-share/10-share.html"></iframe></div></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">share-item</h4><div class="block__elem-title">Элемент-ссылка</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">facebook</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">16</th><td class="block__mod-val-title">Facebook</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">gplus</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">16</th><td class="block__mod-val-title">Google +</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">moimir</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">16</th><td class="block__mod-val-title">Мой Мир</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">odnoklassniki</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">16</th><td class="block__mod-val-title">Одноклассники</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">pinterest</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">16</th><td class="block__mod-val-title">Pinterest</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">twitter</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">16</th><td class="block__mod-val-title">Twitter</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">vkontakte</h4><div class="block__mod-title">Vkontakte</div><table class="block__mod-val-list"></table></div></div></div></div></body></html>

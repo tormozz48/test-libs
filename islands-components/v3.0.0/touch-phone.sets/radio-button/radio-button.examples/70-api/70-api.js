@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/radio-button/radio-button.examples/70-api/70-api.ru.js

@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/desktop.sets/button/button.examples/45-ico/45-ico.ru.js

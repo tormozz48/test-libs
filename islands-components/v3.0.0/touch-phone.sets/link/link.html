@@ -1,0 +1,166 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>link</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок link</span></div><div class="block__title">Ссылка</div><div class="block__description static-text"><div class="b-text__p">Все ссылки желательно делать через этот блок. Если вы хотите разместить ссылку в тексте, то не нужно включать в нее предлог.</div><div class="b-text__p">Правильный цвет ссылки – #1A3DC1.</div><div class="b-text__p">Ссылки бывают:</div><div class="b-text__ul"><div class="b-text__li"><a class="b-link" href="#link.10-link_simple_bem">простые ссылки</a></div></div><div class="b-text__ul"><div class="b-text__li"><a class="b-link" href="#link.30-link_counter-always_bem">ссылки со счетчиками</a>. По умолчанию вероятность показа счётчика — 10%. Вероятностью показа счётчика для конкретной ссылки управляет атрибут <tt>show-counter</tt>.
+    При <tt>show-counter = 100</tt> — показ счётчика гарантирован всегда.</div></div><div class="b-text__ul"><div class="b-text__li"><a class="b-link" href="#link.40-link_pseudo_bem">псевдо-ссылки</a>. Ссылка, подразумевающая действие без перехода на другую страницу.<br/><br/>
+    В <tt>html</tt>-е может быть представлена двумя способами:<div class="b-text__ul"><div class="b-text__li">При наличии атрибута <tt>url</tt> выводится <tt>&lt;a href=&quot;/&quot;...&gt;</tt>. При отключенном <tt>js</tt> происходит переход по ссылке;<br/></div><div class="b-text__li">Без атрибута <tt>url</tt> выводится <tt>&lt;span ...&gt;</tt>;</div></div></div><div class="b-text__li"><a class="b-link" href="#link.50-link_inner_bem">с иконками</a>. Добавление модификатора <tt>_inner</tt> разрешает добавлять во входных данных элемент <tt>inner</tt>, разделяя таким образом текст ссылки и иконку ссылки.
+ Это позволяет вкладывать в ссылку иконки любого размера.</div></div><div class="b-text__p">Если использование глобальных стилей нежелательно, то необходимо использовать <tt>noDeps</tt> на своём уровне переопределения:</div><div>/* link.deps.js */
+({
+    noDeps: [
+        { mods: { type: &apos;global&apos; } }
+    ]
+})</div><h2 id="-">Описание</h2>
+<p>Блок <code>link</code> предназначен для создания ссылок: простых, с иконками, со счетчиками, псевдо-ссылок.
+Может использоваться в других блоках, например <code>input</code>.</p>
+<p><strong>Примечание:</strong> <em>Рекомендуется все ссылки делать с использованием блока <code>link</code>.</em></p>
+<p><a name="einner"></a></p>
+<h3 id="-">Элементы блока</h3>
+<p><code>inner</code> – опциональный внутренний элемент, в который помещается текстовое содержимое ссылки. Необходим, когда ссылка содержит графический контент, например, иконку. В HTML преобразуется в тэг <code>&lt;span&gt;</code>.
+Добавляется в BEMJSON блока <a href="#addinner">следующим образом</a>.</p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования ссылки:</p>
+<pre><code class="lang-js">{
+    block: &#39;link&#39;        // имя блока
+    url: &#39;http://ya.ru&#39;, // адрес ресурса
+    target: &#39;_blink&#39;,    // имя окна/фрейма, в котором будет открыт документ, на который указывает ссылка
+    title: &#39;Подсказка&#39;,  // всплывающая подсказка к тексту ссылки
+    mods: {outer: &#39;yes&#39;, disabled: &#39;yes&#39;}, // поле модификаторов ссылки. Необязательное
+    content: &#39;Самая посещаемая страница Рунета&#39; // текст ссылки
+}</code></pre>
+<p>При наличии поля <code>url</code> на веб-странице отобразится ссылка вида <code>&lt;a атрибуты&gt; текст ссылки &lt;/a&gt;</code>, при отсутствии – тэг <code>&lt;span атрибуты&gt; ... &lt;/span&gt;</code>.</p>
+<h4 id="-">Атрибуты блока</h4>
+<p><code>url</code>, <code>target</code>, <code>title</code>, <code>tabindex</code>, <code>id</code> – необязательные. Задаются в одноименных полях входного BEMJSON блока.</p>
+<p>В BEMHTML-шаблоне поле <code>url</code> преобразуется в атрибут ссылки <code>href</code>, остальные – в соответствующие атрибуты тэга <code>&lt;a&gt;</code> с заданными значениями. По умолчанию тэгам <code>&lt;a&gt;</code> и <code>&lt;span&gt;</code> будет добавлен атрибут <code>tabindex=0</code>, если он не был явно задан во входных данных, а для <code>&lt;span&gt;</code> дополнительно и <code>role=&quot;button&quot;</code>.</p>
+<h3 id="-">Модификаторы блока</h3>
+<p>Ссылки бывают:</p>
+<ul>
+<li><strong>Простая ссылка</strong>.</li>
+</ul>
+<pre><code class="lang-js">{
+   block: &#39;link&#39;,
+   url: &#39;http://ya.ru&#39;,
+   content: &#39;Самая посещаемая страница Рунета&#39;
+}</code></pre>
+<!-- %%link.examples/10-link-simple/10-link-simple%% -->
+
+<!-- %%link.examples/20-link-attributes/20-link-attributes%% -->
+
+<ul>
+<li><strong>Сылка со счетчиком</strong> (модификатор <code>counter</code> в значении <code>yes</code>).
+Используется для подсчета кликов по ссылке в различных статистических данных. Вероятностью срабатывания счётчика для конкретной ссылки управляет атрибут <code>show-counter</code>. По умолчанию вероятность срабатывания счётчика — 10%.
+При <code>show-counter</code> = 100 — показ счётчика гарантирован всегда.
+<code>counter</code> и <code>showcounter</code> – передаются в качестве JS-параметров при инициализации блока.</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;link&#39;,
+    mods: {counter: &#39;yes&#39;},  // определяет ссылку со счетчиком
+    url: &#39;http://ya.ru&#39;,
+    counter: &#39;123&#39;,          // значение счетчика
+    &#39;show-counter&#39;: &#39;50&#39;,    // вероятность срабатывания счетчика (в половине случаев)
+    content: &#39;Ссылка, у которой есть счётчик в половине случаев&#39;
+}</code></pre>
+<!-- %%link.examples/30-link-counter-always/30-link-counter-always%% -->
+
+<ul>
+<li><p><strong>Псевдо-ссылка</strong> (модификатор <code>pseudo</code> в значении <code>yes</code>).
+Разновидность ссылки, подразумевающая действие без перехода на другую страницу. Визуально имеет пунктирное нижнее подчеркивание.</p>
+<p>В HTML может быть представлена двумя способами:</p>
+<ul>
+<li>При наличии атрибута <code>url</code> выводится <code>&lt;a href=&quot; &quot; атрибуты&gt;текст ссылки&lt;/a&gt;</code>. При отключенном JS происходит переход по ссылке.</li>
+<li>Без атрибута <code>url</code> выводится <code>&lt;span атрибуты&gt; ... &lt;/span&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;link&#39;,
+    mods: {pseudo: &#39;yes&#39;}, // определеяет псевдо-ссылку спаном
+    content: &#39;Псевдо-ссылка спаном&#39;
+}</code></pre>
+<!-- %%link.examples/40-link-pseudo/40-link-pseudo%%  -->
+
+<ul>
+<li><strong>Ссылка с вложенным элементом</strong> (модификатор <code>inner</code> в значении <code>yes</code>).
+В основном служит для использования ссылки с иконками. Наличие модификатора <code>_inner</code> позволяет добавлять во входных данных <a href="#einner">элемент <code>inner</code></a>, разделяющий текст ссылки и иконку ссылки. Содержит только CSS, который переносит подчеркивание с самой ссылки на ее внутренний элемент(текст ссылки).
+Это позволяет вкладывать в ссылку иконки любого размера.</li>
+</ul>
+<p><a name="addinner"></a></p>
+<pre><code class="lang-js">{
+    block: &#39;link&#39;,
+    mods: {inner: &#39;yes&#39;}, // определяет ссылку с вложенным элементом
+    url: &#39;#&#39;,
+    content: [
+        { // добавление иконки с использованием блока `image`
+            block: &#39;image&#39;,
+            mix: [{block: &#39;link&#39;, elem: &#39;icon&#39;}],
+            url: &#39;//yastatic.net/lego/_/q3pWfvEp2kyq8alkR67Ry863-14.png&#39;,
+            alt: &#39;16x16 icon&#39;
+        },
+        { // добавление элемента `inner`, содержащего текст ссылки
+            elem: &#39;inner&#39;,
+            content: &#39;Ссылка с иконкой 16x16&#39;
+        }
+    ]
+}</code></pre>
+<!-- %%link.examples/50-link-inner/50-link-inner%% -->
+
+<ul>
+<li><strong>Внешняя ссылка</strong> (модификатор <code>outer</code> в значении <code>yes</code>).
+Служит для визуального выделения ссылок, ведущих на другие сайты. Содержит CSS со стилем, выделяющим ссылку цветом #070.</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;link&#39;,
+    mods: {outer: &#39;yes&#39;}, // определяет внешнюю ссылку
+    url: &#39;http://ya.ru&#39;,
+    content: &#39;Внешняя ссылка&#39;
+}</code></pre>
+<!-- %%link.examples/15-link-simple-outer/15-link-simple-outer%% -->
+
+<ul>
+<li><strong>Невизуальная ссылка</strong> (модификатор <code>nonvisual</code> в значении <code>yes</code>).
+Делает ссылку невидимой. Она появляется только при фокусировке на ней клавишей <code>Tab</code>.
+В основном, модификация нужна для людей с ограниченными возможностями (поддержка accessibility). В данный момент используется только в шапке.</li>
+</ul>
+<pre><code class="lang-js">{
+    block: &#39;link&#39;,
+    mods: {nonvisual: &#39;yes&#39;},
+    url: &#39;http://example.com&#39;,
+    content: &#39;Невизуальная ссылка&#39;
+},
+{
+    block: &#39;link&#39;,
+    mods: {pseudo: &#39;yes&#39;, nonvisual: &#39;yes&#39;},
+    url: &#39;http://example.com&#39;,
+    content: &#39;Невизуальная псевдо-ссылка&#39;
+}</code></pre>
+<!--%%link.examples/60-nonvisual/60-nonvisual%% -->
+
+<h4 id="-">Состояния ссылки</h4>
+<p>При наличии модификатора <code>disabled</code> в значении <code>yes</code> любая ссылка или псевдо-ссылка становится <strong>неактивной</strong>, то есть будет недоступна для действий пользователя: фокусировка с помощью клавиши <code>Tab</code> и клик кнопкой мыши.
+В HTML для тэгов <code>&lt;a&gt;</code> и <code>&lt;span&gt;</code> добавится атрибут <code>aria-disabled=true</code> (и только для ссылки <code>tabindex=-1</code>).
+Визуально все неактивные ссылки выделяются светло-серым цветом (#ddd).</p>
+<pre><code class="lang-js">{
+    block: &#39;link&#39;,
+    mods: {pseudo: &#39;yes&#39;, disabled: &#39;yes&#39;},
+    content: &#39;Неактивная псевдо-ссылка спаном&#39;
+},
+{
+    block: &#39;link&#39;,
+    mods: {pseudo: &#39;yes&#39;, disabled: &#39;yes&#39;},
+    url: &#39;http://ya.ru&#39;,
+    content: &#39;Неактивная псевдо-ссылка ссылкой&#39;
+}</code></pre>
+<h3 id="-">Значения по умолчанию</h3>
+<p>Оформление (цвет):</p>
+<ul>
+<li>ссылки и посещенной ссылки: #22c;</li>
+<li>внешней ссылки: #070;</li>
+<li>неактивной ссылки: #ddd.</li>
+</ul>
+<p>Атрибуты активной ссылки: <code>tabindex=0</code> и для <code>&lt;span&gt;</code> дополнительно <code>role=&quot;button&quot;</code>.</p>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:10-link-simple:10-link-simple"><a class="example__title" href="link.examples/10-link-simple/10-link-simple.html" target="_blank">Ссылка
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/10-link-simple/10-link-simple.bemjson.js"></iframe><iframe class="example__live" src="link.examples/10-link-simple/10-link-simple.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:15-link-simple-outer:15-link-simple-outer"><a class="example__title" href="link.examples/15-link-simple-outer/15-link-simple-outer.html" target="_blank">Внешняя ссылка
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/15-link-simple-outer/15-link-simple-outer.bemjson.js"></iframe><iframe class="example__live" src="link.examples/15-link-simple-outer/15-link-simple-outer.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:20-link-attributes:20-link-attributes"><a class="example__title" href="link.examples/20-link-attributes/20-link-attributes.html" target="_blank">Ссылка, открывающаяся в новом окне</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/20-link-attributes/20-link-attributes.bemjson.js"></iframe><iframe class="example__live" src="link.examples/20-link-attributes/20-link-attributes.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:30-link-counter-always:30-link-counter-always"><a class="example__title" href="link.examples/30-link-counter-always/30-link-counter-always.html" target="_blank">Ссылка со счётчиком</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/30-link-counter-always/30-link-counter-always.bemjson.js"></iframe><iframe class="example__live" src="link.examples/30-link-counter-always/30-link-counter-always.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:40-link-pseudo:40-link-pseudo"><a class="example__title" href="link.examples/40-link-pseudo/40-link-pseudo.html" target="_blank">Псевдо-ссылка</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/40-link-pseudo/40-link-pseudo.bemjson.js"></iframe><iframe class="example__live" src="link.examples/40-link-pseudo/40-link-pseudo.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:50-link-inner:50-link-inner"><a class="example__title" href="link.examples/50-link-inner/50-link-inner.html" target="_blank">С иконкой и внтуренним элементом</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/50-link-inner/50-link-inner.bemjson.js"></iframe><iframe class="example__live" src="link.examples/50-link-inner/50-link-inner.html"></iframe></div></div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:10-link-simple:10-link-simple"><a class="example__title" href="link.examples/10-link-simple/10-link-simple.html" target="_blank">Ссылка
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/10-link-simple/10-link-simple.bemjson.js"></iframe><iframe class="example__live" src="link.examples/10-link-simple/10-link-simple.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:15-link-simple-outer:15-link-simple-outer"><a class="example__title" href="link.examples/15-link-simple-outer/15-link-simple-outer.html" target="_blank">Внешняя ссылка
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/15-link-simple-outer/15-link-simple-outer.bemjson.js"></iframe><iframe class="example__live" src="link.examples/15-link-simple-outer/15-link-simple-outer.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:20-link-attributes:20-link-attributes"><a class="example__title" href="link.examples/20-link-attributes/20-link-attributes.html" target="_blank">Ссылка, открывающаяся в новом окне</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/20-link-attributes/20-link-attributes.bemjson.js"></iframe><iframe class="example__live" src="link.examples/20-link-attributes/20-link-attributes.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:30-link-counter-always:30-link-counter-always"><a class="example__title" href="link.examples/30-link-counter-always/30-link-counter-always.html" target="_blank">Ссылка со счётчиком</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/30-link-counter-always/30-link-counter-always.bemjson.js"></iframe><iframe class="example__live" src="link.examples/30-link-counter-always/30-link-counter-always.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:40-link-pseudo:40-link-pseudo"><a class="example__title" href="link.examples/40-link-pseudo/40-link-pseudo.html" target="_blank">Псевдо-ссылка</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/40-link-pseudo/40-link-pseudo.bemjson.js"></iframe><iframe class="example__live" src="link.examples/40-link-pseudo/40-link-pseudo.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="link:examples:50-link-inner:50-link-inner"><a class="example__title" href="link.examples/50-link-inner/50-link-inner.html" target="_blank">С иконкой и внтуренним элементом</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="link.examples/50-link-inner/50-link-inner.bemjson.js"></iframe><iframe class="example__live" src="link.examples/50-link-inner/50-link-inner.html"></iframe></div></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">counter</h4><div class="block__mod-title">Ссылка со счетчиками</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Счетчики включены</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">disabled</h4><div class="block__mod-title">Неактивное состояние ссылки</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Неактивная ссылка
+</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">inner</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Ссылка с вложенным элементом</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">nonvisual</h4><div class="block__mod-title">Невизуальная ссылка
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено
+</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">outer</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Ccылка является внешней</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">pseudo</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Псевдоссылка
+Модификация ссылки, подразумевающая действие без перехода на другую страницу.
+Визуально имеет пунктирное нижнее подчеркивание.</td></tr></table></div></div></div></body></html>

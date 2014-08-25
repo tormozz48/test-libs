@@ -1,0 +1,142 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>suggest-item</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок suggest-item</span></div><div class="block__title">Элемент поисковой подсказки
+</div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>suggest-item</code> – элемент поисковой подсказки.</p>
+<p>Представляет собой элемент списка (строку) во всплывающем окне поисковой подсказки (блок <a href="../suggest/suggest.html">suggest</a>), которое появляется после начала ввода пользователем запроса в поисковом поле.</p>
+<p>Блок <code>suggest-item</code> используется блоком <code>suggest</code>, и в отрыве от него применение не предполагается.</p>
+<h3 id="-">Создание подсказок</h3>
+<p>Подсказки создаются на клиенте (в браузере).
+Задача саджеста – показать всплывающее окно с подсказками.</p>
+<h4 id="-">Формирование подсказок</h4>
+<p>Саджест формирует подсказки в несколько этапов:</p>
+<ul>
+<li>получает данные с сервера (событие саджеста <code>data-received</code>).</li>
+<li>строит BEMJSON-дерево (в статическом методе <code>_buildItems</code> саджеста), которое содержит только подсказки, без информации про <a href="../popup/popup.html">popup</a> и само окно.</li>
+<li>BEMHTML-шаблон преобразует полученное дерево в HTML-строку.</li>
+</ul>
+<p>Подсказки бывают разных типов: простая текстовая, навигационная, «погода», «пробки» и др. - строятся они по-разному. Каким образом – определено в <a href="#mods">модификаторе <code>type</code></a> блока <code>suggest-item</code>.</p>
+<h4 id="bemjson-">BEMJSON элементов подсказки</h4>
+<p>Для каждой конкретной подсказки в саджесте создаётся подобный BEMJSON:</p>
+<pre><code class="lang-javascript">{
+    block: &#39;suggest-item&#39;,
+    mods: {type: &#39;тип подсказки {String}&#39;},
+    data: второй элемент массива из ответа сервера {String|Array},
+    ключ: значение
+}</code></pre>
+<h4 id="-">Поля блока</h4>
+<p><a name="mods"></a></p>
+<ul>
+<li><p><code>{Object} mods</code> – модификаторы блока.</p>
+<ul>
+<li><code>{String} type</code> – типы подсказок. Допустимые значения:<ul>
+<li><code>fact</code> – факты. С ответами в подсказке.</li>
+<li><code>nav</code> –  сайт. Навигационные подсказки. По ним сразу можно перейти на сайт, не обращаясь к результатам поиска.</li>
+<li><code>text</code> – поиск. Обычные текстовые подсказки.</li>
+<li><code>traffic</code> – пробки. С колдунщиком трафика. Расширенный ответ может включать текст пробки (стрелка вниз/стрелка вверх), признак цвета светофора на иконке (элемент блока <code>icon</code> со значением <code>traffic</code>).</li>
+<li><code>weather</code> – погода. С колдунщиком погоды, может содержать текст температуры, иконку температуры ( элемент блока <code>icon</code> со значением <code>weather</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>{Sring|Array} data</code> – значение подсказки.</p>
+<p>Сервер присылает ответ в виде массива следующего вида:</p>
+<pre><code>[
+  &#39;эхо запроса&#39;,
+  [ // массив с подсказками
+      &#39;простая текстовая подсказка&#39;,
+      [&#39;&#39;, &#39;простая текстовая подсказка через массив&#39;],
+      [&#39;weather&#39;, &#39;сложная подсказка, типа weather&#39;, {k: v}]
+  ],
+  {
+      глобальные: параметры
+  }
+]</code></pre>
+<p>В <code>data</code> передаётся значение для подсказки из массива подсказок (второй
+элемент массива).
+Подробное описание типов можно посмотреть на странице <a href="http://wiki.yandex-team.ru/YandexMobile/Search/TechDocs/API/SearchSuggest">поисковых подсказок</a>.</p>
+</li>
+<li><p><code>«ключ: значение»</code>. Если подсказка пришла в виде массива (сложная
+подсказка с некоторым типом), то последним элементом этого массива
+(массив 3-го уровня вложенности) может идти какой-то объект <code>{Object}</code>. Если
+это действительно так (этот объект может и не прийти от сервера), то все
+ключи примешиваются к BEMJSON вместе с соответствующими значениями.</p>
+<p>В параметрах каждой конкретной подсказки может прийти, например,
+информация о том, что подсказка — персональная (человек уже вводил такой
+запрос и Яндекс запомнил его; так называемые «Вы искали» или «Мои
+находки»). Тогда ответ сервера будет выглядеть как:</p>
+<pre><code>[
+  &#39;эхо запроса&#39;,
+  [
+      [&#39;&#39;, &#39;персональная подсказка&#39;, {pers: 1}]
+  ]
+]</code></pre>
+<p>BEMJSON, из которого саджест построит подсказки, будет выглядеть как:</p>
+<pre><code class="lang-js">{
+  block: &#39;suggest-item&#39;,
+  mods: {type: &#39;text&#39;},
+  data: [&#39;&#39;, &#39;персональная подсказка&#39;, {pers: 1}],
+  pers: 1
+}</code></pre>
+</li>
+</ul>
+<p>Параметр <code>{pers: 1}</code> обрабатывается в шаблонах и добавляется в
+JS-параметры блока. То есть, если в параметрах блока есть <code>pers</code>, то
+подсказка персональная. Такая информация нужна для статистики
+использования саджеста.</p>
+<p>Кроме {pers: 1} в JS-параметры <code>suggest-item</code> попадает <code>cgi</code>. Значение его
+берётся из поля <code>search_cgi</code>, пришедшего в ответе сервера (в параметрах
+подсказки). Он тоже нужен для статистики.</p>
+<p>Еще в статистике используются данные, присланные сервером как
+глобальные параметры. Но это зона ответственности <code>suggest</code>, а не его
+элементов, <code>suggest-item</code>.</p>
+<h4 id="-">Группировка подсказок</h4>
+<p>Для разных платформ используются различные алгоритмы создания подсказок. Для планшета (touch-pad) и компьютера (desktop) создаются подсказки с группировкой (используется один код для обеих платформ). Для телефонов (touch-phone) – без группировок, простым списком.</p>
+<p>Саджест не меняет порядок следования подсказок, только иногда начинает новую группу. Алгоритм начала новой группы содержится в саджесте, хотя, предварительно, на сервере подсказки сортируются таким образом, чтобы сервер их мог правильно сгруппировать.</p>
+<h5 id="-">Алгоритм группировки подсказок</h5>
+<p>На данный момент <strong>алгоритм группировки</strong> следующий:
+Подсказки одного типа, идущие подряд — образуют одну группу, подсказки с другим типом — другую, даже если в группе только одна подсказка.</p>
+<p>BEMJSON для группировки:</p>
+<pre><code class="lang-js">{
+    block: &#39;suggest&#39;,
+    elem: &#39;group&#39;,
+    content: [
+        {elem: &#39;title&#39;, content: &#39;Заголовок группы&#39;},
+        {elem: &#39;items&#39;, content: [массив из suggest-item’ов]}
+    ]
+}</code></pre>
+<p><strong>Заголовок группы</strong> выводится в зависимости от языка. В саджесте определены
+заголовки для стандартных типов. Локализованное значение заголовка определяется
+следующим образом:</p>
+<pre><code class="lang-js">BEM.I18N(&#39;suggest&#39;, тип подсказки [&#39;text&#39;, &#39;nav&#39;, ...] {String})</code></pre>
+<p>При этом, для простой текстовой подсказки можно выбрать другой
+заголовок. По умолчанию — это «Поиск», но, например, Я.Картинкам нужно
+установить заголовок – «Картинки». Для установки существует глобальный параметр
+(в <a href="https://lego.yandex-team.ru/desktop/common/blocks/i-global">i-global</a>), ключ которого — <code>suggest-label</code>. Получить значение можно, вызвав метод:</p>
+<pre><code class="lang-js">BEM.blocks[&#39;i-global&#39;].param(&#39;suggest-label&#39;)</code></pre>
+<p>Если в результате получаем пустое значение, будет использовано значение по умолчанию.</p>
+<p><em><strong>Примечание:</strong> В Островах v2 название группы можно будет передать в JS-параметрах при определении блока <code>suggest</code> в BEMJSON</em>.</p>
+<h3 id="-">Особенности реализации</h3>
+<ul>
+<li>В версии для телефона существуют свои особенности для подсказок. Все
+нюансы дизайна есть в <a href="http://wiki.yandex-team.ru/serp/thenewserp/dizajjn/touch.suggest">спецификации для тач.саджеста touch.suggest</a>.
+Например, для подсказки «Факт» нужно особым образом выравнивать текст
+подсказок, чтобы текст факта переходил на вторую строчку.</li>
+<li><code>suggest-item</code> экранирует (html escape) данные перед их добавлением на
+страницу.</li>
+<li>Иконки «Пробок» хранятся рядом с <code>suggest-item</code>, а иконки «Погоды»
+берутся из одного хранилища сервиса. Планируется иконки «Пробок» перенести в библиотеку <code>islands-icons</code>.</li>
+<li>SVG используется везде, где можно. Где нельзя — PNG.</li>
+<li>Сервисы могут создавать свои типы подсказок.</li>
+</ul>
+</div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">type</h4><div class="block__mod-title">Тип подсказки
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">fact</th><td class="block__mod-val-title">Факт
+</td></tr><tr><th class="block__mod-val-name">nav</th><td class="block__mod-val-title">Сайт
+</td></tr><tr><th class="block__mod-val-name">text</th><td class="block__mod-val-title">Подсказка
+</td></tr><tr><th class="block__mod-val-name">traffic</th><td class="block__mod-val-title">Пробки
+</td></tr><tr><th class="block__mod-val-name">weather</th><td class="block__mod-val-title">Погода
+</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">answer</h4><div class="block__elem-title">Группа элементов «Быстрый ответ»
+</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">icon</h4><div class="block__elem-title">Иконки
+</div><p>Иконки лежат на блоке suggest-item временно. В будущем иконки будут
+вынесены в библиотеку islands-icons.</p>
+<h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">traffic</h4><div class="block__mod-title">Иконки пробок
+</div><table class="block__mod-val-list"></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">weather</h4><div class="block__mod-title">Иконки погоды
+</div><table class="block__mod-val-list"></table></div></div></div></div></body></html>

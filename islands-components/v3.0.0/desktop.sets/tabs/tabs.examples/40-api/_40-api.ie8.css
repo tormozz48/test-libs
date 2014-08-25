@@ -1,0 +1,525 @@
+/* 40-api.ie.css begin */
+/* 40-api.css begin */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../common.blocks/tabs/tabs.examples/blocks/example/example.css begin */
+.example
+{
+    margin: 10px;
+}
+
+.example__event-output
+{
+    min-height: 2em;
+    margin-top: 1em;
+}
+
+.example__event-output code
+{
+    font-size: 1rem;
+}
+
+/* ../../../../common.blocks/tabs/tabs.examples/blocks/example/example.css end */
+/* ../../../../common.blocks/tabs/tabs.examples/40-api.blocks/example/example.css begin */
+.example__output
+{
+    min-height: 2em;
+    margin-top: 1em;
+}
+
+.example__output code
+{
+    font-size: 13px;
+}
+
+/* ../../../../common.blocks/tabs/tabs.examples/40-api.blocks/example/example.css end */
+/* ../../../../common.blocks/tabs-menu/__tab/tabs-menu__tab.css begin */
+.tabs-menu__tab
+{
+    cursor: pointer;
+}
+
+/* ../../../../common.blocks/tabs-menu/__tab/tabs-menu__tab.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../desktop.blocks/link/link.css begin */
+.link:hover,
+.link:visited:hover
+{
+    color: #d00 !important; /* Оторвать !important после того, как оторвем .i-global__hover */
+}
+
+/* ../../../../desktop.blocks/link/link.css end */
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css begin */
+.link_disabled_yes,
+.link_disabled_yes:hover,
+.link_disabled_yes:hover .link__inner,
+a.link_disabled_yes:link,
+a.link_disabled_yes:visited
+{
+    cursor: default !important;
+
+    color: #ddd !important;
+    outline: 0;
+}
+
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css end */
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_m.css begin */
+.tabs-menu_size_m
+{
+    font-size: 15px;
+    line-height: 36px;
+}
+
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_m.css end */
+/* ../../../../common.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css begin */
+.tabs-menu_theme_normal .tabs-menu__tab
+{
+    position: relative;
+}
+
+.tabs-menu_theme_normal .tabs-menu__tab_active_yes
+{
+    color: #000;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes:before
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    content: '';
+
+    border-bottom: 2px solid #000;
+
+    -webkit-transition: border-bottom-color .15s ease-out;
+            transition: border-bottom-color .15s ease-out;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes.tabs-menu__tab_disabled_yes:before
+{
+    border-bottom-color: #ddd;
+}
+
+/* ../../../../common.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css end */
+/* ../../../../desktop.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css begin */
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes:hover:before
+{
+    border-bottom-color: #d00;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes.tabs-menu__tab_disabled_yes:hover:before
+{
+    border-bottom-color: #ddd;
+}
+
+/* ../../../../desktop.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css end */
+/* ../../../../common.blocks/tabs-menu/_layout/tabs-menu_layout_horiz.css begin */
+.tabs-menu_layout_horiz .tabs-menu__tab
+{
+    display: inline-block;
+
+    margin-left: 16px;
+}
+
+.tabs-menu_layout_horiz .tabs-menu__tab_first_yes
+{
+    margin-left: 0;
+}
+
+/* ../../../../common.blocks/tabs-menu/_layout/tabs-menu_layout_horiz.css end */
+/* ../../../../common.blocks/tabs-panes/__pane/tabs-panes__pane.css begin */
+.tabs-panes__pane
+{
+    display: none;
+}
+
+.tabs-panes__pane_active_yes
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/tabs-panes/__pane/tabs-panes__pane.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../desktop.blocks/button/button.css begin */
+@media all and (min-width:0)
+{
+    .button
+    {
+        cursor: pointer;
+    }
+}
+
+a.button:hover
+{
+    text-decoration: none;
+
+    outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+}
+
+/* ../../../../desktop.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    cursor: default !important;
+}
+
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../desktop.blocks/button/_theme/button_theme_normal.css begin */
+.button_theme_normal.button_hovered_yes
+{
+    color: #000 !important;
+}
+
+@media all and (min-width:0)
+{
+    /* _focused */
+    .button_theme_normal.button_focused_yes
+    {
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    .button_theme_normal.button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    /* _hovered */
+    .button_theme_normal.button_hovered_yes:not(.button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../desktop.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/button/_size/button_size_s.css begin */
+.button_size_s
+{
+    font-size: 13px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_s
+    {
+        line-height: 28px;
+    }
+}
+
+.button_size_s .button__text
+{
+    padding: 0 13px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_s.button_arrow_down .button__text:after
+{
+    right: 9px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_s.button.button_arrow_down .button__text
+{
+    padding-right: 28px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_s.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_pseudo.css begin */
+a.button_theme_pseudo,
+.button_theme_pseudo
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_pseudo
+    {
+        border-radius: 3px;
+    }
+
+    /* :before - border */
+    .button_theme_pseudo:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_pseudo.button_pressed_yes:before
+    {
+        background-color: rgba(0,0,0,.05);
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_pseudo.css end */
+/* ../../../../desktop.blocks/button/_theme/button_theme_pseudo.css begin */
+.button_theme_pseudo.button_hovered_yes
+{
+    color: #000 !important;
+}
+
+@media all and (min-width:0)
+{
+    /* _focused */
+    .button_theme_pseudo.button_focused_yes
+    {
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    /* _hovered */
+    .button_theme_pseudo.button_hovered_yes:not(.button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../desktop.blocks/button/_theme/button_theme_pseudo.css end */
+
+/* 40-api.css end */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */
+/* ../../../../desktop.blocks/button/button.ie.css begin */
+button.button
+{
+    /* Позволяет управлять внутренними отступами кнопки */ /**/
+    overflow: visible;
+
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/button/button.ie.css end */
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css begin */
+a.button_disabled_yes
+{
+    text-decoration: none!important;
+}
+
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css end */
+/* ../../../../desktop.blocks/button/_size/button_size_s.ie.css begin */
+button.button_size_s
+{
+    height: 30px;
+
+    line-height: 24px;
+}
+
+.button_size_s .button__text
+{
+    padding: 0 11px;
+}
+
+/* ../../../../desktop.blocks/button/_size/button_size_s.ie.css end */
+
+/* 40-api.ie.css end */
+/* ../../../../desktop.blocks/tabs-menu/_theme/tabs-menu_theme_normal.ie8.css begin */
+.tabs-menu_theme_normal .tabs-menu__tab_active_yes.tabs-menu__tab_disabled_yes:before
+{
+    content: ' '; /* Смена контента заставляет делать repaint в IE8 https://st.yandex-team.ru/ISLCOMPONENTS-1085 */
+}
+
+/* ../../../../desktop.blocks/tabs-menu/_theme/tabs-menu_theme_normal.ie8.css end */

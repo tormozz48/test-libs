@@ -1,0 +1,16 @@
+@import url(30-size.css);
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css);
+@import url(../../../../common.blocks/slider/slider.examples/30-size.blocks/b-layout-table/_layout/b-layout-table_layout_30-70.ie.css);
+@import url(../../../../desktop.blocks/button/button.ie.css);
+@import url(../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css);
+@import url(../../../../desktop.blocks/button/_size/button_size_s.ie.css);
+@import url(../../../../desktop.blocks/button/_size/button_size_m.ie.css);
+@import url(../../../../desktop.blocks/slider/slider.ie.css);
+@import url(../../../../desktop.blocks/slider/_disabled/slider_disabled_yes.ie.css);
+@import url(../../../../desktop.blocks/slider/__scale/slider__scale.ie.css);
+@import url(../../../../desktop.blocks/slider/__runner/slider__runner.ie.css);
+@import url(../../../../desktop.blocks/input/__box/input__box.ie.css);
+@import url(../../../../desktop.blocks/input/__clear/input__clear.ie.css);
+@import url(../../../../desktop.blocks/slider/__info/_preset/slider__info_preset_inline.ie.css);
+@import url(../../../../desktop.blocks/input/_size/input_size_s.ie.css);
+@import url(../../../../desktop.blocks/input/_size/input_size_m.ie.css);

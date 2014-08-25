@@ -1,0 +1,1266 @@
+/* 10-simple.ie.css begin */
+/* 10-simple.css begin */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css begin */
+.b-page_theme_normal
+{
+    background-color: #f6f5f3;
+}
+
+/* ../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css end */
+/* ../../../../common.blocks/suggest/suggest.css begin */
+.suggest.popup
+{
+    right: 0;
+    left: 0;
+
+    padding: 0;
+
+    border-top: 1px solid #d9d9d9;
+    -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, .15);
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .15);
+}
+
+/* Тень должна быть только снизу. */
+.suggest:before
+{
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 100%;
+    height: 50%;
+
+    content: '';
+
+    -webkit-box-shadow: 0 8px 25px -5px rgba(0, 0, 0, .25);
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, .25);
+}
+
+.suggest .popup__under
+{
+    padding: 0;
+}
+
+.suggest .popup__content
+{
+    padding: 0;
+}
+
+.suggest.popup_theme_ffffff .suggest__content
+{
+    background: #fff;
+}
+
+.suggest__group
+{
+    position: relative;
+}
+
+/* <span/> */
+.suggest__title
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+    text-align: right;
+
+    color: #999;
+}
+
+/* <ul/> */
+.suggest__items
+{
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+/* ../../../../common.blocks/suggest/suggest.css end */
+/* ../../../../desktop.blocks/suggest/suggest.css begin */
+.suggest .popup__content
+{
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.suggest__title
+{
+    width: 138px;
+}
+
+.suggest__group + .suggest__group
+{
+    margin-top: 8px;
+}
+
+.suggest .suggest-item
+{
+    padding: 0 0 0 152px;
+}
+
+/* ../../../../desktop.blocks/suggest/suggest.css end */
+/* ../../../../common.blocks/suggest-item/suggest-item.css begin */
+.suggest-item
+{
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.suggest-item_selected_yes
+{
+    background: #ffeba0;
+}
+
+.suggest-item__hint
+{
+    color: #070;
+}
+
+.suggest-item__value
+{
+    color: #070;
+}
+
+/* ../../../../common.blocks/suggest-item/suggest-item.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_fact.css begin */
+.suggest-item_type_fact .suggest-item__hint
+{
+    position: relative;
+
+    color: #999;
+}
+
+.suggest-item_type_fact .suggest-item__hint:after
+{
+    position: absolute;
+    left: 7px;
+
+    width: 10px;
+
+    content: '■';
+    text-align: center;
+
+    font-size: 6px;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_fact.css end */
+/* ../../../../desktop.blocks/suggest-item/_type/suggest-item_type_fact.css begin */
+.suggest-item_type_fact .suggest-item__hint
+{
+    padding-left: 24px;
+}
+
+/* ../../../../desktop.blocks/suggest-item/_type/suggest-item_type_fact.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_nav.css begin */
+.suggest-item_type_nav
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_nav.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../desktop.blocks/link/link.css begin */
+.link:hover,
+.link:visited:hover
+{
+    color: #d00 !important; /* Оторвать !important после того, как оторвем .i-global__hover */
+}
+
+/* ../../../../desktop.blocks/link/link.css end */
+/* ../../../../common.blocks/suggest-item/__link/suggest-item__link.css begin */
+.suggest-item__link
+{
+    text-decoration: underline;
+}
+
+/* ../../../../common.blocks/suggest-item/__link/suggest-item__link.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_traffic.css begin */
+.suggest-item_type_traffic .suggest-item__value
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_traffic.css end */
+/* ../../../../common.blocks/suggest-item/__icon/suggest-item__icon.css begin */
+.suggest-item__icon
+{
+    display: inline-block;
+
+    vertical-align: middle;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ../../../../common.blocks/suggest-item/__icon/suggest-item__icon.css end */
+/* ../../../../desktop.blocks/suggest-item/__icon/suggest-item__icon.css begin */
+.suggest-item__icon
+{
+    width: 32px;
+    height: 28px; /* Иконка растягивается! */
+    margin: 0 0 0 5px;
+
+    background-size: contain;
+}
+
+/* ../../../../desktop.blocks/suggest-item/__icon/suggest-item__icon.css end */
+/* ../../../../common.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css begin */
+.suggest-item__icon_traffic_red
+{
+    background-image: url("../../../../../../../output/freeze/QDQt5CNQVPNrU0UIYu-QSzje-10.svg");
+}
+
+.suggest-item__icon_traffic_yellow
+{
+    background-image: url("../../../../../../../output/freeze/Iu89JTVhXQvW3cEYmxOGfrZ9hhk.svg");
+}
+
+.suggest-item__icon_traffic_green
+{
+    background-image: url("../../../../../../../output/freeze/m84i2O4i04fpeiDk1V6dxA6RLrk.svg");
+}
+
+/* ../../../../common.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css end */
+/* ../../../../desktop.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css begin */
+/* 28x28 */
+.i-ua_inlinesvg_no .suggest-item__icon_traffic_red
+{
+    background-image: url("../../../../../../../output/freeze/weKr6zPuWRd9AcdB8JfFDReHU4U.png");
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_traffic_yellow
+{
+    background-image: url("../../../../../../../output/freeze/Q08BkoNuFEAvb-CCYIN0ZwFDbwU.png");
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_traffic_green
+{
+    background-image: url("../../../../../../../output/freeze/DtHj0NjGb2bGfdXnz97OZzFTcwA.png");
+}
+
+/* ../../../../desktop.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_weather.css begin */
+.suggest-item_type_weather .suggest-item__value
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_weather.css end */
+/* ../../../../common.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css begin */
+.suggest-item__icon_weather_bkn-plus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-ra-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-plus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-ra-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-plus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-sn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-plus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-sn-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-ra-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-ra-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-sn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-sn-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-ra-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-ra-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-sn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-sn-n.svg');
+}
+
+.suggest-item__icon_weather_bl
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bl.svg');
+}
+
+.suggest-item__icon_weather_fg-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/fg-d.svg');
+}
+
+.suggest-item__icon_weather_fg-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/fg-n.svg');
+}
+
+.suggest-item__icon_weather_ovc
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc.svg');
+}
+
+.suggest-item__icon_weather_ovc-plus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-plus-ra.svg');
+}
+
+.suggest-item__icon_weather_ovc-plus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-plus-sn.svg');
+}
+
+.suggest-item__icon_weather_ovc-minus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-minus-ra.svg');
+}
+
+.suggest-item__icon_weather_ovc-minus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-minus-sn.svg');
+}
+
+.suggest-item__icon_weather_ovc-gr
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-gr.svg');
+}
+
+.suggest-item__icon_weather_ovc-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-ra.svg');
+}
+
+.suggest-item__icon_weather_ovc-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-sn.svg');
+}
+
+.suggest-item__icon_weather_ovc-ts-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-ts-ra.svg');
+}
+
+.suggest-item__icon_weather_skc-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/skc-d.svg');
+}
+
+.suggest-item__icon_weather_skc-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/skc-n.svg');
+}
+
+/* ../../../../common.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css end */
+/* ../../../../desktop.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css begin */
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bl
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bl.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_fg-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/fg_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_fg-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/fg_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-plus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_+ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-plus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_+sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-minus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_-ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-minus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_-sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-gr
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_gr.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-ts-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_ts_ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_skc-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/skc_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_skc-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/skc_n.png');
+}
+
+/* ../../../../desktop.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css end */
+/* ../../../../desktop.blocks/suggest-item/__value/suggest-item__value.css begin */
+.suggest-item__value
+{
+    margin-left: 9px;
+}
+
+.suggest-item_type_weather .suggest-item__value,
+.suggest-item_type_traffic .suggest-item__value
+{
+    margin-left: 5px;
+}
+
+/* ../../../../desktop.blocks/suggest-item/__value/suggest-item__value.css end */
+/* ../../../../desktop.blocks/suggest-item/__icon/_type/suggest-item__icon_type_favicon.css begin */
+.suggest-item__icon_type_favicon
+{
+    width: 16px;
+    height: 16px;
+    margin: 0 0 -3px 9px;
+
+    vertical-align: baseline;
+}
+
+/* ../../../../desktop.blocks/suggest-item/__icon/_type/suggest-item__icon_type_favicon.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_icon.css begin */
+.suggest-item_type_icon .suggest-item__value
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_icon.css end */
+/* ../../../../common.blocks/a11y-hidden/a11y-hidden.css begin */
+.a11y-hidden
+{
+    position: absolute;
+    left: -32767px;
+}
+
+/* ../../../../common.blocks/a11y-hidden/a11y-hidden.css end */
+/* ../../../../common.blocks/popup/popup.css begin */
+.popup
+{
+    position: absolute;
+    z-index: 32700;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1px;
+}
+
+/* ../../../../common.blocks/popup/popup.css end */
+/* ../../../../common.blocks/popup/__content/popup__content.css begin */
+.popup__content
+{
+    position: relative;
+    z-index: 10;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+/* ../../../../common.blocks/popup/__content/popup__content.css end */
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+.popup_theme_ffffff,
+.popup_theme_ffffff .popup__tail:after
+{
+    background: #fff;
+}
+
+.popup_theme_ffffff .popup__tail
+{
+    background: rgba(0,0,0,.15);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, rgba(0,0,0,.15)), color-stop(50%, rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+    background:         linear-gradient(to top right, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+}
+
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css begin */
+.popup_visibility_visible
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../desktop.blocks/popup/_visibility/popup_visibility_visible.css begin */
+/* https://st.yandex-team.ru/ISLCOMPONENTS-180 */
+.popup_visibility_visible:after
+{
+    content: '';
+}
+
+/* ../../../../desktop.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css begin */
+.popup_visibility_outside
+{
+    top: -99999px;
+    left: -99999px;
+
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css end */
+/* ../../../../common.blocks/popup/__under/popup__under.css begin */
+.popup__under
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/popup/__under/popup__under.css end */
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css begin */
+.popup__under_color_white
+{
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css end */
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    position: fixed;
+    z-index: 32000;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    opacity: .3;
+    background: #000;
+}
+
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../common.blocks/input/input.css begin */
+.input
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+}
+
+/* ../../../../common.blocks/input/input.css end */
+/* ../../../../common.blocks/input/_disabled/input_disabled_yes.css begin */
+.input_disabled_yes.input_type_textarea .input__control
+{
+    resize: none;
+}
+
+.input_disabled_yes .input__clear
+{
+    display: none;
+}
+
+.input_disabled_yes,
+.input_disabled_yes .input__control
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .input_disabled_yes.input .input__box
+    {
+        background: rgba(0,0,0,.08);
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+}
+
+/* ../../../../common.blocks/input/_disabled/input_disabled_yes.css end */
+/* ../../../../desktop.blocks/input/_disabled/input_disabled_yes.css begin */
+.input_disabled_yes .input__box,
+.input_disabled_yes .input__control
+{
+    cursor: default;
+}
+
+/* ../../../../desktop.blocks/input/_disabled/input_disabled_yes.css end */
+/* ../../../../common.blocks/input/_theme/input_theme_normal.css begin */
+.input_theme_normal,
+.input_theme_normal .input__control
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+.input_theme_normal .input__hint
+{
+    color: #999;
+}
+
+@media all and (min-width:0)
+{
+    .input_theme_normal .input__box
+    {
+        background: #fff;
+        -webkit-box-shadow: inset 0 0 0 1px #cbcbcb;
+                box-shadow: inset 0 0 0 1px #cbcbcb;
+    }
+
+    .input_theme_normal.input_focused_yes .input__box
+    {
+        -webkit-box-shadow: inset 0 0 0 1px #d0ba65, 0 0 10px #fc0;
+                box-shadow: inset 0 0 0 1px #d0ba65, 0 0 10px #fc0;
+    }
+}
+
+/* ../../../../common.blocks/input/_theme/input_theme_normal.css end */
+/* ../../../../common.blocks/input/__box/input__box.css begin */
+/* Обертка для нативного инпута (__control) и очищающего крестика (__clear). */
+.input__box
+{
+    position: relative;
+
+    display: block;
+}
+
+@media all and (min-width:0)
+{
+    .input__box
+    {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        cursor: text;
+    }
+}
+
+/* ../../../../common.blocks/input/__box/input__box.css end */
+/* ../../../../common.blocks/input/__control/input__control.css begin */
+.input__control
+{
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    margin: 0;
+
+    font-size: 100%;
+
+    color: #000;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -webkit-appearance: none;
+}
+
+@media all and (min-width:0)
+{
+    .input__control
+    {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: .4em 0;
+
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* Лишние отступы у текста */
+.input__control::-webkit-search-decoration
+{
+    -webkit-appearance: none;
+}
+
+/* Нативный крестик */
+.input__control::-webkit-search-cancel-button
+{
+    display: none;
+}
+
+/* Смещение плэйсхолдера */
+.input__control::-webkit-input-placeholder
+{
+    text-indent: 0;
+}
+
+/* Сбрасываем желтый бг у инпутов при автозаполнении */
+.input__control:-webkit-autofill
+{
+    top: 1px;
+    left: 1px;
+
+    height: 1.9em;
+
+    -webkit-box-shadow: inset 0 0 0 50px #fff;
+    -webkit-text-fill-color: #000;
+}
+
+/* Скрываем нативный крестик в IE10 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+{
+    .input__control::-ms-clear
+    {
+        display: none;
+    }
+}
+
+/* ../../../../common.blocks/input/__control/input__control.css end */
+/* ../../../../desktop.blocks/input/__control/input__control.css begin */
+.input__control:-webkit-autofill
+{
+    top: .1em;
+    left: .2em;
+
+    height: 1.6em;
+
+    -webkit-box-shadow: inset 0 0 0 50px #fff;
+    -webkit-text-fill-color: #000;
+}
+
+/* ../../../../desktop.blocks/input/__control/input__control.css end */
+/* ../../../../common.blocks/input/__clear/input__clear.css begin */
+/* Позиционируется относительно input__box.
+ * Важно, чтобы правая граница элемента с очищающим крестиком
+ * совпадала с правой границей input__box, иначе появляется
+ * возможность кликнуть по правому бордеру input__box. */
+.input__clear
+{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    visibility: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    background: url("../../../../../../../output/freeze/K4e4uv8u9I9wb1fi17d8-3Jnr2A.svg") 50% 50% no-repeat;
+}
+
+/* ../../../../common.blocks/input/__clear/input__clear.css end */
+/* ../../../../common.blocks/input/__clear/_visibility/input__clear_visibility_visible.css begin */
+.input__clear_visibility_visible
+{
+    visibility: visible;
+
+    cursor: pointer;
+
+    opacity: .3;
+}
+
+/* ../../../../common.blocks/input/__clear/_visibility/input__clear_visibility_visible.css end */
+/* ../../../../desktop.blocks/input/__clear/_visibility/input__clear_visibility_visible.css begin */
+.input__clear_visibility_visible:hover
+{
+    opacity: .8;
+}
+
+/* ../../../../desktop.blocks/input/__clear/_visibility/input__clear_visibility_visible.css end */
+/* ../../../../common.blocks/input/_size/input_size_m.css begin */
+.input_size_m
+{
+    font-size: 15px;
+    line-height: 32px;
+}
+
+.input_size_m .input__clear
+{
+    width: 32px;
+}
+
+.input_size_m .input__control
+{
+    padding-left: 10px;
+}
+
+.input_size_m .input__box
+{
+    padding-right: 30px;
+}
+
+.input_size_m .input__hint
+{
+    padding-left: 11px;
+}
+
+/* ../../../../common.blocks/input/_size/input_size_m.css end */
+/* ../../../../desktop.blocks/input/_size/input_size_m.css begin */
+/* Для ИЕ10 делаем отступ слева с помощью border, т.к. при длинном тексте в инпуте padding игнорируется
+   (если делать padding для обертки, то попап инпута с саджестом съезжает вправо)
+   https://st.yandex-team.ru/ISLCOMPONENTS-865
+*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+{
+    .input_size_m .input__control
+    {
+        border-left: 10px solid transparent;
+    }
+
+    .input_size_m .input__box .input__control
+    {
+        padding-left: 0;
+    }
+}
+
+/* ../../../../desktop.blocks/input/_size/input_size_m.css end */
+
+/* 10-simple.css end */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */
+/* ../../../../desktop.blocks/suggest-item/_type/suggest-item_type_nav.ie.css begin */
+.suggest-item__link_fill_yes
+{
+    background-image: url('//yastatic.net/lego/_/La6qi18Z8LwgnZdsAr1qy1GwCwo.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* ../../../../desktop.blocks/suggest-item/_type/suggest-item_type_nav.ie.css end */
+/* ../../../../desktop.blocks/suggest-item/__icon/suggest-item__icon.ie.css begin */
+.i-ua_inlinesvg_no .suggest-item__icon
+{
+    width: 28px; /* Иконка не растягивается, используется PNG! */
+    margin: 0 5px;
+
+    background-size: 100% 100%;
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_type_favicon
+{
+    width: 16px;
+    margin: 0 0 -3px 9px;
+
+    vertical-align: middle;
+}
+
+
+.suggest-item__icon
+{
+    position: relative;
+}
+
+/* ../../../../desktop.blocks/suggest-item/__icon/suggest-item__icon.ie.css end */
+/* ../../../../desktop.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.ie.css begin */
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_+ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_+ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_+sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_+sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_-ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_-ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_-sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_-sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bkn_sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bl
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/bl.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_fg-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/fg_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_fg-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/fg_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-plus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_+ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-plus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_+sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-minus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_-ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-minus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_-sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-gr
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_gr.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-ts-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/ovc_ts_ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_skc-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/skc_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_skc-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/26x26_w/skc_n.png');
+}
+
+/* ../../../../desktop.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.ie.css end */
+/* ../../../../desktop.blocks/popup/popup.ie.css begin */
+.popup
+{
+    padding: 0;
+}
+
+/* ../../../../desktop.blocks/popup/popup.ie.css end */
+/* ../../../../desktop.blocks/popup/_theme/popup_theme_ffffff.ie.css begin */
+.popup_theme_ffffff
+{
+    border: 1px solid #e4e4e4;
+}
+
+/* ../../../../desktop.blocks/popup/_theme/popup_theme_ffffff.ie.css end */
+/* ../../../../desktop.blocks/input/__box/input__box.ie.css begin */
+.input__box
+{
+    /* z1 — fix bug IE. INPUT disappears in the table */
+    zoom: 1;
+
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/input/__box/input__box.ie.css end */
+/* ../../../../desktop.blocks/input/__clear/input__clear.ie.css begin */
+.input__clear
+{
+    display: none;
+}
+
+/* ../../../../desktop.blocks/input/__clear/input__clear.ie.css end */
+/* ../../../../desktop.blocks/input/_size/input_size_m.ie.css begin */
+.input_size_m .input__box
+{
+    margin-right: 15px;
+}
+
+.input_size_m .input__control
+{
+    height: 26px;
+
+    line-height: 26px;
+}
+
+/* ../../../../desktop.blocks/input/_size/input_size_m.ie.css end */
+
+/* 10-simple.ie.css end */

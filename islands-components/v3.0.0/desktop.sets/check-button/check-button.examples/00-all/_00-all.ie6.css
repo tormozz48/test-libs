@@ -1,0 +1,1359 @@
+/* 00-all.ie.css begin */
+/* 00-all.css begin */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../common.blocks/check-button/check-button.examples/00-all.blocks/simple-example/simple-example.css begin */
+.simple-example
+{
+    padding: 15px;
+
+    border-bottom: 1px solid #808080;
+}
+
+.simple-example__example-text
+{
+    margin-bottom: 10px;
+}
+
+.simple-example_icon_yes .check-button__icon_16_bus
+{
+    background: url("../../../../../../../output/freeze/wVoQRhDkA1XF8JgI47Go6GQU7AU.png") 0 50% no-repeat;
+}
+
+.simple-example_icon_yes  .check-button__icon_16_metro
+{
+    background: url("../../../../../../../output/freeze/474jnssB38A-X4q1nj-9hcO1DoQ.png") 0 50% no-repeat;
+}
+
+/* ../../../../common.blocks/check-button/check-button.examples/00-all.blocks/simple-example/simple-example.css end */
+/* ../../../../common.blocks/checkbox/checkbox.css begin */
+.i-ua_js_no .checkbox__box:before,
+.i-ua_js_no .checkbox__box:after,
+.i-ua_js_no .checkbox__tick
+{
+    display: none;
+}
+
+/* ../../../../common.blocks/checkbox/checkbox.css end */
+/* ../../../../common.blocks/checkbox/__box/checkbox__box.css begin */
+.checkbox__box
+{
+    position: relative;
+
+    white-space: nowrap;
+}
+
+/* ../../../../common.blocks/checkbox/__box/checkbox__box.css end */
+/* ../../../../desktop.blocks/checkbox/__box/checkbox__box.css begin */
+@media all and (min-width:0)
+{
+    .checkbox__box
+    {
+        cursor: pointer;
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/__box/checkbox__box.css end */
+/* ../../../../common.blocks/checkbox/__control/checkbox__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .checkbox__control
+    {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+
+        width: 101%;
+        height: 101%;
+        margin: 0;
+        padding: 0;
+
+        opacity: 0;
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/__control/checkbox__control.css end */
+/* ../../../../common.blocks/checkbox/__tick/checkbox__tick.css begin */
+@media all and (min-width:0)
+{
+    .checkbox__tick
+    {
+        position: relative;
+        z-index: 3;
+
+        display: inline-block;
+        visibility: hidden;
+
+        padding: 0;
+
+        vertical-align: baseline;
+
+        background: url("../../../../../../../output/freeze/J_kxuf5tD5_oT3zFsj_RdNpltno.svg") 0 100% no-repeat;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/__tick/checkbox__tick.css end */
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_normal.css begin */
+.checkbox_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_theme_normal .checkbox__box:before,
+    .checkbox_theme_normal .checkbox__box:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :after — border & background */
+    .checkbox_theme_normal .checkbox__box:after
+    {
+        top: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked */
+    .checkbox_theme_normal .checkbox__box_checked_yes:after
+    {
+        background: #ffeba0;
+    }
+
+    .checkbox_theme_normal .checkbox__box_checked_yes:after,
+    .checkbox_theme_normal .checkbox__box_checked_yes.checkbox__box_focused_yes:after
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_normal.css end */
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_normal.css begin */
+@media all and (min-width:0)
+{
+    /* _focused */
+    /* :before — для состояния focused */
+    .checkbox_theme_normal .checkbox__box_focused_yes:before
+    {
+        top: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    .checkbox_theme_normal .checkbox__box_focused_yes:after
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    /* _hovered */
+    .checkbox_theme_normal.checkbox_hovered_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+
+    .checkbox_theme_normal.checkbox_hovered_yes.checkbox_checked_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(129,103,0,.6);
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_normal.css end */
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_pseudo.css begin */
+.checkbox_theme_pseudo
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_theme_pseudo .checkbox__box:before,
+    .checkbox_theme_pseudo .checkbox__box:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :after — background */
+    .checkbox_theme_pseudo .checkbox__box:after
+    {
+        top: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked */
+    .checkbox_theme_pseudo .checkbox__box_checked_yes:after
+    {
+        background: #ffeba0;
+    }
+
+    .checkbox_theme_pseudo .checkbox__box_checked_yes:after,
+    .checkbox_theme_pseudo .checkbox__box_checked_yes.checkbox__box_focused_yes:after
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_pseudo.css end */
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_pseudo.css begin */
+@media all and (min-width:0)
+{
+    /* _focused */
+    /* :before — для состояния focused */
+    .checkbox_theme_pseudo .checkbox__box_focused_yes:before
+    {
+        top: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    .checkbox_theme_pseudo .checkbox__box_focused_yes:after
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    /* _hovered */
+    .checkbox_theme_pseudo.checkbox_hovered_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+
+    .checkbox_theme_pseudo.checkbox_hovered_yes.checkbox_checked_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(129,103,0,.6);
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_pseudo.css end */
+/* ../../../../common.blocks/checkbox/_checked/checkbox_checked_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_checked_yes .checkbox__tick
+    {
+        visibility: visible;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_checked/checkbox_checked_yes.css end */
+/* ../../../../common.blocks/checkbox/_disabled/checkbox_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_disabled_yes .checkbox__box:after
+    {
+        background: rgba(0,0,0,.08);
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+    }
+
+    .checkbox_disabled_yes .checkbox__tick
+    {
+        opacity: .4;
+    }
+}
+
+.checkbox_disabled_yes .checkbox__label
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/checkbox/_disabled/checkbox_disabled_yes.css end */
+/* ../../../../desktop.blocks/checkbox/_disabled/checkbox_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_disabled_yes .checkbox__box
+    {
+        cursor: default;
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/_disabled/checkbox_disabled_yes.css end */
+/* ../../../../common.blocks/check-button/check-button.css begin */
+.check-button
+{
+    position: relative;
+
+    display: inline-block;
+
+    cursor: default;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.i-ua_js_no .check-button
+{
+    background: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+/* ../../../../common.blocks/check-button/check-button.css end */
+/* ../../../../common.blocks/check-button/__text/check-button__text.css begin */
+.check-button__text
+{
+    position: relative;
+
+    padding: 0 1em;
+}
+
+.i-ua_js_no .check-button__text
+{
+    padding: 0 1em 0 .3em;
+}
+
+/* ../../../../common.blocks/check-button/__text/check-button__text.css end */
+/* ../../../../common.blocks/check-button/__control/check-button__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .check-button__control
+    {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        opacity: 0;
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* ../../../../common.blocks/check-button/__control/check-button__control.css end */
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.css begin */
+@media all and (min-width:0)
+{
+    .check-button__control
+    {
+        cursor: pointer;
+    }
+}
+
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.css end */
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_normal.css begin */
+.check-button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .check-button_theme_normal
+    {
+        background: 0;
+    }
+
+    .check-button_theme_normal:before,
+    .check-button_theme_normal:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :before — background & border */
+    .check-button_theme_normal:before
+    {
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked, не _pressed */
+    .check-button_theme_normal.check-button_checked_yes:not(.check-button_pressed_yes):before
+    {
+        background-color: #ffeba0;
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+
+    /* _pressed, не _checked */
+    .check-button_theme_normal.check-button_pressed_yes:not(.check-button_checked_yes):before
+    {
+        background-color: #f6f5f3;
+    }
+
+    /* _checked, _pressed */
+    .check-button_theme_normal.check-button_checked_yes.check-button_pressed_yes:before
+    {
+        background-color: #fee481;
+    }
+}
+
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_normal.css end */
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_normal.css begin */
+@media all and (min-width:0)
+{
+    /* _focused */
+    .check-button_theme_normal.check-button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    .check-button_theme_normal.check-button_focused_yes:after
+    {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    /* _hovered */
+    .check-button_theme_normal.check-button_hovered_yes:not(.check-button_checked_yes):not(.check-button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+
+    .check-button_theme_normal.check-button_hovered_yes.check-button_checked_yes:not(.check-button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.7);
+    }
+}
+
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_normal.css end */
+/* ../../../../common.blocks/check-button/_disabled/check-button_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .check-button_disabled_yes:before
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08)!important;
+                box-shadow: 0 0 0 1px rgba(0,0,0,.08)!important;
+    }
+
+    .check-button_disabled_yes:not(.check-button_checked_yes):before
+    {
+        background: rgba(0,0,0,.08);
+    }
+
+    .check-button_disabled_yes.check-button_checked_yes:before
+    {
+        background: #fff7d8!important;
+    }
+}
+
+.check-button_disabled_yes .check-button__text
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/check-button/_disabled/check-button_disabled_yes.css end */
+/* ../../../../desktop.blocks/check-button/_disabled/check-button_disabled_yes.css begin */
+.i-ua_js_yes .check-button_disabled_yes .check-button__control
+{
+    cursor: default!important;
+}
+
+/* ../../../../desktop.blocks/check-button/_disabled/check-button_disabled_yes.css end */
+/* ../../../../common.blocks/check-button/__icon/check-button__icon.css begin */
+/* TODO: проверить реализацию чекбокса с иконками */
+.check-button__icon
+{
+    width: 16px;
+    height: 16px;
+}
+
+.check-button__text .check-button__icon
+{
+    position: relative;
+    top: 3px;
+
+    margin-right: 7px;
+}
+
+/* ../../../../common.blocks/check-button/__icon/check-button__icon.css end */
+/* ../../../../common.blocks/check-button/_size/check-button_size_s.css begin */
+.check-button_size_s
+{
+    font-size: 13px;
+    line-height: 28px;
+}
+
+/* ../../../../common.blocks/check-button/_size/check-button_size_s.css end */
+/* ../../../../common.blocks/check-button/_size/check-button_size_m.css begin */
+.check-button_size_m
+{
+    font-size: 15px;
+    line-height: 32px;
+}
+
+/* ../../../../common.blocks/check-button/_size/check-button_size_m.css end */
+/* ../../../../common.blocks/check-button/_size/check-button_size_l.css begin */
+.check-button_size_l
+{
+    font-size: 18px;
+    line-height: 38px;
+}
+
+/* ../../../../common.blocks/check-button/_size/check-button_size_l.css end */
+/* ../../../../common.blocks/check-button/_only-icon/check-button_only-icon_yes.css begin */
+/* TODO: Проверить реализацию только с иконкой */
+.check-button_only-icon_yes
+{
+    padding: 0 1em;
+}
+
+.check-button_only-icon_yes .check-button__icon
+{
+    /* vam — для _js_no и для ie */
+    vertical-align: baseline;
+}
+
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .check-button_only-icon_yes .check-button__icon
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        margin: -8px 0 0 -8px;
+    }
+}
+
+.i-ua_js_no .check-button_only-icon_yes
+{
+    padding: 0 1em 0 0;
+}
+
+/* ../../../../common.blocks/check-button/_only-icon/check-button_only-icon_yes.css end */
+/* ../../../../desktop.blocks/check-button/_pseudo/check-button_pseudo_yes.css begin */
+.i-ua_js_yes .check-button_pseudo_yes .check-button__control
+{
+    cursor: pointer;
+}
+
+/* ../../../../desktop.blocks/check-button/_pseudo/check-button_pseudo_yes.css end */
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_pseudo.css begin */
+.check-button_theme_pseudo
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .check-button_theme_pseudo
+    {
+        background: 0;
+    }
+
+    .check-button_theme_pseudo:before,
+    .check-button_theme_pseudo:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :before — background & border */
+    .check-button_theme_pseudo:before
+    {
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked, не _pressed */
+    .check-button_theme_pseudo.check-button_checked_yes:not(.check-button_pressed_yes):before
+    {
+        background-color: #ffeba0;
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+
+    /* _pressed, не _checked */
+    .check-button_theme_pseudo.check-button_pressed_yes:not(.check-button_checked_yes):before
+    {
+        background-color: #f6f5f3;
+    }
+
+    /* _checked, _pressed */
+    .check-button_theme_pseudo.check-button_checked_yes.check-button_pressed_yes:before
+    {
+        background-color: #fee481;
+    }
+}
+
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_pseudo.css end */
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_pseudo.css begin */
+@media all and (min-width:0)
+{
+    /* _focused */
+    .check-button_theme_pseudo.check-button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    .check-button_theme_pseudo.check-button_focused_yes:after
+    {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    /* _hovered */
+    .check-button_theme_pseudo.check-button_hovered_yes:not(.check-button_checked_yes):not(.check-button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+
+    .check-button_theme_pseudo.check-button_hovered_yes.check-button_checked_yes:not(.check-button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.7);
+    }
+}
+
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_pseudo.css end */
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_clear.css begin */
+.check-button_theme_clear
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .check-button_theme_clear .check-button__icon,
+    .check-button_theme_clear .check-button__text
+    {
+        opacity: .25;
+    }
+
+    .check-button_theme_clear:before,
+    .check-button_theme_clear:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :before — background & border */
+    .check-button_theme_clear:before
+    {
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+    }
+
+    /* _checked */
+    .check-button_theme_clear.check-button_checked_yes .check-button__icon,
+    .check-button_theme_clear.check-button_checked_yes .check-button__text
+    {
+        opacity: 1;
+    }
+
+    /* _pressed, не _checked */
+    .check-button_theme_clear.check-button_pressed_yes:not(.check-button_checked_yes):before
+    {
+        background-color: #f6f5f3;
+    }
+
+    /* _checked, не _pressed */
+    .check-button_theme_clear.check-button_checked_yes:not(.check-button_pressed_yes):before
+    {
+        background-color: #ffeba0;
+        -webkit-box-shadow: 0 0 0 1px #ffeba0;
+                box-shadow: 0 0 0 1px #ffeba0;
+    }
+
+    /* _checked, _pressed */
+    .check-button_theme_clear.check-button_checked_yes.check-button_pressed_yes:before
+    {
+        background-color: #fee481;
+        -webkit-box-shadow: 0 0 0 1px #fee481;
+                box-shadow: 0 0 0 1px #fee481;
+    }
+
+    /* _disabled_yes запрещен для кнопок с _theme_clear */
+    .check-button_theme_clear.check-button_disabled_yes
+    {
+        visibility: hidden;
+    }
+}
+
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_clear.css end */
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_clear.css begin */
+@media all and (min-width:0)
+{
+    .check-button_theme_clear.check-button_focused_yes:after
+    {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    /* _focused via pointer */
+    .i-ua_interaction_pointer .check-button_theme_clear.check-button_checked_yes.check-button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px #ffeba0;
+    }
+
+    .i-ua_interaction_pointer .check-button_theme_clear.check-button_focused_yes:after
+    {
+        box-shadow: none;
+    }
+
+    /* _hovered */
+    .check-button_theme_clear.check-button_hovered_yes .check-button__icon,
+    .check-button_theme_clear.check-button_hovered_yes .check-button__text
+    {
+        opacity: 1;
+    }
+
+    /* _checked, _focused */
+    .check-button_theme_clear.check-button_checked_yes.check-button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px rgba(129, 103, 0, .6);
+    }
+}
+
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_clear.css end */
+/* ../../../../common.blocks/image/image.css begin */
+.image
+{
+    font: 0/0 a;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/image/image.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../desktop.blocks/button/button.css begin */
+@media all and (min-width:0)
+{
+    .button
+    {
+        cursor: pointer;
+    }
+}
+
+a.button:hover
+{
+    text-decoration: none;
+
+    outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+}
+
+/* ../../../../desktop.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    cursor: default !important;
+}
+
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../desktop.blocks/button/_theme/button_theme_normal.css begin */
+.button_theme_normal.button_hovered_yes
+{
+    color: #000 !important;
+}
+
+@media all and (min-width:0)
+{
+    /* _focused */
+    .button_theme_normal.button_focused_yes
+    {
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    .button_theme_normal.button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    /* _hovered */
+    .button_theme_normal.button_hovered_yes:not(.button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../desktop.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/button/_size/button_size_s.css begin */
+.button_size_s
+{
+    font-size: 13px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_s
+    {
+        line-height: 28px;
+    }
+}
+
+.button_size_s .button__text
+{
+    padding: 0 13px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_s.button_arrow_down .button__text:after
+{
+    right: 9px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_s.button.button_arrow_down .button__text
+{
+    padding-right: 28px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_s.css end */
+/* ../../../../common.blocks/button/_size/button_size_m.css begin */
+.button_size_m
+{
+    font-size: 15px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_m
+    {
+        line-height: 32px;
+    }
+}
+
+.button_size_m .button__text
+{
+    padding: 0 15px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_m.button_arrow_down .button__text:after
+{
+    right: 10px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_m.button.button_arrow_down .button__text
+{
+    padding-right: 31px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_m.css end */
+/* ../../../../common.blocks/button/_size/button_size_l.css begin */
+.button_size_l
+{
+    font-size: 18px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_l
+    {
+        line-height: 38px;
+    }
+}
+
+.button_size_l .button__text
+{
+    padding: 0 18px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_l.button_arrow_down .button__text:after
+{
+    right: 12px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_l.button.button_arrow_down .button__text
+{
+    padding-right: 38px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_l.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_pseudo.css begin */
+a.button_theme_pseudo,
+.button_theme_pseudo
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_pseudo
+    {
+        border-radius: 3px;
+    }
+
+    /* :before - border */
+    .button_theme_pseudo:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_pseudo.button_pressed_yes:before
+    {
+        background-color: rgba(0,0,0,.05);
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_pseudo.css end */
+/* ../../../../desktop.blocks/button/_theme/button_theme_pseudo.css begin */
+.button_theme_pseudo.button_hovered_yes
+{
+    color: #000 !important;
+}
+
+@media all and (min-width:0)
+{
+    /* _focused */
+    .button_theme_pseudo.button_focused_yes
+    {
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    /* _hovered */
+    .button_theme_pseudo.button_hovered_yes:not(.button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../desktop.blocks/button/_theme/button_theme_pseudo.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_clear.css begin */
+a.button_theme_clear,
+.button_theme_clear
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+.button_theme_clear
+{
+    border-radius: 3px;
+}
+
+.button_theme_clear .button__icon,
+.button_theme_clear .button__text
+{
+    opacity: .25;
+}
+
+/*
+ * _disabled_yes запрещен для кнопок с _theme_clear
+ */
+.button_theme_clear.button_disabled_yes
+{
+    visibility: hidden;
+}
+
+.button_theme_clear:before
+{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+
+    padding: 0;
+
+    content: '';
+
+    border-radius: 2px;
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_clear.css end */
+/* ../../../../desktop.blocks/button/_theme/button_theme_clear.css begin */
+.button_theme_clear.button_hovered_yes
+{
+    color: #000 !important;
+}
+
+@media all and (min-width:0)
+{
+    /* _focused */
+    .button_theme_clear.button_focused_yes
+    {
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    /* _focused via pointer */
+    .i-ua_interaction_pointer .button_theme_clear.button_focused_yes
+    {
+        box-shadow: none;
+    }
+
+    .button_theme_clear.button_hovered_yes .button__icon,
+    .button_theme_clear.button_hovered_yes .button__text
+    {
+        opacity: 1;
+    }
+}
+
+/* ../../../../desktop.blocks/button/_theme/button_theme_clear.css end */
+
+/* 00-all.css end */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */
+/* ../../../../desktop.blocks/checkbox/__control/checkbox__control.ie.css begin */
+.checkbox__control
+{
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/checkbox/__control/checkbox__control.ie.css end */
+/* ../../../../desktop.blocks/checkbox/__tick/checkbox__tick.ie.css begin */
+.checkbox__tick
+{
+    display: none;
+}
+
+/* ../../../../desktop.blocks/checkbox/__tick/checkbox__tick.ie.css end */
+/* ../../../../desktop.blocks/check-button/__text/check-button__text.ie.css begin */
+.check-button__text
+{
+    padding: 0 0 0 .3em;
+}
+
+/* ../../../../desktop.blocks/check-button/__text/check-button__text.ie.css end */
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.ie.css begin */
+.check-button__control
+{
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.ie.css end */
+/* ../../../../desktop.blocks/button/button.ie.css begin */
+button.button
+{
+    /* Позволяет управлять внутренними отступами кнопки */ /**/
+    overflow: visible;
+
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/button/button.ie.css end */
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css begin */
+a.button_disabled_yes
+{
+    text-decoration: none!important;
+}
+
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css end */
+/* ../../../../desktop.blocks/button/_size/button_size_s.ie.css begin */
+button.button_size_s
+{
+    height: 30px;
+
+    line-height: 24px;
+}
+
+.button_size_s .button__text
+{
+    padding: 0 11px;
+}
+
+/* ../../../../desktop.blocks/button/_size/button_size_s.ie.css end */
+/* ../../../../desktop.blocks/button/_size/button_size_m.ie.css begin */
+button.button_size_m
+{
+    height: 34px;
+
+    line-height: 28px;
+}
+
+.button_size_m .button__text
+{
+    padding: 0 13px;
+}
+
+/* ../../../../desktop.blocks/button/_size/button_size_m.ie.css end */
+/* ../../../../desktop.blocks/button/_size/button_size_l.ie.css begin */
+button.button_size_l
+{
+    height: 40px;
+
+    line-height: 34px;
+}
+
+.button_size_l .button__text
+{
+    padding: 0 16px;
+}
+
+/* ../../../../desktop.blocks/button/_size/button_size_l.ie.css end */
+
+/* 00-all.ie.css end */

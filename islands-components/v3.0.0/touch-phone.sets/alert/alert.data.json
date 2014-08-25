@@ -1,0 +1,86 @@
+{
+  "name": "alert",
+  "elems": [
+    {
+      "name": "message",
+      "title": [
+        {
+          "level": "touch-phone.blocks",
+          "tech": "title.txt",
+          "content": "Текст сообщения\n"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "type",
+      "vals": [
+        {
+          "name": "block",
+          "title": [
+            {
+              "level": "touch-phone.blocks",
+              "tech": "title.txt",
+              "content": "Сообщение, блокирующее работу всей страницы\n"
+            }
+          ]
+        },
+        {
+          "name": "error",
+          "title": [
+            {
+              "level": "touch-phone.blocks",
+              "tech": "title.txt",
+              "content": "Сообщение об ошибке\n"
+            }
+          ]
+        },
+        {
+          "name": "info",
+          "title": [
+            {
+              "level": "touch-phone.blocks",
+              "tech": "title.txt",
+              "content": "Информационное сообщение\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "touch-phone.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>alert</code> применяется для вывода сообщений пользователю на тачфонах. Сообщения могут быть 3-х типов: информационное, об ошибке или блокирующее.</p>\n<p><code>alert</code> генерируется и добавляется в DOM-дерево блоком-контроллером <a href=\"/.alert-controller.html\"><code>alert-controller</code></a>. </p>\n<p>При наступлении одного из событий, когда нужно показать сообщение, блок <code>alert-controller</code> генерирует блок <code>alert</code>, основанный на блоке <a href=\"./popup.html\"><code>popup</code></a> (всплывающее окно). </p>\n<p>В результате отобразится окно с сообщением. Скрывается сообщение при нажатии на окно или при помощи жеста <code>swipe</code> в любом направлении. По умолчанию при скрытии окно с сообщением <code>alert</code> улетает вправо.</p>\n<p>В блоке выполняется проверка поддержки браузером СSS-свойства анимации трансформацией <code>transition</code> и его аппаратного ускорения. \nПри поддержке – свойства применяются для анимации скрытия и перемещения окна с сообщением. </p>\n<p>Блокирующее сообщение отображается в модальном окне, содержит кнопку  и располагается строго по центру страницы. Окно сообщения об ошибке и информационное отображается под шапкой страницы. </p>\n<h3 id=\"-\">Элемент блока</h3>\n<p>Элемент блока <code>message</code> – cодержит текст сообщения.<br>Текст по умолчанию для каждого типа сообщения нужно задавать в JS-параметрах входного BEMJSON блока <code>alert-controller</code>:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;alert-controller&#39;,\n    js: {\n        message: { //текст по умолчанию для каждого типа сообщения\n            error: &#39;Упс, что-то пошло не так&amp;hellip; &lt;br/&gt; Попробуйте поискать снова&#39;,\n            block: &#39;Все сломалось!&#39;,\n            info: &#39;Все суперпупер круто, &lt;br/&gt; продолжайте в том же духе&#39; \n        },\n        buttonTxt: &#39;Обновить&#39; \n    }\n}</code></pre>\n<p>При необходимости, можно переопределить текст сообщения по умолчанию, передав кастомные значения в параметрах блока <code>alert-message</code> следующим образом:</p>\n<p><code>button_message_block.js</code></p>\n<pre><code class=\"lang-js\">// переопределяем дефолтный текст кастомным для блокирующего сообщения\nthis.bindTo(&#39;tap&#39;, function() {\n    this.findBlockOn(&#39;alert-message&#39;).trigger(&#39;alertBlock&#39;,\n        {\n            message: &#39;Что-то пошло не так. &lt;br/&gt; Попробуйте обновить страницу.&#39;,\n            buttonTxt: &#39;Обновить&#39;\n        }\n    );\n});</code></pre>\n<p><a href=\"https://github.yandex-team.ru/lego/islands-components/tree/dev/touch-phone.blocks/alert/alert.examples\">Пример видов сообщений</a>.</p>\n<h3 id=\"-\">Модификаторы</h3>\n<p>Модификатор блока <code>type</code> задает тип сообщения. Допустимые значения:</p>\n<ul>\n<li><code>info</code> – информационное сообщение;</li>\n<li><code>error</code> – сообщение об ошибке;</li>\n<li><code>block</code> – сообщение, блокирующее работу всей страницы (блокирующее сообщение).</li>\n</ul>\n<p>Каждое значение содержит только CSS-стили визуального оформления соответствующего типа сообщения.     </p>\n"
+    },
+    {
+      "level": "touch-phone.blocks",
+      "tech": "desc.wiki",
+      "content": {
+        "block": "b-text",
+        "content": [
+          {
+            "elem": "p",
+            "content": [
+              "Блок служит для вывода оповещений пользователю. Оповещения могут быть 3х типов: info - информационное сообщение error - сообщение об ошибке block - блокирующее сообщение"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "level": "touch-phone.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "alert.examples/10-simple/10-simple",
+          "title": "Виды сообщений\n"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+    "blockName": "input",
+    "description": "<p>Поле ввода.</p>\n<p>Оборачивает нативный контрол (<code>input</code> или <code>textarea</code>) в контейнер и реализует различные дополнения к нему.</p>\n\n<p>Дополнительная подсказка.</p>\n<p>Представляет собой контейнер (элемент <code>__ahead</code>) содержащий невидимую (элемент <code>__ahead-filler</code>)\nи видимую (элемент <code>__ahead-hint</code>) части подсказки. Невидимая часть нужна для правильного позиционирования\nвидимой части, в ней дублируется значение из поля ввода. В видимую часть записывается\nостаток слова для дополнения.</p>\n\n\n\n\n\n<p>Сообщение под полем ввода. Сообщения используются для показа ошибок, информации и т.д.</p>\n\n\n\n\n\n\n\n<p>Смена значения в нативном контроле отслеживается с помощью DOM-события <code>input</code>.</p>\n\n\n\n",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "isDisabled",
+            "description": "<p>Проверяет, находится ли блок в отключенном состоянии.\nОтключенное состояние характеризуется наличием модификатора <code>_disabled_yes</code>.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "val",
+            "description": "<p>Устанавливает/возвращает текущее значение.</p>\n<p>Если перадан параметр val, то устанавливает значение и возвращает экземпляр блока.\nПри этом генерирует событие <code>change</code>.</p>\n<p>Если метод вызван без параметров, то возвращает текущее значение.</p>\n",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "<p>Устанавливаемое значение.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "data",
+                    "description": "<p>Дополнительные данные, которые будут переданы в обработчик события <code>change</code>.</p>",
+                    "optional": true,
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM",
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "name",
+            "description": "<p>Возвращает имя нативного контрола.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getSelectionEnd",
+            "description": "<p>Возвращает позицию курсора в текстовом поле.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "destruct",
+            "description": "<p>Уничтожает блок.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "buildAhead",
+            "description": "<p>Создает и инициализирует контейнер для дополнительной подсказки.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>Контейнер дополнительной подсказки.</p>",
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "showAhead",
+            "description": "<p>Устанавливает текст дополнительной подсказки если переданы параметры <code>filler</code> и <code>hint</code>, или\nочищает его, если параметры не переданы.</p>\n",
+            "params": [
+                {
+                    "name": "filler",
+                    "description": "<p>Невидимая часть дополнительной подсказки.</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "hint",
+                    "description": "<p>Видимая часть дополнительной подсказки.</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Полный текст дополнительной подсказки.</p>",
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "clearAhead",
+            "description": "<p>Очищает текст дополнительной подсказки.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p><code>false</code>, как знак того, что полный текст дополнительной подсказки пуст.</p>",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "shiftAhead",
+            "description": "<p>Перемещает символы из невидидимой части дополнительной подсказки в видимую часть,\nесли параметр <code>shift</code> положителен, и наоборот, если отрицателен.</p>\n",
+            "params": [
+                {
+                    "name": "shift",
+                    "description": "<p>Количество символов для перемещения.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Полный текст дополнительной подсказки.</p>",
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "clearInput",
+            "description": "<p>Очищает значение в поле ввода.</p>\n<p>Генерирует событие <code>change</code>.</p>\n",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>Дополнительные данные, которые будут переданы в обработчик события <code>change</code>.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "_onSampleClick",
+            "description": "<p>Обработчик клика на подсказку.\nПодсталяет значение подсказки в поле ввода, генерирует событие <code>change</code>.</p>\n",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "<p>Событие клика.</p>",
+                    "optional": false,
+                    "types": [
+                        "$.Event"
+                    ]
+                }
+            ],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "change",
+            "description": "<p>Генерируется при смене значения.</p>",
+            "params": []
+        },
+        {
+            "name": "focus",
+            "description": "<p>Генерируется при получении фокуса.</p>",
+            "params": []
+        },
+        {
+            "name": "blur",
+            "description": "<p>Генерируется при потере фокуса.</p>",
+            "params": []
+        },
+        {
+            "name": "update-items",
+            "description": "<p>Генерируется при обновлении саджеста новыми данными.</p>",
+            "params": []
+        },
+        {
+            "name": "select",
+            "description": "<p>Генерируется при выборе варианта из саджеста.</p>",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>Дополнительные данные события.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "data.item",
+                    "description": "<p>Блок выбранного элемента саджеста.</p>",
+                    "optional": false,
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                },
+                {
+                    "name": "data.byKeyboard",
+                    "description": "<p><code>true</code>, если выбор подсказки произошел с помощью клавиатуры\n(нажата клавиша Enter).</p>",
+                    "optional": false,
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ahead-click",
+            "description": "<p>Генерируется при клике</p>",
+            "params": []
+        }
+    ],
+    "mods": []
+}

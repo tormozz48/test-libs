@@ -1,0 +1,107 @@
+{
+    "blockName": "radiobox",
+    "description": "<p>Блок <code>radiobox</code> – «радио-группа», состоящая из набора зависимых переключателей\n«радио-кнопок» (элементы блока <code>radio</code>).</p>",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "isDisabled",
+            "description": "<p>Шорткат для проверки модификатора <code>_disabled_yes</code>.</p>\n",
+            "params": [
+                {
+                    "name": "radio",
+                    "description": "<p>кнопка, состояние которой необнодимо проверить</p>",
+                    "optional": false,
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "val",
+            "description": "<p>Метод можно вызывать с параметром и без.\nВызвав без парамерта получаем значение аттрибута value элемента radio, соответствующего активной кнопке.\nВызвав с парамертом, в котором передаем значение аттрибута value произвольного элемента radio,\nделаем активной кнопку, соответствующую этому элементу radio.</p>\n",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "<p>Значение аттрибута value какого-либо элемента radio данного блока.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Аттрибут value активного элемента radio, либо объект блока</p>",
+                    "types": [
+                        "String",
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getCurrent",
+            "description": "<p>Метод позволяет получить активный элемент radio блока.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>DOM elements</p>",
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "uncheckAll",
+            "description": "<p>Метод позволяет перевести все кнопки блока в ненажатое состояние.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>Объект блока</p>",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "_getRadioByElem",
+            "description": "<p>Позволяет получить элемент radio (radiobox__radio) по какому-либо потомку этого элемента в DOM-дереве.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "static"
+        }
+    ],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

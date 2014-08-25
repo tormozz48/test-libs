@@ -1,0 +1,41 @@
+{
+  "name": "dropdown-menu",
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Выпадающее меню\n"
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>dropdown-menu</code> – выпадающее меню. Составной блок, реализованный на основе блоков <a href=\"../dropdown/dropdown.html\">dropdown</a> и <a href=\"http://bem.github.io/bem-bl/sets/common-desktop/b-menu-vert/b-menu-vert.ru.html\">b-menu-vert</a>/<a href=\"http://bem.github.io/bem-bl/sets/common-desktop/b-menu-horiz/b-menu-horiz.ru.html\">b-menu-horiz</a> из библиотеки <a href=\"http://bem.github.io/bem-bl/index.ru.html\">bem-bl</a>. Элементом, относительно которого открывается меню, могут быть кнопки, ссылки или другие элементы-триггеры.\nЯвляется сокращенной формой, которая служит для более удобного использования блоков <code>dropdown</code> и <code>b-menu</code>.</p>\n<h3 id=\"-\">Элементы блока</h3>\n<ul>\n<li><p><code>switcher</code> – блок-переключатель. Элемент, относительно которого открывается меню. Должен обладать следующими характеристиками:</p>\n<ul>\n<li>уметь вызывать (триггерить) BEM-событие <code>click</code>;</li>\n<li>уметь корректно реагировать на установку модификатора <code>disabled</code> в значение <code>yes</code> и на его снятие.</li>\n</ul>\n</li>\n<li><p><code>popup</code> – выпадающее окно меню с элементом <code>tail</code> (хвост попапа), указывающим на блок, вызвавший меню. Базируется на блоке <a href=\"../popup/popup.html\">popup</a>.</p>\n</li>\n<li><p><code>menu</code> – меню с пунктами <code>item</code>, построено на основе блока <a href=\"http://bem.github.io/bem-bl/sets/common-desktop/b-menu-vert/b-menu-vert.ru.html\">b-menu-vert</a>/<a href=\"http://bem.github.io/bem-bl/sets/common-desktop/b-menu-horiz/b-menu-horiz.ru.html\">b-menu-horiz</a> (блок, создающий разметку для меню). Меню может быть вертикальным и горизонтальным. По умолчанию – вертикальное. Тип меню определяется в поле блока <code>type</code>.\nДопустимые значения для него: <code>vert</code>(вертикальное меню), <code>horiz</code>(горизонтальное меню).</p>\n</li>\n</ul>\n<p>Направление раскрытия окна с меню выполняется в порядке, установленном в блоке <a href=\"../popup/popup.html\">popup</a>.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>Для создания выпадающего меню нужно в контенте блока задать элемент <code>switcher</code> и перечислить в контенте элемента <code>popup</code> все элементы меню <code>item</code>. В качестве содержимого <code>item</code> используются псевдо-ссылки (блок <a href=\"../link/link.html\">link</a>.</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;dropdown-menu&#39;, // имя блока\n    content: [\n        { // блок-переключатель\n            elem: &#39;switcher&#39;,\n            content: {\n                block: &#39;button&#39;,\n                mods: {size: &#39;m&#39;, arrow: &#39;down&#39;},\n                content: &#39;Меню, пожалуйста&#39;\n            }\n        },\n        { // выпадающее окно с меню\n            elem: &#39;popup&#39;,\n            content: [ // массив элементов item\n                {\n                    elem: &#39;item&#39;, // элемент меню - псевдо-ссылка\n                    content: {\n                        block: &#39;link&#39;,\n                        mods: {pseudo: &#39;yes&#39;},\n                        content: &#39;Пункт1&#39;\n                    }\n                },\n                {\n                    elem: &#39;item&#39;,\n                    content: {\n                        block: &#39;link&#39;,\n                        mods: {pseudo: &#39;yes&#39;},\n                        content: &#39;Пункт2&#39;\n                    }\n                },\n                ...\n            ]\n        }\n    ]\n}</code></pre>\n<!-- %%dropdown-menu.examples/10-simple/10-simple%% -->\n\n<!-- %%dropdown-menu.examples/15-button-dropdown/15-button-dropdown%% -->\n\n\n<h3 id=\"-\">Параметры шаблона</h3>\n<p><code>{Object} menuMods</code> – поле модификаторов выпадающего меню. Располагается в элементе <code>popup</code>. Необязательное.</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;dropdown-menu&#39;,\n    content: [\n        {\n            elem: &#39;switcher&#39;,\n            content: {&lt;блок-переключатель&gt;}\n        },\n        {\n            elem: &#39;popup&#39;,\n            menuMods: {type: &#39;hovered&#39;}, // модификаторы меню\n            content: [&lt;массив из элементов item&gt;]\n        }\n    ]\n}</code></pre>\n<p><code>{Object} menuTitle</code> - поле, формирующее заголовок выпадающего меню. Располагается в элементе <code>popup</code>. Соответствует полю <code>title</code> блока <a href=\"http://bem.github.io/bem-bl/sets/common-desktop/b-menu-vert/b-menu-vert.ru.html\">b-menu-vert</a>. Необязательное.</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;dropdown-menu&#39;,\n    content: [\n        {\n            elem: &#39;switcher&#39;,\n            content: { &lt;блок-переключатель&gt; }\n        },\n        {\n            elem: &#39;popup&#39;,\n            menuTitle: { elem: &#39;title&#39;, content: &#39;Некоторый заголовок&#39; }, // заголовок меню\n            content: [ &lt;массив из элементов item&gt; ]\n        }\n    ]\n}</code></pre>\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Темы оформления</h4>\n<p>Для <code>dropdown-menu</code> реализована тема оформления – белая (модификатор<code>theme</code> со значением <code>ffffff</code>). Используется по умолчанию.\nВизуально выпадающее окно меню  белого цвета с полупрозрачной тенью.  Внешнее оформление наследуется от блока <code>popup</code>. Пункты выпадающего меню состоят из псевдо-ссылок без пунктирного подчеркивания с размером шрифта 15px, высотой строки (line-height): 22px и цветом #22c.</p>\n<p><em><strong>Примечание</strong>: Размер шрифта и высота строки для пункта меню соответствуют размеру <code>m</code> и включены в дефолтную тему оформления. Отдельный модификатор размера со значением <code>m</code> не реализован в данной версии.</em></p>\n<h4 id=\"-\">Размеры</h4>\n<ul>\n<li><p>Реализован модификатор размера <code>size</code> со значением <code>s</code> (необязательный). Устанавливает размер шрифта для пункта меню: 13px и высоту строки (line-height): 18px.</p>\n</li>\n<li><p>По умолчанию пункты выпадающего меню (псевдо-ссылки) при наведении курсора мыши меняют цвет.\nМодификатор элемента <code>menu</code>: <code>type</code> со значением <code>hovered</code> изменит цвет шрифта на черный, и при наведении пункт меню будет выделяться желтой подсветкой.</p>\n</li>\n</ul>\n<!-- %%dropdown-menu.examples/20-menu-type-hovered/20-menu-type-hovered%% -->\n\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li>Ориентация меню: вертикальная.</li>\n<li>Тема оформления: белая (модификатор <code>theme</code> со значением <code>ffffff</code>).</li>\n<li>Размер шрифта пунктов меню: 15px.</li>\n</ul>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "dropdown-menu.examples/10-simple/10-simple",
+          "title": "Простое выпадающее меню\n"
+        },
+        {
+          "url": "dropdown-menu.examples/15-button-dropdown/15-button-dropdown",
+          "title": "Кнопка + кнопка с дропдауном"
+        },
+        {
+          "url": "dropdown-menu.examples/20-menu-type-hovered/20-menu-type-hovered",
+          "title": "Меню с желтым свечением"
+        },
+        {
+          "url": "dropdown-menu.examples/25-menu-has-title/25-menu-has-title",
+          "title": "Меню с заголовком"
+        }
+      ]
+    }
+  ]
+}

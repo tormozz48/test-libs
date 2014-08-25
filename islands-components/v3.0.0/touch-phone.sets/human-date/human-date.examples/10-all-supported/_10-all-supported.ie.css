@@ -1,0 +1,37 @@
+/* 10-all-supported.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/human-date/human-date.examples/10-all-supported.blocks/example/__date/example__date.css begin */
+.example__date
+{
+    padding: 5px;
+}
+
+.example__date .example__human-date
+{
+    padding: 5px;
+
+    font-weight: bold;
+
+    border-bottom: 1px solid #efefef;
+}
+
+/* ../../../../common.blocks/human-date/human-date.examples/10-all-supported.blocks/example/__date/example__date.css end */
+
+/* 10-all-supported.css end */

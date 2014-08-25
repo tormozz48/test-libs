@@ -1,0 +1,96 @@
+{
+    "blockName": "checkbox",
+    "description": "<p>Блок <code>checkbox</code> («чекбокс») – независимый переключатель.\nПозволяет управлять параметром с двумя состояниями – включено и выключено.</p>",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "isDisabled",
+            "description": "<p>Шорткат для проверки модификатора <code>_disabled_yes</code>.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "isChecked",
+            "description": "<p>Шоткат для проверки модификатора <code>_checked_yes</code>.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "toggle",
+            "description": "<p>Хелпер для переключения модификатора <code>_checked_yes</code>.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "val",
+            "description": "<p>Получить/установить значение контрола.</p>\n",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "<p>значение которое нужно установить</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "String",
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "change",
+            "description": "<p>Происходит после изменения модификатора checked.</p>",
+            "params": [
+                {
+                    "name": "checked",
+                    "description": "<p>Выставлен ли модификатор checked в значение 'yes'.</p>",
+                    "optional": false,
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ]
+        }
+    ],
+    "mods": []
+}

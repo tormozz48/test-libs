@@ -1,0 +1,413 @@
+{
+    "blockName": "popup",
+    "description": "\n\n\n\n<p>Попап, автоматически закрывающийся при нажатии за его пределами.</p>\n\n",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "_pushTailPos",
+            "description": "<p>Смещает позицию хвостика на указанные во втором аргументе координаты с учётом текущей позиции.</p>\n",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "<p>Уникальный ключ направления</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "offset",
+                    "description": "<p>Объект, описывающий позицию для смещения</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "block"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [
+        {
+            "name": "__base",
+            "deprecated": false,
+            "description": "<p>Метод, позволяющий выбрать между <code>div</code> и <code>iframe</code>\nпо кастомным факторам.</p>\n",
+            "types": [],
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "events": [
+        {
+            "name": "show",
+            "description": "<p>Генерируется при показе блока.</p>\n<p>Если включена анимация, то генерируется сразу\nв момент ее начала.</p>",
+            "params": []
+        },
+        {
+            "name": "hide",
+            "description": "<p>Генерируется при скрытии блока.</p>\n<p>Если включена анимация, то генерируется по ее\nокончании.</p>",
+            "params": []
+        }
+    ],
+    "mods": [
+        {
+            "name": "adaptive",
+            "value": "yes",
+            "methods": [
+                {
+                    "name": "getScrollEvents",
+                    "description": "<p>Возвращает массив с именами событий скрола.\nСделал так для удобного доопределения с уровня тачей.</p>\n",
+                    "params": [],
+                    "returns": [
+                        {
+                            "description": "",
+                            "types": [
+                                "Array"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "protected",
+                    "scope": "instance"
+                },
+                {
+                    "name": "onScroll",
+                    "description": "<p>Обработчик события <code>scroll</code>.\nПодчищает кэши, инициирует перерисовку блока.</p>\n",
+                    "params": [
+                        {
+                            "name": "e",
+                            "description": "",
+                            "optional": false,
+                            "types": [
+                                "Event"
+                            ]
+                        }
+                    ],
+                    "returns": [],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                },
+                {
+                    "name": "destruct",
+                    "description": "<p>Уничтожает блок, выключает адаптивность (отписывается от события <code>scroll</code> на DOM-элементе блока).</p>\n",
+                    "params": [],
+                    "returns": [],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": "<p>Попап, автоматически меняющий направление\nраскрытия при изменении размеров окна браузера или прокрутке.</p>\n<p>Направление выбирается из js-параметра <code>directions</code> таким образом, чтобы\nна экране отображалась максимум содержимого попапа.</p>"
+        },
+        {
+            "name": "animate",
+            "value": "yes",
+            "methods": [
+                {
+                    "name": "afterShow",
+                    "description": "<p>Метод предназначен для проигрывания анимации показа блока.</p>\n<p>Выполняется при показе блока, когда модификатор\n<code>_visibility_visible</code> уже установлен.</p>\n<p>По умолчанию проигрывает fade-in анимацию.\nПереопределите этот метод для реализации другой анимации.</p>\n",
+                    "params": [],
+                    "returns": [],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "protected",
+                    "scope": "instance"
+                },
+                {
+                    "name": "beforeHide",
+                    "description": "<p>Метод предназначен для проигрывания анимации скрытия блока.</p>\n<p>Выполняется перед скрытием блока. В момент вызова\nмодификатор <code>_visibility_visible</code> еще не снят.</p>\n<p>По умолчанию проигрывает fade-out анимацию.\nПереопределите этот метод для реализации другой анимации.</p>\n<p><strong>ВАЖНО:</strong> при реализации нестандартной анимации, необходимо\nвызвать callback по ее окончании.</p>\n",
+                    "params": [
+                        {
+                            "name": "callback",
+                            "description": "<p>функция, которую необходимо вызвать\nпо окончании анимации. Не принимает аргументов и не возвращает\nникаких значений.</p>",
+                            "optional": false,
+                            "types": [
+                                "function"
+                            ]
+                        }
+                    ],
+                    "returns": [],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "protected",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": "<p>Анимированный попап.</p>\n<p>При показе и скрытии проигрывает анимацию.</p>"
+        },
+        {
+            "name": "autosize",
+            "value": "yes",
+            "methods": [
+                {
+                    "name": "repaint",
+                    "description": "<p>Перерисовывает блок.</p>\n<p>При вызове направление раскрытия будет выбрано заново согласно\njs-параметрам блока и текущему <code>viewport</code>.</p>\n<p>Eсли блок в момент вызова скрыт, он будет показан в своей предыдущей позиции.</p>\n",
+                    "params": [],
+                    "returns": [
+                        {
+                            "description": "",
+                            "types": [
+                                "BEM.DOM"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                },
+                {
+                    "name": "getPlacingSize",
+                    "description": "<p>Возвращает размер области, на которую необходимо разместить попаа.</p>\n",
+                    "params": [],
+                    "returns": [
+                        {
+                            "description": "",
+                            "types": [
+                                "Object"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                },
+                {
+                    "name": "_calcPlacingSize",
+                    "description": "<p>Расчитывает размер области, на которую необходимо разместить попап.</p>\n",
+                    "params": [
+                        {
+                            "name": "direction",
+                            "description": "<p>Параметры открытия блока</p>",
+                            "optional": false,
+                            "types": [
+                                "Object"
+                            ]
+                        }
+                    ],
+                    "returns": [
+                        {
+                            "description": "<p>Размеры</p>",
+                            "types": [
+                                "Object"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": "<p>Попап, автоматически подстраивающий свои размеры под оставшееся свободное место на экране в заданном\nнаправлении direction ( набор направлений задается js-параметре directions). Размещение производится\nс учетом отступов direction:{to:...,offset:...} и размеров хвоста</p>"
+        },
+        {
+            "name": "behaviour",
+            "value": "scrollable",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": "<p>Попап с прокруткой своего содержимого</p>"
+        },
+        {
+            "name": "body-scroll",
+            "value": "no",
+            "methods": [
+                {
+                    "name": "_enableScroll",
+                    "description": "<p>Возвращает скролл на скоуп блока.</p>\n<p>https://st.yandex-team.ru/ISLCOMPONENTS-1069</p>\n",
+                    "params": [],
+                    "returns": [
+                        {
+                            "description": "<p>this</p>",
+                            "types": [
+                                "BEM.DOM"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "protected",
+                    "scope": "instance"
+                },
+                {
+                    "name": "_disableScroll",
+                    "description": "<p>Убирает скролл со скоупа блока.</p>\n<p>https://st.yandex-team.ru/ISLCOMPONENTS-1069</p>\n",
+                    "params": [],
+                    "returns": [
+                        {
+                            "description": "<p>this</p>",
+                            "types": [
+                                "BEM.DOM"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "protected",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": ""
+        },
+        {
+            "name": "poll",
+            "value": "size",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": "<p>Попап с динамическими размерами.</p>\n<p>Через определенные интервалы времени автоматически подстраивает размеры\nпопапа под размеры контента.</p>"
+        },
+        {
+            "name": "position",
+            "value": "fixed",
+            "methods": [
+                {
+                    "name": "addChild",
+                    "description": "<p>Отключает у дочернего попапа слежение за скролом страницы.</p>\n",
+                    "params": [
+                        {
+                            "name": "child",
+                            "description": "<p>Дочерний попап.</p>",
+                            "optional": false,
+                            "types": [
+                                "BEM.DOM"
+                            ]
+                        }
+                    ],
+                    "returns": [],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": "\n\n"
+        },
+        {
+            "name": "type",
+            "value": "modal",
+            "methods": [
+                {
+                    "name": "show",
+                    "description": "<p>Показывает попап как модальное окно.</p>\n",
+                    "params": [
+                        {
+                            "name": "position",
+                            "description": "<p>Координаты <code>left</code>, <code>top</code> и отступы <code>marginLeft</code>, <code>marginTop</code>.</p>",
+                            "optional": true,
+                            "types": [
+                                "Object"
+                            ]
+                        }
+                    ],
+                    "returns": [
+                        {
+                            "description": "",
+                            "types": [
+                                "BEM"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                },
+                {
+                    "name": "repaint",
+                    "description": "<p>Перерисовывает блок с перерасчетом позиции</p>\n",
+                    "params": [],
+                    "returns": [
+                        {
+                            "description": "",
+                            "types": [
+                                "BEM"
+                            ]
+                        }
+                    ],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "protected",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": ""
+        },
+        {
+            "name": "wrapped",
+            "value": "yes",
+            "methods": [
+                {
+                    "name": "destruct",
+                    "description": "<p>Убирает обертку попапа.</p>\n",
+                    "params": [],
+                    "returns": [],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": ""
+        },
+        {
+            "name": "position",
+            "value": "fixed",
+            "methods": [
+                {
+                    "name": "addChild",
+                    "description": "<p>Отключает у дочернего попапа слежение за скролом страницы.</p>\n",
+                    "params": [
+                        {
+                            "name": "child",
+                            "description": "<p>Дочерний попап.</p>",
+                            "optional": false,
+                            "types": [
+                                "BEM.DOM"
+                            ]
+                        }
+                    ],
+                    "returns": [],
+                    "deprecated": false,
+                    "final": false,
+                    "access": "public",
+                    "scope": "instance"
+                }
+            ],
+            "properties": [],
+            "events": [],
+            "description": "\n\n"
+        }
+    ]
+}

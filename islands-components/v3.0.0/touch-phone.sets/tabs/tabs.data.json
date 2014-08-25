@@ -1,0 +1,75 @@
+{
+  "name": "tabs",
+  "mods": [
+    {
+      "name": "control",
+      "vals": [
+        {
+          "name": "buttons",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "В виде кнопок (используется блок `radio-button`)\n"
+            }
+          ]
+        },
+        {
+          "name": "menu",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "В виде меню (используется блок `tabs-menu`)\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Реализация табиков\n"
+        }
+      ]
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Табики\n"
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h3 id=\"-api\">Внимание! Блок имеет нестабильный API</h3>\n<p>Блок, инкапсулирующий в себе различные варианты контролов, используемых для реализации табиков. Он\nпредоставляет одинаковые JavaScript-API и BEMJSON-API для всех реализаций контролов, чтобы можно было легко\nпереходить с одной на другую без переписывания кода.</p>\n<h2 id=\"-\">Реализации контролов</h2>\n<p>В зависимости от значения модификатора <code>_control</code> этот блок имеет различные реализации. Если блоку передать любые\nмодификаторы кроме <code>_control</code>, они будут переданы во внутренный контрол. При этом нужно самостоятельно позаботиться\nо разрешении зависимостей.</p>\n<h3 id=\"-tabs_control_menu-\">В виде меню (<code>tabs_control_menu</code>)</h3>\n<p><!-- %%tabs.examples/10-control-menu/10-control-menu%% -->\nВнутри используется блок <code>tabs-menu</code> (см. пример).\nПереданный <code>content</code> (см. <code>bemjson</code> примера) в блок <code>tab</code> будет подставляться в <code>content</code> блока <code>tabs-menu</code>. При этом\nвсе элементы и модификаторы будут находиться в контектсе <code>tabs-menu</code>, а не к <code>tabs</code>.</p>\n<p>Для блока <a href=\"../tabs-menu/tabs-menu.html\"><code>tabs-menu</code></a> никакие <strong>модификаторы поумолчанию не выставляются</strong>, нужно\nсамостоятельно передать модификаторы <code>_size</code>, <code>_theme</code> и <code>_layout</code> и добавить зависимости.</p>\n<h3 id=\"-tabs_control_buttons-\">В виде кнопок (<code>tabs_control_buttons</code>)</h3>\n<p><!-- %%tabs.examples/20-control-buttons/10-control-buttons%% -->\nВнутри используется блок <code>radio-button</code> (см. пример).</p>\n<p>Переданные в <code>content</code> (см. <code>bemjson</code> примера) элементы <code>tab</code> будут сконвертированы в элементы <code>radio-button__radio</code>.\nВ контексте элементов <code>tab</code> можно передать любые параметры, специфичные для <code>radio-button__radio</code>. Если controlAttrs\nне будут переданы, то в качестве <code>value</code> радиокнопки будет автоматически выстален его порядковый номер (начинается с 0).</p>\n<p>Так же в <code>bemjson</code>-е блока <code>tabs</code> можно передать <code>name</code> для <code>radio-button</code>, иначе он будет сгенерирован автоматически.</p>\n<p>Для блока <a href=\"../radio-button/radio-button.html\"><code>radio-button</code></a> никакие <strong>модификаторы поумолчанию не выставляются</strong>, нужно\nсамостоятельно передать модификатор <code>_size</code> и добавить зависимости. Модификатор <code>_theme_normal</code> выставляется самим\nблоком, его можно переопределить, если нужно.</p>\n<h3 id=\"-\">Своя реализация</h3>\n<p>Можно (и нужно) легко сделать свою реализацию контрола табиков. Для этого нужно на уровне <code>BEMHTML</code> реализовать\nпреобразование исходного <code>BEMJSON</code> в необходимый, а в <code>JavaScript</code> реализовать специальный <code>API</code>\n(заглушку для него можно посмотреть в <code>tabs.js</code>).</p>\n<h2 id=\"-tabs-panes-\">Связь с блоком <code>tabs-panes</code></h2>\n<p><code>tabs-panes</code> - это отдельный блок, реализующий панельки для табиков. Этот функционал бын вынесен в\nотдельный блок для того, чтобы можно было разнести по разным DOM-узлам контрол и панельки табиков для удобства верстки.\nЧтобы <code>tabs-panes</code> переключал панельки в зависимости от нашего <code>tabs</code>, нужно использовать поля <code>id</code> и <code>panes</code> в этих\nблоках соответственно:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;tabs&#39;,\n    panes: &#39;oh-my-tabs-id&#39;\n    // ...\n},\n{\n    block: &#39;tabs-panes&#39;,\n    id: &#39;oh-my-tabs-id&#39;\n    // ...\n},</code></pre>\n<p>В <code>BEMHTML</code> эти поля раскрываются в примешивание блока <code>tabs-panes</code> со связью через одинаковые <code>id</code> в поле <code>js</code>.\nБолее подробно можно посмотреть в примерах.</p>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "tabs.examples/10-control-menu/10-control-menu",
+          "title": "В виде меню\n"
+        },
+        {
+          "url": "tabs.examples/20-control-buttons/20-control-buttons",
+          "title": "В виде кнопок\n"
+        },
+        {
+          "url": "tabs.examples/30-go-deeper/30-go-deeper",
+          "title": "Табики в табиках\n"
+        },
+        {
+          "url": "tabs.examples/40-api/40-api",
+          "title": "API - песочница\n"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css);
+@import url(../../../../common.blocks/input/input.examples/50-width-content.blocks/example/example.css);
+@import url(../../../../common.blocks/input/input.css);
+@import url(../../../../common.blocks/input/_disabled/input_disabled_yes.css);
+@import url(../../../../desktop.blocks/input/_disabled/input_disabled_yes.css);
+@import url(../../../../common.blocks/input/_theme/input_theme_normal.css);
+@import url(../../../../common.blocks/input/__box/input__box.css);
+@import url(../../../../common.blocks/input/__control/input__control.css);
+@import url(../../../../desktop.blocks/input/__control/input__control.css);
+@import url(../../../../common.blocks/input/__clear/input__clear.css);
+@import url(../../../../common.blocks/input/__clear/_visibility/input__clear_visibility_visible.css);
+@import url(../../../../desktop.blocks/input/__clear/_visibility/input__clear_visibility_visible.css);
+@import url(../../../../common.blocks/input/_size/input_size_m.css);
+@import url(../../../../desktop.blocks/input/_size/input_size_m.css);
+@import url(../../../../common.blocks/input/_width/input_width_content.css);

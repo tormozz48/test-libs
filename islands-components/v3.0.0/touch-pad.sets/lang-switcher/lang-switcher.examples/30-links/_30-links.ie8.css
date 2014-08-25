@@ -1,0 +1,564 @@
+/* 30-links.ie.css begin */
+/* 30-links.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/lang-switcher/lang-switcher.examples/30-links.blocks/b-page/b-page.css begin */
+.b-page
+{
+    padding: 30px;
+}
+
+/* ../../../../common.blocks/lang-switcher/lang-switcher.examples/30-links.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/popup/popup.css begin */
+.popup
+{
+    position: absolute;
+    z-index: 32700;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1px;
+}
+
+/* ../../../../common.blocks/popup/popup.css end */
+/* ../../../../common.blocks/popup/__content/popup__content.css begin */
+.popup__content
+{
+    position: relative;
+    z-index: 10;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+/* ../../../../common.blocks/popup/__content/popup__content.css end */
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+.popup_theme_ffffff,
+.popup_theme_ffffff .popup__tail:after
+{
+    background: #fff;
+}
+
+.popup_theme_ffffff .popup__tail
+{
+    background: rgba(0,0,0,.15);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, rgba(0,0,0,.15)), color-stop(50%, rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+    background:         linear-gradient(to top right, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+}
+
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css begin */
+.popup_visibility_visible
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css begin */
+.popup_visibility_outside
+{
+    top: -99999px;
+    left: -99999px;
+
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css end */
+/* ../../../../common.blocks/popup/__under/popup__under.css begin */
+.popup__under
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/popup/__under/popup__under.css end */
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css begin */
+.popup__under_color_white
+{
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css end */
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    position: fixed;
+    z-index: 32000;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    opacity: .3;
+    background: #000;
+}
+
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../common.blocks/popup/__tail/popup__tail.css begin */
+.popup__tail
+{
+    position: absolute;
+    z-index: 9;
+
+    display: block;
+
+    width: 17px;
+    height: 17px;
+
+    font: 0/0 a;
+}
+
+.popup__tail:after
+{
+    position: absolute;
+
+    width: 17px;
+    height: 17px;
+
+    content: '';
+}
+
+.popup_to_top .popup__tail
+{
+    top: 100%;
+
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+}
+
+.popup_to_left .popup__tail
+{
+    left: 100%;
+
+    margin-top: 24.04px; /* 17 * sqrt(2)*/
+
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+}
+
+.popup_to_top .popup__tail:after,
+.popup_to_left .popup__tail:after
+{
+    bottom: 1px;
+    left: 1px;
+}
+
+.popup_to_bottom .popup__tail
+{
+    bottom: 100%;
+
+    margin-left: -17px;
+
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+
+.popup_to_right .popup__tail
+{
+    right: 100%;
+
+    margin-top: 7.04px; /* ( 17*sqrt(2) - 17) */
+
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+}
+
+.popup_to_bottom .popup__tail:after,
+.popup_to_right .popup__tail:after
+{
+    bottom: 1px;
+    left: 1px;
+}
+
+/* ../../../../common.blocks/popup/__tail/popup__tail.css end */
+/* ../../../../common.blocks/dropdown/dropdown.css begin */
+.dropdown
+{
+    display: inline;
+}
+
+/* ../../../../common.blocks/dropdown/dropdown.css end */
+/* ../../../../common.blocks/dropdown-menu/_theme/dropdown-menu_theme_ffffff.css begin */
+.i-ua_js_yes .dropdown-menu__menu_theme_ffffff .link_pseudo_yes > .link__inner
+{
+    border-bottom: 0;
+}
+
+.dropdown-menu__menu_theme_ffffff .link
+{
+    cursor: pointer;
+
+    font-size: 15px;
+    line-height: 22px;
+
+    color: #22c;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+.dropdown-menu__menu_theme_ffffff .link:focus
+{
+    outline: none;
+}
+
+.dropdown-menu__menu_theme_ffffff .b-menu-vert__layout-unit
+{
+    padding: 10px 10px 0 10px;
+}
+
+.dropdown-menu__menu_theme_ffffff .b-menu-vert__layout-unit_position_last
+{
+    padding-bottom: 10px;
+}
+
+/* ../../../../common.blocks/dropdown-menu/_theme/dropdown-menu_theme_ffffff.css end */
+/* ../../../../common.blocks/dropdown-menu/__popup/dropdown-menu__popup.css begin */
+.dropdown-menu__popup .popup__content
+{
+    padding: 0;
+}
+
+/* ../../../../common.blocks/dropdown-menu/__popup/dropdown-menu__popup.css end */
+/* ../../../../common.blocks/lang-switcher/lang-switcher.css begin */
+.lang-switcher
+{
+    display: inline-block;
+}
+
+.lang-switcher__flag
+{
+    position: relative;
+
+    margin: 0 3px -2px 0;
+}
+
+.lang-switcher__lang
+{
+    display: inline-block;
+}
+
+.lang-switcher__lang-name
+{
+    color: #8792a8;
+}
+
+.lang-switcher__lang:link,
+.lang-switcher__lang:visited,
+.lang-switcher__popup-content .lang-switcher__all .link
+{
+    text-decoration: none;
+
+    outline: 0;
+}
+
+.lang-switcher__popup-content .popup__content
+{
+    padding: 3px 0;
+}
+
+.lang-switcher__popup-content .lang-switcher__lang-name,
+.lang-switcher__popup-content .lang-switcher__all .link
+{
+    color: #000;
+}
+
+.lang-switcher__popup-content .lang-switcher__all .link:hover
+{
+    color: #000!important; /* Перебиваем красный цвет при ховере */
+}
+
+.lang-switcher__popup-content .b-menu-vert__layout-unit:hover
+{
+    background-color: #ffeba0;
+}
+
+.lang-switcher__popup-content .lang-switcher__all
+{
+    text-align: center;
+
+    border-top: 1px solid #ccc;
+}
+
+.lang-switcher__popup-content .lang-switcher__all .link
+{
+    font-size: 13px;
+}
+
+.lang-switcher__popup-content .lang-switcher__lang,
+.lang-switcher__popup-content .lang-switcher__all .link
+{
+    display: block;
+
+    height: 24px;
+    padding: 0 8px;
+
+    line-height: 25px;
+}
+
+.lang-switcher__popup-content .b-menu-vert__layout-unit
+{
+    padding: 0;
+}
+
+.lang-switcher__popup-content .lang-switcher__lang_selected_yes
+{
+    cursor: default;
+}
+
+/* ../../../../common.blocks/lang-switcher/lang-switcher.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.css begin */
+.i-ua_js_yes .link_pseudo_yes
+{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.i-ua_js_yes .link_pseudo_yes .link__inner
+{
+    text-decoration: none;
+
+    color: inherit;
+    border-bottom: 1px dotted;
+}
+
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.css end */
+/* ../../../../common.blocks/lang-switcher/__lang/lang-switcher__lang.css begin */
+.lang-switcher__lang
+{
+    outline: 0;
+}
+
+.lang-switcher__lang:focus
+{
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.07), 0 0 6px 2px rgba(255,204,0,.7);
+            box-shadow: 0 1px 0 rgba(0,0,0,.07), 0 0 6px 2px rgba(255,204,0,.7);
+}
+
+.lang-switcher__lang:active,
+.lang-switcher.dropdown-menu_action_open .lang-switcher__lang
+{
+    -webkit-box-shadow: inherit;
+            box-shadow: inherit;
+}
+
+/* ../../../../common.blocks/lang-switcher/__lang/lang-switcher__lang.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/country-flag.css begin */
+.country-flag
+{
+    display: inline-block;
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/country-flag.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_by.css begin */
+/* AUTOGENERATED CONTENT */
+
+.country-flag_s16_by
+{
+    width: 16px;
+    height: 12px;
+
+    background: no-repeat url("../../../../../../../output/freeze/rXMr0axKjRQEIgbchpMuQtEQbQ8.png");
+}
+
+.i-ua_svg_yes .country-flag_s16_by
+{
+    background: no-repeat url("../../../../../../../output/freeze/h0kXEXJ6cVOY4_qb9b3wlzVWYnE.svg");
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_by.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_gb.css begin */
+/* AUTOGENERATED CONTENT */
+
+.country-flag_s16_gb
+{
+    width: 16px;
+    height: 12px;
+
+    background: no-repeat url("../../../../../../../output/freeze/haW3X0r1G7gcRc-kFb4YjnPO6I4.png");
+}
+
+.i-ua_svg_yes .country-flag_s16_gb
+{
+    background: no-repeat url("../../../../../../../output/freeze/81JwiJ0S5NHMeHx4PhwfUcNFwpw.svg");
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_gb.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_kz.css begin */
+/* AUTOGENERATED CONTENT */
+
+.country-flag_s16_kz
+{
+    width: 16px;
+    height: 12px;
+
+    background: no-repeat url("../../../../../../../output/freeze/e-aoL77SMbdXg6qL83OrF5bmRmM.png");
+}
+
+.i-ua_svg_yes .country-flag_s16_kz
+{
+    background: no-repeat url("../../../../../../../output/freeze/fTXHDkLmeP1yFzD1RXSaEx64ZNI.svg");
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_kz.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_ru.css begin */
+/* AUTOGENERATED CONTENT */
+
+.country-flag_s16_ru
+{
+    width: 16px;
+    height: 12px;
+
+    background: no-repeat url("../../../../../../../output/freeze/aXJK_o-btp1MZf_uqan_aQUD9os.png");
+}
+
+.i-ua_svg_yes .country-flag_s16_ru
+{
+    background: no-repeat url("../../../../../../../output/freeze/Dj4vhW2YN3jqIfPxTWak0eSrWok.svg");
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_ru.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_tr.css begin */
+/* AUTOGENERATED CONTENT */
+
+.country-flag_s16_tr
+{
+    width: 16px;
+    height: 12px;
+
+    background: no-repeat url("../../../../../../../output/freeze/M6kA4XbiMuI4Uu-c1ijEASKoTJM.png");
+}
+
+.i-ua_svg_yes .country-flag_s16_tr
+{
+    background: no-repeat url("../../../../../../../output/freeze/VP_u__7THwR1ARnwFf-CHUTydfU.svg");
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_tr.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_tt.css begin */
+/* AUTOGENERATED CONTENT */
+
+.country-flag_s16_tt
+{
+    width: 16px;
+    height: 12px;
+
+    background: no-repeat url("../../../../../../../output/freeze/pLk7M6W3Q-qeeCXfx5Ps0kw4B2g.png");
+}
+
+.i-ua_svg_yes .country-flag_s16_tt
+{
+    background: no-repeat url("../../../../../../../output/freeze/IXEoJQ87voZrlMHCWm9F1re1s5k.svg");
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_tt.css end */
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_ua.css begin */
+/* AUTOGENERATED CONTENT */
+
+.country-flag_s16_ua
+{
+    width: 16px;
+    height: 12px;
+
+    background: no-repeat url("../../../../../../../output/freeze/llv_yrF9QpfJHH2NPeKAvGNpqYg.png");
+}
+
+.i-ua_svg_yes .country-flag_s16_ua
+{
+    background: no-repeat url("../../../../../../../output/freeze/eOy7cRbmE0ITBgdhqc3ea-s428w.svg");
+}
+
+/* ../../../../libs/islands-icons/common.blocks/country-flag/_s16/country-flag_s16_ua.css end */
+
+/* 30-links.css end */
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.ie.css begin */
+.i-ua_js_yes .link_pseudo_yes
+{
+    zoom: 1;
+}
+
+.i-ua_js_yes .link_pseudo_yes,
+.i-ua_js_yes .link_pseudo_yes .link__inner
+{
+    position: relative;
+}
+
+/* ../../../../common.blocks/link/_pseudo/link_pseudo_yes.ie.css end */
+
+/* 30-links.ie.css end */

@@ -1,0 +1,12 @@
+@import url(40-icon.css);
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css);
+@import url(../../../../desktop.blocks/radiobox/__box/radiobox__box.ie.css);
+@import url(../../../../desktop.blocks/radiobox/__control/radiobox__control.ie.css);
+@import url(../../../../desktop.blocks/radio-button/__radio/radio-button__radio.ie.css);
+@import url(../../../../desktop.blocks/radio-button/__radio/_disabled/radio-button__radio_disabled_yes.ie.css);
+@import url(../../../../desktop.blocks/radio-button/__control/radio-button__control.ie.css);
+@import url(../../../../desktop.blocks/radio-button/__text/radio-button__text.ie.css);
+@import url(../../../../desktop.blocks/button/button.ie.css);
+@import url(../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css);
+@import url(../../../../desktop.blocks/button/_size/button_size_m.ie.css);
+@import url(../../../../desktop.blocks/button/_only-icon/button_only-icon_yes.ie.css);

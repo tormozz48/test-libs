@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/desktop.sets/radiobox/radiobox.examples/10-radiobox/10-radiobox.ru.js

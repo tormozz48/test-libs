@@ -1,0 +1,45 @@
+{
+  "name": "dropdown",
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Является составным блоком, объединяющим выпадающее окно (popup) и вызывающий его элемент, относительно которого оно открывается.\nСлужит для создания элементов веб-интерфейса, используемых для скрытия дополнительной информации, ненужной в данный момент. Например, разного рода выпадающие меню, подсказки и т.п.</p>\n<h3 id=\"-\">Элементы блока</h3>\n<ul>\n<li><p><code>switcher</code> – блок-переключатель (открывает/закрывает выпадающее окно дропдауна). Должен уметь:</p>\n<ul>\n<li>обрабатывать (триггерить) BEM-событие <code>click</code>;</li>\n<li>корректно реагировать на установку модификатора <code>disabled</code> в значение <code>yes</code> и на его снятие.\nТакими элементами на странице, например, могут быть кнопки, псевдо-ссылки. Открытие/закрытие дропдауна может выполняться по нажатию левой кнопки мыши или клавиши <code>Enter</code> по элементу-переключателю (должен быть в фокусе).</li>\n</ul>\n<p>Во входных данных <code>switcher</code> миксуется с блоком, выполняющим роль переключателя.</p>\n<pre><code class=\"lang-js\">{\n  block: &#39;dropdown&#39;,\n  content: [\n      {\n           block: &lt;&#39;имя блока&#39;&gt;,\n            mix: [{block: &#39;dropdown&#39;, elem: &#39;switcher&#39;}],\n            ...\n        },\n      ...\n}</code></pre>\n</li>\n<li><p><code>popup</code> – выпадающее окно дропдауна. На уровне BEMHTML-шаблона выполняется микс элемента с блоком <a href=\"../popup/popup.html\">popup</a> и добавляется элемент <code>tail</code> (хвост попапа), указывающий на блок-переключатель.</p>\n</li>\n</ul>\n<p>На этапе инициализации блока <code>dropdown</code> в BEMJSON элемента <code>popup</code> можно передавать («пробрасывать») опциональные зарезервированные поля (<code>mods</code>, <code>js</code>, <code>attrs</code>, <code>content</code>) и выполнять методы блока <code>popup</code>.\nСписок методов настраивается в параметре <code>popupMethods</code>.</p>\n<p>По умолчанию блок <code>dropdown</code> может выполнять некоторые <a href=\"../popup/popup.html#methodsdef\">методы блока <code>popup</code></a> в своем контексте («проброшенные» методы).</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>Для подключения <code>dropdown</code> в контенте блока следует задать элементы <code>switcher</code> и <code>popup</code>. Например, следующим образом:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;dropdown&#39;, // имя блока\n    content: [\n        { // блок-переключатель (например, псевдо-ссылка)\n            block: &#39;link&#39;,\n            mix: [{block: &#39;dropdown&#39;, elem: &#39;switcher&#39;}],\n            mods: {pseudo: &#39;yes&#39;},\n            url: &#39;http://www.yandex.ru/all&#39;,\n            content: &#39;ещё&#39;\n        },\n        { //выпадающее окно с произвольным содержимым\n            elem: &#39;popup&#39;,\n            // параметры блока `popup` в контексте `dropdown`\n            js: {directions: &#39;bottom-left-center&#39;},\n            mods: {&#39;has-close&#39;: &#39;yes&#39;},\n            content: &#39;I am a dropdown here!&#39;\n        }\n    ]\n}</code></pre>\n<!-- %%dropdown.examples/10-usual/10-usual.html%% -->\n\n<!-- %%dropdown.examples/15-button/15-button%% -->\n\n\n<p>Пример использования «проброшенных» методов:</p>\n<!-- %%dropdown.examples/25-has-close/25-has-close%% -->\n\n<h3 id=\"js-\">JS-параметры</h3>\n<ul>\n<li><code>switcherBlock</code> – имя блока, который нужно найти на блоке <a href=\"https://github.yandex-team.ru/lego/islands-components/blob/draftdoc/common.blocks/dropdown/dropdown.js#L33\">switcher</a> (на одном узле может быть несколько блоков).</li>\n</ul>\n<p>Если <code>switcherBlock</code> не задан, то попап показывается/скрывается при левом клике в любом месте элемента <code>switcher</code>.\nЕсли же он задан, то открываться/закрываться попап будет при клике на блок <code>switcherBlock</code> внутри элемента <code>switcher</code>.</p>\n<!-- %%dropdown.examples/30-button-disabled/30-button-disabled%% -->\n\n\n<h3 id=\"-\">Модификаторы</h3>\n<p><em><strong>Примечание</strong>: Модификатор <code>action</code> не создан на файловой структуре блока, т.к не участвует в изменении внешнего вида блока. Нужен внутри BEMHTML-шаблона и в JS-коде для реализации логики открытия/закрытия выпадающего окна (элемент <code>popup</code>).</em></p>\n<p>Модификатор <code>action</code> может принимать значения <code>open</code> – выпадающее окно открыто и <code>closed</code> – выпадающее окно закрыто.</p>\n<h3 id=\"-\">Значения по умолчанию</h3>\n<p>Используются значения по умолчанию блока <a href=\"../popup/popup.html\">popup</a>:</p>\n<ul>\n<li>Тема оформления выпадающего окна: белая (модификатор <code>theme</code> со значением <code>ffffff</code>).</li>\n<li>Автоматически закрывается при клике за пределами своей области и закрывает попапы, открытые из &quot;себя&quot; (модификатор <code>autoclosable</code> со значением <code>yes</code>).</li>\n<li>Автоматически выбирает направление раскрытия по приоритету, если видимая площадь меньше 100% (модификатор <code>adaptive</code> со значением <code>yes</code>).</li>\n<li>Анимированный показ и скрытие (модификатор <code>animate</code> со значением <code>yes</code>).</li>\n<li><code>popup</code> содержит элемент <code>tail</code> (хвост).</li>\n<li>Выпадающее окно дропдауна по умолчанию скрыто (модификатор <code>action</code> со значением <code>closed</code>).</li>\n</ul>\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Дропдаун (выпадушка)\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "dropdown.examples/10-usual/10-usual",
+          "title": "Обычный dropdown\n"
+        },
+        {
+          "url": "dropdown.examples/15-button/15-button",
+          "title": "С кнопкой switcher'ом\n"
+        },
+        {
+          "url": "dropdown.examples/20-close-it/20-close-it",
+          "title": "С кнопкой \"Закрыть\" внутри\n"
+        },
+        {
+          "url": "dropdown.examples/25-has-close/25-has-close",
+          "title": "Dropdown с закрывающим крестиком\n"
+        },
+        {
+          "url": "dropdown.examples/30-button-disabled/30-button-disabled",
+          "title": "С задизейбленной кнопкой\n"
+        }
+      ]
+    }
+  ]
+}

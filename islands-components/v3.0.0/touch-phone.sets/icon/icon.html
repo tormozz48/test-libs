@@ -1,0 +1,30 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>icon</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок icon</span></div><div class="block__title">Абстрактная иконка</div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>icon</code> – абстрактная иконка.
+Используется внутри других блоков в качестве контейнера для декоративных изображений.
+Представляет собой HTML-тэг <code>&lt;i&gt;</code> с фоновой картикой, заданной через <code>background-image</code>.</p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования блока:</p>
+<pre><code class="lang-js">{
+    block: &#39;icon&#39;
+}</code></pre>
+<h3 id="-">Варианты использования блока</h3>
+<p>Путь к изображению, ширина и высота иконки задаются с помощью css-свойств
+<code>background-image</code>, <code>width</code> и <code>height</code> соответственно.</p>
+<p>Свойства иконки можно задать в модификаторе блока <code>icon</code>:</p>
+<pre><code class="lang-css">.icon_type_active
+{
+    width: 16px;
+    height: 16px;
+
+    background-position: -16px 0;
+
+    backgroun-image: url(image-sprite.png);
+}</code></pre>
+<p>Также можно задать свойства иконки каскадом в родительском блоке или его элементе:</p>
+<pre><code class="lang-css">.button_icon_comment .icon
+{
+    width: 16px;
+
+    background-image: url(icon-comment.png);
+}</code></pre>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="icon:examples:10-icon:10-icon"><a class="example__title" href="icon.examples/10-icon/10-icon.html" target="_blank">Кнопки с иконками</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="icon.examples/10-icon/10-icon.bemjson.js"></iframe><iframe class="example__live" src="icon.examples/10-icon/10-icon.html"></iframe></div></div></div></div></body></html>

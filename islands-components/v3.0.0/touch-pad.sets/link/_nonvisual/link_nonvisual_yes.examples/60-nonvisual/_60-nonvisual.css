@@ -1,0 +1,72 @@
+/* ../../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css begin */
+.b-page_theme_normal
+{
+    background-color: #f6f5f3;
+}
+
+/* ../../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css end */
+/* ../../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../../common.blocks/link/link.css end */
+/* ../../../../../common.blocks/link/_pseudo/link_pseudo_yes.css begin */
+.i-ua_js_yes .link_pseudo_yes
+{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.i-ua_js_yes .link_pseudo_yes .link__inner
+{
+    text-decoration: none;
+
+    color: inherit;
+    border-bottom: 1px dotted;
+}
+
+/* ../../../../../common.blocks/link/_pseudo/link_pseudo_yes.css end */
+/* ../../../../../common.blocks/link/_nonvisual/link_nonvisual_yes.css begin */
+.link_nonvisual_yes
+{
+    position: absolute;
+    z-index: 32767;
+    left: -32767px;
+}
+
+.link_nonvisual_yes:focus,
+.link_nonvisual_yes:active
+{
+    left: inherit;
+}
+
+/* ../../../../../common.blocks/link/_nonvisual/link_nonvisual_yes.css end */

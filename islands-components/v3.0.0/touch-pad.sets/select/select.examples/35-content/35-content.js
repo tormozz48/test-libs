@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-pad.sets/select/select.examples/35-content/35-content.ru.js

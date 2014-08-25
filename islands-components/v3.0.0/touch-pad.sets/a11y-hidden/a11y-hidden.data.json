@@ -1,0 +1,29 @@
+{
+  "name": "a11y-hidden",
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>а11y-hidden</code> обеспечивает доступность веб-контента людям с ограниченными возможностями. Предоставляет необходимые сведения об элементах интерфейса программам чтения с экрана, для альтернативного воспроизведения.</p>\n<p>Блок визуально скрыт и доступен только специальным приложениям. Является вспомогательным для других блоков и самостоятельно не используется. </p>\n<h3 id=\"-\">Подключение блока</h3>\n<p><code>а11y-hidden</code> подключается примиксовыванием к другому блоку:</p>\n<pre><code class=\"lang-js\">({\n    block: &#39;info&#39;,\n    mix: [{ block: &#39;a11y-hidden&#39; }],\n    content: &#39;Информация для людей с ограниченными возможностями.&#39; // скрытое содержимое\n})</code></pre>\n<p>В HTML блока будет добавлен дополнительный класс <code>а11y-hidden</code> и текст для альтернативного воспроизведения. </p>\n<pre><code class=\"lang-html\">&lt;div class=&quot;info a11y-hidden&quot;&gt;Информация для людей с ограниченными возможностями.&lt;/div&gt;</code></pre>\n<!-- %%a11y-hidden.examples/10-simple/10-simple%% -->\n\n<p>Блок реализован посредством CSS:</p>\n<pre><code class=\"lang-css\">.a11y-hidden\n{\n    position: absolute;\n    left: -32767px;\n}</code></pre>\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Визуально скрытый блок\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "a11y-hidden.examples/10-simple/10-simple",
+          "title": "Визуально скрытый блок\n"
+        }
+      ]
+    }
+  ]
+}

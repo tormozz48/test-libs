@@ -1,0 +1,65 @@
+{
+    "blockName": "dropdown",
+    "description": "<p>Управляемое выпадающее окно.</p>\n<p>Является составным блоком, объединяющим выпадающее окно (popup) и вызывающий его элемент,\nотносительно которого оно открывается.</p>\n<p>Служит для создания элементов веб-интерфейса,\nиспользуемых для скрытия дополнительной информации, ненужной в данный момент.\nНапример, разного рода выпадающие меню, подсказки и т.п.</p>\n<p>Элементом управления является элемент <code>switcher</code>.</p>\n<p><code>switcherBlock</code> – имя блока, который нужно найти на элементе <code>switcher</code> (на одном узле может\nбыть несколько блоков). Если <code>switcherBlock</code> не задан, то popup показывается/скрывается при клике\nлевой кнопкой мыши в любом месте элемента <code>switcher</code>.</p>\n<p>Если же он задан, то открываться/закрываться popup будет при клике на блок <code>switcherBlock</code>\nвнутри элемента <code>switcher</code>.</p>",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "getPopup",
+            "description": "<p>Возвращает инстанс <code>popup</code>-а.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getDefaultParams",
+            "description": "<p>Декларация методов блока <code>popup</code>, доступных для выполнения в блоке <code>dropdown</code>.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>Возвращает объект, содержащий имя элемента и методы <code>popup</code>.</p>",
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "destruct",
+            "description": "<p>Удаляет блок, предварительно удалив слушатели событий блока <code>popup</code>.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "show",
+            "description": "<p>Генерируется, когда блок <code>popup</code> отображается.</p>",
+            "params": []
+        },
+        {
+            "name": "hide",
+            "description": "<p>Генерируется, когда блок <code>popup</code> скрывается.</p>",
+            "params": []
+        }
+    ],
+    "mods": []
+}

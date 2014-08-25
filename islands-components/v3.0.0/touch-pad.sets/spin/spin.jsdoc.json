@@ -1,0 +1,83 @@
+{
+    "blockName": "spin",
+    "description": "<p>Индикатор загрузки.\nВращается посредством CSS3 анимации, в старых браузерах деградирует до CSS-sprite анимации.</p>",
+    "jsParams": [
+        {
+            "name": "params",
+            "description": "<p>Параметры блока:</p>",
+            "optional": true,
+            "types": [
+                "Object"
+            ]
+        },
+        {
+            "name": "params.animation",
+            "description": "<p>Вид анимации: 'transform' для CSS3 анимации,\n                                                       'sprite' для анимации через CSS-sprite.</p>",
+            "optional": true,
+            "types": [
+                "String"
+            ]
+        },
+        {
+            "name": "params.startDelay",
+            "description": "<p>Задержка (ms) перед стартом анимации.</p>",
+            "optional": true,
+            "types": [
+                "Number"
+            ],
+            "default": "0"
+        },
+        {
+            "name": "params.frameAngle",
+            "description": "<p>Угол поворота (deg) за один кадр. Только для CSS3 анимации.</p>",
+            "optional": true,
+            "types": [
+                "Number"
+            ],
+            "default": "10"
+        },
+        {
+            "name": "params.frameTime",
+            "description": "<p>Время отображения (ms) одного кадра анимации.</p>",
+            "optional": true,
+            "types": [
+                "Number"
+            ],
+            "default": "27"
+        },
+        {
+            "name": "params.frames",
+            "description": "<p>Количество кадров анимации. Только для анимации через CSS-sprite.</p>",
+            "optional": true,
+            "types": [
+                "Number"
+            ],
+            "default": "36"
+        }
+    ],
+    "methods": [
+        {
+            "name": "getDefaultParams",
+            "description": "<p>Возвращает параметры блока по умолчанию.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "destruct",
+            "description": "<p>Уничтожает блок.\nОстанавливает вращение.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

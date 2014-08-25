@@ -1,0 +1,411 @@
+{
+  "name": "button",
+  "elems": [
+    {
+      "name": "icon",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Используется для отображения иконки в кнопке, рядом с текстом или самостоятельно (требует указания модификатора _only-icon)"
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Обрамляет текст кнопки, используется в нажатом состоянии для сдвига текста без смещения рядом стоящего текста"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "arrow",
+      "vals": [
+        {
+          "name": "down",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Стрелка, указывающая вниз\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "counter",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Счетчики включены\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Кнопка со счетчиком\n"
+        }
+      ]
+    },
+    {
+      "name": "disabled",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Неактивное состояние"
+        }
+      ]
+    },
+    {
+      "name": "focused",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Фокус есть"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "В фокусе"
+        }
+      ]
+    },
+    {
+      "name": "hovered",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Наведение есть"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Наведенное состояние"
+        }
+      ]
+    },
+    {
+      "name": "only-icon",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Кнопки только с иконкой"
+        }
+      ]
+    },
+    {
+      "name": "pressed",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Нажатие есть"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Нажатое состояние"
+        }
+      ]
+    },
+    {
+      "name": "round",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Круглая кнопка"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Круглая кнопка"
+        }
+      ]
+    },
+    {
+      "name": "side",
+      "vals": [
+        {
+          "name": "left",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Кнопка располагается слева, правые края ровные"
+            }
+          ]
+        },
+        {
+          "name": "right",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Кнопка располагается справа, левые края ровные"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Стороны кнопки без скруглений"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "l",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Высота 38px, размер шрифта 18px"
+            }
+          ]
+        },
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Высота 32px, размер шрифта 15px"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Высота 28px, размер шрифта 13px"
+            }
+          ]
+        },
+        {
+          "name": "xs",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Высота 24px, размер шрифта 13px"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "action",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Кнопка действия"
+            }
+          ]
+        },
+        {
+          "name": "clear",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Кнопка без рамки"
+            }
+          ]
+        },
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычная кнопка"
+            }
+          ]
+        },
+        {
+          "name": "pseudo",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Псевдо"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Темы"
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>button</code> используется для создания различных типов кнопок и предоставляет возможности по их стилизации. Кроме этого, позволяет стилизовать ссылку <code>&lt;a href&gt;</code> в виде кнопки.\nФункциональность кастомной кнопки основана на нативной, которая скрыта.\nВ MSIE8 и ниже кастомные кнопки деградируют до нативных кнопок <code>&lt;button&gt;</code>, кнопка-ссылка станет нативной ссылкой <code>&lt;a&gt;</code>.</p>\n<h3 id=\"-\">Варианты использования кнопок</h3>\n<p>С помощью <code>button</code> можно создать следующие типы кнопок:</p>\n<ul>\n<li><strong>Обычная кнопка</strong> – применяется для любых кнопок веб-интерфейса, используется по умолчанию. Не отправляет данные на сервер. По умолчанию тема оформления кнопки <strong>обычная</strong> (модификатор <code>theme</code> со значением <code>normal</code>).</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;button&#39;, // имя блока\n    mods: {size: &#39;m&#39;}, // поле модификаторов. Модификатор размера - обязательный\n    content: &#39;Я.Button&#39;  // текст на кнопке\n}</code></pre>\n<!-- %%button.examples/10-button/10-button%% -->\n\n<ul>\n<li><p><strong>Кнопка действия</strong> – предназначена для отправки данных на сервер (<code>submit</code>). Должна располагаться в форме.</p>\n<p>Чтобы кнопка стала кнопкой действия, во входном BEMJSON блока вам нужно добавить поле <code>type</code> со значением <code>submit</code>, <code>{String} type</code> – тип кнопки.</p>\n<p>Обычно <strong>кнопка-действия</strong> визуально выделяется на странице темой оформления (модификатор <code>theme</code> со значением\n<code>action</code>, необязательный). Если нужно, для <code>submit</code> можно использовать любую тему.</p>\n</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">{\n    tag: &#39;form&#39;,\n    attrs: {action: &#39;#&#39;},\n    content: {\n        block: &#39;button&#39;,\n        mods: {theme: &#39;action&#39;, size: &#39;m&#39;},\n        type: &#39;submit&#39;,\n        name: &#39;my-submit&#39;,\n        content: &#39;Я.Submit&#39;\n    }\n}</code></pre>\n<p> <strong>Кнопке-действия</strong> и <strong>обычной</strong> можно устанавливать атрибуты нативной кнопки  <code>&lt;button атрибуты&gt;</code>:\n   <code>name</code> и <code>value</code> задаются в одноименных полях входного BEMJSON блока.\n   <code>accesskey</code>, <code>tabindex</code>, <code>autofocus</code> – в зарезервированном поле <code>attrs</code> BEMJSON.</p>\n<!-- %%button.examples/20-submit-attrs/20-submit-attrs%% -->\n\n<ul>\n<li><p><strong>Кнопка-ссылка</strong> – разновидность обычной кнопки, для которой дополнительно задано поле <code>{String} url</code>.</p>\n<p>Применяется для перехода по ссылке. <strong>Кнопкой-ссылкой</strong> может стать любая кнопка с полем <code>url</code>. В выходном HTML такая кнопка будет преобразована в тэг <code>&lt;a атрибуты&gt; &lt;/a&gt;</code>, поле <code>url</code> – в атрибут ссылки <code>href</code>.</p>\n<p> Кнопке-ссылке можно задать необязательные атрибуты нативной ссылки, которые преобразуются в соответствующие HTML-атрибуты тэга <code>&lt;a&gt;</code>:\n<code>accesskey</code>, <code>charset</code>, <code>hreflang</code>, <code>media</code>, <code>name</code>, <code>rel</code>, <code>rev</code>, <code>tabindex</code>, <code>title</code>, <code>type</code>, <code>target</code> — задаются в зарезервированном поле атрибутов <code>attrs</code>.\n<code>target</code> — можно задать и в одноименном поле BEMJSON блока.</p>\n</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;button&#39;,\n    mods: {size: &#39;m&#39;},\n    url: &#39;ya.ru&#39;,\n    content: &#39;Я.Ссылка&#39;\n}</code></pre>\n<!-- %%button.examples/30-link/30-link%% -->\n\n<ul>\n<li><p><strong>Псевдо-кнопка</strong> – любая кнопка, которой задан модификатор псевдо <code>pseudo</code> со значением <code>yes</code>.</p>\n<p>При нажатии на псевдо-кнопку JavaScript запускает какое-либо действие (<code>popup</code> и прочее). При отсутствии JavaScript происходит переход по ссылке (для кнопки-ссылки).</p>\n<p>По умолчанию псевдо-кнопке устанавливается тема оформления псевдо – модификатор <code>theme</code> со значением <code>pseudo</code>.\n У псевдо-кнопки отсутствует визуальный эффект нажатия (текст не сдвигается при нажатии). Кнопка прозрачная с бордером и по размеру меньше обычной кнопки (модификатор <code>theme</code> со значением <code>normal</code>).</p>\n</li>\n</ul>\n<p>Для появления у псевдо-кнопки визуального эффекта нажатия (текст сдвигается на 1px вниз и  добавляется прозрачная желтая заливка), нужно установить модификатор  <code>pseudo-pressed</code> со значением <code>yes</code>.</p>\n<!-- %%button.examples/57-pseudo-button-link/57-pseudo-button-link%% -->\n\n<p>   Тема псевдо может использоваться без модификатора <code>pseudo</code>. Чаще всего псевдо используется для оформления ссылки в виде кнопки.</p>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;button&#39;,\n    url: &#39;/&#39;,\n    mods: {size: &#39;m&#39;, pseudo: &#39;yes&#39;},\n    content: &#39;Псевдо-кнопка&#39;\n}\n{\n    block: &#39;button&#39;,\n    mods: {size: &#39;s&#39;, pseudo: &#39;yes&#39;},\n    content: &#39;Псевдо-кнопка&#39;\n}</code></pre>\n<!-- %%button.examples/55-pseudo/55-pseudo%% -->\n\n<ul>\n<li><strong>Кнопка со счетчиком</strong> – такой может стать любая кнопка: обычная, действия, ссылка, для которой дополнительно задан модификатор  <code>counter</code> со значением <code>yes</code>.\nКнопка со счетчиком используется для сбора различных статистических данных, с разной вероятностью показа на веб-странице.\nВероятностью показа счётчика для конкретной кнопки управляет поле блока <code>show-counter</code>. При <code>show-counter</code> = 100 — показ счётчика гарантирован всегда.\nПо умолчанию вероятность срабатывания счётчика - 10%.</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;b-form&#39;,\n    attrs: {action: &#39;#&#39;, method: &#39;get&#39;},\n    content: [\n        {\n            content: [\n                {\n                    block: &#39;button&#39;,\n                    mods: {size: &#39;m&#39;, counter: &#39;yes&#39;},\n                    counter: 123,\n                    content: &#39;Я.Кнопка&#39;\n                },\n                &#39; — со счётчиком с вероятностью показа по умолчанию&#39;\n            ]\n        }\n    ]\n}</code></pre>\n<!-- %%button.examples/35-counter-always/35-counter-always%% -->\n\n<h3 id=\"-\">Содержимое кнопки</h3>\n<p>Кнопке можно задать произвольное содержимое в зарезервированном поле <code>content</code>. Значение по умолчанию для него не задано.\nКроме текста, на кнопку можно добавить иконку.</p>\n<p>Допустимы следующие варианты наполнения кнопки:</p>\n<ul>\n<li><p>У кнопки поле <code>content</code> отсутствует или пусто <code>{block: &#39;button&#39;}</code>.\nВ этом случае кнопка схлопывается по высоте и ширине.</p>\n<p>Если задан только размер кнопки, то ее высота будет соответствовать высоте указанного размера.</p>\n</li>\n<li><p>Контент содержит только текст (нужно указывать размер для блока).</p>\n</li>\n<li><p>Кнопка содержит только иконку.</p>\n<p>В этом случае кнопке нужно добавить модификатор <code>only-icon</code> со значением <code>yes</code> и смиксовать элемент кнопки <code>icon</code>\nс блоком иконки <code>image</code>.</p>\n<p><a href=\"http://islands-components.lego-staging.dev.yandex-team.ru/dev.islands-components/desktop.sets/image/image.html\">image</a> — блок из библиотеки <a href=\"https://github.yandex-team.ru/lego/islands-components\">islands-components</a>, который служит контейнером для изображения (преобразуется в HTML-тэг <code>&lt;img&gt;</code>). Нужное изображение задается с помощью нового модификатора блока <code>image</code> (произвольная пара «ключ:значение»), для которого в CSS хранится путь к изображению.</p>\n</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">  {\n    block: &#39;button&#39;,\n    mods: {size: &#39;s&#39;, &#39;only-icon&#39;: &#39;yes&#39;},\n    content: {\n        block: &#39;image&#39;,\n        mix: [{block: &#39;button&#39;, elem: &#39;icon&#39;, mods: {&#39;16&#39;: &#39;comment&#39;}}],\n        alt: &#39;&#39;\n     }\n}</code></pre>\n<ul>\n<li>Кнопка содержит иконку и текст</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;button&#39;,\n    mods: {size: &#39;m&#39;},\n    content: [\n        {\n             block: &#39;image&#39;,\n             mix: [{block: &#39;button&#39;, elem: &#39;icon&#39;,  mods: {&#39;16&#39;: &#39;settings&#39;}}],\n             alt: &#39;/&#39;\n        },\n        &#39;Я.Кнопка&#39;\n   ]\n}</code></pre>\n<!-- %%button.examples/45-ico/45-ico%% -->\n\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Темы оформления</h4>\n<p>Любой кнопке можно задать одну из следующих тем оформления (модификатор темы <code>theme</code>):</p>\n<ul>\n<li><p><strong>Обычная</strong> <code>normal</code> (используется по умолчанию) – кнопка со светло-серым градиентом, под кнопкой едва заметная тень.</p>\n</li>\n<li><p><strong>Действия</strong> <code>action</code> – кнопка с желтой заливкой. Основное назначение этой темы – визуальное выделение кнопки, выполняющей главное действие (обработка данных), т.е кнопки-действия.</p>\n</li>\n<li><p><strong>Псевдо</strong> <code>pseudo</code> – кнопка прозрачная со светло-серым контуром, без тени и по размеру меньше обычной кнопки.</p>\n</li>\n<li><p><strong>Темно-серая</strong> <code>dark-grey</code> – кнопка темно-серого цвета. Используется только для обычной кнопки и кнопки-ссылки при размещении на темном фоне.</p>\n</li>\n<li><p><strong>Без рамки</strong> <code>clear</code> – Кнопка с прозрачным фоном, полупрозрачным текстом и без рамки. При наведении курсора текст становится непрозрачным.\nНе используется в качестве элемента формы, поэтому статус <code>disabled</code> - запрещен.</p>\n</li>\n</ul>\n<!-- %%button.examples/110-theme-dark-grey/110-theme-dark-grey%% -->\n\n<p>Помимо тем, для стилизации кнопок используются следующие модификаторы:</p>\n<ul>\n<li><p><code>shadow</code> со значением <code>yes</code></p>\n<p>Кнопка с большой полупрозрачной тенью или «летающая» кнопка. Используется для визуального выделения кнопки, размещенной на сложном фоне, например, над картой. По нажатию «приземляется».</p>\n</li>\n</ul>\n<!-- %%button.examples/50-shadow/50-shadow%% -->\n\n<ul>\n<li><code>side</code> со значением <code>left</code>(или <code>right</code>) – кнопка, закругленная только с левого (правого) края.</li>\n</ul>\n<!-- %%button.examples/105-side/105-side%% -->\n\n<ul>\n<li><p><code>round</code> со значением <code>yes</code></p>\n<p>Круглые кнопки обычно используются для проигрывания музыки. По умолчанию круглой кнопке добавляется модификатор <code>only_icon</code> со значением <code>yes</code> и выполняется микс с блоком иконки <code>image</code>, от которого приходит CSS. Иконки находятся в спрайте (в формате svg). Диаметр кнопки 32px.</p>\n</li>\n</ul>\n<!-- %%button.examples/100-round-button/100-round-button%% -->\n\n<ul>\n<li><p><code>arrow</code> со значением <code>down</code></p>\n<p>Кнопка со стрелкой вниз. Может использоваться, например, для реализации выпадающих списков – блок <a href=\"../select/select.html\">select</a>.</p>\n</li>\n</ul>\n<!-- %%button.examples/95-with-arrow/95-with-arrow%% -->\n\n<h4 id=\"-\">Размеры кнопок</h4>\n<p>Для кнопок реализованы размеры <code>s</code> и <code>m</code>.\nМодификатор размера <code>size</code> – обязателен при объявлении блока. По умолчанию не определен.</p>\n<p>Высота кнопки зависит от размера шрифта и <code>line-height</code>.</p>\n<p><em><strong>Исключение</strong>: псевдо-кнопка с темой оформления псевдо (модификатор <code>theme</code>со значением <code>pseudo</code>) имеет меньшую высоту, чем обычная кнопка ( модификатор <code>theme</code> со значением <code>normal</code>)</em>.</p>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;button&#39;,\n    mods: {size: &#39;s&#39;},\n    content: &#39;Я.Кнопка размером S&#39;\n}</code></pre>\n<!-- %%button.examples/40-height/40-height%% -->\n\n<p>Таблица размеров кнопок с различными темами оформления</p>\n<table>\n<thead>\n<tr>\n<th>Кнопка</th>\n<th>Размер кнопки</th>\n<th>Высота кнопки</th>\n<th>Размер шрифта</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Обычная</td>\n<td>s</td>\n<td>28px</td>\n<td>13px</td>\n</tr>\n<tr>\n<td></td>\n<td>m</td>\n<td>32px</td>\n<td>15px</td>\n</tr>\n<tr>\n<td>Псевдо-кнопка</td>\n<td>s</td>\n<td>24px</td>\n<td>13px</td>\n</tr>\n<tr>\n<td></td>\n<td>m</td>\n<td>28px</td>\n<td>15px</td>\n</tr>\n</tbody>\n</table>\n<p>Если нужен другой размер кнопки, его можно реализовать у себя на проекте.</p>\n<p><a name=\"customsize\"></a></p>\n<h5 id=\"-\">Создание кастомного размера</h5>\n<p>Скопировать существующий CSS-файл с размерами и вставить в него необходимые новые параметры.</p>\n<h3 id=\"-\">Состояния кнопок</h3>\n<p>Кнопки могут находиться в следующих состояниях:</p>\n<ul>\n<li><strong>Не активна</strong>, модификатор <code>disabled</code>.</li>\n<li><strong>В фокусе</strong>, модификатор <code>focused</code>.</li>\n<li><strong>Наведение курсором</strong>, модификатор <code>hovered</code>.</li>\n<li><strong>Нажата</strong>, модификатор <code>pressed</code>.</li>\n</ul>\n<p>Для появления эффекта нажатия у псевдо-кнопки используется дополнительное состояние:</p>\n<ul>\n<li><strong>Псевдо-кнопка нажата</strong>, модификатор <code>pseudo-pressed</code>.</li>\n</ul>\n<p>Модификаторы состояния кнопки устанавливаются со значением <code>yes</code>.</p>\n<p>Все состояния обычной кнопки:\n<img src=\"http://jing.yandex-team.ru/storage/gela-d/838600/2014-03-11_1044.png\" alt=\"\"></p>\n<p>Если кнопка находится в состоянии <strong>в фокусе</strong>, по ней можно выполнить нажатие клавишей <code>Space</code> или <code>Enter</code>. Переход по контролам формы осуществляется клавишей <code>Tab</code>.</p>\n<p>Кнопка может находиться в нескольких состояниях одновременно. Например, <strong>в фокусе</strong> + <strong>наведение курсором</strong> + <strong>нажата</strong>.</p>\n<p>В состоянии <strong>не активна</strong> кнопка отображается с прозрачностью и недоступна для действий пользователя. Такая кнопка не может получить фокус путем нажатия на клавишу <code>Tab</code>, мышью или другими способами. Тем не менее, такое состояние кнопки можно изменять программно. Значение не активной кнопки не передается на сервер.</p>\n<!-- %%button.examples/80-disabled/80-disabled%% -->\n\n<p>С помощью модификатора <code>focus</code> со значением <code>no</code> можно запретить визуальное отображение фокуса у кнопки, и событие <code>focus</code> не возникает.</p>\n<!-- %%button.examples/15-focus-no/15-focus-no%% -->\n\n<!-- %%button.examples/57-pseudo-button-link/57-pseudo-button-link%% -->\n\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li><strong>Тип кнопки</strong>: обычная  <code>&lt;button type=&quot;button&quot;&gt;</code>.</li>\n<li><strong>Тема оформления</strong>: обычная серая, модификатор  <code>theme</code> со значением <code>normal</code>.</li>\n</ul>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "button.examples/10-button/10-button",
+          "title": "Кнопка, в форме"
+        },
+        {
+          "url": "button.examples/100-round-button/100-round-button",
+          "title": "Кнопка для проигрывания музыки"
+        },
+        {
+          "url": "button.examples/105-side/105-side",
+          "title": "Кнопки с незакругленными краями"
+        },
+        {
+          "url": "button.examples/15-focus-no/15-focus-no",
+          "title": "Кнопка без фокуса"
+        },
+        {
+          "url": "button.examples/20-submit-attrs/20-submit-attrs",
+          "title": "С заданными name, отправляющая форму на сервер"
+        },
+        {
+          "url": "button.examples/30-link/30-link",
+          "title": "Ссылкой"
+        },
+        {
+          "url": "button.examples/35-counter-always/35-counter-always",
+          "title": "С счетчиками\n"
+        },
+        {
+          "url": "button.examples/40-height/40-height",
+          "title": "Реализованные размеры"
+        },
+        {
+          "url": "button.examples/45-ico/45-ico",
+          "title": "Кнопки-ссылки с иконками"
+        },
+        {
+          "url": "button.examples/55-pseudo/55-pseudo",
+          "title": "Псевдо-кнопка"
+        },
+        {
+          "url": "button.examples/57-clear/57-clear",
+          "title": "Кнопка без рамки"
+        },
+        {
+          "url": "button.examples/60-link-float/60-link-float",
+          "title": "Плавающая кнопка в тексте"
+        },
+        {
+          "url": "button.examples/70-complex/70-complex",
+          "title": "В тексте"
+        },
+        {
+          "url": "button.examples/80-disabled/80-disabled",
+          "title": "Кнопка отключена"
+        },
+        {
+          "url": "button.examples/90-bemhtmljs/90-bemhtmljs",
+          "title": "Кнопки, сгенерированные на клиенте (JS)\n"
+        },
+        {
+          "url": "button.examples/95-with-arrow/95-with-arrow",
+          "title": "Со стрелкой\n"
+        }
+      ]
+    }
+  ]
+}

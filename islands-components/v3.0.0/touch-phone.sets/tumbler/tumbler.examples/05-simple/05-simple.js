@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/tumbler/tumbler.examples/05-simple/05-simple.ru.js

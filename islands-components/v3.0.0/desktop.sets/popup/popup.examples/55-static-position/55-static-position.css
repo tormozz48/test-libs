@@ -1,0 +1,11 @@
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css);
+@import url(../../../../common.blocks/popup/popup.examples/55-static-position.blocks/example/example.css);
+@import url(../../../../common.blocks/popup/popup.css);
+@import url(../../../../common.blocks/popup/__content/popup__content.css);
+@import url(../../../../common.blocks/popup/_theme/popup_theme_ffffff.css);
+@import url(../../../../common.blocks/popup/_visibility/popup_visibility_visible.css);
+@import url(../../../../desktop.blocks/popup/_visibility/popup_visibility_visible.css);
+@import url(../../../../common.blocks/popup/_visibility/popup_visibility_outside.css);
+@import url(../../../../common.blocks/popup/__under/popup__under.css);
+@import url(../../../../common.blocks/popup/__under/_color/popup__under_color_white.css);
+@import url(../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css);

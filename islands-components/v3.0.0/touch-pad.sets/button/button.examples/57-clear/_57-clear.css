@@ -1,0 +1,292 @@
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/button/button.examples/57-clear.blocks/example/example.css begin */
+.example__color-block
+{
+    display: inline-block;
+
+    padding: 10px;
+}
+
+.example__color-block_color_yellow
+{
+    background: #ff0;
+}
+
+.example__color-block_color_green
+{
+    background: #008000;
+}
+
+.example__color-block_color_blue
+{
+    background: #00f;
+}
+
+/* ../../../../common.blocks/button/button.examples/57-clear.blocks/example/example.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    pointer-events: none;
+}
+
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css begin */
+.button_pressed_yes
+{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/button/_size/button_size_s.css begin */
+.button_size_s
+{
+    font-size: 13px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_s
+    {
+        line-height: 28px;
+    }
+}
+
+.button_size_s .button__text
+{
+    padding: 0 13px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_s.button_arrow_down .button__text:after
+{
+    right: 9px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_s.button.button_arrow_down .button__text
+{
+    padding-right: 28px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_s.css end */
+/* ../../../../common.blocks/button/_size/button_size_m.css begin */
+.button_size_m
+{
+    font-size: 15px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_m
+    {
+        line-height: 32px;
+    }
+}
+
+.button_size_m .button__text
+{
+    padding: 0 15px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_m.button_arrow_down .button__text:after
+{
+    right: 10px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_m.button.button_arrow_down .button__text
+{
+    padding-right: 31px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_m.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_clear.css begin */
+a.button_theme_clear,
+.button_theme_clear
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+.button_theme_clear
+{
+    border-radius: 3px;
+}
+
+.button_theme_clear .button__icon,
+.button_theme_clear .button__text
+{
+    opacity: .25;
+}
+
+/*
+ * _disabled_yes запрещен для кнопок с _theme_clear
+ */
+.button_theme_clear.button_disabled_yes
+{
+    visibility: hidden;
+}
+
+.button_theme_clear:before
+{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+
+    padding: 0;
+
+    content: '';
+
+    border-radius: 2px;
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_clear.css end */

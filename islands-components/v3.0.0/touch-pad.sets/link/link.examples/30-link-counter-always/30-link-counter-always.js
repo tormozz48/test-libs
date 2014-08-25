@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-pad.sets/link/link.examples/30-link-counter-always/30-link-counter-always.ru.js

@@ -1,0 +1,750 @@
+/* 30-auto-overflow-y.css begin */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../desktop.blocks/button/button.css begin */
+@media all and (min-width:0)
+{
+    .button
+    {
+        cursor: pointer;
+    }
+}
+
+a.button:hover
+{
+    text-decoration: none;
+
+    outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+}
+
+/* ../../../../desktop.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    cursor: default !important;
+}
+
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../desktop.blocks/button/_theme/button_theme_normal.css begin */
+.button_theme_normal.button_hovered_yes
+{
+    color: #000 !important;
+}
+
+@media all and (min-width:0)
+{
+    /* _focused */
+    .button_theme_normal.button_focused_yes
+    {
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    .button_theme_normal.button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    /* _hovered */
+    .button_theme_normal.button_hovered_yes:not(.button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../desktop.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/button/_arrow/button_arrow_down.css begin */
+/* Стрелочка в кнопке */
+.button_arrow_down .button__text:after
+{
+    position: absolute;
+    top: 0;
+
+    width: 1em;
+    height: 100%;
+
+    content: '';
+
+    background: url("../../../../../../../output/freeze/nxVYm3eJskpK6xxT19mmmO3_VTk.svg") 50% 50% no-repeat;
+}
+
+.button_disabled_yes.button_arrow_down .button__text:after
+{
+    opacity: .3;
+}
+
+.i-ua_inlinesvg_no .button_arrow_down .button__text:after
+{
+    background: url("../../../../../../../output/freeze/IKmSl-WqL9H2BaqjM1VNJL3ZT6A.png") 0 50% no-repeat;
+}
+
+/* ../../../../common.blocks/button/_arrow/button_arrow_down.css end */
+/* ../../../../common.blocks/popup/popup.css begin */
+.popup
+{
+    position: absolute;
+    z-index: 32700;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1px;
+}
+
+/* ../../../../common.blocks/popup/popup.css end */
+/* ../../../../common.blocks/popup/__content/popup__content.css begin */
+.popup__content
+{
+    position: relative;
+    z-index: 10;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+/* ../../../../common.blocks/popup/__content/popup__content.css end */
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+.popup_theme_ffffff,
+.popup_theme_ffffff .popup__tail:after
+{
+    background: #fff;
+}
+
+.popup_theme_ffffff .popup__tail
+{
+    background: rgba(0,0,0,.15);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, rgba(0,0,0,.15)), color-stop(50%, rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+    background:         linear-gradient(to top right, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+}
+
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css begin */
+.popup_visibility_visible
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../desktop.blocks/popup/_visibility/popup_visibility_visible.css begin */
+/* https://st.yandex-team.ru/ISLCOMPONENTS-180 */
+.popup_visibility_visible:after
+{
+    content: '';
+}
+
+/* ../../../../desktop.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css begin */
+.popup_visibility_outside
+{
+    top: -99999px;
+    left: -99999px;
+
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css end */
+/* ../../../../common.blocks/popup/__under/popup__under.css begin */
+.popup__under
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/popup/__under/popup__under.css end */
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css begin */
+.popup__under_color_white
+{
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css end */
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    position: fixed;
+    z-index: 32000;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    opacity: .3;
+    background: #000;
+}
+
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../common.blocks/popup/_autosize/popup_autosize_yes.css begin */
+.popup_autosize_yes .popup__content
+{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ../../../../common.blocks/popup/_autosize/popup_autosize_yes.css end */
+/* ../../../../common.blocks/select/select.css begin */
+.select
+{
+    display: inline-block;
+}
+
+/* ../../../../common.blocks/select/select.css end */
+/* ../../../../common.blocks/select/__item/select__item.css begin */
+.select__item
+{
+    cursor: default;
+    white-space: nowrap;
+}
+
+.select__text
+{
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    max-width: 100%;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    vertical-align: top;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+}
+
+/* ../../../../common.blocks/select/__item/select__item.css end */
+/* ../../../../common.blocks/select/__item/_selected/select__item_selected_yes.css begin */
+/* :after – галочка */
+.select__item_selected_yes .select__text:after
+{
+    position: absolute;
+
+    height: 100%;
+
+    content: '';
+
+    background: url("../../../../../../../output/freeze/J_kxuf5tD5_oT3zFsj_RdNpltno.svg") 50% 50% no-repeat;
+}
+
+/* ../../../../common.blocks/select/__item/_selected/select__item_selected_yes.css end */
+/* ../../../../common.blocks/select/__item/_label/select__item_label_yes.css begin */
+.select__item_label_yes .select__text
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/select/__item/_label/select__item_label_yes.css end */
+/* ../../../../common.blocks/select/__button/select__button.css begin */
+.select__button
+{
+    max-width: 100%;
+
+    text-align: left;
+    vertical-align: top;
+}
+
+.select__button .button__text
+{
+    display: block;
+    overflow: hidden;
+
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+}
+
+.i-ua_js_no .select__button
+{
+    display: none;
+}
+
+.select_opened_yes .select__button .button__text:after
+{
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+/* ../../../../common.blocks/select/__button/select__button.css end */
+/* ../../../../common.blocks/select/__control/select__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .select__control
+    {
+        display: none;
+    }
+}
+
+/* ../../../../common.blocks/select/__control/select__control.css end */
+/* ../../../../common.blocks/select/__list/select__list.css begin */
+.select__list
+{
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* ../../../../common.blocks/select/__list/select__list.css end */
+/* ../../../../common.blocks/select/__separator/select__separator.css begin */
+.select__separator
+{
+    display: block;
+
+    width: 100%;
+    height: 1px;
+}
+
+.select__separator:first-child,
+.select__separator:last-child
+{
+    display: none;
+}
+
+/* ../../../../common.blocks/select/__separator/select__separator.css end */
+/* ../../../../common.blocks/select/__popup/select__popup.css begin */
+.select__popup.popup
+{
+    width: auto;
+    margin-top: 8px; /* Для соответствия отступа гайдам, но чтобы не менять js */
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-overflow-scrolling: touch; /* https://jira.yandex-team.ru/browse/LEGO-7899 */
+}
+
+/* after – в попапе не нужен */
+.select__popup:after
+{
+    content: none;
+}
+
+.select__popup .popup__content
+{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ../../../../common.blocks/select/__popup/select__popup.css end */
+/* ../../../../common.blocks/button/_size/button_size_m.css begin */
+.button_size_m
+{
+    font-size: 15px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_m
+    {
+        line-height: 32px;
+    }
+}
+
+.button_size_m .button__text
+{
+    padding: 0 15px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_m.button_arrow_down .button__text:after
+{
+    right: 10px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_m.button.button_arrow_down .button__text
+{
+    padding-right: 31px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_m.css end */
+/* ../../../../common.blocks/select/_size/select_size_m.css begin */
+.select_size_m,
+.select__popup_size_m .select__item
+{
+    font-size: 15px;
+}
+
+.select_size_m
+{
+    line-height: 32px;
+}
+
+.select__popup_size_m .select__item
+{
+    line-height: 28px;
+}
+
+/* popup */
+.select__popup_size_m .popup__content
+{
+    padding: 0;
+}
+
+.select__popup_size_m  .select__list
+{
+    padding: 6px 0;
+}
+
+/* popup__item */
+.select__popup_size_m .select__text
+{
+    padding: 0 15px 0 34px;
+}
+
+.select__popup_size_m .select__item_selected_yes .select__text:after
+{
+    left: 5px;
+
+    width: 36px;
+
+    -webkit-background-size: 15px;
+            background-size: 15px;
+}
+
+.select__popup_size_m .select__item_label_yes .select__text
+{
+    padding-left: 14px;
+}
+
+/* ../../../../common.blocks/select/_size/select_size_m.css end */
+/* ../../../../common.blocks/select/_theme/select_theme_normal.css begin */
+.select_theme_normal,
+.select__popup_theme_normal .select__item
+{
+    font-family: Arial, sans-serif;
+}
+
+/* option-group: */
+.select__separator,
+.select__popup_theme_normal .select__group
+{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.select__popup_theme_normal .select__group:last-child
+{
+    border-bottom: 0;
+}
+
+/* Зависимости от размеров: */
+/* _size_s */
+.select__popup_size_s.select__popup_theme_normal .select__separator
+{
+    margin-top: 4px;
+}
+
+.select__popup_size_s.select__popup_theme_normal .select__group
+{
+    padding-bottom: 4px;
+}
+
+.select__popup_size_s.select__popup_theme_normal .select__group + .select__group
+{
+    padding-top: 4px;
+}
+
+/* _size_m */
+.select__popup_size_m.select__popup_theme_normal .select__separator
+{
+    margin-top: 5px;
+}
+
+.select__popup_size_m.select__popup_theme_normal .select__group
+{
+    padding-bottom: 5px;
+}
+
+.select__popup_size_m.select__popup_theme_normal .select__group + .select__group
+{
+    padding-top: 5px;
+}
+
+/* item: */
+.select__popup_theme_normal .select__item_focused_yes
+{
+    background-color: #ffeba0;
+}
+
+.select__popup_theme_normal .select__item_disabled_yes
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/select/_theme/select_theme_normal.css end */
+/* ../../../../desktop.blocks/select/_theme/select_theme_normal.css begin */
+/* Select */
+.select__popup_theme_normal .select__item_hovered_yes
+{
+    background-color: #ffeba0;
+}
+
+/* ../../../../desktop.blocks/select/_theme/select_theme_normal.css end */
+
+/* 30-auto-overflow-y.css end */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */
+/* ../../../../desktop.blocks/button/button.ie.css begin */
+button.button
+{
+    /* Позволяет управлять внутренними отступами кнопки */ /**/
+    overflow: visible;
+
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/button/button.ie.css end */
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css begin */
+a.button_disabled_yes
+{
+    text-decoration: none!important;
+}
+
+/* ../../../../desktop.blocks/button/_disabled/button_disabled_yes.ie.css end */
+/* ../../../../desktop.blocks/popup/popup.ie.css begin */
+.popup
+{
+    padding: 0;
+}
+
+/* ../../../../desktop.blocks/popup/popup.ie.css end */
+/* ../../../../desktop.blocks/popup/_theme/popup_theme_ffffff.ie.css begin */
+.popup_theme_ffffff
+{
+    border: 1px solid #e4e4e4;
+}
+
+/* ../../../../desktop.blocks/popup/_theme/popup_theme_ffffff.ie.css end */
+/* ../../../../desktop.blocks/select/select.ie.css begin */
+.select
+{
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/select/select.ie.css end */
+/* ../../../../desktop.blocks/select/__button/select__button.ie.css begin */
+.select__button
+{
+    display: none;
+}
+
+/* ../../../../desktop.blocks/select/__button/select__button.ie.css end */
+/* ../../../../desktop.blocks/button/_size/button_size_m.ie.css begin */
+button.button_size_m
+{
+    height: 34px;
+
+    line-height: 28px;
+}
+
+.button_size_m .button__text
+{
+    padding: 0 13px;
+}
+
+/* ../../../../desktop.blocks/button/_size/button_size_m.ie.css end */

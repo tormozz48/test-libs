@@ -1,0 +1,66 @@
+{
+    "blockName": "tabs",
+    "description": "",
+    "jsParams": [],
+    "methods": [],
+    "properties": [
+        {
+            "name": "getSupportedControls",
+            "deprecated": false,
+            "description": "<p>Возвращает индекс активного табика или -1, если нет активного табика. Индексация начинается от 0.</p>\n",
+            "types": [],
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "events": [
+        {
+            "name": "change",
+            "description": "<p>Генерируется при смене активного таба.</p>",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>Данные события.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "data.currentIndex",
+                    "description": "<p>Индекс активного таба.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                },
+                {
+                    "name": "data.prevIndex",
+                    "description": "<p>Индекс предыдущего активного таба.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ]
+        }
+    ],
+    "mods": [
+        {
+            "name": "control",
+            "value": "buttons",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": ""
+        },
+        {
+            "name": "control",
+            "value": "menu",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": ""
+        }
+    ]
+}

@@ -1,0 +1,182 @@
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../common.blocks/tabs/tabs.examples/blocks/example/example.css begin */
+.example
+{
+    margin: 10px;
+}
+
+.example__event-output
+{
+    min-height: 2em;
+    margin-top: 1em;
+}
+
+.example__event-output code
+{
+    font-size: 1rem;
+}
+
+/* ../../../../common.blocks/tabs/tabs.examples/blocks/example/example.css end */
+/* ../../../../common.blocks/tabs-menu/__tab/tabs-menu__tab.css begin */
+.tabs-menu__tab
+{
+    cursor: pointer;
+}
+
+/* ../../../../common.blocks/tabs-menu/__tab/tabs-menu__tab.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../desktop.blocks/link/link.css begin */
+.link:hover,
+.link:visited:hover
+{
+    color: #d00 !important; /* Оторвать !important после того, как оторвем .i-global__hover */
+}
+
+/* ../../../../desktop.blocks/link/link.css end */
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css begin */
+.link_disabled_yes,
+.link_disabled_yes:hover,
+.link_disabled_yes:hover .link__inner,
+a.link_disabled_yes:link,
+a.link_disabled_yes:visited
+{
+    cursor: default !important;
+
+    color: #ddd !important;
+    outline: 0;
+}
+
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css end */
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_m.css begin */
+.tabs-menu_size_m
+{
+    font-size: 15px;
+    line-height: 36px;
+}
+
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_m.css end */
+/* ../../../../common.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css begin */
+.tabs-menu_theme_normal .tabs-menu__tab
+{
+    position: relative;
+}
+
+.tabs-menu_theme_normal .tabs-menu__tab_active_yes
+{
+    color: #000;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes:before
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    content: '';
+
+    border-bottom: 2px solid #000;
+
+    -webkit-transition: border-bottom-color .15s ease-out;
+            transition: border-bottom-color .15s ease-out;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes.tabs-menu__tab_disabled_yes:before
+{
+    border-bottom-color: #ddd;
+}
+
+/* ../../../../common.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css end */
+/* ../../../../desktop.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css begin */
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes:hover:before
+{
+    border-bottom-color: #d00;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes.tabs-menu__tab_disabled_yes:hover:before
+{
+    border-bottom-color: #ddd;
+}
+
+/* ../../../../desktop.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css end */
+/* ../../../../common.blocks/tabs-menu/_layout/tabs-menu_layout_horiz.css begin */
+.tabs-menu_layout_horiz .tabs-menu__tab
+{
+    display: inline-block;
+
+    margin-left: 16px;
+}
+
+.tabs-menu_layout_horiz .tabs-menu__tab_first_yes
+{
+    margin-left: 0;
+}
+
+/* ../../../../common.blocks/tabs-menu/_layout/tabs-menu_layout_horiz.css end */
+/* ../../../../common.blocks/tabs-panes/__pane/tabs-panes__pane.css begin */
+.tabs-panes__pane
+{
+    display: none;
+}
+
+.tabs-panes__pane_active_yes
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/tabs-panes/__pane/tabs-panes__pane.css end */

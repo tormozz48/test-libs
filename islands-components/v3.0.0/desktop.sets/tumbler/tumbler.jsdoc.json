@@ -1,0 +1,145 @@
+{
+    "blockName": "tumbler",
+    "description": "<p>Тумблер.</p>\n<p>Визуально представлен переключателем c двумя состояниями &quot;включено&quot;/&quot;выключено&quot;.\nПредназначен для выбора одного из двух возможных значений некоторого (или произвольного) параметра.\nВыбор осуществляется переводом переключателя тумблера в соответствующее состояние.</p>\n<p>Произвольные параметры можно задать в BEMJSON в полях <code>value</code> правого и левого элементов <code>option</code>.\nПо умолчанию выбран параметр левого элемента.</p>\n<p>Переключается кликом на тумблере, перетаскиванием переключателя мышкой и, если тумблер\nнаходится в фокусе, то клавиатурными клавишами <code>left</code> и <code>right</code>.</p>",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "toggle",
+            "description": "<p>Переключает состояния тумблера включен-выключен, либо, если у тумблера заданы значения для переключения,\nпереключает между левым и правым значением элемента <code>option</code>.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "uncheck",
+            "description": "<p>Выключает тумблер либо, если у тумблера заданы значения для переключения, выбирает левый элемент <code>option</code>.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "check",
+            "description": "<p>Включает тумблер либо, если у тумблера заданы значения для переключения, выбирает правый элемент <code>option</code>.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "val",
+            "description": "<p>Получает/устанавливает значение тумблера.\nПри вызове без параметров, возвращает текущее значение тумблера в виде строки.\nЕсли метод вызван со строковым параметром, то тумблер переключится в состояние,\nсоответствующее переданному значению, если оно будет существовать среди заданных значений тумблера.</p>\n",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "<p>Устанавливаемое значение тумблера.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Значение тумблера или объект блока.</p>",
+                    "types": [
+                        "String",
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "isChecked",
+            "description": "<p>Получает состояние тумблера.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>Возвращает true, если тумблер включен, и false, если выключен.</p>",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "isDisabled",
+            "description": "<p>Получает состояние активности тумблера.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>Возвращает false, если тумблер активен, и true, если не активен.</p>",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "change",
+            "description": "<p>Генерируется при переключении тумблера.</p>",
+            "params": [
+                {
+                    "name": "checked",
+                    "description": "<p>Состояние тумблера, включен или выключен.</p>",
+                    "optional": false,
+                    "types": [
+                        "Boolean"
+                    ]
+                },
+                {
+                    "name": "value",
+                    "description": "<p>Значение тумблера.</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ]
+        }
+    ],
+    "mods": []
+}

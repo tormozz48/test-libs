@@ -1,0 +1,147 @@
+/* 20-sizes.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/tabs-menu/tabs-menu.examples/blocks/example/example.css begin */
+.example
+{
+    margin: 10px;
+}
+
+/* ../../../../common.blocks/tabs-menu/tabs-menu.examples/blocks/example/example.css end */
+/* ../../../../common.blocks/tabs-menu/tabs-menu.examples/blocks/example/_type/example_type_table.css begin */
+.example_type_table
+{
+    border-collapse: collapse;
+}
+.example_type_table .example__cell
+{
+    padding: 8px 10px;
+
+    border: 1px solid #eee;
+}
+
+/* ../../../../common.blocks/tabs-menu/tabs-menu.examples/blocks/example/_type/example_type_table.css end */
+/* ../../../../common.blocks/tabs-menu/__tab/tabs-menu__tab.css begin */
+.tabs-menu__tab
+{
+    cursor: pointer;
+}
+
+/* ../../../../common.blocks/tabs-menu/__tab/tabs-menu__tab.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css begin */
+.link_disabled_yes,
+.link_disabled_yes:hover,
+.link_disabled_yes:hover .link__inner,
+a.link_disabled_yes:link,
+a.link_disabled_yes:visited
+{
+    cursor: default !important;
+
+    color: #ddd !important;
+    outline: 0;
+}
+
+/* ../../../../common.blocks/link/_disabled/link_disabled_yes.css end */
+/* ../../../../touch.blocks/link/_disabled/link_disabled_yes.css begin */
+.link_disabled_yes
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/link/_disabled/link_disabled_yes.css end */
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_m.css begin */
+.tabs-menu_size_m
+{
+    font-size: 15px;
+    line-height: 36px;
+}
+
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_m.css end */
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_s.css begin */
+.tabs-menu_size_s
+{
+    font-size: 13px;
+    line-height: 30px;
+}
+
+/* ../../../../common.blocks/tabs-menu/_size/tabs-menu_size_s.css end */
+/* ../../../../common.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css begin */
+.tabs-menu_theme_normal .tabs-menu__tab
+{
+    position: relative;
+}
+
+.tabs-menu_theme_normal .tabs-menu__tab_active_yes
+{
+    color: #000;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes:before
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    content: '';
+
+    border-bottom: 2px solid #000;
+
+    -webkit-transition: border-bottom-color .15s ease-out;
+            transition: border-bottom-color .15s ease-out;
+}
+
+.tabs-menu_theme_normal.tabs-menu_layout_horiz .tabs-menu__tab_active_yes.tabs-menu__tab_disabled_yes:before
+{
+    border-bottom-color: #ddd;
+}
+
+/* ../../../../common.blocks/tabs-menu/_theme/tabs-menu_theme_normal.css end */
+/* ../../../../common.blocks/tabs-menu/_layout/tabs-menu_layout_horiz.css begin */
+.tabs-menu_layout_horiz .tabs-menu__tab
+{
+    display: inline-block;
+
+    margin-left: 16px;
+}
+
+.tabs-menu_layout_horiz .tabs-menu__tab_first_yes
+{
+    margin-left: 0;
+}
+
+/* ../../../../common.blocks/tabs-menu/_layout/tabs-menu_layout_horiz.css end */
+
+/* 20-sizes.css end */

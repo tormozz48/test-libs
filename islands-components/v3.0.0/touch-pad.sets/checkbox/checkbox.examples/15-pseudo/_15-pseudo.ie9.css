@@ -1,0 +1,300 @@
+/* 15-pseudo.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/checkbox/checkbox.examples/15-pseudo.blocks/b-page/b-page.css begin */
+.b-page
+{
+    background: #f6f5f3;
+}
+
+/* ../../../../common.blocks/checkbox/checkbox.examples/15-pseudo.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/checkbox/checkbox.examples/15-pseudo.blocks/example/__example-text/example__example-text.css begin */
+.example
+{
+    background: #f6f5f3;
+}
+
+.example__example-text
+{
+    display: inline-block;
+
+    padding: 20px 0 10px;
+}
+
+/* ../../../../common.blocks/checkbox/checkbox.examples/15-pseudo.blocks/example/__example-text/example__example-text.css end */
+/* ../../../../common.blocks/checkbox/checkbox.css begin */
+.i-ua_js_no .checkbox__box:before,
+.i-ua_js_no .checkbox__box:after,
+.i-ua_js_no .checkbox__tick
+{
+    display: none;
+}
+
+/* ../../../../common.blocks/checkbox/checkbox.css end */
+/* ../../../../touch.blocks/checkbox/checkbox.css begin */
+.checkbox
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/checkbox/checkbox.css end */
+/* ../../../../common.blocks/checkbox/__box/checkbox__box.css begin */
+.checkbox__box
+{
+    position: relative;
+
+    white-space: nowrap;
+}
+
+/* ../../../../common.blocks/checkbox/__box/checkbox__box.css end */
+/* ../../../../common.blocks/checkbox/__control/checkbox__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .checkbox__control
+    {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+
+        width: 101%;
+        height: 101%;
+        margin: 0;
+        padding: 0;
+
+        opacity: 0;
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/__control/checkbox__control.css end */
+/* ../../../../common.blocks/checkbox/__tick/checkbox__tick.css begin */
+@media all and (min-width:0)
+{
+    .checkbox__tick
+    {
+        position: relative;
+        z-index: 3;
+
+        display: inline-block;
+        visibility: hidden;
+
+        padding: 0;
+
+        vertical-align: baseline;
+
+        background: url("../../../../../../../output/freeze/J_kxuf5tD5_oT3zFsj_RdNpltno.svg") 0 100% no-repeat;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/__tick/checkbox__tick.css end */
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_normal.css begin */
+.checkbox_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_theme_normal .checkbox__box:before,
+    .checkbox_theme_normal .checkbox__box:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :after — border & background */
+    .checkbox_theme_normal .checkbox__box:after
+    {
+        top: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked */
+    .checkbox_theme_normal .checkbox__box_checked_yes:after
+    {
+        background: #ffeba0;
+    }
+
+    .checkbox_theme_normal .checkbox__box_checked_yes:after,
+    .checkbox_theme_normal .checkbox__box_checked_yes.checkbox__box_focused_yes:after
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_normal.css end */
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_pseudo.css begin */
+.checkbox_theme_pseudo
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_theme_pseudo .checkbox__box:before,
+    .checkbox_theme_pseudo .checkbox__box:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :after — background */
+    .checkbox_theme_pseudo .checkbox__box:after
+    {
+        top: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked */
+    .checkbox_theme_pseudo .checkbox__box_checked_yes:after
+    {
+        background: #ffeba0;
+    }
+
+    .checkbox_theme_pseudo .checkbox__box_checked_yes:after,
+    .checkbox_theme_pseudo .checkbox__box_checked_yes.checkbox__box_focused_yes:after
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_pseudo.css end */
+/* ../../../../common.blocks/checkbox/_checked/checkbox_checked_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_checked_yes .checkbox__tick
+    {
+        visibility: visible;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_checked/checkbox_checked_yes.css end */
+/* ../../../../common.blocks/checkbox/_disabled/checkbox_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_disabled_yes .checkbox__box:after
+    {
+        background: rgba(0,0,0,.08);
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+    }
+
+    .checkbox_disabled_yes .checkbox__tick
+    {
+        opacity: .4;
+    }
+}
+
+.checkbox_disabled_yes .checkbox__label
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/checkbox/_disabled/checkbox_disabled_yes.css end */
+/* ../../../../common.blocks/checkbox/__label/checkbox__label.css begin */
+.checkbox__label
+{
+    margin-left: .4em;
+}
+
+/* ../../../../common.blocks/checkbox/__label/checkbox__label.css end */
+/* ../../../../common.blocks/checkbox/_size/checkbox_size_s.css begin */
+.checkbox_size_s
+{
+    font-size: 13px;
+}
+
+.checkbox_size_s .checkbox__box:after,
+.checkbox_size_s .checkbox__box:before
+{
+    width: 12px;
+    height: 12px;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_size_s .checkbox__tick
+    {
+        top: -1px;
+        left: 2px;
+
+        width: 16px;
+        height: 16px;
+
+        -webkit-background-size: contain;
+                background-size: contain;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_size/checkbox_size_s.css end */
+/* ../../../../common.blocks/checkbox/_size/checkbox_size_m.css begin */
+.checkbox_size_m
+{
+    font-size: 15px;
+}
+
+.checkbox_size_m .checkbox__box:after,
+.checkbox_size_m .checkbox__box:before
+{
+    width: 15px;
+    height: 15px;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_size_m .checkbox__tick
+    {
+        top: 0;
+        left: 2px;
+
+        width: 18px;
+        height: 18px;
+
+        -webkit-background-size: contain;
+                background-size: contain;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_size/checkbox_size_m.css end */
+
+/* 15-pseudo.css end */

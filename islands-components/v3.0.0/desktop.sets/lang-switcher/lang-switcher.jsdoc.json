@@ -1,0 +1,9 @@
+{
+    "blockName": "lang-switcher",
+    "description": "<p>Переключатель языка.</p>\n<p>На этапе инициализации выполняется предварительная загрузка\nизображения для каждого дочернего элемента <code>flag</code>.\nПути к изображениям берутся из CSS-свойства <code>background-image</code>.</p>",
+    "jsParams": [],
+    "methods": [],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

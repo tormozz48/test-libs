@@ -1,0 +1,383 @@
+{
+  "name": "select",
+  "elems": [
+    {
+      "name": "control",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Нативный селект\n"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "mods": [
+        {
+          "name": "disabled",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Неактивное состояние"
+            }
+          ]
+        },
+        {
+          "name": "focused",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Фокус состояние"
+            }
+          ]
+        },
+        {
+          "name": "hovered",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Наведенное состояние"
+            }
+          ]
+        },
+        {
+          "name": "inner",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Пункт в option group"
+            }
+          ]
+        },
+        {
+          "name": "label",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Заголовок option group"
+            }
+          ]
+        },
+        {
+          "name": "selected",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Выбранный пункт"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Пункт выпадающего списка"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Выпадающий список"
+        }
+      ]
+    },
+    {
+      "name": "popup",
+      "mods": [
+        {
+          "name": "scrollable",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Вертикальный скролл"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Попап, как элемент селекта\n"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Разделитель между пунктами"
+        }
+      ]
+    },
+    {
+      "name": "ui",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Описывает процесс отрисовки блока (служебный)"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "layout",
+      "vals": [
+        {
+          "name": "content",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Селект шириной 100%"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Модификатор, который может менять поведение ширины селекта (по умолчанию - auto)"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 15px"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 13px"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычная\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Темы"
+        }
+      ]
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Выпадающий список (select)"
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>select</code>(«селект») – раскрывающийся список выбора. Каждый пункт списка создается с помощью элемента блока <code>option</code>, который должен быть вложен в контейнер <code>select</code>.\nВ HTML всегда лежит невидимый <code>&lt;select&gt;</code> для использования его функциональности. При отключенном JS появляется нативный контрол.</p>\n<p>Раскрывающийся список имеет всего один уровень вложенности, как в нативном выпадающем списке, и позволяет выбрать только один элемент из списка.\nБольше уровней вложенности не предусмотрено.</p>\n<p><code>select</code> – составной блок, его реализация основана на блоках <a href=\"../button/button.html\">button</a> (кнопка селекта) и <a href=\"../popup/popup.html\">popup</a> (всплывающее окно селекта).\nВизуально представлен кнопкой и выпадающим списком.</p>\n<p>В MSIE8 и ниже блок <code>select</code> деградируют до нативного селекта <code>&lt;select&gt;</code>.</p>\n<h3 id=\"-\">Варианты использования</h3>\n<p><code>select</code> позволяет создавать следующие разновидности списков:</p>\n<ul>\n<li><p><strong>обычный</strong> – содержит список пунктов.</p>\n</li>\n<li><p><strong>с группой элементов</strong> – выпадающий список с пунктами, объединенными в группу. Групп может быть несколько.</p>\n<p>Для объединения пунктов списка в группу служит элемент блока <code>option  group</code> – контейнер, внутри которого располагаются элементы <code>option</code> группы. Группе элементов можно задать заголовок – элемент блока <code>label</code>. Визуально заголовок группы выделяется жирным начертанием. Все вложенные элементы группы смещаются вправо от своих исходных положений (на 2em).</p>\n</li>\n</ul>\n<!-- %%select.examples/15-fixed/15-fixed%% -->\n\n<ul>\n<li><strong>динамически перестраиваемые списки</strong> – связанные списки, где содержание зависимого (второго) списка формируется в зависимости от выбранного значения в первом списке.</li>\n</ul>\n<!-- %%select.examples/55-dynamic/55-dynamic%% -->\n\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для использования селекта:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;select&#39;, // имя блока\n    name: &#39;mail&#39;, // имя контрола для отправки на сервер\n    mods: {size: &#39;m&#39;, theme: &#39;normal&#39;}, // модификаторы блока. Модификаторы темы и размера – обязательные\n    content: [ // содержимое селекта\n        { // кнопка селекта\n            block: &#39;button&#39;,\n            content: &#39;Отправленные&#39; // текст кнопки (отображает выбранный пункт списка)\n        },\n        {\n            elem: &#39;control&#39;, // нативный селект\n            content: [ // массив элементов `option` и `option-group`\n                {\n                    elem: &#39;option&#39;, // пункт выпадающего списка\n                    attrs: {value: &#39;send&#39;}, // атрибуты списка. value – обязательный\n                    content: &#39;Отправленные&#39; // название пункта\n                },\n                {\n                    elem: &#39;option&#39;,\n                    attrs: {value: &#39;draft&#39;},\n                    content: &#39;Черновики&#39;\n                },\n                {\n                    elem: &#39;option-group&#39;, // элемент группы\n                    attrs: {label: &#39;Тут группа&#39;}, // заголовок группы\n                    content: [ // массив элементов `option`, принадлежащих группе\n                        {\n                               elem: &#39;option&#39;,\n                            attrs: {value: &#39;tvc&#39;},\n                            content: &#39;ТВЦ&#39;\n                        }\n                       ...\n                    ]\n                }\n                …\n            ]\n        }\n    ]\n}</code></pre>\n<p>В результате BEMHTML-преобразований блок <code>select</code> трансформируется в HTML-тэг <code>&lt;span&gt;</code>, реализующий кастомный селект. Внутри него будет находиться нативный контрол <code>&lt;select name=&quot;имя&quot; атрибуты&gt;</code>(элемент блока <code>control</code>), содержащий нативные элементы <code>&lt;option атрибуты&gt;</code> и <code>&lt;optgroup атрибуты&gt;</code> – преобразованные элементы блока <code>option</code> и <code>option-group</code> соответственно.</p>\n<!-- %%select.examples/10-auto/10-auto%% -->\n\n<h4 id=\"-\">Атрибуты выпадающего списка</h4>\n<p>Так как функциональность блока <code>select</code> основана на нативных элементах <code>select</code>, <code>option</code> и <code>optgroup</code>, то ему можно задавать аналогичные нативные атрибуты, а\nдля нативных элементов <code>option</code> и <code>optgroup</code> задаются одноименные пары («ключ:значение») в зарезервированном поле атрибутов <code>attrs</code> соответствующих элементов блока.</p>\n<p>Для формирования HTML-атрибутов в нативном селекте во входном BEMJSON блока задаются одноименные поля.</p>\n<p><code>id</code>, <code>name</code>, <code>tabindex</code> – необязательные атрибуты блока.</p>\n<ul>\n<li><code>{String} id</code> – уникальный идентификатор, генерируется по умолчанию.</li>\n<li><code>{String} name</code> – имя контрола для отправки на сервер. Если имя не задано явно в BEMJSON, будет сгенерирован атрибут <code>name=&quot;id&quot;</code>.</li>\n<li><code>{Number} tabindex</code>.</li>\n</ul>\n<h4 id=\"-\">Атрибуты и содержимое пунктов списка</h4>\n<ul>\n<li><p>Атрибуты:</p>\n<ul>\n<li><code>selected</code> – служит для установки активного пункта списка. По умолчанию выбран первый элемент списка.</li>\n<li><code>value</code> – значение пункта списка, которое будет отправлено на сервер или прочитано с помощью скриптов. Обязательный атрибут.</li>\n<li><code>disabled</code> – блокирует доступ к элементу списка <code>disabled: &#39;disabled&#39;</code>.</li>\n</ul>\n</li>\n<li><p><code>content</code> – название пункта в списке.</p>\n</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    elem: &#39;option&#39;, // пункт списка\n    attrs: {value: &#39;us&#39;, selected: &#39;selected&#39;} // атрибуты пункта\n    content: &#39;Белоруссия&#39;\n}</code></pre>\n<h4 id=\"-\">Атрибуты и содержимое группы пунктов</h4>\n<ul>\n<li><p>Атрибуты элемента блока <code>option-group</code> устанавливаются в его поле <code>attrs</code>.</p>\n<ul>\n<li><code>disabled</code> – блокирует доступ ко всем элементам группы списка <code>disabled: &#39;disabled&#39;</code>.</li>\n<li><code>label</code> – заголовок группы.</li>\n</ul>\n</li>\n<li><p><code>content</code> – содержит массив элементов <code>option</code> входящих в группу.</p>\n</li>\n</ul>\n<pre><code class=\"lang-js\">{\n     elem: &#39;option-group&#39;,\n    attrs: {label: &#39;СНГ&#39;}, // заголовок и атрибуты группы\n    content: [ // массив элементов `option`, входящих в группу\n        {\n            elem: &#39;option&#39;, // элемент группы\n            attrs: {value: &#39;ua&#39;},\n            content: &#39;Украина&#39;\n        }\n        ...\n    ]\n}</code></pre>\n<h3 id=\"-\">Модификаторы</h3>\n<p>«Галочка» для выбранного пункта выпадающего списка и «стрелочка» в кнопке – векторные изображения, в формате svg. Браузерам, не поддерживающим svg, отдается картинка в формате png.</p>\n<h4 id=\"-\">Ширина селекта</h4>\n<p>Ширину выпадающего списка можно установить с помощью модификатора <code>layout</code>, а также изменять с помощью CSS-стилей.</p>\n<ul>\n<li><p>По умолчанию селекту задан модификатор <code>layout</code> со значением <code>auto</code> (в CSS установлено свойство <code>width: auto</code>). В этом случае ширина выпадающего списка и кнопки устанавливается, исходя из ширины его содержимого.</p>\n<!-- %%select.examples/10-auto/10-auto%% -->\n</li>\n<li><p>Ширину вы можете ограничить по своему усмотрению CSS-свойством <code>max-width</code> – <a href=\"https://github.yandex-team.ru/lego/islands-controls/blob/dev/common.blocks/select/select.examples/12max-width.blocks/select/select.css\">пример select.css</a>.</p>\n<!-- %%select.examples/12-max-width/12-max-width%% -->\n</li>\n<li><p>Селект с фиксированной шириной.\nПри выставленном модификаторе <code>layout</code> со значением <code>fixed</code> кнопке и выпадающему списку можно задать необходимое фиксированное значение ширины (CSS-свойство <code>width</code>) – <a href=\"https://github.yandex-team.ru/lego/islands-controls/blob/dev/common.blocks/select/select.examples/15fixed.blocks/select/select.css\">пример select.css</a>.</p>\n<p><em><strong>Важно</strong>: При использовании модификатора<code>layout</code> со значением <code>fixed</code> или CSS-свойства <code>max-width</code> ширину элемента <code>popup</code> нужно указывать на 2 пикселя меньше требуемой.</em></p>\n<!-- %%select.examples/15-fixed/15-fixed%% -->\n\n<p>Если у вас на странице находится два селекта с разной фиксированной шириной, то для каждого нужно выставить модификатор <code>width</code> с соответствующим значением, чтобы CSS-свойство, ограничивающее ширину, не применилось ко всем селектам. <a href=\"https://github.yandex-team.ru/lego/islands-controls/blob/dev/common.blocks/select/select.examples/17two-fixed.blocks/select/select.css\">см. пример select.css</a></p>\n</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;select&#39;,\n    name: &#39;mail&#39;,\n    mods: {size: &#39;s&#39;, theme: &#39;normal&#39;, width: &#39;100&#39;},\n    content: [...]\n},\n{\n    block: &#39;select&#39;,\n    name: &#39;mail2&#39;,\n    mods: {size: &#39;m&#39;, theme: &#39;normal&#39;, width: &#39;400&#39;},\n    content: [...]\n}</code></pre>\n<!-- %%select.examples/17-two-fixed/17-two-fixed%% -->\n\n<ul>\n<li>Селект с модификатором <code>layout</code> с выставленным значением <code>content</code> имеет CSS-свойство <code>width: 100%</code>. В этом случае ширина кнопки и выпадающего списка – 100%. Они растягиваются на всю ширину родительского блока.</li>\n</ul>\n<!-- %%select.examples/35-content/35-content%% -->\n\n<h4 id=\"-\">Высота выпадающего списка</h4>\n<ul>\n<li><code>rows</code> – JS-параметр селекта, служит для ограничения высоты списка.\nЗначение параметра определяет количество отображаемых строк в списке.\nЗадается во входных данных блока следующим образом:</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;select&#39;,\n    name: &#39;mail&#39;,\n    mods: {size: &#39;m&#39;, theme: &#39;normal&#39;},\n    js: {rows: 6}, // указание количества отображаемых строк в селекте\n    content: [...]\n}</code></pre>\n<p>Если количество пунктов больше, чем указано в <code>rows</code>, список отобразится с вертикальной прокруткой (для элемента <code>popup</code> будет установлен модификатор <code>scrollable</code> со значением <code>yes</code>, отвечающий за CSS-свойство <code>overflow-y:scroll</code>).</p>\n<!-- %%select.examples/30-auto-overflow-y/30-auto-overflow-y%% -->\n\n<h4 id=\"-\">Темы оформления</h4>\n<p>Для блока <code>select</code> реализована стандартная тема оформления – обычная (модификатор <code>theme</code> со значением <code>normal</code>). Модификатор темы – обязателен при объявлении блока. По умолчанию не определен.</p>\n<p>Значение модификатора темы селекта передается модификатору темы кнопки (блок <code>button</code>), если оно явно не задано во входных данных кнопки.\nПо умолчанию кнопке селекта установлен модификатор <code>arrow</code> со значением <code>down</code> (кнопка со стрелкой вниз).</p>\n<h4 id=\"-\">Размеры</h4>\n<p>Для селекта реализованы два размера - <code>s</code> и <code>m</code>. Модификатор размера <code>size</code> – обязательный. По умолчанию не определен.</p>\n<p>По умолчанию значение модификатор <code>size</code> селекта передается блокам <code>button</code> и <code>popup</code>.</p>\n<p>Если нужен размер кнопки, отличный от заданного в селекте, его можно определить в поле <code>mods</code> входных данных кнопки <code>button</code>.</p>\n<p>Таблица размеров пунктов селекта</p>\n<table>\n<thead>\n<tr>\n<th>Размеры блока</th>\n<th>Размер шрифта</th>\n<th>Высота кнопки</th>\n<th>Высота поля</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>s</td>\n<td>13px</td>\n<td>28px</td>\n<td>28px</td>\n</tr>\n<tr>\n<td>m</td>\n<td>15px</td>\n<td>32px</td>\n<td>32px</td>\n</tr>\n</tbody>\n</table>\n<p>При необходимости размер блока можно доопределить в проекте. <a href=\"../button/button.html#customsize\">Кастомный размер</a>.</p>\n<h4 id=\"-\">Состояния селекта и его элементов</h4>\n<ul>\n<li>Состояния блока <code>select</code>:<ul>\n<li><strong>Не активен</strong>, модификатор блока <code>disabled</code> со значением<code>yes</code>.\nПри переключении модификатора <code>disabled</code> экземпляр блока <code>select</code> находит вложенный в него блок <code>button</code> и переключает его модификатор <code>disabled</code> в то же значение, которое получил сам.\nМодификатор <code>disabled</code> в значении <code>yes</code> блока <code>select</code> делает кнопку селекта неактивной и, следовательно, выпадающий список будет не доступен для пользователя.</li>\n</ul>\n</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;select&#39;,\n    name: &#39;mail&#39;,\n    mods: {size: &#39;m&#39;, theme: &#39;normal&#39;, disabled: &#39;yes&#39;}, // добавлен модификатор блока `disabled`\n    content: [...]\n}</code></pre>\n<ul>\n<li>Состояния элемента <code>option-group</code> (группа пунктов списка):<ul>\n<li><strong>Не активна</strong> – не доступны только элементы списка, входящие в группу.\nЗадать это состояние можно в поле атрибутов элемента <code>option-group</code>, указав атрибуту <code>disabled</code> значение <code>disabled</code>:</li>\n</ul>\n</li>\n</ul>\n<pre><code class=\"lang-js\">...\n{\n    elem: &#39;option-group&#39;,\n    attrs: {label: &#39;Заголовок группы&#39;, disabled: &#39;disabled&#39;},\n    content: [...]\n}\n...</code></pre>\n<ul>\n<li><p>Состояния элемента <code>option</code> (пункты списка, элементы <code>select__item</code>) :</p>\n<ul>\n<li><strong>Не активен</strong>, модификатор <code>disabled</code> – пункт списка не доступен пользователю.</li>\n<li><strong>Наведен</strong>, модификатор <code>hovered</code>.</li>\n<li><p><strong>В фокусе</strong>, модификатор <code>focused</code>.\nРаскрытие селекта может выполняться клавишей <code>Space</code> или <code>Enter</code>, если он находится в фокусе.\nПереход по пунктам селекта может осуществляться клавишами <code>[↑,↓]</code>.</p>\n</li>\n<li><p><strong>Выбран</strong>, модификатор <code>selected</code> – выбранный пункт, визуально отмечен «галочкой».</p>\n</li>\n</ul>\n<p>Состояние <strong>не активен</strong> пункту можно установить во входных данных элемента <code>option</code> в поле атрибутов <code>attrs</code>,  задав атрибут <code>disabled</code> со значением <code>disabled</code>.</p>\n</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    elem: &#39;option&#39;,\n    attrs: {value: &#39;unknown&#39;, disabled: &#39;disabled&#39;},\n    content: &#39;Неизвестные&#39;\n}</code></pre>\n<!-- %%select.examples/20-auto-disabled/20-auto-disabled%% -->\n\n\n<h4 id=\"-\">Предварительный выбор пункта списка</h4>\n<p>Во входных данных в контенте кнопки <code>button</code> нужно прописывать выбранный по умолчанию пункт селекта. Это нужно для того, чтобы при загрузке страницы, пока еще не отработал JS, кнопка не схлопывалась без контента.</p>\n<p>По умолчанию выбран первый пункт списка. Чтобы выбрать по умолчанию другой пункт — нужно добавить нужному пункту атрибут <code>selected=&quot;selected&quot;</code> и в контенте кнопки <code>button</code> прописать содержимое этого пункта. Текст кнопки и выбранного пункта будут синхронизированы.</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;select&#39;,\n    name: &#39;mail&#39;,\n    mods: {size:&#39;m&#39;},\n    content: [\n        {\n            block: &#39;button&#39;,\n            content: &#39;Черновики&#39; //предварительно выбранный пункт &quot;Черновики&quot;\n        },\n        {\n            elem: &#39;control&#39;,\n            content: [\n                {\n                    elem: &#39;option&#39;,\n                    attrs: {value: &#39;send&#39;},\n                    content: &#39;Отправленные&#39;\n                },\n                {\n                    elem: &#39;option&#39;,\n                    attrs: {value: &#39;draft&#39;, selected: &#39;selected&#39;},\n                    content: &#39;Черновики&#39;\n                }\n            ]\n        }\n    ]\n}</code></pre>\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li><strong>Кнопка селекта</strong>: со стрелкой вниз (модификатор блока <code>button</code> – <code>_arrow_down</code>).</li>\n<li><strong>Количество строк в селекте</strong>: 15.</li>\n<li><strong>Ширина списка</strong>: по ширине содержимого элемента списка (модификатор <code>layout</code> со значением <code>auto</code>).</li>\n<li><strong>Выбранный элемент</strong>: первый в списке.</li>\n<li><code>id</code>: по умолчанию генерируется случайным образом.</li>\n<li>Если значение параметра <code>name</code> явно не задано во входных данных, ему будет присвоено значение <code>id</code>.</li>\n<li><strong>Выпадающее окно</strong> (<code>popup</code>): раскрывается без анимации (модификатор<code>animate</code> со значением <code>no</code>), его направления раскрытия - <code>down</code>.</li>\n</ul>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "select.examples/10-auto/10-auto",
+          "title": "C шириной auto\n"
+        },
+        {
+          "url": "select.examples/12-max-width/12-max-width",
+          "title": "C шириной auto и max-width\n"
+        },
+        {
+          "url": "select.examples/15-fixed/15-fixed",
+          "title": "С фиксированной шириной\n"
+        },
+        {
+          "url": "select.examples/16-fixed-disabled/16-fixed-disabled",
+          "title": "Неактивный селект c фиксированной шириной\n"
+        },
+        {
+          "url": "select.examples/17-two-fixed/17-two-fixed",
+          "title": "C разной фиксированной шириной в размерах\n"
+        },
+        {
+          "url": "select.examples/18-fixed-in-table/18-fixed-in-table",
+          "title": "C фиксированной шириной в таблице\n"
+        },
+        {
+          "url": "select.examples/20-auto-disabled/20-auto-disabled",
+          "title": "C неактивными пунктами в выпадающем списке\n"
+        },
+        {
+          "url": "select.examples/25-fixed-overflow-y/25-fixed-overflow-y",
+          "title": "C overflow-y и фиксированной шириной\n"
+        },
+        {
+          "url": "select.examples/30-auto-overflow-y/30-auto-overflow-y",
+          "title": "C overflow-y и шириной auto\n"
+        },
+        {
+          "url": "select.examples/35-content/35-content",
+          "title": "Шириной 100%\n"
+        },
+        {
+          "url": "select.examples/50-api/50-api",
+          "title": "API\n"
+        },
+        {
+          "url": "select.examples/52-related/52-related",
+          "title": "Динамически перестраиваемые селекты (1)\n"
+        },
+        {
+          "url": "select.examples/55-dynamic/55-dynamic",
+          "title": "Динамически перестраиваемые селекты (2)\n"
+        },
+        {
+          "url": "select.examples/60-popup/60-popup",
+          "title": "В попапе"
+        },
+        {
+          "url": "select.examples/65-popup-fixed/65-popup-fixed",
+          "title": "В попапе с position: fixed"
+        }
+      ]
+    }
+  ]
+}

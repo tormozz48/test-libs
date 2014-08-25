@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/dropdown-menu/dropdown-menu.examples/15-button-dropdown/15-button-dropdown.ru.js

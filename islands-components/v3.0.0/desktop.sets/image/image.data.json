@@ -1,0 +1,44 @@
+{
+  "name": "image",
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.wiki",
+      "content": {
+        "block": "b-text",
+        "content": [
+          {
+            "elem": "p",
+            "content": [
+              "Блок представляет собой однопиксельный gif для вставки картинок"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>image</code> – абстрактная картинка. Создает контейнер для размещения изображения на веб-странице. Реализован посредством BEMHTML-шаблона, формирующего HTML-тэг <code>&lt;img атрибуты&gt;</code>.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для использования блока:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;image&#39;\n}</code></pre>\n<p>По умолчанию блок без параметров выведет на веб-странице тэг <code>&lt;img&gt;</code> с однопиксельным прозрачным gif-файлом, путь к которому задан в атрибуте <code>src</code>, и пустым атрибутом <code>alt</code>.</p>\n<h3 id=\"-\">Атрибуты блока</h3>\n<p><code>url</code>, <code>alt</code>, <code>width</code>, <code>height</code> – опциональные. Объявляются в одноименных полях входного BEMJSON блока.\nВ BEMHTML-шаблоне <code>url</code> преобразуется в атрибут <code>src</code>, остальные – в одноименные атрибуты тэга  <code>&lt;img&gt;</code> с соответствующими значениями.</p>\n<h3 id=\"-\">Варианты использования блока</h3>\n<p>В блоке путь к изображению задается двумя способами:</p>\n<ul>\n<li><a href=\"#iurl\">c помощью поля url</a>;</li>\n<li><a href=\"#imod\">с помощью модификатора</a>.</li>\n</ul>\n<p><a name=\"iurl\"></a></p>\n<h4 id=\"-url\">Задание изображения с помощью url</h4>\n<p>Этот способ рекомендуется для добавления одиночных изображений.</p>\n<p>Путь к изображению указываем в поле <code>url</code> входного BEMJSON блока:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;image&#39;,      // имя блока\n    url: &#39;my-image.png&#39;, // путь к изображению\n    alt: &#39;My image&#39;      // альтернативный текст для изображения\n}</code></pre>\n<p>Также изображению можно задать необходимую высоту и ширину.</p>\n<!-- %%image.examples/10-image/10-image%% -->\n\n<p><a name=\"imod\"></a></p>\n<h4 id=\"-\">Задание изображения с помощью добавления модификатора</h4>\n<p>Этот способ рекомендуется при использовании спрайтов.</p>\n<p>Добавляем блоку модификатор в виде произвольной пары «ключ:значение», BEMJSON:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;image&#39;,\n    mods: {type: &#39;simple&#39;}, // добавление нового модификатора\n    alt: &#39;My image&#39;\n}</code></pre>\n<p>В CSS модификатора в стилевом свойстве <code>background: url(...)</code> задаем размеры изображения и путь к нему:</p>\n<pre><code class=\"lang-css\">.image_type_simple\n{\n    width: 16px;\n    height: 16px;\n    background: no-repeat -50px 0 url(image-sprite.png);\n}</code></pre>\n<p>Этот способ подходит и для задания одиночных изображений:</p>\n<pre><code class=\"lang-css\">.image_type_simple\n{\n    background: no-repeat url(image-sprite.png);\n}</code></pre>\n<h3 id=\"-\">Значения по умолчанию</h3>\n<p>По умолчанию тэгу <code>&lt;img&gt;</code> добавляются атрибуты:</p>\n<ul>\n<li><code>src</code>: &#39;//yastatic.net/lego/_/La6qi18Z8LwgnZdsAr1qy1GwCwo.gif&#39; (путь к прозрачному, однопиксельному gif-файлу);</li>\n<li><code>alt</code>: пустая строка.</li>\n</ul>\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Абстрактная картинка"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "image.examples/10-image/10-image",
+          "title": "Пример с иконкой серпа"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "tabs-panes",
+  "elems": [
+    {
+      "name": "pane",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Панелька, скрыта в обычном состоянии, показана с модификатором `tabs-panes__pane_active_yes`.\n"
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h3 id=\"-api\">Внимание! Блок имеет нестабильный API</h3>\n<p>Панельки для табиков, реализуют переключение контента. Может работать с любым блоком, который геренинует событие\n<code>change</code> и передает в качестве параметров <code>{Number} сurrentIndex</code> и <code>{Number} prevIndex</code>. Пример такого блока -\nблок <a href=\"../tabs/tabs.html\"><code>tabs</code></a>.</p>\n<p>Чтобы связать панельки с другим блоком, к последнему нужно примешать\n<code>[{block: &#39;tabs-menu&#39;, js: {id: &#39;your-binding-id&#39;}}]</code> и использовать этот же <code>id</code> в объявлении <code>tabs-panes</code>; также\nнужно доопределить статический метод <code>getSupportedControls</code>, чтобы он возвращал названия нужных блоков. Поумолчанию,\nвозвращает <code>tabs</code>.</p>\n<p>Пример подключения:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;my-custom-block&#39;,\n    mix: [{block: &#39;tabs-menu&#39;, js: {id: &#39;your-binding-id&#39;}}]\n    // ...\n},\n{\n    block: &#39;tabs-panes&#39;,\n    id: &#39;your-binding-id&#39;\n    // ...\n},</code></pre>\n"
+    }
+  ],
+  "title": [
+    {
+      "level": "common.blocks",
+      "tech": "title.txt",
+      "content": "Панельки для табиков\n"
+    }
+  ]
+}

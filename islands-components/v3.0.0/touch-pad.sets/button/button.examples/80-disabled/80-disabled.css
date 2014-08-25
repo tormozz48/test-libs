@@ -1,0 +1,12 @@
+@import url(../../../../libs/bem-bl/blocks-touch/b-page/b-page.css);
+@import url(../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css);
+@import url(../../../../common.blocks/button/button.css);
+@import url(../../../../common.blocks/button/__text/button__text.css);
+@import url(../../../../common.blocks/button/_disabled/button_disabled_yes.css);
+@import url(../../../../touch.blocks/button/_disabled/button_disabled_yes.css);
+@import url(../../../../touch.blocks/button/_pressed/button_pressed_yes.css);
+@import url(../../../../common.blocks/button/_theme/button_theme_normal.css);
+@import url(../../../../common.blocks/button/_size/button_size_m.css);
+@import url(../../../../common.blocks/button/_theme/button_theme_pseudo.css);
+@import url(../../../../common.blocks/button/_theme/button_theme_action.css);
+@import url(../../../../common.blocks/button/_theme/button_theme_clear.css);

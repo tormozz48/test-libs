@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-pad.sets/tumbler/tumbler.examples/15-disabled/15-disabled.ru.js

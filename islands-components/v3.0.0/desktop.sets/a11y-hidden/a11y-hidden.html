@@ -1,0 +1,23 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>a11y-hidden</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок a11y-hidden</span></div><div class="block__title">Визуально скрытый блок
+</div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>а11y-hidden</code> обеспечивает доступность веб-контента людям с ограниченными возможностями. Предоставляет необходимые сведения об элементах интерфейса программам чтения с экрана, для альтернативного воспроизведения.</p>
+<p>Блок визуально скрыт и доступен только специальным приложениям. Является вспомогательным для других блоков и самостоятельно не используется. </p>
+<h3 id="-">Подключение блока</h3>
+<p><code>а11y-hidden</code> подключается примиксовыванием к другому блоку:</p>
+<pre><code class="lang-js">({
+    block: &#39;info&#39;,
+    mix: [{ block: &#39;a11y-hidden&#39; }],
+    content: &#39;Информация для людей с ограниченными возможностями.&#39; // скрытое содержимое
+})</code></pre>
+<p>В HTML блока будет добавлен дополнительный класс <code>а11y-hidden</code> и текст для альтернативного воспроизведения. </p>
+<pre><code class="lang-html">&lt;div class=&quot;info a11y-hidden&quot;&gt;Информация для людей с ограниченными возможностями.&lt;/div&gt;</code></pre>
+<!-- %%a11y-hidden.examples/10-simple/10-simple%% -->
+
+<p>Блок реализован посредством CSS:</p>
+<pre><code class="lang-css">.a11y-hidden
+{
+    position: absolute;
+    left: -32767px;
+}</code></pre>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="a11y-hidden:examples:10-simple:10-simple"><a class="example__title" href="a11y-hidden.examples/10-simple/10-simple.html" target="_blank">Визуально скрытый блок
+</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="a11y-hidden.examples/10-simple/10-simple.bemjson.js"></iframe><iframe class="example__live" src="a11y-hidden.examples/10-simple/10-simple.html"></iframe></div></div></div></div></body></html>

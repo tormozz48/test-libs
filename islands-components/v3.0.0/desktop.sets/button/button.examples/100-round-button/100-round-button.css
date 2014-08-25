@@ -1,0 +1,13 @@
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css);
+@import url(../../../../common.blocks/button/button.css);
+@import url(../../../../desktop.blocks/button/button.css);
+@import url(../../../../common.blocks/button/button.examples/100-round-button.blocks/button/button.css);
+@import url(../../../../common.blocks/button/__text/button__text.css);
+@import url(../../../../common.blocks/button/_disabled/button_disabled_yes.css);
+@import url(../../../../desktop.blocks/button/_disabled/button_disabled_yes.css);
+@import url(../../../../common.blocks/button/_theme/button_theme_normal.css);
+@import url(../../../../desktop.blocks/button/_theme/button_theme_normal.css);
+@import url(../../../../common.blocks/button/_round/button_round_yes.css);
+@import url(../../../../common.blocks/image/image.css);
+@import url(../../../../common.blocks/button/__icon/button__icon.css);
+@import url(../../../../common.blocks/button/_only-icon/button_only-icon_yes.css);

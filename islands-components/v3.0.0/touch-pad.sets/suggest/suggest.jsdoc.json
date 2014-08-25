@@ -1,0 +1,351 @@
+{
+    "blockName": "suggest",
+    "description": "<p>Саджест – поисковая подсказка.</p>\n<p>Появляется после первых введенных букв при формулировке поискового запроса.\nСостоит из элементов поисковой подсказки (блок suggest-item).\nИспользуется для экономии времени на формулировку запроса.\nБлок не имеет DOM-представления, создаётся и подключается с помощью BEM.create()</p>\n<p>После ввода хотя бы одного символа или клика в поле ввода поискового запроса\nсоздаётся блок <code>popup</code> (DOM-узлы) и вся работа с DOM идёт через него.</p>\n\n\n\n\n\n",
+    "jsParams": [
+        {
+            "name": "params.owner",
+            "description": "<p>Блок для которого появляются подсказки.</p>",
+            "optional": false,
+            "types": [
+                "BEM"
+            ]
+        },
+        {
+            "name": "params.input",
+            "description": "<p>Блок ввода для запроса, например блок input.</p>",
+            "optional": false,
+            "types": [
+                "BEM"
+            ]
+        },
+        {
+            "name": "params.url",
+            "description": "<p>Адрес сервера, источника данных для подсказок.</p>",
+            "optional": false,
+            "types": [
+                "String"
+            ]
+        },
+        {
+            "name": "params.name",
+            "description": "<p>Название дата-провайдера, который подгототавливает данных от сервера.</p>",
+            "optional": true,
+            "types": [
+                "String"
+            ]
+        },
+        {
+            "name": "params.suggest",
+            "description": "<p>Дополнительные параметры для подсказок http://nda.ya.ru/3QTLT9.</p>",
+            "optional": true,
+            "types": [
+                "Object"
+            ]
+        },
+        {
+            "name": "params.mods",
+            "description": "<p>Модификаторы саджеста, передаваемые в popup в котором строятся подсказки.</p>",
+            "optional": true,
+            "types": [
+                "Object"
+            ]
+        },
+        {
+            "name": "params.label",
+            "description": "<p>Указатель на блок service-label.</p>",
+            "optional": true,
+            "types": [
+                "String"
+            ]
+        },
+        {
+            "name": "params.cache",
+            "description": "<p>Флаг, указывающий кешировать или нет результаты запроса к серверу.</p>",
+            "optional": true,
+            "types": [
+                "Boolean"
+            ]
+        },
+        {
+            "name": "params.updateOnEnter",
+            "description": "<p>Обновлять строку-запрос при перемещении по элементам саджеста клавишами ↑↓.</p>",
+            "optional": true,
+            "types": [
+                "Boolean"
+            ]
+        },
+        {
+            "name": "params.debounceDelay",
+            "description": "<p>Таймаут на изменения подсказки при быстром наборе запроса, ms.</p>",
+            "optional": true,
+            "types": [
+                "Number"
+            ]
+        },
+        {
+            "name": "params.showListOnFocus",
+            "description": "<p>Флаг показа списка подсказок по фокусу мыши.</p>",
+            "optional": true,
+            "types": [
+                "Boolean"
+            ]
+        }
+    ],
+    "methods": [
+        {
+            "name": "destruct",
+            "description": "<p>Уничтожает сам блок.\nУничтожает связанный блок popup.</p>\n<p>Выключает прослушивание события tap.suggest на элементе document.\nУничтожает сам блок.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getDefaultParams",
+            "description": "<p>Возвращает параметры блока по умолчанию с добавлением параметров\ncache, updateOnEnter, debounceDelay, showListOnFocus.</p>\n<p>Возвращает параметры блока по умолчанию c добавлением значения\nзадержки обновления саджеста по нажатию Backspace.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "getPopupBlock",
+            "description": "<p>Возвращает блок всплывающего окошка.</p>\n<p>Обычно это блок popup.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "updateTop",
+            "description": "<p>Обновляет позицию окошка на странице.</p>\n<p>Окошко всегда позиционируется под шапкой owner.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Block"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "redraw",
+            "description": "<p>Обновить окошко с подсказками после асинхронной перезагрузки страницы.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Block"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "_getProvider",
+            "description": "<p>Создаёт или возвращает ранее созданного провайдера.</p>\n<p>Провайдер представлен блоком suggest__provider.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "_buildItems",
+            "description": "<p>Создаёт элементы подсказки.</p>\n",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "<p>— данные от сервера</p>",
+                    "optional": false,
+                    "types": [
+                        "Array"
+                    ]
+                },
+                {
+                    "name": "meta",
+                    "description": "<p>— мета-информация от сервера</p>",
+                    "optional": false,
+                    "types": [
+                        "Array"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>BEMJSON</p>",
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "static"
+        },
+        {
+            "name": "_getTextLabel",
+            "description": "<p>Возвращает заголовок для группы по-умолчанию</p>\n<p>Обычный заголовок — «Поиск», но сервисы могут выбрать другой.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "static"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "data-requested",
+            "description": "<p>Генерируется перед отправкой данных.</p>",
+            "params": []
+        },
+        {
+            "name": "created",
+            "description": "<p>Генерируется после создания подсказки.</p>",
+            "params": []
+        },
+        {
+            "name": "data-received",
+            "description": "<p>Генерируется после получения данных.</p>",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>Данные, полученные от провайдера.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "update-items",
+            "description": "<p>Генерируется в момент, когда был показан новый набор подсказок.</p>",
+            "params": []
+        },
+        {
+            "name": "select",
+            "description": "<p>Генерируется в момент выбора элемента, строки подсказки.</p>",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "<p>Выбранный элемент подсказки, suggest-item.</p>",
+                    "optional": false,
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                },
+                {
+                    "name": "itemIndex",
+                    "description": "<p>Позиция подсказки в массиве подсказок.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                },
+                {
+                    "name": "pos",
+                    "description": "<p>Позиция курсора-каретки в поле ввода на последний запрос к серверу.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                },
+                {
+                    "name": "meta",
+                    "description": "<p>Мета-информация, полученная от сервера при последнем запросе.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "byKeyboard",
+                    "description": "<p>Флаг, выбрана ли подсказка при помощи клавиатуры.</p>",
+                    "optional": false,
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "complete",
+            "description": "<p>Саджест с автодополнением текста подсказки</p>",
+            "params": [
+                {
+                    "name": "params.backspaceDelay",
+                    "description": "<p>задержка обновления саджеста по нажатию Backspace, ms</p>\n<p>Генерируется в момент, когда пользователь клавишей <code>вправо</code> выбрал предложенную саджестом подсказку</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "usage",
+                    "description": "<p>варинат элемента управления, которым была выбрана подсказка, mouse, tab, arrow</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "chars",
+                    "description": "<p>количество символов в строке-дополнении</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ]
+        }
+    ],
+    "mods": []
+}

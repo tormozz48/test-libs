@@ -1,0 +1,605 @@
+{
+  "name": "input",
+  "elems": [
+    {
+      "name": "box",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Элемент рисующий поля ввода (нативный инпут скрыт)"
+        }
+      ]
+    },
+    {
+      "name": "clear",
+      "mods": [
+        {
+          "name": "visibility",
+          "vals": [
+            {
+              "name": "visible",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Видимость крестика очистки поля ввода\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Кнопка - очистить"
+        }
+      ]
+    },
+    {
+      "name": "dataprovider",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Дефолтный источник данных для саджеста"
+        }
+      ]
+    },
+    {
+      "name": "foot",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Элемент внизу саджеста"
+        }
+      ]
+    },
+    {
+      "name": "hint",
+      "mods": [
+        {
+          "name": "visibility",
+          "vals": [
+            {
+              "name": "visible",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "включена"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Видимость подсказки"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Подсказка в поле ввода, исчезает при наборе текста"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Метка над полем ввода"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "mods": [
+        {
+          "name": "type",
+          "vals": [
+            {
+              "name": "error",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "сообщение об ошибке"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Тип сообщения"
+            }
+          ]
+        },
+        {
+          "name": "visibility",
+          "vals": [
+            {
+              "name": "visible",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "видимо"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Видимость сообщения"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Сообщения для показа ошибок, информации и т.д."
+        }
+      ]
+    },
+    {
+      "name": "popup",
+      "mods": [
+        {
+          "name": "fade",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "включено"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Постепенное исчезновение текста попапа"
+            }
+          ]
+        },
+        {
+          "name": "gradient",
+          "vals": [
+            {
+              "name": "yes",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "включен"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Попап с градиентом серого цвета"
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "vals": [
+            {
+              "name": "m",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "размер l"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер саджеста"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Попап для саджеста\n"
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Пример к полю ввода"
+        }
+      ]
+    },
+    {
+      "name": "samples",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Обертка для примеров к полю ввода"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "autofocus",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Получение фокуса при вводе текста на странице"
+        }
+      ]
+    },
+    {
+      "name": "clear",
+      "vals": [
+        {
+          "name": "no",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Инпут без крестика очистки содержимого\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "disabled",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Неактивное поле"
+        }
+      ]
+    },
+    {
+      "name": "focused",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Фокус есть"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "В фокусе"
+        }
+      ]
+    },
+    {
+      "name": "popup",
+      "vals": [
+        {
+          "name": "gradient",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "с градиентом"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Выпадающий попап из инпута"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 15px"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 13px"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер инпута"
+        }
+      ]
+    },
+    {
+      "name": "suggest",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "включен"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Саджест"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "по-умолчанию\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Темы оформления\n"
+        }
+      ]
+    },
+    {
+      "name": "type",
+      "vals": [
+        {
+          "name": "password",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "пароль"
+            }
+          ]
+        },
+        {
+          "name": "textarea",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "с текстовой областью"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Тип"
+        }
+      ]
+    },
+    {
+      "name": "width",
+      "vals": [
+        {
+          "name": "content",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "автоматическая, по размеру содержимого\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Ширина\n"
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>input</code> служит для создания различных типов текстовых полей с шириной 100%:</p>\n<ul>\n<li>простого поля ввода;</li>\n<li>поля с паролем;</li>\n<li>текстовой области.</li>\n</ul>\n<p>В MSIE8 и ниже поле ввода деградирует до нативного контрола <code>&lt;input атрибуты&gt;</code>, поле ввода с текстовой областью станет нативной текстовой областью <code>&lt;textarea атрибуты&gt;</code>.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON блока:</p>\n<pre><code class=\"lang-javascript\">{\n    block: &#39;input&#39;,            // имя блока\n    mods: {size: &#39;s&#39;},         // модификаторы блока. Модификатор размера – обязательный\n    content: {elem: &#39;control&#39;} // нативный инпут. Обязательный элемент\n}</code></pre>\n<p>В результате BEMHTML-преобразований будет создано кастомное простое поле ввода с шириной 100%, внутри которого находится нативный инпут.</p>\n<!-- %%input.examples/05-input/05-input%% -->\n\n<h3 id=\"-\">Содержимое блока</h3>\n<ul>\n<li><code>{Object|Array} content</code> – содержимое блока. Служит для добавления различных элементов инпуту, расширяющих его функциональность.</li>\n</ul>\n<p>Элемент <code>control</code> – обязательный, добавляется в <code>content</code> блока во входных данных. BEMHTML-шаблоном преобразуется в нативный контрол <code>&lt;input атрибуты&gt;</code>. По умолчанию подключает элемент блока <code>clear</code> – кнопку очистки поля ввода (крестик).</p>\n<h3 id=\"-\">Атрибуты блока</h3>\n<p>Блоку можно установить атрибуты нативного контрола <code>&lt;input атрибуты&gt;</code> или <code>&lt;textarea атрибуты&gt;</code>, в зависимости от типа блока (т.к. один из контролов всегда будет находиться в HTML блока для реализации его функциональности).</p>\n<p>Ниже перечислены допустимые атрибуты, которые задаются в одноименных полях входного BEMJSON блока:</p>\n<ul>\n<li><code>{String} name</code> — имя для идентификации контрола обработчиком формы. Если <code>name</code> явно не задан, HTML-атрибут <code>name</code> автоматически сформируется с пустым значением.</li>\n<li><code>{String} value</code> — значение, отправляемое на сервер. По умолчанию содержит пустое значение.</li>\n<li><code>{String} id</code> — уникальный идентификатор блока. По умолчанию генерируется случайным образом, если явно не задан в BEMJSON.</li>\n</ul>\n<p>Следующие атрибуты блока <code>input</code>:\n<code>name</code>, <code>value</code>, <code>id</code>, <code>tabindex</code>, <code>spellcheck</code>, <code>accesskey</code> – можно задать в зарезервированном поле атрибутов <code>attrs</code> элемента <code>control</code>.\nЗначения атрибутов, заданные в поле <code>attrs</code>, перекроют значения аналогичных атрибутов, заданных в одноименных полях BEMJSON блока.</p>\n<pre><code class=\"lang-javascript\">{   // простое поле ввода (по умолчанию)\n    block: &#39;input&#39;,\n    mods: {size: &#39;s&#39;},\n    content: {\n        elem: &#39;control&#39;,\n        attrs: {accesskey: &#39;yes&#39;, id: &#39;newid&#39;, tabindex: &#39;1&#39;, name: &#39;test&#39;}\n    }\n}</code></pre>\n<p>Для <strong>простого поля</strong> и <strong>поля с паролем</strong> атрибуты совпадают.</p>\n<h4 id=\"-\">Атрибуты текстовой области</h4>\n<p><code>name</code>, <code>value</code>, <code>id</code>, <code>rows</code>, <code>cols</code>, <code>readonly</code>, <code>wrap</code>, <code>maxlength</code>, <code>spellcheck</code>, <code>accesskey</code>, <code>tabindex</code> — не обязательные. Задаются аналогично атрибутам для <strong>простого поля</strong> .</p>\n<pre><code class=\"lang-javascript\">{   // текстовая область, модификатор `type` со значением `textarea`\n    block: &#39;input&#39;,\n    mods: {type: &#39;textarea&#39;, size: &#39;s&#39;},\n    name: &#39;test&#39;,\n    content: {\n        elem: &#39;control&#39;,\n        attrs: {rows: &#39;3&#39;, readonly: &#39;yes&#39;, maxlength: &#39;100&#39;}\n    }\n}</code></pre>\n<h3 id=\"-\">Варианты использования инпута</h3>\n<p>Добавляя различные элементы блока <code>input</code> и их модификаторы в <code>content</code> блока, можно расширить функциональность полей ввода.\nВсе нижеперечисленные элементы являются не обязательными.</p>\n<ul>\n<li><code>label</code> – элемент добавляет <strong>метку полю ввода</strong> (преобразуется в HTML-тэг <code>&lt;label&gt;</code>). Связь метки с тэгом <code>&lt;input&gt;</code> устанавливается с помощью идентификатора <code>id</code>, который может генерироваться по умолчанию случайным образом. При щелчке кнопкой мыши на метку в поле ввода будет установлен фокус.</li>\n</ul>\n<!-- %%input.examples/10-label/10-label%% -->\n\n<ul>\n<li><code>hint</code> – добавляет <strong>подсказки к инпуту</strong>. В контенте содержится текст подсказки. Аналогично метке, в HTML он будет преобразован в тэг <code>&lt;label&gt;</code>. <code>id</code> для метки (если она задана) и подсказки совпадают. Подсказка в поле ввода исчезает при наборе текста.</li>\n</ul>\n<!-- %%input.examples/15-label-hint/15-label-hint%% -->\n\n\n<ul>\n<li><p><code>message</code> – добавляет <strong>сообщение об ошибке</strong>. Служит для вывода ошибок и другой дополнительной информации. Располагается под полем ввода. Текст сообщения задается в контенте элемента.</p>\n<p><strong>Модификаторы элемента</strong>:</p>\n<ul>\n<li><code>type</code> со значением <code>error</code> — задает тип сообщения (об ошибке);</li>\n<li><code>visibility</code> со значением <code>visible</code> – его видимость.</li>\n</ul>\n<p><em><strong>Примечание</strong>: В блоке реализован только тип сообщения для ошибок. Нужный тип сообщения можно доопределить у себя на проекте.</em></p>\n</li>\n</ul>\n<pre><code class=\"lang-javascript\">{\n    block: &#39;input&#39;,\n    mods: {size: &#39;s&#39;},\n    content: [\n        {elem: &#39;label&#39;, content: &#39;Метка для инпута&#39;},\n        {elem: &#39;control&#39;}, // нативный инпут\n        {\n            elem: &#39;message&#39;,\n            elemMods: {type: &#39;error&#39;, visibility: &#39;visible&#39;},\n            content: &#39;Ошиблись, бывает&#39;\n        }\n    ]\n}</code></pre>\n <!-- %%input.examples/20-message-error/20-message-error%% -->\n\n<ul>\n<li><code>samples</code> – <strong>поле ввода с примерами</strong>. Элемент служит для добавления примеров инпуту. Является оберткой для набора примеров поля ввода. В его контенте содержится массив элементов блока <code>sample</code>.<ul>\n<li><code>sample</code> – создает конкретный пример к полю ввода.\nЭлемент миксуется с блоком <code>link</code> (ссылка) из библиотеки islands-components, для которого задан модификатор <code>mods: {pseudo: &#39;yes&#39;}</code>(псевдо-ссылка). Такая ссылка предполагает действие без перехода на другую страницу. Визуально выделяется пунктирным нижним подчеркиванием. При нажатии на ссылку с примером его значение подставляется в поле ввода.</li>\n</ul>\n</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;input&#39;,\n    mods: {size: &#39;s&#39;},\n    content: [\n        {elem: &#39;control&#39;},\n        {\n            elem: &#39;samples&#39;,\n            content: [ // массив примеров для поля ввода\n                {\n                    block: &#39;link&#39;,\n                    mods: {pseudo: &#39;yes&#39;},\n                    mix: [{block: &#39;input&#39;, elem: &#39;sample&#39;}],\n                    content: &#39;пример 1&#39;\n                },\n              ...\n            ]\n        }\n    ]\n}</code></pre>\n<!-- %%input.examples/25-samples/25-samples%% -->\n\n<!-- %%input.examples/55-in-table/55-in-table%% -->\n\n<ul>\n<li><code>clear</code> – <strong>кнопка очистки</strong> содержимого инпута («крестик»). По умолчанию элемент добавлен в BEMHTML-шаблоне элемента <code>control</code>.\n«Крестик» – векторное изображение, в формате svg.</li>\n</ul>\n<p>Если применить модификатор блока <code>clear</code> со значением <code>no</code>, то «крестик» при вводе текста отображаться не будет:</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;input&#39;,\n    mods: {size: &#39;s&#39;, clear: &#39;no&#39;},\n    content: [...]\n}</code></pre>\n<!-- %%input.examples/30-clear/30-clear%% -->\n\n\n<h3 id=\"-\">Модификаторы</h3>\n<h3 id=\"-\">Типы полей ввода</h3>\n<p>Поля ввода могу быть нескольких типов, которые определяют вид и характеристики инпута.\nОпределяется тип инпута соответствующим значением модификатора <code>{String} type</code>.</p>\n<ul>\n<li>По умолчанию создается <strong>простое текстовое поле ввода с шириной 100%</strong>.</li>\n</ul>\n<!-- %%input.examples/05-input/05-input%% -->\n\n<ul>\n<li><code>password</code> – <strong>поле для пароля</strong> (модификатор <code>type</code> со значением <code>password</code>).\nВ результате BEMHTML-преобразований трансформируется в нативное поле с паролем <code>&lt;input type=&quot;password&quot; атрибуты&gt;</code>.</li>\n</ul>\n<pre><code class=\"lang-javascript\">{\n    block: &#39;input&#39;,\n    mods: { size: &#39;s&#39; , type: &#39;password&#39;},\n    content: { elem: &#39;control&#39; }\n}</code></pre>\n<ul>\n<li><code>textarea</code> – <strong>текстовая область</strong> (модификатор <code>type</code> со значением <code>textarea</code>). В HTML блока будет сформирован тэг <code>&lt;textarea атрибуты&gt;</code>. По умолчанию текстовая область создается с размерами: cols: 10 (ширина поля в символах), rows: 10 (высота поля в строках текста).</li>\n</ul>\n<!-- %%input.examples/40-textarea/40-textarea%% -->\n\n\n<h4 id=\"-\">Темы оформления</h4>\n<p>Для блока <code>input</code> реализована стандартная тема оформления – <strong>обычная</strong> (модификатор <code>theme</code> со значением <code>normal</code>). Используется по умолчанию.</p>\n<h4 id=\"-\">Размеры</h4>\n<p>Для инпута реализованы два размера — <code>s</code> и <code>m</code>, определяющие размер шрифта текста и высоту поля ввода или текстовой области.\nМодификатор размера <code>{String} size</code> – обязательный при объявлении блока. По умолчанию не определен.</p>\n<p>Таблица размеров инпута</p>\n<table>\n<thead>\n<tr>\n<th>Размер блока</th>\n<th>Размер шрифта</th>\n<th>Высота поля</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>s</td>\n<td>13px</td>\n<td>28px</td>\n</tr>\n<tr>\n<td>m</td>\n<td>15px</td>\n<td>32px</td>\n</tr>\n</tbody>\n</table>\n<p>При необходимости размеры блока можно доопределить на проекте. <a href=\"../button/button.html#customsize\">Кастомный размер</a>.</p>\n<p>По высоте блок <code>input</code> совпадает с  блоком кнопки <a href=\"../button/button.html\">button</a>.</p>\n<!-- %%input.examples/40-textarea/40-textarea%% -->\n\n<h4 id=\"-\">Состояния инпута</h4>\n<ul>\n<li><strong>Автофокус</strong>, модификатор <code>autofocus</code> со значением <code>yes</code> – установка  фокуса при вводе текста на странице.</li>\n</ul>\n<p>В блоке <code>input</code> есть возможность задать автофокус при загрузке страницы, для этого используется JS-параметр <code>autoFocus</code> :\n<code>js: { autoFocus: &#39;yes&#39; }</code>, вместо модификатора  автофокуса.</p>\n<ul>\n<li><p><strong>Не активен</strong>, модификатор <code>disabled</code>со значением <code>yes</code> – инпут и все его элементы недоступны для действий пользователя.</p>\n</li>\n<li><p><strong>В фокусе</strong>, модификатор <code>focused</code> со значением <code>yes</code> – поле ввода находится в фокусе.</p>\n</li>\n</ul>\n<p>Возможен переход в инпут по <code>Ctrl + ↑</code>.</p>\n<!-- %%input.examples/45-disabled/45-disabled%% -->\n\n<!-- %%input.examples/07-autofocus/07-autofocus%% -->\n\n<!-- %%input.examples/08-autofocus-keydown/08-autofocus-keydown%% -->\n\n\n<h4 id=\"-\">Поле ввода с автоматической шириной по содержимому</h4>\n<p>Модификатор блока <code>width</code> со значением <code>content</code> служит для задания автоматической ширины инпута по размеру его содержимого. Если модификатор не указан, то по умолчанию ширина поля ввода будет 100%.</p>\n<pre><code class=\"lang-js\">{\n    block: &#39;input&#39;,\n    mods: {size: &#39;m&#39;, width: &#39;content&#39;},\n    content: {elem: &#39;control&#39;}\n}</code></pre>\n<!-- %%input.examples/50-width-content/50-width-content%% -->\n\n<h4 id=\"-\">Поле ввода с саджестом</h4>\n<p>Модификатор <code>suggest</code> со значением <code>yes</code> – добавляет саджест (поисковые подсказки в выпадающем окне) к инпуту.\nСодержимое саджеста обновляется по мере ввода поискового запроса. Подходящий запрос можно выбрать как мышкой, кликнув на него, так и передвигаясь при помощи клавиш «вверх/вниз».</p>\n<p><code>dataprovider</code> – предоставляет данные о подсказках для саджеста. Он получает данные с сервера и обрабатывает их специальным образом, а затем передает саджесту в формате, который тот понимает.</p>\n<p><em><strong>Примечание:</strong> <code>dataprovider</code> реализован как элемент блока <code>input</code> и является наследником блока <code>i-request_type_ajax</code>. Реализует единственный метод\n<code>getDataprovider()</code>, нормализующий процесс получения данных для автокомплита.\nКаждый пунт автокоплита — это экземпляр блока <code>b-autocomplete-item</code>.</em></p>\n<p><code>url</code> – адрес сервера данных для саджеста.</p>\n<pre><code class=\"lang-javascript\">{\n    block: &#39;input&#39;,\n    mods: {suggest: &#39;yes&#39;, size: &#39;s&#39;},\n    js: {\n        dataprovider: {url: &#39;http://suggest.yandex.ru/suggest-ya.cgi?v=4&amp;callback=?&#39;}\n    },\n    content: {elem: &#39;control&#39;, attrs: { name: &#39;autocomplete&#39;}}\n}</code></pre>\n<!-- %%input.examples/60-suggest/60-suggest%% -->\n\n<hr>\n<p><strong>Внимание!</strong> <em>Саджеста у произвольной строки ввода нет в v1 Островов. Планируется его реализация в v2. У произвольной строки ввода появится автокомплит — по сути, тот же саджест.</em></p>\n<hr>\n<h4 id=\"-\">Поле ввода с дополнительной подсказкой</h4>\n<p>Модификатор блока <code>tap-ahead</code> со значением <code>yes</code> дает возможность использовать <strong>дополнительные подсказки</strong> при вводе поискового запроса в инпут. То есть, по нажатию клавиши <code>Tab</code> можно дополнить вводимое слово предложенным вариантом (визуально отделяется от набираемого текста запроса серым цветом шрифта). По умолчанию подсказка появляется при вводе минимум трех символов. Это поведение можно изменить, переопределив параметр <code>showOverChars</code>.</p>\n<p>По умолчанию при инициализации блока <code>input</code> с модификатором <code>tab-ahead</code>, выставленным в значение <code>yes</code>, будет добавлен элемент блока <code>ahead</code>.\nПолный текст дополнительной подсказки состоит из невидимой и видимой части – элементов блока инпут:</p>\n<ul>\n<li><code>ahead-filler</code> – невидимая часть, необходимая для точного позиционирования видимой части.</li>\n<li><code>ahead-hint</code> – видимая часть подсказки (серого цвета).</li>\n</ul>\n<p>В HTML элемент <code>ahead</code> трансформируется в тэг <code>&lt;div&gt;</code>, служащий контейнером для показа дополнительной подсказки. Каждый из элементов <code>ahead-filler</code> и <code>ahead-hint</code> преобразуется в тэг <code>&lt;span&gt;</code>, содержащий свою часть текста подсказки.</p>\n<p>В связке с <code>tab-ahead</code> могут использоваться модификаторы:</p>\n<ul>\n<li><code>noprevent-tab</code> – не отменять нажатие <code>Tab</code>, если нечего было дополнять. В этом случае при нажатии клавиши <code>Tab</code> фокус будет установлен на следующий элемент страницы (т.е. будет снят запрет на переход по нажатию на клавишу <code>Tab</code> к следующему контролу).</li>\n<li><code>nosplit-words</code> – не разбивать подсказку по словам. Дополнять подсказки целиком,  а не по отдельным словам.</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;input&#39;,\n    mods: {\n        size: &#39;s&#39;,\n        suggest: &#39;yes&#39;,\n        &#39;tap-ahead&#39;: &#39;yes&#39;,\n        &#39;noprevent-tab&#39;: &#39;yes&#39;\n    },\n    js: {\n        dataprovider: {url: &#39;http://suggest.yandex.ru/suggest-ya.cgi?v=4&amp;callback=?&#39;}\n    },\n    content: {elem: &#39;control&#39;, attrs: {name: &#39;autocomplete&#39;}}\n}</code></pre>\n<!-- %%input.examples/100-tap-ahead/100-tap-ahead%% -->\n\n<!-- %%input.examples/105-noprevent-tab/105-noprevent-tab%% -->\n\n<!-- %%input.examples/110-nosplit-words/110-nosplit-words%% -->\n\n\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li><strong>Тип поля ввода</strong>: простое текстовое.</li>\n<li><strong>Ширина</strong>: 100%.</li>\n<li><strong>Тема оформления</strong>: обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>\n<li><strong>Размеры текстовой области</strong>: cols:10, rows:10.</li>\n<li>Кнопка очистки (крестик) – подключается элементом блока <code>control</code>.</li>\n</ul>\n<p>Если явно не были заданы  блоку во входном BEMJSON данные:</p>\n<ul>\n<li><code>id</code> – генерируется автоматически случайным образом;</li>\n<li>Атрибуты <code>name</code>, <code>value</code> – генерируется с пустым значением.</li>\n</ul>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "input.examples/05-input/05-input",
+          "title": "Поле ввода"
+        },
+        {
+          "url": "input.examples/07-autofocus/07-autofocus",
+          "title": "Поле ввода с автофокусом"
+        },
+        {
+          "url": "input.examples/08-autofocus-keydown/08-autofocus-keydown",
+          "title": "Поле ввода с автофокусом при вводе текста на странице"
+        },
+        {
+          "url": "input.examples/10-label/10-label",
+          "title": "С меткой"
+        },
+        {
+          "url": "input.examples/15-label-hint/15-label-hint",
+          "title": "С меткой и подсказкой"
+        },
+        {
+          "url": "input.examples/20-message-error/20-message-error",
+          "title": "С сообщением об ошибке"
+        },
+        {
+          "url": "input.examples/25-samples/25-samples",
+          "title": "С примерами"
+        },
+        {
+          "url": "input.examples/30-clear/30-clear",
+          "title": "Поле ввода с кнопкой очистки\n"
+        },
+        {
+          "url": "input.examples/35-size/35-size",
+          "title": "В размерах с кнопками"
+        },
+        {
+          "url": "input.examples/40-textarea/40-textarea",
+          "title": "Поле ввода текстовой областью в размерах"
+        },
+        {
+          "url": "input.examples/45-disabled/45-disabled",
+          "title": "Неактивное состояние"
+        },
+        {
+          "url": "input.examples/50-width-content/50-width-content",
+          "title": "С автоматическим ресайзом по содержимому\n"
+        },
+        {
+          "url": "input.examples/55-in-table/55-in-table",
+          "title": "В таблице"
+        },
+        {
+          "url": "input.examples/60-suggest/60-suggest",
+          "title": "Простой саджест\n"
+        },
+        {
+          "url": "input.examples/65-suggest-foot/65-suggest-foot",
+          "title": "Простой саджест c элементом foot\n"
+        },
+        {
+          "url": "input.examples/70-big-suggest/70-big-suggest",
+          "title": "Саджест с установкой ширины по ширине большого инпута\n"
+        },
+        {
+          "url": "input.examples/75-suggest-fade/75-suggest-fade",
+          "title": "Саджест с установкой ширины по ширине инпута и фэйдингом\n"
+        },
+        {
+          "url": "input.examples/80-suggest-market/80-suggest-market",
+          "title": "Саджест маркета\n"
+        },
+        {
+          "url": "input.examples/85-suggest-serp/85-suggest-serp",
+          "title": "Саджест серпа\n"
+        },
+        {
+          "url": "input.examples/90-suggest-custom/90-suggest-custom",
+          "title": "Саджест с кастомными элементами (на примере Метро)\n"
+        },
+        {
+          "url": "input.examples/94-suggest-sticky-line/94-suggest-sticky-line",
+          "title": "Саджест для залипающей поисковой строки\n"
+        },
+        {
+          "url": "input.examples/95-suggest-slovari/95-suggest-slovari",
+          "title": "Саджест с переводом слов\n"
+        }
+      ]
+    }
+  ]
+}

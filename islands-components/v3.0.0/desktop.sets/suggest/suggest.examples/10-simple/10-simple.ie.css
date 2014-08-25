@@ -1,0 +1,10 @@
+@import url(10-simple.css);
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css);
+@import url(../../../../desktop.blocks/suggest-item/_type/suggest-item_type_nav.ie.css);
+@import url(../../../../desktop.blocks/suggest-item/__icon/suggest-item__icon.ie.css);
+@import url(../../../../desktop.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.ie.css);
+@import url(../../../../desktop.blocks/popup/popup.ie.css);
+@import url(../../../../desktop.blocks/popup/_theme/popup_theme_ffffff.ie.css);
+@import url(../../../../desktop.blocks/input/__box/input__box.ie.css);
+@import url(../../../../desktop.blocks/input/__clear/input__clear.ie.css);
+@import url(../../../../desktop.blocks/input/_size/input_size_m.ie.css);

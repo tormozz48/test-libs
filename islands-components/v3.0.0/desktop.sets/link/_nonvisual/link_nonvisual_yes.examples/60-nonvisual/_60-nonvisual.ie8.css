@@ -1,0 +1,140 @@
+/* 60-nonvisual.ie.css begin */
+/* 60-nonvisual.css begin */
+/* ../../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css begin */
+.b-page_theme_normal
+{
+    background-color: #f6f5f3;
+}
+
+/* ../../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css end */
+/* ../../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../../common.blocks/link/link.css end */
+/* ../../../../../desktop.blocks/link/link.css begin */
+.link:hover,
+.link:visited:hover
+{
+    color: #d00 !important; /* Оторвать !important после того, как оторвем .i-global__hover */
+}
+
+/* ../../../../../desktop.blocks/link/link.css end */
+/* ../../../../../common.blocks/link/_pseudo/link_pseudo_yes.css begin */
+.i-ua_js_yes .link_pseudo_yes
+{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.i-ua_js_yes .link_pseudo_yes .link__inner
+{
+    text-decoration: none;
+
+    color: inherit;
+    border-bottom: 1px dotted;
+}
+
+/* ../../../../../common.blocks/link/_pseudo/link_pseudo_yes.css end */
+/* ../../../../../common.blocks/link/_nonvisual/link_nonvisual_yes.css begin */
+.link_nonvisual_yes
+{
+    position: absolute;
+    z-index: 32767;
+    left: -32767px;
+}
+
+.link_nonvisual_yes:focus,
+.link_nonvisual_yes:active
+{
+    left: inherit;
+}
+
+/* ../../../../../common.blocks/link/_nonvisual/link_nonvisual_yes.css end */
+
+/* 60-nonvisual.css end */
+/* ../../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */
+/* ../../../../../common.blocks/link/_pseudo/link_pseudo_yes.ie.css begin */
+.i-ua_js_yes .link_pseudo_yes
+{
+    zoom: 1;
+}
+
+.i-ua_js_yes .link_pseudo_yes,
+.i-ua_js_yes .link_pseudo_yes .link__inner
+{
+    position: relative;
+}
+
+/* ../../../../../common.blocks/link/_pseudo/link_pseudo_yes.ie.css end */
+
+/* 60-nonvisual.ie.css end */
+/* ../../../../../desktop.blocks/link/_pseudo/link_pseudo_yes.ie8.css begin */
+.link
+{
+    outline: none;
+}
+
+/* ../../../../../desktop.blocks/link/_pseudo/link_pseudo_yes.ie8.css end */

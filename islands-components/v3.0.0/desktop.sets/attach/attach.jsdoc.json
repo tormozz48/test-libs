@@ -1,0 +1,54 @@
+{
+    "blockName": "attach",
+    "description": "<p>Блок <code>attach</code> служит для отправки файла на сервер.</p>",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "val",
+            "description": "<p>Возвращает значение контрола, путь к выбранному файлу.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "resetFile",
+            "description": "<p>Сбросить выбранное значение контрола.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getDefaultParams",
+            "description": "",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

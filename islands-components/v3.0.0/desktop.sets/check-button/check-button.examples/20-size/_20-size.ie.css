@@ -1,0 +1,583 @@
+/* 20-size.css begin */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css begin */
+/* ../body/i-global__body.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font: 0.8em Arial, Helvetica, sans-serif;
+
+        /* Чтобы в FF2- заработал z-index: -1 */ /**/
+        position: relative;
+        z-index: 0;
+
+        margin: 0;
+        padding: 0 0 1em 0;
+
+        color: #000;
+        background: #fff;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.css end */
+/* ../wbr/i-global__wbr.css begin */
+/* Поддержка wbr в Opera и Safari 2/3 (begin) */ /**/
+    /* См. http://harisov.livejournal.com/97666.html */ /**/
+    wbr
+    {
+        display: inline-block;
+    }
+/* Поддержка wbr в Opera и Safari 2/3 (end) */ /**/
+
+/* ../wbr/i-global__wbr.css end */
+/* ../hover/i-global__hover.css begin */
+/* Global definitions: Links hover (begin) */ /**/
+    :link:hover,
+    :visited:hover
+    {
+        color: #f00 !important; /*!head*/
+    }
+/* Global definitions: Links hover (end) */ /**/
+
+/* ../hover/i-global__hover.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css end */
+/* ../../../../common.blocks/checkbox/checkbox.css begin */
+.i-ua_js_no .checkbox__box:before,
+.i-ua_js_no .checkbox__box:after,
+.i-ua_js_no .checkbox__tick
+{
+    display: none;
+}
+
+/* ../../../../common.blocks/checkbox/checkbox.css end */
+/* ../../../../common.blocks/checkbox/__box/checkbox__box.css begin */
+.checkbox__box
+{
+    position: relative;
+
+    white-space: nowrap;
+}
+
+/* ../../../../common.blocks/checkbox/__box/checkbox__box.css end */
+/* ../../../../desktop.blocks/checkbox/__box/checkbox__box.css begin */
+@media all and (min-width:0)
+{
+    .checkbox__box
+    {
+        cursor: pointer;
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/__box/checkbox__box.css end */
+/* ../../../../common.blocks/checkbox/__control/checkbox__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .checkbox__control
+    {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+
+        width: 101%;
+        height: 101%;
+        margin: 0;
+        padding: 0;
+
+        opacity: 0;
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/__control/checkbox__control.css end */
+/* ../../../../common.blocks/checkbox/__tick/checkbox__tick.css begin */
+@media all and (min-width:0)
+{
+    .checkbox__tick
+    {
+        position: relative;
+        z-index: 3;
+
+        display: inline-block;
+        visibility: hidden;
+
+        padding: 0;
+
+        vertical-align: baseline;
+
+        background: url("../../../../../../../output/freeze/J_kxuf5tD5_oT3zFsj_RdNpltno.svg") 0 100% no-repeat;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/__tick/checkbox__tick.css end */
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_normal.css begin */
+.checkbox_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_theme_normal .checkbox__box:before,
+    .checkbox_theme_normal .checkbox__box:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :after — border & background */
+    .checkbox_theme_normal .checkbox__box:after
+    {
+        top: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked */
+    .checkbox_theme_normal .checkbox__box_checked_yes:after
+    {
+        background: #ffeba0;
+    }
+
+    .checkbox_theme_normal .checkbox__box_checked_yes:after,
+    .checkbox_theme_normal .checkbox__box_checked_yes.checkbox__box_focused_yes:after
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_normal.css end */
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_normal.css begin */
+@media all and (min-width:0)
+{
+    /* _focused */
+    /* :before — для состояния focused */
+    .checkbox_theme_normal .checkbox__box_focused_yes:before
+    {
+        top: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    .checkbox_theme_normal .checkbox__box_focused_yes:after
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    /* _hovered */
+    .checkbox_theme_normal.checkbox_hovered_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+
+    .checkbox_theme_normal.checkbox_hovered_yes.checkbox_checked_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(129,103,0,.6);
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_normal.css end */
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_pseudo.css begin */
+.checkbox_theme_pseudo
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .checkbox_theme_pseudo .checkbox__box:before,
+    .checkbox_theme_pseudo .checkbox__box:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :after — background */
+    .checkbox_theme_pseudo .checkbox__box:after
+    {
+        top: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked */
+    .checkbox_theme_pseudo .checkbox__box_checked_yes:after
+    {
+        background: #ffeba0;
+    }
+
+    .checkbox_theme_pseudo .checkbox__box_checked_yes:after,
+    .checkbox_theme_pseudo .checkbox__box_checked_yes.checkbox__box_focused_yes:after
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_theme/checkbox_theme_pseudo.css end */
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_pseudo.css begin */
+@media all and (min-width:0)
+{
+    /* _focused */
+    /* :before — для состояния focused */
+    .checkbox_theme_pseudo .checkbox__box_focused_yes:before
+    {
+        top: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    .checkbox_theme_pseudo .checkbox__box_focused_yes:after
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    /* _hovered */
+    .checkbox_theme_pseudo.checkbox_hovered_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+
+    .checkbox_theme_pseudo.checkbox_hovered_yes.checkbox_checked_yes:not(.checkbox_focused_yes) .checkbox__box:after
+    {
+        box-shadow: 0 0 0 1px rgba(129,103,0,.6);
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/_theme/checkbox_theme_pseudo.css end */
+/* ../../../../common.blocks/checkbox/_checked/checkbox_checked_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_checked_yes .checkbox__tick
+    {
+        visibility: visible;
+    }
+}
+
+/* ../../../../common.blocks/checkbox/_checked/checkbox_checked_yes.css end */
+/* ../../../../common.blocks/checkbox/_disabled/checkbox_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_disabled_yes .checkbox__box:after
+    {
+        background: rgba(0,0,0,.08);
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+    }
+
+    .checkbox_disabled_yes .checkbox__tick
+    {
+        opacity: .4;
+    }
+}
+
+.checkbox_disabled_yes .checkbox__label
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/checkbox/_disabled/checkbox_disabled_yes.css end */
+/* ../../../../desktop.blocks/checkbox/_disabled/checkbox_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .checkbox_disabled_yes .checkbox__box
+    {
+        cursor: default;
+    }
+}
+
+/* ../../../../desktop.blocks/checkbox/_disabled/checkbox_disabled_yes.css end */
+/* ../../../../common.blocks/check-button/check-button.css begin */
+.check-button
+{
+    position: relative;
+
+    display: inline-block;
+
+    cursor: default;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.i-ua_js_no .check-button
+{
+    background: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+/* ../../../../common.blocks/check-button/check-button.css end */
+/* ../../../../common.blocks/check-button/__text/check-button__text.css begin */
+.check-button__text
+{
+    position: relative;
+
+    padding: 0 1em;
+}
+
+.i-ua_js_no .check-button__text
+{
+    padding: 0 1em 0 .3em;
+}
+
+/* ../../../../common.blocks/check-button/__text/check-button__text.css end */
+/* ../../../../common.blocks/check-button/__control/check-button__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .check-button__control
+    {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        opacity: 0;
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* ../../../../common.blocks/check-button/__control/check-button__control.css end */
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.css begin */
+@media all and (min-width:0)
+{
+    .check-button__control
+    {
+        cursor: pointer;
+    }
+}
+
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.css end */
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_normal.css begin */
+.check-button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .check-button_theme_normal
+    {
+        background: 0;
+    }
+
+    .check-button_theme_normal:before,
+    .check-button_theme_normal:after
+    {
+        position: absolute;
+
+        content: '';
+    }
+
+    /* :before — background & border */
+    .check-button_theme_normal:before
+    {
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        border-radius: 2px;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked, не _pressed */
+    .check-button_theme_normal.check-button_checked_yes:not(.check-button_pressed_yes):before
+    {
+        background-color: #ffeba0;
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+
+    /* _pressed, не _checked */
+    .check-button_theme_normal.check-button_pressed_yes:not(.check-button_checked_yes):before
+    {
+        background-color: #f6f5f3;
+    }
+
+    /* _checked, _pressed */
+    .check-button_theme_normal.check-button_checked_yes.check-button_pressed_yes:before
+    {
+        background-color: #fee481;
+    }
+}
+
+/* ../../../../common.blocks/check-button/_theme/check-button_theme_normal.css end */
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_normal.css begin */
+@media all and (min-width:0)
+{
+    /* _focused */
+    .check-button_theme_normal.check-button_focused_yes:before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+    }
+
+    .check-button_theme_normal.check-button_focused_yes:after
+    {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 1px;
+
+        border-radius: 3px;
+        box-shadow: 0 0 6px #fc0;
+    }
+
+    /* _hovered */
+    .check-button_theme_normal.check-button_hovered_yes:not(.check-button_checked_yes):not(.check-button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+
+    .check-button_theme_normal.check-button_hovered_yes.check-button_checked_yes:not(.check-button_focused_yes):before
+    {
+        box-shadow: 0 0 0 1px rgba(178,142,0,.7);
+    }
+}
+
+/* ../../../../desktop.blocks/check-button/_theme/check-button_theme_normal.css end */
+/* ../../../../common.blocks/check-button/_disabled/check-button_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .check-button_disabled_yes:before
+    {
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08)!important;
+                box-shadow: 0 0 0 1px rgba(0,0,0,.08)!important;
+    }
+
+    .check-button_disabled_yes:not(.check-button_checked_yes):before
+    {
+        background: rgba(0,0,0,.08);
+    }
+
+    .check-button_disabled_yes.check-button_checked_yes:before
+    {
+        background: #fff7d8!important;
+    }
+}
+
+.check-button_disabled_yes .check-button__text
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/check-button/_disabled/check-button_disabled_yes.css end */
+/* ../../../../desktop.blocks/check-button/_disabled/check-button_disabled_yes.css begin */
+.i-ua_js_yes .check-button_disabled_yes .check-button__control
+{
+    cursor: default!important;
+}
+
+/* ../../../../desktop.blocks/check-button/_disabled/check-button_disabled_yes.css end */
+/* ../../../../common.blocks/check-button/_size/check-button_size_s.css begin */
+.check-button_size_s
+{
+    font-size: 13px;
+    line-height: 28px;
+}
+
+/* ../../../../common.blocks/check-button/_size/check-button_size_s.css end */
+/* ../../../../common.blocks/check-button/_size/check-button_size_m.css begin */
+.check-button_size_m
+{
+    font-size: 15px;
+    line-height: 32px;
+}
+
+/* ../../../../common.blocks/check-button/_size/check-button_size_m.css end */
+/* ../../../../common.blocks/check-button/_size/check-button_size_l.css begin */
+.check-button_size_l
+{
+    font-size: 18px;
+    line-height: 38px;
+}
+
+/* ../../../../common.blocks/check-button/_size/check-button_size_l.css end */
+
+/* 20-size.css end */
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css begin */
+/* ../body/i-global__body.ie.css begin */
+/* Global definitions (begin) */ /**/
+    body
+    {
+        font-size: 80%;
+    }
+/* Global definitions (end) */ /**/
+/* ../body/i-global__body.ie.css end */
+
+/* ../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css end */
+/* ../../../../desktop.blocks/checkbox/__control/checkbox__control.ie.css begin */
+.checkbox__control
+{
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/checkbox/__control/checkbox__control.ie.css end */
+/* ../../../../desktop.blocks/checkbox/__tick/checkbox__tick.ie.css begin */
+.checkbox__tick
+{
+    display: none;
+}
+
+/* ../../../../desktop.blocks/checkbox/__tick/checkbox__tick.ie.css end */
+/* ../../../../desktop.blocks/check-button/__text/check-button__text.ie.css begin */
+.check-button__text
+{
+    padding: 0 0 0 .3em;
+}
+
+/* ../../../../desktop.blocks/check-button/__text/check-button__text.ie.css end */
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.ie.css begin */
+.check-button__control
+{
+    vertical-align: middle;
+}
+
+/* ../../../../desktop.blocks/check-button/__control/check-button__control.ie.css end */

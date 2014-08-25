@@ -1,0 +1,119 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>attach</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок attach</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>attach</code> служит для отправки файла на сервер.
+Визуально представлен кнопкой на основе блока <a href="../button/button.html">button</a>, открывающей системное окно загрузки файла, именем файла с иконкой и крестиком для отмены. Не позволяет прикреплять несколько файлов и не поддерживает drag-and-drop.
+Блок использует функциональность нативного контрола, сам контрол скрыт.
+В MSIE8 и ниже <code>attach</code> деградирует до нативного контрола — прикрепить файл <code>&lt;input type=&quot;file&quot;&gt;</code>.
+В Windows Phone 7.0–8.0 и iOS версии ниже 6.0 <code>attach</code> не работает из-за отсутствия поддержки <code>&lt;input type=&quot;file&quot; /&gt;</code>.</p>
+<p><img src="http://jing.yandex-team.ru/files/gela-d/2014-03-11_1217.png" alt=""></p>
+<h3 id="-attach">Элементы блока attach</h3>
+<ul>
+<li><code>button</code> – кнопка выбора файла. Использует поведение (JS), внешний вид (CSS) блока <code>button</code>. Кнопка преобразуется BEMHTML-шаблоном в тэг <code>&lt;span&gt;</code>, в отличие от обычной кнопки <code>button</code> — тэг <code>&lt;button&gt;</code>. По умолчанию контент кнопки содержит локализованный текст «Выберите файл».</li>
+<li><p><code>control</code> – преобразуется BEMHTML-шаблоном в нативный элемент прикрепления файла с атрибутами <code>&lt;input type=&quot;file&quot; name=&quot;имя&quot; атрибуты&gt;</code>. Расположен внутри HTML-кнопки.</p>
+</li>
+<li><p><code>holder</code> – контейнер с информацией о прикрепленном файле. Формируется из элементов блока:</p>
+<ul>
+<li><code>icon-file</code> – иконка, соответствующая типу прикрепленного файла (определяется по расширению файла).</li>
+<li><code>text</code> – имя файла. Элемент создается в BEMHTML-шаблоне элемента <code>holder</code>. В HTML преобразуется в тэг <code>&lt;span&gt;</code>.
+Если файл не был прикреплен, для <code>holder</code> выставляется модификатор <code>state</code> со значением <code>hidden</code>, указывающий, что файл не выбран. По умолчанию в <code>text</code> будет выведено сообщение «файл не выбран».</li>
+<li><code>reset</code> – кнопка отмены выбранного файла (крестик), появляется после прикрепления файла.</li>
+</ul>
+</li>
+</ul>
+<p>Для вывода иконок и крестика используется микс соответствующих элементов с блоком <a href="http://docs.lego.dev.yandex.ru/islands-components/v2.1.0/desktop.sets/image/image.html">image</a>, который служит контейнером для загрузки изображений <code>&lt;img&gt;</code>.</p>
+<p>Тексты «Выбрать файл» и «файл не выбран» не изменяются и выводятся в виде локализованной строки. Для этого используется технология <code>i18n</code> — переводы из <a href="https://lego.yandex-team.ru/doc/concept/localization.wiki#Tanker">Танкера</a>. <a href="https://lego.yandex-team.ru/doc/concept/localization.wiki">Список поддерживаемых локалей</a>.</p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования блока:</p>
+<pre><code class="lang-JavaScript">{
+    block: &#39;attach&#39;,  // имя блока
+    mods: { size: &#39;s&#39; },  // модификаторы блока. Модификатор размера - обязательный
+    content: [
+       {
+             block: &#39;button&#39;,  // кнопка выбора  файла
+             mods: { size: &#39;s&#39; }, // модификатор размера – не обязательный, может быть передан из attach
+             mix: [{ block: &#39;attach&#39;, elem: &#39;button&#39; }],
+             name:&#39;customName&#39;,
+             content: { // локализованное сообщение на кнопке
+                block: &#39;i-bem&#39;, elem: &#39;i18n&#39;, keyset: &#39;attach&#39;, key: &#39;button-text&#39;
+            }
+        },
+        {
+            elem: &#39;holder&#39;,  // поле с информацией о выбранном файле
+            content: {
+                block: &#39;i-bem&#39;, elem: &#39;i18n&#39;, keyset: &#39;attach&#39;, key: &#39;no-file&#39;
+            }
+        }
+    ]
+}</code></pre>
+<!-- %%attach.examples/10-attach/10-attach%% -->
+
+<p>Для локализации текстовых сообщений в BEMJSON используется вспомогательный элемент <code>i18n</code> блока <code>i-bem</code>, который в BEMHTML-шаблоне заменяется на результат вызова метода <a href="https://lego.yandex-team.ru/doc/concept/localization.wiki#BEMI18N">BEM.I18N</a> (&#39;attach&#39;, &#39;no-file&#39;).</p>
+<p><em><strong>Примечание</strong>: необходимо гарантировать наличие у BEMHTML-шаблона элемента <code>i-bem__i18n</code>, описав соответствующую <code>mustDeps</code> – зависимость в коде <strong>deps.js</strong> локализуемого блока.</em></p>
+<pre><code class="lang-JavaScript">// block-for-attach.deps.js
+({
+     mustDeps: [
+           { block: &#39;i-bem&#39;, elem: &#39;i18n&#39; }
+   ]
+})</code></pre>
+<h3 id="-">Атрибуты блока</h3>
+<p>Атрибуты <code>name</code>, <code>tabindex</code>, <code>id</code> – опциональные, задаются в одноименных полях входного BEMJSON элемента блока <code>button</code>.
+Формируют соответствующие HTML-атрибуты с кастомным значением в нативном контроле <code>&lt;input type=&quot;file&quot; атрибуты&gt;</code>, т.к. он лежит в основе его реализации.</p>
+<ul>
+<li><code>{String} name</code> – имя контрола. По умолчанию генерируется со значением – <code>attachment</code>, если явно не задано в BEMJSON.</li>
+<li><code>{String} id</code> – уникальный идентификатор.</li>
+<li><code>{Number} tabindex</code> – определяет последовательность перехода между элементами  при нажатии на кнопку <code>Tab</code>.</li>
+</ul>
+<h3 id="-">Модификаторы</h3>
+<h4 id="-">Темы оформления</h4>
+<p>Для оформления блока можно использовать темы блока <code>button</code>. Тема задается значением модификатора <code>theme</code>:</p>
+<ul>
+<li><code>normal</code> — обычная кнопка. Используется по умолчанию.</li>
+<li><code>action</code> — кнопка-действие.</li>
+<li><code>pseudo</code> – псевдо-кнопка.</li>
+</ul>
+<p>Устанавливается значение модификатора <code>theme</code> в поле <code>mods</code> кнопки.</p>
+<p>Кнопка отмены (крестик) — изображение в векторном формате svg. Иконки файлов расположены в <a href="https://github.yandex-team.ru/lego/islands-components/blob/dev/common.blocks/attach/__icon-file/attach__icon-file.png">спрайте</a>, в формате png.</p>
+<h4 id="-">Размеры</h4>
+<p>Для блока реализованы два размера – <code>s</code> и <code>m</code>. По умолчанию не определен.
+Модификатор размера <code>size</code> — обязательный при объявлении блока, служит для задания размера шрифта и высоты кнопки.
+Если в BEMJSON кнопки выбора файла <code>button</code> явно не установлен модификатор размера, то он будет передан из блока <code>attach</code> с тем же значением.</p>
+<p>Таблица размеров блока</p>
+<table>
+<thead>
+<tr>
+<th>Размер</th>
+<th>Высота кнопки</th>
+<th>Шрифт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s</td>
+<td>28px</td>
+<td>13px</td>
+</tr>
+<tr>
+<td>m</td>
+<td>32px</td>
+<td>15px</td>
+</tr>
+</tbody>
+</table>
+<p>Если необходим другой размер кнопки, его можно доопределить на уровне переопределения проекта.</p>
+<h3 id="-attach">Состояния блока attach</h3>
+<ul>
+<li><strong>Не активен</strong>. Модификатор <code>disabled</code> со значением <code>yes</code>.</li>
+</ul>
+<p>В состоянии блока <strong>не активен</strong> кнопка выбора становится недоступной для действий пользователя. Модификатор <code>disabled</code> со значением <code>yes</code> выставляется в кнопке.</p>
+<p>Если блок активен и кнопка выбора находится в фокусе, то можно открыть окно выбора файла клавишей <code>Space</code> или <code>Enter</code>.</p>
+<!-- %%attach.examples/20-disabled/20-disabled%% -->
+
+<h3 id="-">Значения по умолчанию</h3>
+<ul>
+<li><strong>Тема кнопки</strong>:     обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>
+<li><strong>Локализация</strong>:     <code>ru</code>.</li>
+<li>Сообщение на кнопке : «Выбрать файл».</li>
+<li>Сообщение <code>holder</code>: «файл не выбран» (модификатор <code>state</code> со значением <code>hidden</code>).</li>
+<li>Атрибут <code>name</code>: <code>attachment</code>.</li>
+</ul>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="attach:examples:10-attach:10-attach"><a class="example__title" href="attach.examples/10-attach/10-attach.html" target="_blank">Прикрепить файл на основе button</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="attach.examples/10-attach/10-attach.bemjson.js"></iframe><iframe class="example__live" src="attach.examples/10-attach/10-attach.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="attach:examples:20-disabled:20-disabled"><a class="example__title" href="attach.examples/20-disabled/20-disabled.html" target="_blank">Неактивное состояние</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="attach.examples/20-disabled/20-disabled.bemjson.js"></iframe><iframe class="example__live" src="attach.examples/20-disabled/20-disabled.html"></iframe></div></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">disabled</h4><div class="block__mod-title">Неактивное состояние</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено неактивное состояние</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">size</h4><div class="block__mod-title">Размер</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">m</th><td class="block__mod-val-title">Размер шрифта в кнопке 15px</td></tr><tr><th class="block__mod-val-name">s</th><td class="block__mod-val-title">Размер шрифта в кнопке 13px</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">theme</h4><div class="block__mod-title"></div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">normal</th><td class="block__mod-val-title">Обычная</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">button</h4><div class="block__elem-title">Кнопка, как элемент блока</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">control</h4><div class="block__elem-title">Нативный контрол прикрепить файл</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">holder</h4><div class="block__elem-title">Элемент для отображения имени файла</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">state</h4><div class="block__mod-title">Состояние
+</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">hidden</th><td class="block__mod-val-title">Картинки скрыты</td></tr></table></div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">icon-file</h4><div class="block__elem-title">Иконки файлов</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">reset</h4><div class="block__elem-title">Отмена выбранного файла (крестик удаления файла)</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">visibility</h4><div class="block__mod-title">Видимость</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">visible</th><td class="block__mod-val-title">Включена</td></tr></table></div></div></div></div></body></html>

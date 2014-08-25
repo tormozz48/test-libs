@@ -1,0 +1,1465 @@
+/* 10-simple.ie.css begin */
+/* 10-simple.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css begin */
+.b-page_theme_normal
+{
+    background-color: #f6f5f3;
+}
+
+/* ../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css end */
+/* ../../../../libs/islands-romochka/touch-phone.blocks/b-page/_theme/b-page_theme_normal.css begin */
+.b-page_theme_normal
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(42%, #fff), to(rgba(255,255,255,0)));
+    background-image: -webkit-linear-gradient(top, #fff 42%, rgba(255,255,255,0));
+    background-image:         linear-gradient(top, #fff 42%, rgba(255,255,255,0));
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 195px;
+            background-size: 100% 195px;
+}
+
+/* ../../../../libs/islands-romochka/touch-phone.blocks/b-page/_theme/b-page_theme_normal.css end */
+/* ../../../../common.blocks/suggest/suggest.css begin */
+.suggest.popup
+{
+    right: 0;
+    left: 0;
+
+    padding: 0;
+
+    border-top: 1px solid #d9d9d9;
+    -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, .15);
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, .15);
+}
+
+/* Тень должна быть только снизу. */
+.suggest:before
+{
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 100%;
+    height: 50%;
+
+    content: '';
+
+    -webkit-box-shadow: 0 8px 25px -5px rgba(0, 0, 0, .25);
+            box-shadow: 0 8px 25px -5px rgba(0, 0, 0, .25);
+}
+
+.suggest .popup__under
+{
+    padding: 0;
+}
+
+.suggest .popup__content
+{
+    padding: 0;
+}
+
+.suggest.popup_theme_ffffff .suggest__content
+{
+    background: #fff;
+}
+
+.suggest__group
+{
+    position: relative;
+}
+
+/* <span/> */
+.suggest__title
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+    text-align: right;
+
+    color: #999;
+}
+
+/* <ul/> */
+.suggest__items
+{
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+}
+
+/* ../../../../common.blocks/suggest/suggest.css end */
+/* ../../../../touch-phone.blocks/suggest/suggest.css begin */
+.suggest.popup
+{
+    border-top-width: 0;
+    -webkit-box-shadow: none;
+}
+
+.suggest
+{
+    margin-top: 1px;
+
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.i-ua_platform_wp .suggest
+{
+    font-family: Arial, sans-serif;
+}
+
+.suggest .popup__content
+{
+    -webkit-box-shadow: 0 4px 8px -5px rgba(0, 0, 0, .2);
+            box-shadow: 0 4px 8px -5px rgba(0, 0, 0, .2);
+}
+
+.suggest .suggest-item
+{
+    padding: 0 9px;
+}
+
+/* ../../../../touch-phone.blocks/suggest/suggest.css end */
+/* ../../../../common.blocks/suggest-item/suggest-item.css begin */
+.suggest-item
+{
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.suggest-item_selected_yes
+{
+    background: #ffeba0;
+}
+
+.suggest-item__hint
+{
+    color: #070;
+}
+
+.suggest-item__value
+{
+    color: #070;
+}
+
+/* ../../../../common.blocks/suggest-item/suggest-item.css end */
+/* ../../../../touch.blocks/suggest-item/suggest-item.css begin */
+.suggest-item.i-pressed-controller_pressed_yes
+{
+    background: #ffeba0;
+}
+
+/* ../../../../touch.blocks/suggest-item/suggest-item.css end */
+/* ../../../../touch-phone.blocks/suggest-item/suggest-item.css begin */
+.suggest-item
+{
+    white-space: normal;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.suggest-item__text,
+.suggest-item__answer,
+.suggest-item__link,
+.suggest-item__hint
+{
+    display: inline-block;
+    overflow: hidden;
+
+    max-width: 100%;
+    height: 18px;
+
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.suggest-item__hint
+{
+    max-width: 100%;
+
+    text-overflow: ellipsis;
+}
+
+.suggest-item_pos_last .suggest-item__wrapper
+{
+    border-bottom: none;
+}
+
+.suggest-item.i-pressed-controller_pressed_yes,
+.suggest-item_selected_yes
+{
+    margin-top: -1px;
+
+    background: #f6f9fe;
+}
+
+.suggest-item.i-pressed-controller_pressed_yes .suggest-item__wrapper,
+.suggest-item_selected_yes .suggest-item__wrapper
+{
+    border-top: 1px #ededed solid;
+}
+
+.suggest-item.i-pressed-controller_pressed_yes.suggest-item_pos_first,
+.suggest-item_selected_yes.suggest-item_pos_first
+{
+    margin-top: 0;
+}
+
+.suggest-item.i-pressed-controller_pressed_yes.suggest-item_pos_first .suggest-item__wrapper,
+.suggest-item_selected_yes.suggest-item_pos_first .suggest-item__wrapper
+{
+    border-top: none;
+}
+
+.suggest-item__nav
+{
+    margin-right: 18px;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/suggest-item.css end */
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type.css begin */
+.suggest-item_type_weather .suggest-item__ellipsis,
+.suggest-item_type_traffic .suggest-item__ellipsis
+{
+    margin-top: -1px;
+}
+
+.i-ua_platform_ios .suggest-item_type_weather .suggest-item__ellipsis,
+.i-ua_platform_ios .suggest-item_type_traffic .suggest-item__ellipsis
+{
+    margin-top: -5px;
+}
+
+.suggest-item_type_weather .suggest-item__wrapper,
+.suggest-item_type_traffic .suggest-item__wrapper
+{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.suggest-item_type_weather .suggest-item__text,
+.suggest-item_type_traffic .suggest-item__text
+{
+    padding-bottom: 10px;
+
+    text-overflow: ellipsis;
+}
+
+.suggest-item_type_weather .suggest-item__table,
+.suggest-item_type_traffic .suggest-item__table
+{
+    display: table;
+
+    width: 100%;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_fact.css begin */
+.suggest-item_type_fact .suggest-item__hint
+{
+    position: relative;
+
+    color: #999;
+}
+
+.suggest-item_type_fact .suggest-item__hint:after
+{
+    position: absolute;
+    left: 7px;
+
+    width: 10px;
+
+    content: '■';
+    text-align: center;
+
+    font-size: 6px;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_fact.css end */
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_fact.css begin */
+.suggest-item_type_fact .suggest-item__hint:after
+{
+    content: ''; /* Убираем буллет */
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_fact.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__hint/suggest-item__hint.css begin */
+.suggest-item__hint
+{
+    color: #9b9b9b;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__hint/suggest-item__hint.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_nav.css begin */
+.suggest-item_type_nav
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_nav.css end */
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_nav.css begin */
+.suggest-item_type_nav .suggest-item__wrapper
+{
+    position: relative;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_nav.css end */
+/* ../../../../common.blocks/link/link.css begin */
+.link,
+.link:visited
+{
+    color: #22c;
+}
+
+.link
+{
+    text-decoration: none;
+
+    -webkit-transition: color .15s ease-out;
+            transition: color .15s ease-out;
+}
+
+/* ../../../../common.blocks/link/link.css end */
+/* ../../../../common.blocks/suggest-item/__link/suggest-item__link.css begin */
+.suggest-item__link
+{
+    text-decoration: underline;
+}
+
+/* ../../../../common.blocks/suggest-item/__link/suggest-item__link.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_traffic.css begin */
+.suggest-item_type_traffic .suggest-item__value
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_traffic.css end */
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_traffic.css begin */
+.suggest-item_type_traffic .suggest-item__icon
+{
+    width: 24px;
+    height: 24px;
+}
+
+.suggest-item_type_traffic .suggest-item__info
+{
+    width: 60px;
+}
+
+.suggest-item_type_traffic .suggest-item__answer
+{
+    height: 24px;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_traffic.css end */
+/* ../../../../common.blocks/suggest-item/__icon/suggest-item__icon.css begin */
+.suggest-item__icon
+{
+    display: inline-block;
+
+    vertical-align: middle;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ../../../../common.blocks/suggest-item/__icon/suggest-item__icon.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__icon/suggest-item__icon.css begin */
+.suggest-item__icon
+{
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 5px;
+
+    -webkit-background-size: contain;
+            background-size: contain;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__icon/suggest-item__icon.css end */
+/* ../../../../common.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css begin */
+.suggest-item__icon_traffic_red
+{
+    background-image: url("../../../../../../../output/freeze/QDQt5CNQVPNrU0UIYu-QSzje-10.svg");
+}
+
+.suggest-item__icon_traffic_yellow
+{
+    background-image: url("../../../../../../../output/freeze/Iu89JTVhXQvW3cEYmxOGfrZ9hhk.svg");
+}
+
+.suggest-item__icon_traffic_green
+{
+    background-image: url("../../../../../../../output/freeze/m84i2O4i04fpeiDk1V6dxA6RLrk.svg");
+}
+
+/* ../../../../common.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css begin */
+/* ../../../../touch-pad.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css begin */
+/* 32x32 */
+.i-ua_inlinesvg_no .suggest-item__icon_traffic_red
+{
+    background-image: url("../../../../../../../output/freeze/CvXYkDFo4xnqquHvpnYpJu-yObQ.png");
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_traffic_yellow
+{
+    background-image: url("../../../../../../../output/freeze/11xbts9AJoqb1qTh-XHGNSTS5lc.png");
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_traffic_green
+{
+    background-image: url("../../../../../../../output/freeze/8c15zBQ-Cv6ZH-J9lKevzZjJWMU.png");
+}
+
+/* ../../../../touch-pad.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css end */
+
+/* ../../../../touch-phone.blocks/suggest-item/__icon/_traffic/suggest-item__icon_traffic.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__info/suggest-item__info.css begin */
+.suggest-item__info
+{
+    display: table-cell;
+
+    padding-right: 9px;
+
+    text-align: right;
+
+    color: #9b9b9b;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__info/suggest-item__info.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_weather.css begin */
+.suggest-item_type_weather .suggest-item__value
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_weather.css end */
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_weather.css begin */
+.suggest-item_type_weather .suggest-item__icon
+{
+    width: 32px;
+    height: 32px;
+    margin: 0 0 0 3px;
+}
+
+.i-ua_inlinesvg_no .suggest-item_type_weather .suggest-item__icon
+{
+    -webkit-background-size: 32px 32px;
+}
+
+.suggest-item_type_weather .suggest-item__answer
+{
+    height: 32px;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/_type/suggest-item_type_weather.css end */
+/* ../../../../common.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css begin */
+.suggest-item__icon_weather_bkn-plus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-ra-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-plus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-ra-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-plus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-sn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-plus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-plus-sn-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-ra-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-ra-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-sn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-minus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-minus-sn-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-ra-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-ra-n.svg');
+}
+
+.suggest-item__icon_weather_bkn-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-sn-d.svg');
+}
+
+.suggest-item__icon_weather_bkn-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bkn-sn-n.svg');
+}
+
+.suggest-item__icon_weather_bl
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/bl.svg');
+}
+
+.suggest-item__icon_weather_fg-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/fg-d.svg');
+}
+
+.suggest-item__icon_weather_fg-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/fg-n.svg');
+}
+
+.suggest-item__icon_weather_ovc
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc.svg');
+}
+
+.suggest-item__icon_weather_ovc-plus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-plus-ra.svg');
+}
+
+.suggest-item__icon_weather_ovc-plus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-plus-sn.svg');
+}
+
+.suggest-item__icon_weather_ovc-minus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-minus-ra.svg');
+}
+
+.suggest-item__icon_weather_ovc-minus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-minus-sn.svg');
+}
+
+.suggest-item__icon_weather_ovc-gr
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-gr.svg');
+}
+
+.suggest-item__icon_weather_ovc-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-ra.svg');
+}
+
+.suggest-item__icon_weather_ovc-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-sn.svg');
+}
+
+.suggest-item__icon_weather_ovc-ts-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/ovc-ts-ra.svg');
+}
+
+.suggest-item__icon_weather_skc-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/skc-d.svg');
+}
+
+.suggest-item__icon_weather_skc-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/svg/skc-n.svg');
+}
+
+/* ../../../../common.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css begin */
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-plus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_+sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-minus-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_-sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-ra-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_ra_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-ra-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_ra_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-sn-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_sn_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bkn-sn-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bkn_sn_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_bl
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/bl.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_fg-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/fg_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_fg-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/fg_n.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-plus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_+ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-plus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_+sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-minus-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_-ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-minus-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_-sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-gr
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_gr.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-sn
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_sn.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_ovc-ts-ra
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/ovc_ts_ra.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_skc-d
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/skc_d.png');
+}
+
+.i-ua_inlinesvg_no .suggest-item__icon_weather_skc-n
+{
+    background-image: url('//yastatic.net/weather/i/icons/48x48/skc_n.png');
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__icon/_weather/suggest-item__icon_weather.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__value/suggest-item__value.css begin */
+.suggest-item__value:not(:empty)
+{
+    margin-left: 9px;
+}
+
+.suggest-item_type_weather .suggest-item__value,
+.suggest-item_type_traffic .suggest-item__value
+{
+    margin-left: 5px;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__value/suggest-item__value.css end */
+/* ../../../../touch.blocks/suggest-item/__icon/_type/suggest-item__icon_type_favicon.css begin */
+.suggest-item__icon_type_favicon
+{
+    width: 16px;
+    height: 16px;
+
+    vertical-align: baseline;
+}
+
+/* ../../../../touch.blocks/suggest-item/__icon/_type/suggest-item__icon_type_favicon.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__icon/_type/suggest-item__icon_type_favicon.css begin */
+.suggest-item__icon_type_favicon
+{
+    margin: 0 0 -3px 0;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__icon/_type/suggest-item__icon_type_favicon.css end */
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_icon.css begin */
+.suggest-item_type_icon .suggest-item__value
+{
+    color: #999;
+}
+
+/* ../../../../common.blocks/suggest-item/_type/suggest-item_type_icon.css end */
+/* ../../../../common.blocks/a11y-hidden/a11y-hidden.css begin */
+.a11y-hidden
+{
+    position: absolute;
+    left: -32767px;
+}
+
+/* ../../../../common.blocks/a11y-hidden/a11y-hidden.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__wrapper/suggest-item__wrapper.css begin */
+.suggest-item__wrapper
+{
+    overflow: hidden;
+
+    padding: 9px 9px 11px 13px;
+
+    text-overflow: ellipsis;
+
+    font-family: Helvetica, Arial, sans-serif;
+
+    border-bottom: 1px #ededed solid;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__wrapper/suggest-item__wrapper.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__wrapper/_column/suggest-item__wrapper_column_ellipsis.css begin */
+.suggest-item__wrapper_column_ellipsis
+{
+    display: table;
+
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+
+    line-height: 18px;
+}
+
+.suggest-item__wrapper_column_ellipsis .suggest-item__left,
+.suggest-item__wrapper_column_ellipsis .suggest-item__right
+{
+    display: table-cell;
+
+    height: 32px;
+
+    vertical-align: middle;
+}
+
+.suggest-item__wrapper_column_ellipsis .suggest-item__left
+{
+    padding-left: 13px;
+}
+
+.suggest-item__wrapper_column_ellipsis .suggest-item__right
+{
+    padding-right: 9px;
+
+    text-align: right;
+    white-space: nowrap;
+}
+
+.suggest-item__ellipsis
+{
+    overflow: hidden;
+
+    height: 18px;
+
+    word-break: break-all;
+}
+
+.suggest-item__ellipsis:before
+{
+    float: left;
+
+    width: 5px;
+    height: 18px;
+
+    content: '';
+}
+
+.suggest-item__ellipsis:after
+{
+    position: relative;
+    top: -18px;
+    left: 100%;
+
+    float: right;
+
+    width: 15px;
+    margin-left: -15px;
+    padding-right: 5px;
+
+    content: '\02026';
+    text-align: right;
+
+    background: #fff;
+}
+
+.suggest-item__ellipsis-text
+{
+    float: right;
+
+    width: 100%;
+    margin-left: -5px;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__wrapper/_column/suggest-item__wrapper_column_ellipsis.css end */
+/* ../../../../touch-phone.blocks/suggest-item/__wrapper/_column/suggest-item__wrapper_column_jump.css begin */
+.suggest-item__wrapper_column_jump
+{
+    text-align: justify;
+
+    font-size: 1px;
+    line-height: 1;
+}
+
+.suggest-item__wrapper_column_jump:after
+{
+    display: inline-block;
+
+    width: 100%;
+
+    content: '';
+}
+
+.suggest-item__wrapper_column_jump .suggest-item__left,
+.suggest-item__wrapper_column_jump .suggest-item__right
+{
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.suggest-item__wrapper_column_jump .suggest-item__left
+{
+    margin-right: 9px;
+}
+
+.suggest-item__wrapper_column_jump .suggest-item__right
+{
+    max-width: 100%;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/__wrapper/_column/suggest-item__wrapper_column_jump.css end */
+/* ../../../../touch-phone.blocks/suggest-item/_pers/suggest-item_pers_yes.css begin */
+.suggest-item_pers_yes
+{
+    color: #7131ac;
+}
+
+/* ../../../../touch-phone.blocks/suggest-item/_pers/suggest-item_pers_yes.css end */
+/* ../../../../common.blocks/popup/popup.css begin */
+.popup
+{
+    position: absolute;
+    z-index: 32700;
+
+    display: none;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1px;
+}
+
+/* ../../../../common.blocks/popup/popup.css end */
+/* ../../../../common.blocks/popup/__content/popup__content.css begin */
+.popup__content
+{
+    position: relative;
+    z-index: 10;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+/* ../../../../common.blocks/popup/__content/popup__content.css end */
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+.popup_theme_ffffff,
+.popup_theme_ffffff .popup__tail:after
+{
+    background: #fff;
+}
+
+.popup_theme_ffffff .popup__tail
+{
+    background: rgba(0,0,0,.15);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(50%, rgba(0,0,0,.15)), color-stop(50%, rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+    background:         linear-gradient(to top right, rgba(0,0,0,.15) 50%, rgba(0,0,0,0) 50%);
+}
+
+/* ../../../../common.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../touch-phone.blocks/popup/_theme/popup_theme_ffffff.css begin */
+.i-ua_android_2 .popup_theme_ffffff
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1) inset, 0 10px 20px -5px rgba(0,0,0,.4);
+}
+
+/* ../../../../touch-phone.blocks/popup/_theme/popup_theme_ffffff.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css begin */
+.popup_visibility_visible
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_visible.css end */
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css begin */
+.popup_visibility_outside
+{
+    top: -99999px;
+    left: -99999px;
+
+    display: block;
+}
+
+/* ../../../../common.blocks/popup/_visibility/popup_visibility_outside.css end */
+/* ../../../../common.blocks/popup/__under/popup__under.css begin */
+.popup__under
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/popup/__under/popup__under.css end */
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css begin */
+.popup__under_color_white
+{
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../common.blocks/popup/__under/_color/popup__under_color_white.css end */
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    position: fixed;
+    z-index: 32000;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+
+    opacity: .3;
+    background: #000;
+}
+
+/* ../../../../common.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../touch-phone.blocks/popup/__under/_type/popup__under_type_paranja.css begin */
+.popup__under_type_paranja
+{
+    pointer-events: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -ms-touch-action: none;
+}
+
+/* ../../../../touch-phone.blocks/popup/__under/_type/popup__under_type_paranja.css end */
+/* ../../../../touch-phone.blocks/popup/__under/_suggest/popup__under_suggest_yes.css begin */
+.popup__under_suggest_yes
+{
+    position: absolute;
+    top: 90px;
+
+    opacity: .8;
+    background: #fff;
+}
+
+/* ../../../../touch-phone.blocks/popup/__under/_suggest/popup__under_suggest_yes.css end */
+/* ../../../../common.blocks/input/input.css begin */
+.input
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 100%;
+}
+
+/* ../../../../common.blocks/input/input.css end */
+/* ../../../../common.blocks/input/_disabled/input_disabled_yes.css begin */
+.input_disabled_yes.input_type_textarea .input__control
+{
+    resize: none;
+}
+
+.input_disabled_yes .input__clear
+{
+    display: none;
+}
+
+.input_disabled_yes,
+.input_disabled_yes .input__control
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .input_disabled_yes.input .input__box
+    {
+        background: rgba(0,0,0,.08);
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+}
+
+/* ../../../../common.blocks/input/_disabled/input_disabled_yes.css end */
+/* ../../../../touch.blocks/input/_disabled/input_disabled_yes.css begin */
+.i-ua_platform_ios .input_disabled_yes,
+.i-ua_platform_ios .input_disabled_yes .input__control
+{
+    color: inherit!important; /* iOS сам добавляет прозрачность на текст*/
+}
+
+.i-ua_ios_5 .input_disabled_yes.input_type_textarea .input__control
+{
+    color: #f3f3f3!important; /* iOS5 дизэйблит по-своему */
+}
+
+/* ../../../../touch.blocks/input/_disabled/input_disabled_yes.css end */
+/* ../../../../touch-phone.blocks/input/_disabled/input_disabled_yes.css begin */
+.i-ua_android_2 .input_disabled_yes.input .input__box:before
+{
+    -webkit-box-shadow: none;
+}
+
+/* ../../../../touch-phone.blocks/input/_disabled/input_disabled_yes.css end */
+/* ../../../../common.blocks/input/_theme/input_theme_normal.css begin */
+.input_theme_normal,
+.input_theme_normal .input__control
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+.input_theme_normal .input__hint
+{
+    color: #999;
+}
+
+@media all and (min-width:0)
+{
+    .input_theme_normal .input__box
+    {
+        background: #fff;
+        -webkit-box-shadow: inset 0 0 0 1px #cbcbcb;
+                box-shadow: inset 0 0 0 1px #cbcbcb;
+    }
+
+    .input_theme_normal.input_focused_yes .input__box
+    {
+        -webkit-box-shadow: inset 0 0 0 1px #d0ba65, 0 0 10px #fc0;
+                box-shadow: inset 0 0 0 1px #d0ba65, 0 0 10px #fc0;
+    }
+}
+
+/* ../../../../common.blocks/input/_theme/input_theme_normal.css end */
+/* ../../../../touch-phone.blocks/input/_theme/input_theme_normal.css begin */
+/* фикс для Samsung Bada, которая не понимает box-shadow */
+.i-ua_platform_bada .input.input_theme_normal .input__box:before
+{
+    border: 1px solid #cbac33;
+}
+
+/* Костыли для Android 2.* */
+.i-ua_android_2 .input_theme_normal .input__box:before
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
+}
+
+.i-ua_android_2 .input_theme_normal.input_focused_yes .input__box
+{
+    -webkit-box-shadow: 0 0 10px #fc0;
+}
+
+.i-ua_android_2 .input_theme_normal.input_focused_yes .input__box:before
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(178,142,0,.6);
+}
+
+/* ../../../../touch-phone.blocks/input/_theme/input_theme_normal.css end */
+/* ../../../../common.blocks/input/__box/input__box.css begin */
+/* Обертка для нативного инпута (__control) и очищающего крестика (__clear). */
+.input__box
+{
+    position: relative;
+
+    display: block;
+}
+
+@media all and (min-width:0)
+{
+    .input__box
+    {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        cursor: text;
+    }
+}
+
+/* ../../../../common.blocks/input/__box/input__box.css end */
+/* ../../../../touch.blocks/input/__box/input__box.css begin */
+/* disable select __box on touch devices */
+.input__box
+{
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+}
+
+/* ../../../../touch.blocks/input/__box/input__box.css end */
+/* ../../../../touch-phone.blocks/input/__box/input__box.css begin */
+.i-ua_platform_wp .input_size_m .input__box
+{
+    padding-left: 7px;
+}
+
+/* ../../../../touch-phone.blocks/input/__box/input__box.css end */
+/* ../../../../common.blocks/input/__control/input__control.css begin */
+.input__control
+{
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    margin: 0;
+
+    font-size: 100%;
+
+    color: #000;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -webkit-appearance: none;
+}
+
+@media all and (min-width:0)
+{
+    .input__control
+    {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: .4em 0;
+
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+}
+
+/* Лишние отступы у текста */
+.input__control::-webkit-search-decoration
+{
+    -webkit-appearance: none;
+}
+
+/* Нативный крестик */
+.input__control::-webkit-search-cancel-button
+{
+    display: none;
+}
+
+/* Смещение плэйсхолдера */
+.input__control::-webkit-input-placeholder
+{
+    text-indent: 0;
+}
+
+/* Сбрасываем желтый бг у инпутов при автозаполнении */
+.input__control:-webkit-autofill
+{
+    top: 1px;
+    left: 1px;
+
+    height: 1.9em;
+
+    -webkit-box-shadow: inset 0 0 0 50px #fff;
+    -webkit-text-fill-color: #000;
+}
+
+/* Скрываем нативный крестик в IE10 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+{
+    .input__control::-ms-clear
+    {
+        display: none;
+    }
+}
+
+/* ../../../../common.blocks/input/__control/input__control.css end */
+/* ../../../../touch.blocks/input/__control/input__control.css begin */
+.input__control
+{
+    -webkit-box-sizing: border-box;
+}
+
+/* ../../../../touch.blocks/input/__control/input__control.css end */
+/* ../../../../touch-phone.blocks/input/__control/input__control.css begin */
+.i-ua_platform_wp .input.input_size_m .input__control
+{
+    padding-left: 0;
+}
+
+/* ../../../../touch-phone.blocks/input/__control/input__control.css end */
+/* ../../../../common.blocks/input/__clear/input__clear.css begin */
+/* Позиционируется относительно input__box.
+ * Важно, чтобы правая граница элемента с очищающим крестиком
+ * совпадала с правой границей input__box, иначе появляется
+ * возможность кликнуть по правому бордеру input__box. */
+.input__clear
+{
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    visibility: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    background: url("../../../../../../../output/freeze/K4e4uv8u9I9wb1fi17d8-3Jnr2A.svg") 50% 50% no-repeat;
+}
+
+/* ../../../../common.blocks/input/__clear/input__clear.css end */
+/* ../../../../touch-phone.blocks/input/__clear/input__clear.css begin */
+.input__clear
+{
+    -webkit-background-size: 18px;
+            background-size: 18px;
+}
+
+.i-ua_inlinesvg_no .input .input__clear
+{
+    opacity: 1;
+    background-image: url("../../../../../../../output/freeze/MbAH5xhDcR6dSCID3y7TlTwVWnc.png");
+}
+
+.i-ua_inlinesvg_no .input_size_s .input__clear
+{
+    -webkit-background-size: 12px;
+            background-size: 12px;
+}
+
+.i-ua_inlinesvg_no .input_size_s .input__clear
+{
+    -webkit-background-size: 18px;
+            background-size: 18px;
+}
+
+/* ../../../../touch-phone.blocks/input/__clear/input__clear.css end */
+/* ../../../../common.blocks/input/__clear/_visibility/input__clear_visibility_visible.css begin */
+.input__clear_visibility_visible
+{
+    visibility: visible;
+
+    cursor: pointer;
+
+    opacity: .3;
+}
+
+/* ../../../../common.blocks/input/__clear/_visibility/input__clear_visibility_visible.css end */
+/* ../../../../touch.blocks/input/__clear/_visibility/input__clear_visibility_visible.css begin */
+/* disable select __clear on touch devices */
+.input__clear_visibility_visible
+{
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+}
+
+/* ../../../../touch.blocks/input/__clear/_visibility/input__clear_visibility_visible.css end */
+/* ../../../../touch-phone.blocks/input/__clear/_visibility/input__clear_visibility_visible.css begin */
+.input__clear_visibility_visible
+{
+    opacity: .3;
+}
+
+/* ../../../../touch-phone.blocks/input/__clear/_visibility/input__clear_visibility_visible.css end */
+/* ../../../../common.blocks/input/_size/input_size_m.css begin */
+.input_size_m
+{
+    font-size: 15px;
+    line-height: 32px;
+}
+
+.input_size_m .input__clear
+{
+    width: 32px;
+}
+
+.input_size_m .input__control
+{
+    padding-left: 10px;
+}
+
+.input_size_m .input__box
+{
+    padding-right: 30px;
+}
+
+.input_size_m .input__hint
+{
+    padding-left: 11px;
+}
+
+/* ../../../../common.blocks/input/_size/input_size_m.css end */
+
+/* 10-simple.css end */
+/* ../../../../libs/islands-romochka/touch-phone.blocks/b-page/_theme/b-page_theme_normal.ie.css begin */
+.b-page
+{
+    background-image: url("../../../../../../../output/freeze/bgvrDmMsHiAbE1Kq5LjpzTFxi-8.svg");
+}
+
+/* ../../../../libs/islands-romochka/touch-phone.blocks/b-page/_theme/b-page_theme_normal.ie.css end */
+
+/* 10-simple.ie.css end */

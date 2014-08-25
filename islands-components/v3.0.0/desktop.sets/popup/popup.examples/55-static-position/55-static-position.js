@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/desktop.sets/popup/popup.examples/55-static-position/55-static-position.ru.js

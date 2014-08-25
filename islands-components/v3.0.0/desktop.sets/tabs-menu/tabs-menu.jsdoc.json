@@ -1,0 +1,110 @@
+{
+    "blockName": "tabs-menu",
+    "description": "",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "getActive",
+            "description": "<p>Возвращает элемент активного табика.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getTab",
+            "description": "<p>Возвращает DOM-элемент табика по его индексу.</p>\n",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "<p>Индекс табика. Индексация начинается от 0.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "indexOfTab",
+            "description": "<p>Возвращает индекс табика или -1, если переданный элемент не найден среди табиков.</p>\n",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "<p>DOM-элемент табика.</p>",
+                    "optional": true,
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "change",
+            "description": "<p>Генерируется при смене активного табика.</p>",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>Данные события.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "data.current",
+                    "description": "<p>Активированный табик.</p>",
+                    "optional": false,
+                    "types": [
+                        "jQuery"
+                    ]
+                },
+                {
+                    "name": "data.prevIndex",
+                    "description": "<p>Деактивированный табик.</p>",
+                    "optional": false,
+                    "types": [
+                        "jQuery"
+                    ]
+                }
+            ]
+        }
+    ],
+    "mods": []
+}

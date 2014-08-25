@@ -1,0 +1,234 @@
+{
+    "blockName": "select",
+    "description": "<p>Блок <code>select</code>(«селект») – раскрывающийся список выбора.\nЭлемент управления имеет один уровень вложенности и позволяет выбрать\nтолько один элемент из списка.</p>\n\n\n\n\n\n",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "isDisabled",
+            "description": "<p>Возвращает <code>true</code>, если блок заблокирован.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "isOpened",
+            "description": "<p>Возвращает <code>true</code>, если в данный момент выпадающий список элементов\nоткрыт.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "open",
+            "description": "<p>Открывает выпадающий список.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "close",
+            "description": "<p>Закрывает выпадающий список.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "val",
+            "description": "<p>Устанавливает значение, если передан параметр <code>val</code> или\nвозвращает текущее значение, если параметр не передан.</p>\n",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "<p>устанавливаемое значение. Будет\nвыбран элемент <code>__option</code> с аттрибутом <code>value</code>, равным\nэтому параметру.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>текущее значение или сам блок, если значение устанавливалось.</p>",
+                    "types": [
+                        "String",
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "setOptions",
+            "description": "<p>Устанавливает новый набор опций.</p>\n<p>Позволяет декларативно задать список новых пунктов\nили групп для блока. Каждый элемент описывается\nв виде объекта со следующими полями:</p>\n<ul>\n<li><code>item</code> - тип элемента. Принимет следующие значения:<ul>\n<li><code>option</code> - одиночный пункт.</li>\n<li><code>optgroup</code> - группа опций с дочерними элементами.</li>\n</ul>\n</li>\n<li><code>disabled</code> - если <code>true</code>, пункт (или дочерние пункты группы)\nбудет заблокирован и не сможет быть выбран.</li>\n</ul>\n<p>Для одиночных пунктов также задаются следующие параметры:</p>\n<ul>\n<li><code>value</code> - значение опции (аттрибут <code>value</code> DOM-элемента).\n-<code>content</code> - отображаемое значение. Может быть как строкой, так и\n<code>bemjson</code>, при условии, что соотвествующие шаблоны доступны на клиенте.</li>\n</ul>\n<p>Дополнительные параметры для групп пунктов:</p>\n<ul>\n<li><code>label</code> - заголовок группы.</li>\n<li><code>content</code> - массив из дочерних элементов или групп.</li>\n</ul>\n<p>Примеры:</p>\n<p>Установить набор из трех опций:</p>\n<pre><code class=\"lang-javascript\">block.setOptions([\n    {item: 'option', value: 'moscow', content: 'Москва'},\n    {item: 'option', value: 'spb', content: 'Санкт-Петербург'},\n    {item: 'option', value: 'simf', content: 'Симферополь'}\n]);\n</code></pre>\n<p>Заблокированный пункт:</p>\n<pre><code class=\"lang-javascript\">block.setOptions([\n    {item: 'option', content: 'Нельзя выбрать', disabled: true}\n]);\n</code></pre>\n<p>Группы:</p>\n<pre><code class=\"lang-javascript\">block.setOptions([\n    {\n        item: 'optgroup',\n        label: 'Россия',\n        content: [\n            {item: 'option', value: 'moscow', content: 'Москва'},\n            {item: 'option', value: 'spb', content: 'Санкт-Петербург'}\n        ]\n    },\n    {\n        item: 'optgroup',\n        label: 'Украина',\n        content: [\n            {item: 'option', value: 'simf', content: 'Симферополь'}\n        ]\n    }\n\n]);\n</code></pre>\n",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>устанавливаемые опции.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object[]"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "redraw",
+            "description": "<p>Перерисовывает выпадающий список.</p>\n<p>Размеры списка будут подстроены под содержимое его элементов.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "destruct",
+            "description": "<p>Уничтожает блок.</p>\n<p>Выпадающий список будет закрыт перед уничтожением.</p>\n",
+            "params": [],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getDefaultParams",
+            "description": "<p>Возвращает параметры блока по умолчанию.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "focus",
+            "description": "<p>Генерируется, когда блок получает фокус.</p>",
+            "params": []
+        },
+        {
+            "name": "blur",
+            "description": "<p>Генерируется, когда блок теряет фокус.</p>",
+            "params": []
+        },
+        {
+            "name": "change",
+            "description": "<p>Генерируется при смене выбранного пункта.</p>",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "data.index",
+                    "description": "<p>Индекс элемента, выбранного в настоящий момент.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                },
+                {
+                    "name": "data.prev",
+                    "description": "<p>Индекс предыдущего выбранного элемента или -1, если\nтакого элемента нет.</p>",
+                    "optional": false,
+                    "types": [
+                        "number"
+                    ]
+                }
+            ]
+        }
+    ],
+    "mods": [
+        {
+            "name": "layout",
+            "value": "content",
+            "methods": [],
+            "properties": [
+                {
+                    "name": "FOCUS_OFFSET_HORIZ",
+                    "deprecated": false,
+                    "description": "<p>{Number} учитывам отступ появляющийся при фокусе на кнопке</p>\n",
+                    "types": [],
+                    "access": "public",
+                    "scope": "static"
+                }
+            ],
+            "events": [],
+            "description": "<p>Селект, растягивающийся на всю ширину родителя.</p>"
+        }
+    ]
+}

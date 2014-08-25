@@ -1,0 +1,216 @@
+{
+  "name": "checkbox",
+  "elems": [
+    {
+      "name": "box",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Элемент рисующий чекбокс (нативный чекбокс скрыт)"
+        }
+      ]
+    },
+    {
+      "name": "control",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Нативный чекбокс"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Метка к чекбоксу"
+        }
+      ]
+    },
+    {
+      "name": "tick",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Галочка"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "checked",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Состояние чекбокса — активное (галочка нажата)"
+        }
+      ]
+    },
+    {
+      "name": "disabled",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Неактивное состояние. Нажать на чекбокс нельзя."
+        }
+      ]
+    },
+    {
+      "name": "focused",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Состояние фокуса"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 15px"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта 13px"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычный чекбокс"
+            }
+          ]
+        },
+        {
+          "name": "pseudo",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычный чекбокс"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Темы"
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>checkbox</code> («чекбокс») – независимый переключатель. Позволяет управлять параметром с двумя состояниями – включено и выключено. Группа чекбоксов используется для выбора более одного варианта из списка.\nБлок создает контейнер, содержащий нативный контрол «чекбокс» <code>&lt;input type=&quot;checkbox&quot; name=&quot;имя&quot; атрибуты&gt;</code>.  Сам нативный контрол скрыт внутри контейнера, используется только его функциональность. Нестандартное островное оформление чекбокса задается контейнеру.\nВ MSIE8 и ниже <code>checkbox</code> деградирует до нативного чекбокса <code>&lt;input type=&quot;checkbox&quot; атрибуты&gt;</code>.</p>\n<h3 id=\"-\">Элементы блока</h3>\n<ul>\n<li><code>box</code> – добавляется в BEMHTML-шаблоне блока и трансформируется в тэг <code>&lt;span&gt;</code>. Используется для отрисовки чекбокса (нативный чекбокс скрыт).</li>\n<li><code>control</code> – добавляется на уровне шаблонизатора блока к содержимому <code>checkbox</code>. В HTML преобразуется в нативный контрол чекбокс <code>&lt;input type=&quot;checkbox&quot; name=&quot;имя&quot; атрибуты&gt;</code>. Служит для использования функциональности нативного чекбокса.</li>\n<li><code>tick</code> – элемент для отображения «галочки» в поле чекбокса.\nВ HTML трансформируется в тэг <code>&lt;i&gt;</code>. В CSS-свойстве элемента <code>background</code> находится векторное изображение «галочки» в формате svg.</li>\n</ul>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для использования блока:</p>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;checkbox&#39;, // имя блока\n    mods: {size: &#39;m&#39;},  // поле модификаторов. Модификатор размера - обязательный\n    checkboxAttrs: {id: &#39;nn&#39;, value: &#39;val&#39;, name: &#39;text&#39;, tabindex: 1}, // атрибуты чекбокса\n     content: {elem: &#39;label&#39;, content: &#39;label&#39;} // метка чекбокса\n}</code></pre>\n<p><code>checkboxAttrs</code>, <code>content</code> – не обязательные поля BEMJSON блока.</p>\n<p>BEMHTML-шаблон трансформирует <code>checkbox</code> в HTML-тэг <code>&lt;span&gt;</code>, реализующий кастомный чекбокс, внутри которого будет находиться нативный чекбокс <code>&lt;input type=&quot;checkbox&quot; атрибуты&gt;</code>.</p>\n<h3 id=\"-\">Атрибуты блока</h3>\n<ul>\n<li><code>{Object} checkboxAttrs</code> – поле атрибутов.\nДопустимые атрибуты: <code>name</code>, <code>value</code>, <code>accesskey</code>, <code>tabindex</code>, <code>id</code>, <code>autofocus</code>.\nСовпадают с HTML-атрибутами нативного чекбокса, который лежит в основе реализации блока <code>checkbox</code>.<ul>\n<li><code>{String} name</code> – имя контрола для идентификации обработчиком формы. У чекбоксов, объединенных в группу, имена должны совпадать.</li>\n<li><code>{String} value</code> – значение, отправляемое на сервер при передаче формы.</li>\n<li><code>{String} id</code> – уникальный идентификатор чекбокса. Если <code>id</code> явно не задан во входных данных <code>checkboxAttrs:{id: &#39;nnn&#39;}</code>, то будет сгенерирован автоматически. Служит для связи с меткой.</li>\n<li><code>{Number} tabindex</code> – определяет последовательность перехода между элементами при нажатии на кнопку <code>Tab</code>.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"-\">Содержимое блока</h3>\n<ul>\n<li><code>{Object} content</code> – содержимое чекбокса (метка).\nДля создания метки (текста) контрола служит элемент блока <code>checkbox</code> – <code>label</code>. Не обязательный элемент. Текст метки задается в контенте элемента <code>label</code>.</li>\n</ul>\n<pre><code class=\"lang-js\">{\n    block: &#39;checkbox&#39;,\n    mods: {size: &#39;m&#39;},\n    content: {elem: &#39;label&#39;, content: &#39;текст метки&#39;} //добавление метки чекбоксу\n}</code></pre>\n<p>BEMHTML-шаблон преобразует <code>label</code> в HTML-тэг <code>&lt;label&gt;</code>, который устанавливает связь между меткой и чекбоксом. Такая связь используется для изменения состояния чекбокса при нажатии курсором мыши или пробелом на метку. Чекбокс связывается с меткой идентификатором <code>id</code> внутри  нативного чекбокса и указанием его значения в атрибуте <code>for</code> тэга <code>&lt;label&gt;</code>.</p>\n<!-- %%checkbox.examples/20-label/20-label%% -->\n\n<!-- %%checkbox.examples/25-label-id/25-label-id%% -->\n\n<h3 id=\"-checkbox\">Варианты использования checkbox</h3>\n<ul>\n<li>Для управления одним параметром.</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;checkbox&#39;,\n    mods: {size: &#39;m&#39;},\n    checkboxAttrs: {id: &#39;login&#39;},\n    content: {elem: &#39;label&#39;, content: &#39;запомнить меня&#39;}\n}</code></pre>\n<ul>\n<li>Группа чекбоксов. Значение атрибута <code>name</code> у чекбоксов в группе должно быть одинаковое.</li>\n</ul>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;checkbox&#39;,\n    mods: {size: &#39;m&#39;},\n    checkboxAttrs: {id: &#39;nnn&#39;, value: &#39;val_1&#39;, accesskey: &#39;kj&#39;, name: &#39;text&#39;, tabindex: 1}\n},\n{\n    block: &#39;checkbox&#39;,\n    mods: {size: &#39;m&#39;, checked: &#39;yes&#39;},\n    checkboxAttrs: {value: &#39;val_2&#39;,  name: &#39;text&#39;, tabindex: 2}\n},\n{\n     block: &#39;checkbox&#39;,\n    mods: {size: &#39;m&#39;, disabled: &#39;yes&#39;, checked: &#39;yes&#39;},\n     checkboxAttrs: {id: &#39;nn&#39;, value: &#39;val_3&#39;, name: &#39;text&#39;, tabindex: 3},\n     content: {elem: &#39;label&#39;, content: &#39;label&#39;}\n}</code></pre>\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Темы оформления</h4>\n<p>По умолчанию для чекбокса реализована одна тема оформления – <strong>обычная</strong> (модификатор <code>theme</code> со значением <code>normal</code>).</p>\n<h4 id=\"-\">Размеры</h4>\n<p>Для чекбокса реализованы два размера – <code>s</code> и <code>m</code>, которые определяют размер шрифта метки и поля для проставления галочки.\nМодификатор размера <code>size</code> – обязателен при объявлении блока, по умолчанию не задан.</p>\n<hr>\n<p><strong>NB</strong> Если модификатор размера не указан во входных данных блока – чекбокс не отобразится на странице.</p>\n<hr>\n<p>Таблица размеров блока</p>\n<table>\n<thead>\n<tr>\n<th>Размер блока</th>\n<th>Размер шрифта</th>\n<th>Размеры поля чекбокса</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>s</td>\n<td>13px</td>\n<td>width: 12px; height: 12px;</td>\n</tr>\n<tr>\n<td>m</td>\n<td>15px</td>\n<td>width: 14px; height: 14px;</td>\n</tr>\n</tbody>\n</table>\n<p>При необходимости вы можете доопределить нужный размер на уровне проекта. <a href=\"../button/button.html#customsize\">Кастомный размер</a>.</p>\n<!-- %%checkbox.examples/10-state/10-state%% -->\n\n<h4 id=\"-\">Состояния</h4>\n<p>Модификаторы состояния чекбокса:</p>\n<ul>\n<li><strong>Выбран</strong>  <code>checked</code> – характеризует активное (выбранное) состояние чекбокса.</li>\n<li><strong>Не активен</strong>  <code>disabled</code> – чекбокс отключен.</li>\n<li><strong>В фокусе</strong> <code>focused</code> – чекбокс находится в фокусе.</li>\n</ul>\n<p>Если во входных данных не задан модификатор состояния блока, то <code>checkbox</code> по умолчанию будет активен (можно нажать на чекбокс) и не выбран.\nВ состоянии <strong>не активен</strong> (модификатор <code>disabled</code> со значением <code>yes</code>) чекбокс и метка будут недоступны для действий пользователя.\nЧекбокс может находиться одновременно в нескольких состояниях. Например, <strong>не активен</strong> и <strong>выбран</strong>.\nВ состоянии <strong>в фокусе</strong>  реагирует только на клик левой кнопки мыши или на нажатие пробела. Переход по чекбоксам осуществляется клавишей <code>Tab</code>, установка состояния <strong>выбран/не выбран</strong> – <code>Space</code>.</p>\n<pre><code class=\"lang-javascript\">{\n    block: &#39;checkbox&#39;,\n    mods: {size: &#39;m&#39;, disabled: &#39;yes&#39;, checked: &#39;yes&#39;},\n    content: {elem: &#39;label&#39;, content: &#39;label&#39;}\n}</code></pre>\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li><strong>Тема оформления</strong>: обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>\n<li><strong>Состояние</strong>: активен, не выбран.</li>\n<li>Атрибут <code>id</code> генерируется по умолчанию, если явно не задан в BEMJSON.</li>\n</ul>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "checkbox.examples/10-state/10-state",
+          "title": "Все состояния"
+        },
+        {
+          "url": "checkbox.examples/15-pseudo/15-pseudo",
+          "title": "Все состояния псевдо-чекбокса"
+        },
+        {
+          "url": "checkbox.examples/20-label/20-label",
+          "title": "С label"
+        },
+        {
+          "url": "checkbox.examples/25-label-id/25-label-id",
+          "title": "С label и генерацией случайного id"
+        },
+        {
+          "url": "checkbox.examples/30-complex/30-complex",
+          "title": "В тексте"
+        },
+        {
+          "url": "checkbox.examples/35-api/35-api",
+          "title": "API"
+        }
+      ]
+    }
+  ]
+}

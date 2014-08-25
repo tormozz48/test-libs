@@ -1,0 +1,60 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>human-date</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок human-date</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>human-date</code> – BEMHTML шаблон, предназначенный для преобразования и вывода даты в разных удобных и понятных для человека форматах.
+Текстовые компоненты даты могут выводиться на требуемом языке, локализованные значения для которых будут взяты из <a href="https://lego.yandex-team.ru/doc/concept/localization.wiki#Tanker">Танкера</a>. <a href="https://lego.yandex-team.ru/doc/concept/localization.wiki#Podderzhivaemyelokali">Список поддерживаемых языковых локализаций</a>.</p>
+<p>Возможности блока:</p>
+<ul>
+<li>выводит даты относительно текущей в прошлом, настоящем и будущем времени;</li>
+<li>выводит даты в сокращенном или полном формате (только дата или только время);</li>
+</ul>
+<p>Примеры форматов:</p>
+<ul>
+<li>В прошлом:<ul>
+<li>5 мин</li>
+<li>1 час</li>
+<li>вчера</li>
+<li>7 д</li>
+<li>16 сен</li>
+<li>14 фев 2012</li>
+</ul>
+</li>
+<li>В будущем:<ul>
+<li>завтра</li>
+<li>5 ноя</li>
+<li>28 янв 2015</li>
+</ul>
+</li>
+<li>В настоящем:<ul>
+<li>сейчас</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования и настройки блока:</p>
+<pre><code class="lang-js">{
+    block: &quot;human-date&quot;, // имя блока
+    timestamp: 1389877577337, // дата. Обязательное поле
+    showYear: true,  // всегда для даты показывает год в формате &quot;YYYY&quot; (по умол. текущий год не выводится)
+    showTime: true // всегда показывает время в формате &quot;HH:MM&quot;
+}</code></pre>
+<h4 id="-">Поля блока</h4>
+<ul>
+<li><p><code>{Number|String} timestamp</code> – целочисленное значение даты в миллисекундах или в форматах <a href="http://tools.ietf.org/html/rfc2822#page-14">rfc2822</a> (Mon, 25 Dec 1995 13:30:00 GMT), <a href="http://www.w3.org/TR/NOTE-datetime">ISO8601</a> (2011-10-10T14:48:00), которые корректно интерпретируются оператором <code>new Date()</code>. Обязательное поле.</p>
+</li>
+<li><p><code>{Boolean} showYear</code> – при наличии этого параметра год будет выведен всегда, иначе – только если год в дате отличается от текущего.
+Допустимое значение: <code>true</code>, <code>false</code>.
+По умолчанию выводится только год, отличный от текущего.</p>
+</li>
+<li><p><code>{Boolean} showTime</code> – при наличии этого параметра будет дополнительно выводиться время в формате <code>H:MM</code> для относительных дат в следующем виде: <code>вчера в H:MM</code>, <code>сегодня в H:MM</code>, <code>завтра в H:MM</code>.</p>
+</li>
+</ul>
+<p>Язык для текстовых элементов даты определяется автоматически на основании доменной зоный из блока <code>i-global</code>.
+Вы можете установить нужный язык во входных данных в параметрах блока <code>i-global</code> следующим образом:</p>
+<pre><code class="lang-js">{
+    block: &#39;i-global&#39;,
+    params: {
+        lang: &#39;ru&#39;,
+        &#39;content-region&#39;: &#39;ru&#39;
+    }
+}</code></pre>
+<p>Локализация текстовых элементов даты осуществляется на уровне BEMHTML-шаблона с помощью метода <a href="https://lego.yandex-team.ru/doc/concept/localization.wiki#BEMI18N">BEM.I18N</a>.</p>
+</div><div class="block__examples"></div></div></div></body></html>

@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-phone.sets/tabs-menu/tabs-menu.examples/20-sizes/20-sizes.ru.js

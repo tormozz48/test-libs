@@ -1,0 +1,442 @@
+/* 20-disabled.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    pointer-events: none;
+}
+
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch-phone.blocks/button/_disabled/button_disabled_yes.css begin */
+.i-ua_android_2 .button_disabled_yes.button:before
+{
+    -webkit-box-shadow: none;
+}
+
+/* ../../../../touch-phone.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css begin */
+.button_pressed_yes
+{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../touch-phone.blocks/button/_theme/button_theme_normal.css begin */
+/* Костыли для Android 2.* */
+.i-ua_android_2 .button_theme_normal:before
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
+}
+
+.i-ua_android_2 .button_theme_normal.button_pressed_yes:before
+{
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
+}
+
+/* ../../../../touch-phone.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/attach/attach.css begin */
+.attach
+{
+    display: inline-block;
+
+    white-space: nowrap;
+}
+
+/* Оптимизация css для элементов holder && reset */
+.attach .image
+{
+    width: 1px;
+    height: 1px;
+
+    vertical-align: middle;
+}
+
+/* ../../../../common.blocks/attach/attach.css end */
+/* ../../../../common.blocks/image/image.css begin */
+.image
+{
+    font: 0/0 a;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/image/image.css end */
+/* ../../../../common.blocks/attach/__holder/attach__holder.css begin */
+.attach__holder
+{
+    display: inline-block;
+
+    margin-left: .5em;
+}
+
+/* ../../../../common.blocks/attach/__holder/attach__holder.css end */
+/* ../../../../common.blocks/attach/__holder/_state/attach__holder_state_hidden.css begin */
+.attach__holder_state_hidden .image
+{
+    display: none;
+}
+
+/* ../../../../common.blocks/attach/__holder/_state/attach__holder_state_hidden.css end */
+/* ../../../../common.blocks/attach/__reset/attach__reset.css begin */
+.attach__reset
+{
+    margin-left: 5px;
+    padding: 12px 12px 0 0;
+
+    cursor: pointer;
+
+    background: url("../../../../../../../output/freeze/1NHNyJyMowfy_B6k5HvO9kXPtIQ.svg") no-repeat;
+    background-size: 100% 100%;
+}
+
+/* ../../../../common.blocks/attach/__reset/attach__reset.css end */
+/* ../../../../common.blocks/attach/__reset/_visibility/attach__reset_visibility_visible.css begin */
+.attach__reset_visibility_visible
+{
+    visibility: visible;
+
+    opacity: .2;
+}
+
+/* ../../../../common.blocks/attach/__reset/_visibility/attach__reset_visibility_visible.css end */
+/* ../../../../common.blocks/attach/__icon-file/attach__icon-file.css begin */
+.attach__icon-file
+{
+    margin-right: 3px;
+    padding: 15px 15px 0 0;
+
+    background: url("../../../../../../../output/freeze/4me0iliC4OKERBOBlRoFzs6cj2k.png") no-repeat;
+}
+
+/* files */
+.attach__holder_file_none .attach__icon-file,
+.attach__holder_file_unknown .attach__icon-file
+{
+    background-position: 0 0;
+}
+
+.attach__holder_file_archive .attach__icon-file
+{
+    background-position: -16px 0;
+}
+
+.attach__holder_file_gif .attach__icon-file
+{
+    background-position: -32px 0;
+}
+
+.attach__holder_file_jpg .attach__icon-file
+{
+    background-position: -48px 0;
+}
+
+.attach__holder_file_png .attach__icon-file
+{
+    background-position: -64px 0;
+}
+
+.attach__holder_file_eml .attach__icon-file
+{
+    background-position: -79px 0;
+}
+
+.attach__holder_file_exe .attach__icon-file
+{
+    background-position: -96px 0;
+}
+
+.attach__holder_file_video .attach__icon-file
+{
+    background-position: -112px 0;
+}
+
+.attach__holder_file_mov .attach__icon-file
+{
+    background-position: -127px 0;
+}
+
+.attach__holder_file_wmv .attach__icon-file
+{
+    background-position: -144px 0;
+}
+
+.attach__holder_file_mp4 .attach__icon-file
+{
+    background-position: -159px 0;
+}
+
+.attach__holder_file_avi .attach__icon-file
+{
+    background-position: -175px 0;
+}
+
+.attach__holder_file_xls .attach__icon-file
+{
+    background-position: -192px 0;
+}
+
+.attach__holder_file_doc .attach__icon-file
+{
+    background-position: -207px 0;
+}
+
+.attach__holder_file_txt .attach__icon-file
+{
+    background-position: -224px 0;
+}
+
+.attach__holder_file_pdf .attach__icon-file
+{
+    background-position: -239px 0;
+}
+
+.attach__holder_file_ppt .attach__icon-file
+{
+    background-position: -256px 0;
+}
+
+.attach__holder_file_audio .attach__icon-file
+{
+    background-position: -272px 0;
+}
+
+.attach__holder_file_mp3 .attach__icon-file
+{
+    background-position: -288px 0;
+}
+
+.attach__holder_file_wav .attach__icon-file
+{
+    background-position: -304px 0;
+}
+
+.attach__holder_file_wma .attach__icon-file
+{
+    background-position: -320px 0;
+}
+
+/* ../../../../common.blocks/attach/__icon-file/attach__icon-file.css end */
+/* ../../../../common.blocks/attach/__button/attach__button.css begin */
+@media all and (min-width:0)
+{
+    .attach__button
+    {
+        overflow: hidden;
+
+        cursor: default;
+        vertical-align: top;
+    }
+}
+
+/* ../../../../common.blocks/attach/__button/attach__button.css end */
+/* ../../../../common.blocks/attach/__control/attach__control.css begin */
+@media all and (min-width:0)
+{
+    .attach__control
+    {
+        position: absolute;
+        right: 0;
+
+        height: 100%;
+
+        font-size: 186%;
+
+        opacity: 0;
+        border: none;
+        background: none;
+    }
+}
+
+/* ../../../../common.blocks/attach/__control/attach__control.css end */
+/* ../../../../common.blocks/attach/_size/attach_size_s.css begin */
+.attach_size_s
+{
+    font-size: 13px;
+    line-height: 28px;
+}
+
+/* ../../../../common.blocks/attach/_size/attach_size_s.css end */
+/* ../../../../common.blocks/attach/_disabled/attach_disabled_yes.css begin */
+.attach_disabled_yes .attach__holder
+{
+    opacity: .6;
+}
+
+/* ../../../../common.blocks/attach/_disabled/attach_disabled_yes.css end */
+/* ../../../../common.blocks/button/_size/button_size_s.css begin */
+.button_size_s
+{
+    font-size: 13px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_s
+    {
+        line-height: 28px;
+    }
+}
+
+.button_size_s .button__text
+{
+    padding: 0 13px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_s.button_arrow_down .button__text:after
+{
+    right: 9px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_s.button.button_arrow_down .button__text
+{
+    padding-right: 28px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_s.css end */
+
+/* 20-disabled.css end */

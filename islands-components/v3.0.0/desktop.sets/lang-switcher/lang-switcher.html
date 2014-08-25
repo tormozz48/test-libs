@@ -1,0 +1,108 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>lang-switcher</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок lang-switcher</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>lang-switcher</code> – переключатель языков для изменения языка интерфейса сервисов Яндекса. <a href="http://2-10.lego.yandex-team.ru/doc/concept/localization.wiki#Podderzhivaemyelokali">Список поддерживаемых локализаций</a>. Реализован на основе блока <a href="../dropdown-menu/dropdown-menu.html">dropdown-menu</a> и <a href="http://bem.github.io/bem-bl/sets/common-desktop/b-menu-vert/b-menu-vert.ru.html">b-menu-vert</a>.</p>
+<p>Визуально представлен:</p>
+<ul>
+<li><strong>Указателем текущего языка</strong> (элемент <code>lang</code> с модификатором <code>selected</code> в значении <code>yes</code>), являющийся псевдо-ссылкой с иконкой флага.</li>
+<li><strong>Списком языков</strong> – выпадающее вертикальное меню, каждый элемент которого состоит из:<ul>
+<li><strong>Флага страны</strong> (элемент <code>flag</code> – служит для вставки иконки флага). Нужная иконка определяется по двухбуквенному коду языка, а не страны или доменной зоны.</li>
+<li><strong>Ссылки изменения языка</strong> (элемент <code>lang</code>) – представлена двухбуквенным кодом страны и ведет на отдельную страницу на <a href="http://wiki.yandex-team.ru/tune">tune</a>, где выполняется выбор нужного языка. Ссылку содержат все элементы, кроме выбранного.</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://jing.yandex-team.ru/files/vikka/2013-12-18_2209.png" alt=""></p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования блока:</p>
+<pre><code class="lang-js">{
+    block: &#39;lang-switcher&#39;, // имя блока
+    lang: {code: &#39;ru&#39;, name: &#39;Ru&#39;}, // текущий язык интерфейса, выводится в указателе языка
+    content: [ // список языков
+        {
+            elem: &#39;lang&#39;,                     // язык
+            lang: {code: &#39;ua&#39;, name: &#39;Ua&#39;},   // параметр lang элемента lang
+            url: &#39;#&#39;                          // ссылка для выбора нужного языка
+        },
+        {
+            elem: &#39;lang&#39;,
+            lang: {code: &#39;en&#39;, name: &#39;En&#39;},
+            url: &#39;#&#39;
+        },
+        {
+            elem: &#39;lang&#39;,
+            lang: {code: &#39;ru&#39;, name: &#39;Ru&#39;},
+            mods: {selected: &#39;yes&#39;},          // выбранный язык
+            url: &#39;#&#39;
+        }
+    ]
+}</code></pre>
+<!-- %%lang-switcher.examples/10-simple/10-simple%% -->
+
+<h4 id="-">Поля блока</h4>
+<ul>
+<li><code>{Object} lang</code> – выбранный язык. В BEMHTML-шаблоне преобразуется в элемент <code>lang</code>, которому по умолчанию добавляется модификатор <code>selected</code> в значении <code>yes</code>.</li>
+<li><code>{Boolean} noMore</code> – признак вывода ссылки «еще», которая используется для выбора нужного языка интерфейса на странице <a href="http://tune.yandex.ru/lang/?retpath=http%3A%2F%2Fwww.yandex.ua%2F">tune</a>. Необязательное поле. Допустимые значения: <code>true</code> или <code>false</code>.</li>
+<li><code>{String} moreText</code> – текст ссылки для выбора языка интерфейса (по умолчанию локализованное слово «еще»). Переводы берутся из Танкера. Необязательное поле.</li>
+<li><p><code>{Array} content</code> – список языков.</p>
+</li>
+<li><p>элемент <code>lang</code> – язык интерфейса, в BEMJSON принимает параметр:</p>
+<ul>
+<li><p><code>{Object}lang</code>, где:</p>
+<ul>
+<li><code>{String} code</code> — код региона;</li>
+<li><code>{String} langCode</code> — код языка;</li>
+<li><code>{String} region</code> — входной хеш для <a href="https://lego.yandex-team.ru/desktop/common/blocks/i-geodata">i-geodata</a>.</li>
+</ul>
+<pre><code class="lang-js">{elem : &#39;lang&#39;, lang: {code: &#39;ua&#39;, name: &#39;украинский&#39;}}, //если известен код региона
+{elem : &#39;lang&#39;, lang: {langCode: &#39;uk&#39;, name: &#39;украинский&#39;}}, //если известен язык
+{elem : &#39;lang&#39;, lang: {region: {id : &#39;187&#39;}, name: &#39;украинский&#39;}} //можно найти регион по любому его признаку</code></pre>
+<p> Можно использовать любой из трех вариантов, нужный регион будет найден с помощью блока <a href="https://lego.yandex-team.ru/desktop/common/blocks/i-geodata">i-geodata</a>.</p>
+</li>
+<li><p><code>{String} url</code> – ссылка изменения языка. Если ссылка не задана явно во входных данных блока <code>lang-switcher</code>(параметр <code>url</code> элемента <code>lang</code>), то она генерируется по следующему шаблону:</p>
+<pre><code class="lang-html">%tune-host%/api/lang/v1.1/save.xml?intl=%lang-code%&amp;retpath=%params/retpath%&amp;sk=%secret-key%</code></pre>
+<p>где:</p>
+<ul>
+<li><code>tune-host</code> – адрес сервиса <a href="http://wiki.yandex-team.ru/tune tune">tune</a> для данного региона, берется из блока <a href="https://lego.yandex-team.ru/desktop/common/blocks/i-services">i-services</a> (список сервисов);</li>
+<li><p><code>secret-key</code> – сгенерированный секретный ключ, возвращаемый из <code>x:get-secret-key()</code>.
+Секретный ключ необходимо задавать явно в параметрах блока
+<a href="/desktop/common/blocks/i-global i-global">i-global</a>:</p>
+<pre><code class="lang-js">this[&#39;i-global&#39;][&#39;secret-key&#39;]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">Модификаторы</h3>
+<h4 id="-">Выбор языка</h4>
+<p>При наличии у элемента <code>lang</code> модификатора <code>selected</code> в значении <code>yes</code> соответствующий язык будет выбран во всех локалях и отобразится в <strong>указателе языка</strong>.</p>
+<p>Переключатель языка различается в разных локалях. Отличия состоят в выбранном языке. Конкретный язык приобретает атрибут <code>selected</code> в процессе rebuild в том случае, если ни у одного из языков во входных данных нет такого атрибута (т.е не установлен модификатор <code>mods: {selected: &#39;yes&#39;}</code>).</p>
+<h4 id="-">Переключатель языков с иконками флагов</h4>
+<p>Значения модификатора <code>icon</code> элемента <code>flag</code> – иконки флага для языков.
+Допустимые значения: <code>be</code>, <code>en</code>, <code>kk</code>, <code>ru</code>, <code>tr</code>, <code>tt</code>, <code>uk</code>.</p>
+<p>На этапе инициализации выполняется предварительная загрузка изображения флага для каждого модификатора <code>icon</code> элемента <code>flag</code>. Путь к изображению находится в CSS-свойстве <code>background-image</code>.</p>
+<p>Размер иконок <code>16x12px</code> в формате <code>svg</code>, деградирующем до <code>png</code>.</p>
+<hr>
+<p><strong>NB</strong>: Необходимо указать зависимости от нужных значений  модификатора <code>icon</code> элемента <code>flag</code>.</p>
+<hr>
+<h4 id="-">Переключатель языков без иконок флагов</h4>
+<p>Модификатор блока <code>noflags</code> со значение <code>yes</code> – отключает вывод иконок флагов в переключателе языков, BEMJSON:</p>
+<pre><code class="lang-js">{
+    block: &#39;lang-switcher&#39;,
+    lang: {code: &#39;ru&#39;, name: &#39;Ru&#39;},
+    mods: {noflags: &#39;yes&#39;}, // отключение отображения иконок флагов
+    content: [ //список языков
+        {
+            elem: &#39;lang&#39;,
+            lang: {langCode: &#39;be&#39;, name: &#39;Be&#39;}
+        },
+        ...
+    ]
+}</code></pre>
+<p>В данном случае, зависимости для значений модификаторов флагов <code>__flag_icon_*</code> добавлять не нужно.</p>
+<!-- %%lang-switcher.examples/15-without-flagse/15-without-flags%% -->
+
+
+<h3 id="-">Итоговый список языков</h3>
+<p>Если в итоговом списке языков набирается менее двух, то переключатель не отображается.</p>
+<p>Если в итоговом списке языков меньше 4 и во входных данных блока отсутствует поле <code>noMore</code> – к списку будет добавлен элемент блока <code>all</code>, который преобразуется в ссылку на <a href="http://tune.yandex.ru/lang/?retpath=http%3A%2F%2Fwww.yandex.ua%2F">tune</a> (страница настроек пользователя для выбора языка интерфейса).
+Ссылке можно задать произвольный текст в поле <code>moreText</code> входного BEMJSON блока, или будет использовано значение по умолчанию – локализованное слово «еще» (перевод берется из Танкера).</p>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="lang-switcher:examples:10-simple:10-simple"><a class="example__title" href="lang-switcher.examples/10-simple/10-simple.html" target="_blank">Простой набор языков</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="lang-switcher.examples/10-simple/10-simple.bemjson.js"></iframe><iframe class="example__live" src="lang-switcher.examples/10-simple/10-simple.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="lang-switcher:examples:20-all:20-all"><a class="example__title" href="lang-switcher.examples/20-all/20-all.html" target="_blank">Простой набор языков с кнопкой Еще</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="lang-switcher.examples/20-all/20-all.bemjson.js"></iframe><iframe class="example__live" src="lang-switcher.examples/20-all/20-all.html"></iframe></div></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">lang</h4><div class="block__elem-title">Язык</div></div></div></div></body></html>

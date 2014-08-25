@@ -1,0 +1,197 @@
+{
+  "name": "attach",
+  "elems": [
+    {
+      "name": "button",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Кнопка, как элемент блока"
+        }
+      ]
+    },
+    {
+      "name": "control",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Нативный контрол прикрепить файл"
+        }
+      ]
+    },
+    {
+      "name": "holder",
+      "mods": [
+        {
+          "name": "state",
+          "vals": [
+            {
+              "name": "hidden",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Картинки скрыты"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Состояние\n"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Элемент для отображения имени файла"
+        }
+      ]
+    },
+    {
+      "name": "icon-file",
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Иконки файлов"
+        }
+      ]
+    },
+    {
+      "name": "reset",
+      "mods": [
+        {
+          "name": "visibility",
+          "vals": [
+            {
+              "name": "visible",
+              "title": [
+                {
+                  "level": "common.blocks",
+                  "tech": "title.txt",
+                  "content": "Включена"
+                }
+              ]
+            }
+          ],
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Видимость"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Отмена выбранного файла (крестик удаления файла)"
+        }
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "disabled",
+      "vals": [
+        {
+          "name": "yes",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Включено неактивное состояние"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Неактивное состояние"
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "vals": [
+        {
+          "name": "m",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта в кнопке 15px"
+            }
+          ]
+        },
+        {
+          "name": "s",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Размер шрифта в кнопке 13px"
+            }
+          ]
+        }
+      ],
+      "title": [
+        {
+          "level": "common.blocks",
+          "tech": "title.txt",
+          "content": "Размер"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "vals": [
+        {
+          "name": "normal",
+          "title": [
+            {
+              "level": "common.blocks",
+              "tech": "title.txt",
+              "content": "Обычная"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "description": [
+    {
+      "level": "common.blocks",
+      "tech": "desc.md",
+      "content": "<h2 id=\"-\">Описание</h2>\n<p>Блок <code>attach</code> служит для отправки файла на сервер.\nВизуально представлен кнопкой на основе блока <a href=\"../button/button.html\">button</a>, открывающей системное окно загрузки файла, именем файла с иконкой и крестиком для отмены. Не позволяет прикреплять несколько файлов и не поддерживает drag-and-drop.\nБлок использует функциональность нативного контрола, сам контрол скрыт.\nВ MSIE8 и ниже <code>attach</code> деградирует до нативного контрола — прикрепить файл <code>&lt;input type=&quot;file&quot;&gt;</code>.\nВ Windows Phone 7.0–8.0 и iOS версии ниже 6.0 <code>attach</code> не работает из-за отсутствия поддержки <code>&lt;input type=&quot;file&quot; /&gt;</code>.</p>\n<p><img src=\"http://jing.yandex-team.ru/files/gela-d/2014-03-11_1217.png\" alt=\"\"></p>\n<h3 id=\"-attach\">Элементы блока attach</h3>\n<ul>\n<li><code>button</code> – кнопка выбора файла. Использует поведение (JS), внешний вид (CSS) блока <code>button</code>. Кнопка преобразуется BEMHTML-шаблоном в тэг <code>&lt;span&gt;</code>, в отличие от обычной кнопки <code>button</code> — тэг <code>&lt;button&gt;</code>. По умолчанию контент кнопки содержит локализованный текст «Выберите файл».</li>\n<li><p><code>control</code> – преобразуется BEMHTML-шаблоном в нативный элемент прикрепления файла с атрибутами <code>&lt;input type=&quot;file&quot; name=&quot;имя&quot; атрибуты&gt;</code>. Расположен внутри HTML-кнопки.</p>\n</li>\n<li><p><code>holder</code> – контейнер с информацией о прикрепленном файле. Формируется из элементов блока:</p>\n<ul>\n<li><code>icon-file</code> – иконка, соответствующая типу прикрепленного файла (определяется по расширению файла).</li>\n<li><code>text</code> – имя файла. Элемент создается в BEMHTML-шаблоне элемента <code>holder</code>. В HTML преобразуется в тэг <code>&lt;span&gt;</code>.\nЕсли файл не был прикреплен, для <code>holder</code> выставляется модификатор <code>state</code> со значением <code>hidden</code>, указывающий, что файл не выбран. По умолчанию в <code>text</code> будет выведено сообщение «файл не выбран».</li>\n<li><code>reset</code> – кнопка отмены выбранного файла (крестик), появляется после прикрепления файла.</li>\n</ul>\n</li>\n</ul>\n<p>Для вывода иконок и крестика используется микс соответствующих элементов с блоком <a href=\"http://docs.lego.dev.yandex.ru/islands-components/v2.1.0/desktop.sets/image/image.html\">image</a>, который служит контейнером для загрузки изображений <code>&lt;img&gt;</code>.</p>\n<p>Тексты «Выбрать файл» и «файл не выбран» не изменяются и выводятся в виде локализованной строки. Для этого используется технология <code>i18n</code> — переводы из <a href=\"https://lego.yandex-team.ru/doc/concept/localization.wiki#Tanker\">Танкера</a>. <a href=\"https://lego.yandex-team.ru/doc/concept/localization.wiki\">Список поддерживаемых локалей</a>.</p>\n<h3 id=\"-\">Объявление блока на странице</h3>\n<p>BEMJSON для использования блока:</p>\n<pre><code class=\"lang-JavaScript\">{\n    block: &#39;attach&#39;,  // имя блока\n    mods: { size: &#39;s&#39; },  // модификаторы блока. Модификатор размера - обязательный\n    content: [\n       {\n             block: &#39;button&#39;,  // кнопка выбора  файла\n             mods: { size: &#39;s&#39; }, // модификатор размера – не обязательный, может быть передан из attach\n             mix: [{ block: &#39;attach&#39;, elem: &#39;button&#39; }],\n             name:&#39;customName&#39;,\n             content: { // локализованное сообщение на кнопке\n                block: &#39;i-bem&#39;, elem: &#39;i18n&#39;, keyset: &#39;attach&#39;, key: &#39;button-text&#39;\n            }\n        },\n        {\n            elem: &#39;holder&#39;,  // поле с информацией о выбранном файле\n            content: {\n                block: &#39;i-bem&#39;, elem: &#39;i18n&#39;, keyset: &#39;attach&#39;, key: &#39;no-file&#39;\n            }\n        }\n    ]\n}</code></pre>\n<!-- %%attach.examples/10-attach/10-attach%% -->\n\n<p>Для локализации текстовых сообщений в BEMJSON используется вспомогательный элемент <code>i18n</code> блока <code>i-bem</code>, который в BEMHTML-шаблоне заменяется на результат вызова метода <a href=\"https://lego.yandex-team.ru/doc/concept/localization.wiki#BEMI18N\">BEM.I18N</a> (&#39;attach&#39;, &#39;no-file&#39;).</p>\n<p><em><strong>Примечание</strong>: необходимо гарантировать наличие у BEMHTML-шаблона элемента <code>i-bem__i18n</code>, описав соответствующую <code>mustDeps</code> – зависимость в коде <strong>deps.js</strong> локализуемого блока.</em></p>\n<pre><code class=\"lang-JavaScript\">// block-for-attach.deps.js\n({\n     mustDeps: [\n           { block: &#39;i-bem&#39;, elem: &#39;i18n&#39; }\n   ]\n})</code></pre>\n<h3 id=\"-\">Атрибуты блока</h3>\n<p>Атрибуты <code>name</code>, <code>tabindex</code>, <code>id</code> – опциональные, задаются в одноименных полях входного BEMJSON элемента блока <code>button</code>.\nФормируют соответствующие HTML-атрибуты с кастомным значением в нативном контроле <code>&lt;input type=&quot;file&quot; атрибуты&gt;</code>, т.к. он лежит в основе его реализации.</p>\n<ul>\n<li><code>{String} name</code> – имя контрола. По умолчанию генерируется со значением – <code>attachment</code>, если явно не задано в BEMJSON.</li>\n<li><code>{String} id</code> – уникальный идентификатор.</li>\n<li><code>{Number} tabindex</code> – определяет последовательность перехода между элементами  при нажатии на кнопку <code>Tab</code>.</li>\n</ul>\n<h3 id=\"-\">Модификаторы</h3>\n<h4 id=\"-\">Темы оформления</h4>\n<p>Для оформления блока можно использовать темы блока <code>button</code>. Тема задается значением модификатора <code>theme</code>:</p>\n<ul>\n<li><code>normal</code> — обычная кнопка. Используется по умолчанию.</li>\n<li><code>action</code> — кнопка-действие.</li>\n<li><code>pseudo</code> – псевдо-кнопка.</li>\n</ul>\n<p>Устанавливается значение модификатора <code>theme</code> в поле <code>mods</code> кнопки.</p>\n<p>Кнопка отмены (крестик) — изображение в векторном формате svg. Иконки файлов расположены в <a href=\"https://github.yandex-team.ru/lego/islands-components/blob/dev/common.blocks/attach/__icon-file/attach__icon-file.png\">спрайте</a>, в формате png.</p>\n<h4 id=\"-\">Размеры</h4>\n<p>Для блока реализованы два размера – <code>s</code> и <code>m</code>. По умолчанию не определен.\nМодификатор размера <code>size</code> — обязательный при объявлении блока, служит для задания размера шрифта и высоты кнопки.\nЕсли в BEMJSON кнопки выбора файла <code>button</code> явно не установлен модификатор размера, то он будет передан из блока <code>attach</code> с тем же значением.</p>\n<p>Таблица размеров блока</p>\n<table>\n<thead>\n<tr>\n<th>Размер</th>\n<th>Высота кнопки</th>\n<th>Шрифт</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>s</td>\n<td>28px</td>\n<td>13px</td>\n</tr>\n<tr>\n<td>m</td>\n<td>32px</td>\n<td>15px</td>\n</tr>\n</tbody>\n</table>\n<p>Если необходим другой размер кнопки, его можно доопределить на уровне переопределения проекта.</p>\n<h3 id=\"-attach\">Состояния блока attach</h3>\n<ul>\n<li><strong>Не активен</strong>. Модификатор <code>disabled</code> со значением <code>yes</code>.</li>\n</ul>\n<p>В состоянии блока <strong>не активен</strong> кнопка выбора становится недоступной для действий пользователя. Модификатор <code>disabled</code> со значением <code>yes</code> выставляется в кнопке.</p>\n<p>Если блок активен и кнопка выбора находится в фокусе, то можно открыть окно выбора файла клавишей <code>Space</code> или <code>Enter</code>.</p>\n<!-- %%attach.examples/20-disabled/20-disabled%% -->\n\n<h3 id=\"-\">Значения по умолчанию</h3>\n<ul>\n<li><strong>Тема кнопки</strong>:     обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>\n<li><strong>Локализация</strong>:     <code>ru</code>.</li>\n<li>Сообщение на кнопке : «Выбрать файл».</li>\n<li>Сообщение <code>holder</code>: «файл не выбран» (модификатор <code>state</code> со значением <code>hidden</code>).</li>\n<li>Атрибут <code>name</code>: <code>attachment</code>.</li>\n</ul>\n"
+    }
+  ],
+  "examples": [
+    {
+      "level": "common.blocks",
+      "tech": "examples",
+      "content": [
+        {
+          "url": "attach.examples/10-attach/10-attach",
+          "title": "Прикрепить файл на основе button"
+        },
+        {
+          "url": "attach.examples/20-disabled/20-disabled",
+          "title": "Неактивное состояние"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/desktop.sets/dropdown/dropdown.examples/30-button-disabled/30-button-disabled.ru.js

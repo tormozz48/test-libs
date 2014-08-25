@@ -1,0 +1,217 @@
+/* 10-theme-gray.ie.css begin */
+/* 10-theme-gray.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/spin/spin.examples/10-theme-gray.blocks/b-page/b-page.css begin */
+.b-page
+{
+    padding: 10px 20px;
+}
+
+/* ../../../../common.blocks/spin/spin.examples/10-theme-gray.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/spin/spin.examples/10-theme-gray.blocks/example-text/example-text.css begin */
+.example-text
+{
+    margin: 20px 0 10px;
+}
+
+/* ../../../../common.blocks/spin/spin.examples/10-theme-gray.blocks/example-text/example-text.css end */
+/* ../../../../common.blocks/spin/spin.css begin */
+.spin
+{
+    display: none;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    font: 0/0 a;
+}
+
+@-webkit-keyframes islands-spin
+{
+    0%
+    {
+        -webkit-transform: rotate(0);
+    }
+    100%
+    {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes islands-spin
+{
+    0%
+    {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    100%
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+/* ../../../../common.blocks/spin/spin.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-32.css begin */
+.spin_theme_gray-32 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 31px 31px 0 0;
+
+    opacity: .4;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_gray-32 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/nP4IZopD-Ls1QX5OEc8fM7074KM.png");
+}
+
+.spin_theme_gray-32 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/rtFfcs_d3_1Z8S7_0-At2O9LUcc.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_gray-32.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/7krsYYRdn6RrDWcFpaGoGrpJ5ew.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-32.css end */
+/* ../../../../common.blocks/spin/_progress/spin_progress_yes.css begin */
+.spin_progress_yes
+{
+    display: block;
+}
+
+/* ../../../../common.blocks/spin/_progress/spin_progress_yes.css end */
+/* ../../../../common.blocks/spin/__icon/spin__icon.css begin */
+.spin__icon
+{
+    border: 0;
+
+    -webkit-backface-visibility: hidden; /* облегчаем анимацию */
+       -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+}
+
+/* ../../../../common.blocks/spin/__icon/spin__icon.css end */
+/* ../../../../common.blocks/image/image.css begin */
+.image
+{
+    font: 0/0 a;
+
+    border: 0;
+}
+
+/* ../../../../common.blocks/image/image.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-16.css begin */
+.spin_theme_gray-16 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 15px 15px 0 0;
+
+    opacity: .4;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_gray-16 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/aKv_ddA72eyzdJpLStb57b4HstQ.png");
+}
+
+.spin_theme_gray-16 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/irtSUlwn-ZEkpQTakzp8Wd_U2QU.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_gray-16.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/NCh4wF8bdec6tEiPQg3xSNNkvrY.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-16.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-24.css begin */
+.spin_theme_gray-24 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 23px 23px 0 0;
+
+    opacity: .4;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_gray-24 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/UaSwowXPU6oWmjiM22HWhHxr-M8.png");
+}
+
+.spin_theme_gray-24 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/bB4o4ZaYBTFDXwADHrRycrL00hk.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_gray-24.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/z7KLtJAtsUdo202kBOYnDkAESdg.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-24.css end */
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-48.css begin */
+.spin_theme_gray-48 .spin__icon
+{
+    width: 1px;
+    height: 1px;
+    padding: 47px 47px 0 0;
+
+    opacity: .4;
+}
+
+/* Когда нет поддержки SVG */
+.i-ua_inlinesvg_no .spin_theme_gray-48 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/041tpCtrYt6WfZYU_2OGmZIK3js.png");
+}
+
+.spin_theme_gray-48 .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/fSS6rE22nwGCDWMhyulZurMWX_Y.svg");
+}
+
+/* Когда нет поддержки transforms2d */
+.spin_theme_gray-48.spin_support-transforms_no .spin__icon
+{
+    background-image: url("../../../../../../../output/freeze/etVt9Zj5JfjhDYEN48dfXFI5wzc.png");
+}
+
+/* ../../../../common.blocks/spin/_theme/spin_theme_gray-48.css end */
+
+/* 10-theme-gray.css end */
+
+/* 10-theme-gray.ie.css end */

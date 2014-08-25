@@ -1,0 +1,289 @@
+/* 22-alone.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/tumbler/tumbler.css begin */
+.tumbler
+{
+    display: inline-block;
+}
+
+/* ../../../../common.blocks/tumbler/tumbler.css end */
+/* ../../../../touch.blocks/tumbler/tumbler.css begin */
+.tumbler
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/tumbler/tumbler.css end */
+/* ../../../../common.blocks/tumbler/__box/tumbler__box.css begin */
+.tumbler__box
+{
+    position: relative;
+
+    display: inline-block;
+
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.i-ua_js_no .tumbler__box
+{
+    display: none;
+}
+
+/* ../../../../common.blocks/tumbler/__box/tumbler__box.css end */
+/* ../../../../common.blocks/tumbler/__button/tumbler__button.css begin */
+.tumbler__button
+{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+
+    -webkit-transition: left .2s ease;
+            transition: left .2s ease;
+}
+
+.tumbler_pressed_yes .tumbler__button
+{
+    -webkit-transition: none;
+            transition: none;
+    -o-transition-duration: 0s;
+}
+
+.tumbler__button:focus
+{
+    outline: 0;
+}
+
+/* ../../../../common.blocks/tumbler/__button/tumbler__button.css end */
+/* ../../../../common.blocks/tumbler/__label/tumbler__label.css begin */
+.tumbler__label
+{
+    display: inline-block;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+/* ../../../../common.blocks/tumbler/__label/tumbler__label.css end */
+/* ../../../../common.blocks/tumbler/__input/tumbler__input.css begin */
+.i-ua_js_yes .tumbler__input
+{
+    position: absolute;
+    left: -9999px;
+}
+
+/* ../../../../common.blocks/tumbler/__input/tumbler__input.css end */
+/* ../../../../common.blocks/tumbler/__sticker/tumbler__sticker.css begin */
+.tumbler__sticker
+{
+    position: absolute;
+
+    overflow: hidden;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+
+    border-radius: 3px;
+
+    -webkit-transition: width .2s ease;
+            transition: width .2s ease;
+}
+
+.tumbler_pressed_yes .tumbler__sticker
+{
+    -webkit-transition: none;
+            transition: none;
+    -o-transition-duration: 0s;
+}
+
+/* .tumbler для нужного веса селектора */
+.tumbler.tumbler_checked_yes .tumbler__sticker_position_right
+{
+    width: 0;
+}
+
+/* ../../../../common.blocks/tumbler/__sticker/tumbler__sticker.css end */
+/* ../../../../common.blocks/tumbler/__sticker-label/tumbler__sticker-label.css begin */
+.tumbler__sticker-label
+{
+    position: relative;
+}
+
+.tumbler__sticker_position_left .tumbler__sticker-label
+{
+    float: right;
+}
+
+/* ../../../../common.blocks/tumbler/__sticker-label/tumbler__sticker-label.css end */
+/* ../../../../common.blocks/tumbler/_theme/tumbler_theme_normal.css begin */
+.tumbler_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+/* тумблер не прячем от IE8 */
+
+.tumbler_theme_normal .tumbler__box,
+.tumbler_theme_normal .tumbler__button
+{
+    border-radius: 3px;
+}
+
+/* :before — background & border */
+.tumbler_theme_normal .tumbler__box:before,
+.tumbler_theme_normal .tumbler__button:before
+{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+
+    padding: 0;
+
+    content: '';
+}
+
+.tumbler_theme_normal .tumbler__button:before
+{
+    border-radius: 2px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+}
+
+/* стикеры тумблера */
+.tumbler_theme_normal .tumbler__sticker:before
+{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+
+    content: '';
+
+    border-radius: 2px;
+}
+
+/* tumbler ON */
+.tumbler_theme_normal .tumbler__sticker_position_left
+{
+    left: 0;
+
+    width: 0;
+}
+
+.tumbler_theme_normal .tumbler__sticker_position_left:before
+{
+    background: #ffeba0;
+    -webkit-box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+            box-shadow: 0 0 0 1px rgba(178,142,0,.6);
+}
+
+/* tumbler OFF */
+.tumbler_theme_normal .tumbler__sticker_position_right
+{
+    right: 0;
+}
+
+.tumbler_theme_normal .tumbler__sticker_position_right:before
+{
+    background: rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+}
+
+/* ../../../../common.blocks/tumbler/_theme/tumbler_theme_normal.css end */
+/* ../../../../common.blocks/tumbler/_size/tumbler_size_s.css begin */
+.tumbler_size_s
+{
+    font-size: 13px;
+    line-height: 28px;
+}
+
+.tumbler_size_s .tumbler__box,
+.tumbler_size_s .tumbler__sticker-label,
+.tumbler_size_s .tumbler__sticker_position_right,
+.tumbler_size_s.tumbler_checked_yes .tumbler__sticker_position_left
+{
+    width: 72px;
+    height: 28px;
+}
+
+.tumbler_size_s .tumbler__button
+{
+    width: 28px;
+    height: 28px;
+}
+
+.tumbler_size_s .tumbler__sticker_position_left
+{
+    text-indent: -28px;
+}
+
+.tumbler_size_s .tumbler__sticker_position_right
+{
+    text-indent: 28px;
+}
+
+/* _checked */
+.tumbler_size_s.tumbler_checked_yes .tumbler__button
+{
+    left: 44px;
+}
+
+/* __text */
+.tumbler_size_s .tumbler__text_side_left
+{
+    padding-right: 6px;
+}
+
+.tumbler_size_s .tumbler__text_side_right
+{
+    padding-left: 6px;
+}
+
+.i-ua_js_no .tumbler_size_s .tumbler__text_side_right
+{
+    padding-left: 0;
+}
+
+.tumbler_size_s .tumbler__text_side_left:empty
+{
+    padding-right: 0;
+}
+
+.tumbler_size_s .tumbler__text_side_right:empty
+{
+    padding-left: 0;
+}
+
+/* ../../../../common.blocks/tumbler/_size/tumbler_size_s.css end */
+
+/* 22-alone.css end */

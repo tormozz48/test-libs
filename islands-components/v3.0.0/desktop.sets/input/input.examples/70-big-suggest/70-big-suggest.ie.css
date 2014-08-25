@@ -1,0 +1,12 @@
+@import url(70-big-suggest.css);
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.ie.css);
+@import url(../../../../desktop.blocks/input/__box/input__box.ie.css);
+@import url(../../../../desktop.blocks/input/__clear/input__clear.ie.css);
+@import url(../../../../desktop.blocks/input/__popup/input__popup.ie.css);
+@import url(../../../../desktop.blocks/input/__hint/input__hint.ie.css);
+@import url(../../../../desktop.blocks/input/_suggest/input_suggest_yes.ie.css);
+@import url(../../../../desktop.blocks/popup/popup.ie.css);
+@import url(../../../../desktop.blocks/popup/_theme/popup_theme_ffffff.ie.css);
+@import url(../../../../libs/islands-romochka/desktop.blocks/b-autocomplete-item/b-autocomplete-item.ie.css);
+@import url(../../../../libs/islands-romochka/desktop.blocks/b-autocomplete-item/_type/b-autocomplete-item_type_foot.ie.css);
+@import url(../../../../desktop.blocks/input/_size/input_size_m.ie.css);

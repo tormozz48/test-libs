@@ -1,0 +1,1 @@
+/Users/user/Work/recearch/bem-data-source/content/islands-components/v3.0.0/touch-pad.sets/a11y-hidden/a11y-hidden.examples/10-simple/10-simple.ru.js

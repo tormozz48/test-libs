@@ -1,0 +1,581 @@
+/* 70-api.ie.css begin */
+/* 70-api.css begin */
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css begin */
+.b-page
+{
+    font: 12px Helvetica, Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    -webkit-text-size-adjust: none;
+}
+/* ../../../../libs/bem-bl/blocks-touch/b-page/b-page.css end */
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css begin */
+/* :( */
+.i-ua_android-vowels-hack_yes *
+{
+    text-shadow: none !important;
+}
+/* ../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css end */
+/* ../../../../common.blocks/radiobox/radiobox.css begin */
+.radiobox
+{
+    display: inline-block;
+}
+
+/* ../../../../common.blocks/radiobox/radiobox.css end */
+/* ../../../../touch.blocks/radiobox/radiobox.css begin */
+.radiobox
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/radiobox/radiobox.css end */
+/* ../../../../common.blocks/radiobox/_theme/radiobox_theme_normal.css begin */
+.radiobox_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+
+    /* :before — border & background */
+    .radiobox_theme_normal .radiobox__box:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 50%;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _checked */
+    .radiobox_theme_normal .radiobox__radio_checked_yes .radiobox__box:before
+    {
+        background: #ffeba0;
+        -webkit-box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+                box-shadow: 0 0 0 1px rgba(153,122,0,.5);
+    }
+
+    .radiobox_theme_normal .radiobox__radio_checked_yes .radiobox__box:after
+    {
+        background: #000;
+    }
+}
+
+/* ../../../../common.blocks/radiobox/_theme/radiobox_theme_normal.css end */
+/* ../../../../common.blocks/radiobox/__radio/radiobox__radio.css begin */
+.radiobox__radio
+{
+    position: relative;
+}
+
+/* ../../../../common.blocks/radiobox/__radio/radiobox__radio.css end */
+/* ../../../../common.blocks/radiobox/__radio/_checked/radiobox__radio_checked_yes.css begin */
+@media all and (min-width:0)
+{
+    /* Маркер */
+    /* Цвет (background) маркера задается в _theme */
+    .radiobox__radio_checked_yes .radiobox__box:after
+    {
+        position: absolute;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 50%;
+    }
+}
+
+/* ../../../../common.blocks/radiobox/__radio/_checked/radiobox__radio_checked_yes.css end */
+/* ../../../../common.blocks/radiobox/__radio/_disabled/radiobox__radio_disabled_yes.css begin */
+@media all and (min-width:0)
+{
+    .radiobox__radio_disabled_yes .radiobox__box:before
+    {
+        background: rgba(0,0,0,.08)!important;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08)!important;
+                box-shadow: 0 0 0 1px rgba(0,0,0,.08)!important;
+    }
+
+    .radiobox__radio_disabled_yes .radiobox__box:after
+    {
+        opacity: .4;
+    }
+}
+
+.radiobox__radio_disabled_yes
+{
+    color: #999!important;
+}
+
+/* ../../../../common.blocks/radiobox/__radio/_disabled/radiobox__radio_disabled_yes.css end */
+/* ../../../../touch.blocks/radiobox/__radio/_disabled/radiobox__radio_disabled_yes.css begin */
+.radiobox__radio_disabled_yes
+{
+    pointer-events: none;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/radiobox/__radio/_disabled/radiobox__radio_disabled_yes.css end */
+/* ../../../../common.blocks/radiobox/__box/radiobox__box.css begin */
+.radiobox__box
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin-right: .45em; /* Размеры (width, height) обертки задаются в _size */
+
+    border-radius: 100%;
+}
+
+/* ../../../../common.blocks/radiobox/__box/radiobox__box.css end */
+/* ../../../../common.blocks/radiobox/__control/radiobox__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .radiobox__control
+    {
+        position: absolute;
+
+        opacity: 0;
+    }
+}
+
+/* ../../../../common.blocks/radiobox/__control/radiobox__control.css end */
+/* ../../../../common.blocks/radio-button/__radio/radio-button__radio.css begin */
+.radio-button__radio
+{
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+
+    margin: 0 -1px 0 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+
+    outline: 0;
+}
+
+/* :before — бордер
+   :after — фон */
+.radio-button__radio:after,
+.radio-button__radio:before
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+}
+
+.radio-button__radio:after
+{
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+}
+
+.radio-button__radio_side_left,
+.radio-button__radio_side_left:before
+{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.radio-button__radio_side_right,
+.radio-button__radio_side_right:before
+{
+    right: 0;
+
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.radio-button__radio_side_left:after
+{
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.radio-button__radio_side_right:after
+{
+    right: 1px;
+
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.i-ua_js_no .radio-button__radio:after,
+.i-ua_js_no .radio-button__radio:before
+{
+    display: none;
+}
+
+/* ../../../../common.blocks/radio-button/__radio/radio-button__radio.css end */
+/* ../../../../common.blocks/radio-button/__radio/_pressed/radio-button__radio_pressed_yes.css begin */
+.radio-button__radio_pressed_yes:before
+{
+    right: 0;
+}
+
+.radio-button__radio_next-for-pressed_yes:before
+{
+    left: 1px;
+}
+
+/* ../../../../common.blocks/radio-button/__radio/_pressed/radio-button__radio_pressed_yes.css end */
+/* ../../../../common.blocks/radio-button/__radio/_focused/radio-button__radio_focused_yes.css begin */
+.i-ua_js_yes .radio-button__radio_focused_yes
+{
+    z-index: 1;
+}
+
+/* ../../../../common.blocks/radio-button/__radio/_focused/radio-button__radio_focused_yes.css end */
+/* ../../../../common.blocks/radio-button/__radio/_disabled/radio-button__radio_disabled.css begin */
+.radio-button .radio-button__radio_disabled_yes
+{
+    color: #999!important;
+}
+
+.radio-button .radio-button__radio_disabled_yes:before
+{
+    border-color: rgba(0,0,0,.08)!important;
+}
+
+.radio-button .radio-button__radio_disabled_yes:after
+{
+    background: rgba(0,0,0,.08)!important;
+}
+
+/* ../../../../common.blocks/radio-button/__radio/_disabled/radio-button__radio_disabled.css end */
+/* ../../../../touch.blocks/radio-button/__radio/_disabled/radio-button__radio_disabled_yes.css begin */
+.radio-button__radio_disabled_yes
+{
+    pointer-events: none;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/radio-button/__radio/_disabled/radio-button__radio_disabled_yes.css end */
+/* ../../../../common.blocks/radio-button/__radio/_side/radio-button__radio_side_both.css begin */
+.radio-button__radio_side_both
+{
+    border-radius: 3px;
+}
+
+.radio-button__radio_side_both:before
+{
+    right: 0;
+
+    border-radius: 3px;
+}
+
+.radio-button__radio_side_both:after
+{
+    border-radius: 2px;
+}
+
+/* ../../../../common.blocks/radio-button/__radio/_side/radio-button__radio_side_both.css end */
+/* ../../../../common.blocks/radio-button/__control/radio-button__control.css begin */
+@media all and (min-width:0)
+{
+    .i-ua_js_yes .radio-button__control
+    {
+        position: absolute; /*left: -1000px;*/
+
+        opacity: 0;
+    }
+}
+
+/* ../../../../common.blocks/radio-button/__control/radio-button__control.css end */
+/* ../../../../common.blocks/radio-button/__text/radio-button__text.css begin */
+.radio-button__text
+{
+    position: relative;
+    z-index: 1;
+
+    padding: 0 1em;
+
+    pointer-events: none;
+}
+
+.i-ua_js_no .radio-button__text
+{
+    padding: 0 1em 0 .3em;
+}
+
+/* ../../../../common.blocks/radio-button/__text/radio-button__text.css end */
+/* ../../../../common.blocks/radio-button/radio-button.css begin */
+.radio-button
+{
+    display: inline-block;
+
+    white-space: nowrap;
+
+    border-radius: 3px;
+}
+
+/* ../../../../common.blocks/radio-button/radio-button.css end */
+/* ../../../../touch.blocks/radio-button/radio-button.css begin */
+.radio-button
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* ../../../../touch.blocks/radio-button/radio-button.css end */
+/* ../../../../common.blocks/radio-button/_theme/radio-button_theme_normal.css begin */
+.i-ua_js_yes .radio-button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    /* :before — бордер */
+    .radio-button_theme_normal .radio-button__radio:before
+    {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(0,0,0,.2) rgba(0,0,0,.1) rgba(0,0,0,.2) rgba(0,0,0,.1);
+    }
+
+    .radio-button_theme_normal .radio-button__radio_side_left:before,
+    .radio-button_theme_normal .radio-button__radio_side_right:before
+    {
+        border-right-color: rgba(0,0,0,.2);
+    }
+
+    /* :after — фон */
+    .radio-button_theme_normal .radio-button__radio:after
+    {
+        background: #fff;
+    }
+
+    /* _pressed */
+    .radio-button_theme_normal .radio-button__radio_pressed_yes:before
+    {
+        border-color: rgba(153,122,0,.5);
+    }
+
+    .radio-button_theme_normal .radio-button__radio_pressed_yes:after
+    {
+        background: #ffeca6;
+    }
+
+    .radio-button_theme_normal .radio-button__radio_next-for-pressed_yes.radio-button__radio:before
+    {
+        border-left-width: 0;
+    }
+}
+
+/* ../../../../common.blocks/radio-button/_theme/radio-button_theme_normal.css end */
+/* ../../../../common.blocks/radio-button/_size/radio-button_size_m.css begin */
+.radio-button_size_m
+{
+    font-size: 15px;
+    line-height: 32px;
+}
+
+/* ../../../../common.blocks/radio-button/_size/radio-button_size_m.css end */
+/* ../../../../common.blocks/button/button.css begin */
+/* button — рисует бордер кнопки */ /**/
+.button
+{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    white-space: nowrap;
+
+    outline: 0;
+}
+
+.button::-moz-focus-inner
+{
+    padding: 0;
+
+    border: 0;
+}
+
+/* Прячем стили от IE < 9 */ /**/
+@media all and (min-width:0)
+{
+    .button
+    {
+        border: 0;
+        background: none; /* убираем нативный фон кнопки */
+    }
+
+    a.button:link,
+    a.button:visited
+    {
+        text-decoration: none;
+
+        outline: hidden; /* hidden for Opera 12 to remove native focusing  */
+    }
+}
+
+/* ../../../../common.blocks/button/button.css end */
+/* ../../../../common.blocks/button/__text/button__text.css begin */
+.button__text
+{
+    position: relative;
+
+    pointer-events: none;
+}
+
+/* ../../../../common.blocks/button/__text/button__text.css end */
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes,
+a.button_disabled_yes .button__text
+{
+    color: #aaa !important;
+}
+
+@media all and (min-width:0)
+{
+    .button_disabled_yes.button:before
+    {
+        background: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+
+    .button_disabled_yes.button
+    {
+        background: rgba(0,0,0,.08) !important;
+    }
+}
+
+/* ../../../../common.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css begin */
+.button_disabled_yes
+{
+    pointer-events: none;
+}
+
+/* ../../../../touch.blocks/button/_disabled/button_disabled_yes.css end */
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css begin */
+.button_pressed_yes
+{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* ../../../../touch.blocks/button/_pressed/button_pressed_yes.css end */
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css begin */
+a.button_theme_normal,
+.button_theme_normal
+{
+    font-family: Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width:0)
+{
+    .button_theme_normal
+    {
+        border-radius: 3px;
+    }
+
+    /* :before — background & border */
+    .button_theme_normal:before
+    {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        left: 1px;
+
+        padding: 0;
+
+        content: '';
+
+        border-radius: 2px;
+        background: #fff;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+    }
+
+    /* _pressed */
+    .button_theme_normal.button_pressed_yes:before
+    {
+        background-color: #f6f5f3;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+                box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    }
+}
+
+/* ../../../../common.blocks/button/_theme/button_theme_normal.css end */
+/* ../../../../common.blocks/button/_size/button_size_s.css begin */
+.button_size_s
+{
+    font-size: 13px;
+}
+
+@media all and (min-width:0)
+{
+    .button_size_s
+    {
+        line-height: 28px;
+    }
+}
+
+.button_size_s .button__text
+{
+    padding: 0 13px;
+}
+
+/* Стрелочка в кнопке */
+.button_size_s.button_arrow_down .button__text:after
+{
+    right: 9px;
+
+    -webkit-background-size: 11px 6px;
+            background-size: 11px 6px;
+}
+
+.button_size_s.button.button_arrow_down .button__text
+{
+    padding-right: 28px;
+}
+
+/* ../../../../common.blocks/button/_size/button_size_s.css end */
+
+/* 70-api.css end */
+
+/* 70-api.ie.css end */

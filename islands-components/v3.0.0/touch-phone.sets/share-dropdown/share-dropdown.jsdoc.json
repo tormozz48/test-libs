@@ -1,0 +1,143 @@
+{
+    "blockName": "share-dropdown",
+    "description": "<p>Блок «Поделиться».</p>\n<p>Блок <code>share-dropdown</code>, cлужит оберткой для блока «Поделиться», основан на блоке <code>dropdown-menu</code>.\nВизуально представлен кнопкой «Поделиться» и выпадающим окном со списком популярных социальных сетей.\nПозволяет посетителям размещать ссылку на страницу сайта в коммуникационных сервисах.\nСсылки открываются в новом окне, строятся в зависимости от сервиса и различных параметров,\nмогут изменяться динамически.</p>",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "updateLink",
+            "description": "<p>Обновление данных для указанного сервиса.</p>\n",
+            "params": [
+                {
+                    "name": "service",
+                    "description": "<p>Имя сервиса, соответствующее выставленному модификатору (<code>facebook</code>, <code>moimir</code>, etc.).</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params",
+                    "description": "<p>Параметры, по которым строится ссылка для сервиса.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "params.service",
+                    "description": "<p>Сервис. Если данный параметр не указан, то берется\nзначение data-атрибута <code>data-service</code> из DOM-элемента блока <code>link</code>. Иначе, переданное\nзначение параметра должно соответствовать первому параметру (<code>service</code>).</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.url",
+                    "description": "<p>Адрес страницы, которой необходимо поделиться. Значение по умолчанию берется из\nwindow.location.href.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.title",
+                    "description": "<p>Заголовок страницы. Значение по умолчанию - document.title.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.image",
+                    "description": "<p>Дополнительная картинка, передаваемая в сервис. Для Pinterest этот\nпараметр является обязательным.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.description",
+                    "description": "<p>Описание ссылки. Если параметр не указан,\nописания берется из мета-тега description.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Экземпляр блока.</p>",
+                    "types": [
+                        "BEM.DOM"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "updateLinks",
+            "description": "<p>Обновление данных для всех сервисов указанных в блоке.</p>\n",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "<p>Параметры, по которым строится ссылка для сервиса.</p>",
+                    "optional": false,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "params.service",
+                    "description": "<p>Сервис. Если данный параметр не указан, то берется\nзначение data-атрибута <code>data-service</code> из DOM-элемента блока <code>link</code>. Иначе, переданное\nзначение параметра должно соответствовать первому параметру (<code>service</code>).</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.url",
+                    "description": "<p>Адрес страницы, которой необходимо поделиться. Значение по умолчанию берется из\nwindow.location.href.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.title",
+                    "description": "<p>Заголовок страницы. Значение по умолчанию - document.title.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.image",
+                    "description": "<p>Дополнительная картинка, передаваемая в сервис. Для <code>Pinterest</code> этот\nпараметр является обязательным.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                },
+                {
+                    "name": "params.description",
+                    "description": "<p>Описание ссылки. Если параметр не указан,\nописания берется из мета-тега description.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

@@ -1,0 +1,12 @@
+@import url(../../../../libs/islands-romochka/desktop.blocks/i-global/_type/i-global_type_simple.css);
+@import url(../../../../common.blocks/spin/spin.examples/15-theme-white.blocks/b-page/b-page.css);
+@import url(../../../../common.blocks/spin/spin.examples/15-theme-white.blocks/example-text/example-text.css);
+@import url(../../../../common.blocks/spin/spin.css);
+@import url(../../../../common.blocks/spin/_theme/spin_theme_gray-32.css);
+@import url(../../../../common.blocks/spin/_progress/spin_progress_yes.css);
+@import url(../../../../common.blocks/spin/__icon/spin__icon.css);
+@import url(../../../../common.blocks/image/image.css);
+@import url(../../../../common.blocks/spin/_theme/spin_theme_white-16.css);
+@import url(../../../../common.blocks/spin/_theme/spin_theme_white-24.css);
+@import url(../../../../common.blocks/spin/_theme/spin_theme_white-32.css);
+@import url(../../../../common.blocks/spin/_theme/spin_theme_white-48.css);

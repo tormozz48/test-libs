@@ -1,0 +1,9 @@
+{
+    "blockName": "radio-button",
+    "description": "<p>Блок <code>radio-button</code> – «радио-группа», состоящая из набора зависимых\nпереключателей «радио-кнопок» (элементы блока <code>radio</code>) в виде кнопок.</p>",
+    "jsParams": [],
+    "methods": [],
+    "properties": [],
+    "events": [],
+    "mods": []
+}

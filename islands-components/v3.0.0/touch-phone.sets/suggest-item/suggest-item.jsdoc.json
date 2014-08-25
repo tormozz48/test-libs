@@ -1,0 +1,148 @@
+{
+    "blockName": "suggest-item",
+    "description": "<p>Вариант в саджесте.</p>\n\n\n\n",
+    "jsParams": [],
+    "methods": [
+        {
+            "name": "val",
+            "description": "<p>Возвращает текст варианта в саджесте.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "enter",
+            "description": "<p>Действие при выделении варианта подсказки.</p>\n<p>Метод вызывается, когда пользователь выделяет вариант подсказки с помощью\nстрелочек вверх/вниз на клавиатуре. В блоке suggest это предусмотрено.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p><code>true</code>, если есть необходимость обновить значение в поле ввода саджеста.</p>",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "select",
+            "description": "<p>Действие при выборе варианта подсказки.</p>\n<p>Метод вызывается, когда пользователь выбирает вариант подсказки с помощью\nнажатия Enter или клика по нему. В блоке suggest это предусмотрено.</p>\n",
+            "params": [
+                {
+                    "name": "byKeyboard",
+                    "description": "<p><code>true</code>, если выбор подсказки сделан с помощью клавиатуры.</p>",
+                    "optional": false,
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p><code>true</code>, если есть необходимость обновить значение в поле ввода саджеста.</p>",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "isItem",
+            "description": "<p>Проверяет, поддерживается ли данный тип подсказки блоком.</p>\n",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "<p>Название типа.</p>",
+                    "optional": false,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "static"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "pointerdown",
+            "description": "<p>Прокси для DOM-события pointerdown.</p>",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "<p>Объект DOM-события.</p>",
+                    "optional": false,
+                    "types": [
+                        "$.Event"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "pointerup",
+            "description": "<p>Прокси для DOM-события pointerup.</p>",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "<p>Объект DOM-события.</p>",
+                    "optional": false,
+                    "types": [
+                        "$.Event"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "tap",
+            "description": "<p>Прокси для DOM-события tap.</p>",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "<p>Объект DOM-события.</p>",
+                    "optional": false,
+                    "types": [
+                        "$.Event"
+                    ]
+                }
+            ]
+        }
+    ],
+    "mods": [
+        {
+            "name": "nav",
+            "value": "yes",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": "<p>Вариант в виде навигационной подсказки.</p>"
+        }
+    ]
+}

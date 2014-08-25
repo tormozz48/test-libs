@@ -1,0 +1,149 @@
+<!doctype html><html class="page__root"><head><meta charset="utf-8"/><title>radiobox</title><link rel="stylesheet" href="../catalogue/_catalogue.css"/><script src="//yandex.st/jquery/1.8.2/jquery.min.js"></script><script src="../catalogue/_catalogue.js"></script></head><body class="page"><div class="catalogue"><div class="block"><div class="header"><a class="link link_pos_right" href="../index/index.html">← каталог</a><span class="header__block-name">Блок radiobox</span></div><div class="block__title"></div><div class="block__description static-text"><h2 id="-">Описание</h2>
+<p>Блок <code>radiobox</code> – «радио-группа», состоящая из набора зависимых переключателей «радио-кнопок» (элементы блока <code>radio</code>). Служит для выбора единственного варианта из списка.
+В реализации блока используется функциональность нативного контрола радиобокс, сам контрол скрыт.
+В MSIE8 и ниже <code>radiobox</code> деградируют до нативного <code>&lt;input type=&quot;radio&quot; name=&quot;имя&quot; атрибуты&gt;</code>.</p>
+<h3 id="-">Объявление блока на странице</h3>
+<p>BEMJSON для использования радио-группы:</p>
+<pre><code class="lang-javascript">{
+    block: &#39;radiobox&#39;,   // имя блока
+    mods: {size: &#39;s&#39;},   // модификаторы блока. Модификатор размера - обязательный
+    name: &#39;test&#39;,        // имя радио-группы. Присваивается всем элементам группы. Обязательное поле
+    value: &#39;val-2&#39;,      // значение, служит для предварительного выбора одной из радио-кнопок
+    content: [ // массив радио-кнопок
+        {
+            elem: &#39;radio&#39;, // элемент радио-группы – радио-кнопка
+            content: &#39;только друзьям&#39;, // метка радио-кнопки
+            controlAttrs: {value: &#39;val-1&#39;} // значение отправляемое на сервер
+        },
+        {
+            elem: &#39;radio&#39;,
+            content: &#39;только мне&#39;,
+            elemMods: {disabled: &#39;yes&#39;}, // модификаторы радио-кнопки
+            controlAttrs: {value: &#39;val-2&#39;}
+        }
+    ]
+}</code></pre>
+<p>В результате BEMHTML-преобразований блок <code>radiobox</code> на странице заменяется HTML-тэгом <code>&lt;span&gt;</code> –  контейнер, содержащий группу радио-кнопок.
+Каждая радио-кнопка преобразуется шаблоном в элемент <code>radio</code>, реализующий кастомную радио-кнопку, внутри которого будет находиться нативный контрол <code>&lt;input type=&quot;radio&quot; name=&quot;имя&quot; атрибуты&gt;</code>.</p>
+<!-- %%radiobox.examples/10-radiobox/10-radiobox%% -->
+
+
+<h3 id="-">Атрибуты радио-группы</h3>
+<p>Задаются в одноименных полях входного BEMJSON блока.</p>
+<ul>
+<li><code>{String} name</code> – имя радио-группы. По умолчанию присваивается всем радио-кнопкам. BEMHTML-шаблоном трансформируется в атрибут <code>name</code> с заданным значением для каждого нативного радиобокса группы. Обязательное поле.</li>
+<li><code>{String} value</code> – служит для предварительного выбора одного из вариантов в списке. Устанавливает модификатор <code>checked</code> со значением <code>yes</code> радио-кнопке,
+у которой значение <code>value</code> в поле <code>controlAttrs</code> совпадает с заданным значением <code>value</code> блока.</li>
+</ul>
+<h3 id="js-">JS-параметры</h3>
+<ul>
+<li><code>{Object} js</code> – JS-параметры блока.<ul>
+<li><code>{String} id</code> – идентификатор радио-группы. Значением параметра может выступать произвольная строка.</li>
+</ul>
+</li>
+</ul>
+<p>Несколько блоков <code>radiobox</code> могут функционировать как единая радио-группа. Состояние их будет согласовано:
+возможно выбрать только один элемент из общей совокупности элементов радио-групп.
+Для этого нужно для каждой из объединяемых радио-групп:</p>
+<ul>
+<li>в JS-параметрах указать одинаковое значение параметра <code>id</code>;</li>
+<li>указать одинаковое значение в поле <code>name</code>. Все радио-кнопки, имеющие одно значение свойства <code>name</code>, находятся в одной группе кнопок и обрабатываются вместе.</li>
+</ul>
+<p>В результате при инициализации блоков создается один JS-объект, поле <code>{jQuery} domElem</code> которого содержит ссылки на DOM-узлы  радио-групп.</p>
+<p>Идентификатор <code>id</code> используется только в момент инициализации экземпляра блока.
+Значение <code>id</code> должно быть уникальным в пределах экземпляров одного блока.
+Радио-группы могут располагаться в произвольном месте страницы.
+<a href="https://github.com/bem/bem-core/blob/v1/common.docs/i-bem-js/i-bem-js.ru.md#%D0%9E%D0%B4%D0%B8%D0%BD-js-%D0%B1%D0%BB%D0%BE%D0%BA-%D0%BD%D0%B0-%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85-html-%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%85">Подробнее о распределенных блоках</a>.</p>
+<!-- %%radiobox.examples/15-radiobox-cut/15-radiobox-cut%% -->
+
+<!-- %%radiobox.examples/60-radiobox-table/60-radiobox-table%% -->
+
+<h3 id="-">Содержимое радио-группы</h3>
+<ul>
+<li><code>{Array} content</code> – содержит массив радио-кнопок (элементов <code>radio</code>).</li>
+</ul>
+<h3 id="-">Атрибуты радио-кнопки</h3>
+<ul>
+<li><p><code>{Object} controlAttrs</code> – поле атрибутов элементов <code>radio</code>.
+Радио-кнопке можно задать атрибуты нативного радиобокса, лежащего в основе ее реализации.</p>
+<ul>
+<li><code>{String} value</code> – значение, отправляемое на сервер. Уникальное для каждого <code>radio</code>. Обязательный атрибут.</li>
+<li><code>{String} name</code> –  имя. Автоматически формируется из поля <code>name</code> блока <code>radiobox</code>. Одинаковое для всех элементов радио-группы.</li>
+<li><code>{String} id</code> – идентификатор радио-кнопки. Генерируется автоматически, если явно не задан. Служит для связи с меткой.</li>
+<li><code>{Number} tabindex</code> – определяет последовательность перехода между элементами при нажатии на кнопку <code>Tab</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">Содержимое радио-кнопки</h3>
+<ul>
+<li><code>{String} content</code> – текст, преобразуемый в метку радио-кнопки (<code>&lt;label&gt;</code>).
+Метка <code>&lt;label for=&quot;значение_id&quot;&gt;</code> связывается с контролом <code>&lt;input type=&quot;radio&quot; id=&quot;значение_id&quot;&gt;</code> через свой атрибут <code>for</code> и аналогичным значением <code>id</code> у <code>input</code>.</li>
+</ul>
+<p>Метка позволяет переключать состояние радио-кнопки на <strong>выбрана</strong> по нажатию клавиши мыши.</p>
+<h3 id="-">Модификаторы</h3>
+<h4 id="-">Темы оформления</h4>
+<p>Для радио-группы реализована стандартная тема оформления – обычная, модификатор <code>theme</code> со значением <code>normal</code>. Используется по умолчанию.</p>
+<h4 id="-">Размеры</h4>
+<p>Для <code>radiobox</code> реализованы два размера – <code>s</code> и <code>m</code>. Модификатор размера <code>size</code> – обязательный при объявлении блока. По умолчанию не определен.
+Без указания размера радио-кнопки группы не отобразятся на странице.
+Размер блока задает размеры кнопок и шрифта меток.</p>
+<p>Таблица размеров радио-кнопок</p>
+<table>
+<thead>
+<tr>
+<th>Размер</th>
+<th>Шрифт</th>
+<th>Диаметр кнопки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s</td>
+<td>13px</td>
+<td>14px</td>
+</tr>
+<tr>
+<td>m</td>
+<td>15px</td>
+<td>16px</td>
+</tr>
+</tbody>
+</table>
+<p>Если необходим другой размер, его можно доопределить на проекте. <a href="../button/button.html#customsize">Кастомный размер</a>.</p>
+<!-- %%check-button.examples/20-size/20-size%% -->
+
+<h4 id="-">Состояния радио-группы и ее элементов</h4>
+<ul>
+<li><p><strong>Модификаторы состояния радио-группы</strong>:</p>
+<ul>
+<li><strong>В фокусе</strong>  <code>focused</code>.</li>
+<li><strong>Не активна</strong> <code>disabled</code>. Все элементы радио-группы и их метки становятся недоступны пользователю.
+Каждой радио-кнопке <code>radio</code> радио-группы будет установлен модификатор <code>disabled</code> со значением <code>yes</code>,
+а в соответствующем нативном радиобоксе сформируется атрибут <code>disabled</code>.</li>
+</ul>
+</li>
+</ul>
+<!-- %%radiobox.examples/20-radiobox-disabled/20-radiobox-disabled%% -->
+
+<ul>
+<li><p><strong>Модификаторы состояния радио-кнопки</strong>:</p>
+<ul>
+<li><strong>Выбрана</strong>, модификатор <code>checked</code> со значением <code>yes</code> – характеризует выбранную радио-кнопку. Состояние может быть установлено только для одной радио-кнопки. Также  может быть установлено предварительно, на этапе инициализации блока, через значение  <code>value</code> радио-группы. По умолчанию выбрана первая радио-кнопка группы.  Модификатор в HTML трансформируется в атрибут нативной радио-кнопки <code>checked=&quot;checked&quot;</code>.</li>
+<li><strong>В фокусе</strong>  <code>focused</code>. Радио-кнопка в фокусе.
+Переход по элементам радио-группы осуществляется клавишами <code>[ ←, ↑, →, ↓ ].</code></li>
+<li><strong>Не активна</strong> <code>disabled</code>. Радио-кнопка недоступна для пользователя. Модификатор в HTML трансформируется в атрибут нативной радио-кнопки <code>disabled=&quot;disabled&quot;</code>.</li>
+</ul>
+</li>
+</ul>
+<!-- %%radiobox.examples/40-radiobox-different/40-radiobox-different%% -->
+
+<!-- %%radiobox.examples/25-radiobox-disabled-radio/25-radiobox-disabled%% -->
+
+<p>Радио-кнопка может находиться в нескольких состояниях одновременно. Например, <strong>выбрана</strong> и <strong>не активна</strong>.</p>
+<h3 id="-">Значения по умолчанию</h3>
+<ul>
+<li><strong>Тема оформления</strong>: обычная (модификатор <code>theme</code> со значением <code>normal</code>).</li>
+<li><strong>Состояние радио-кнопки</strong>: активна и не выбрана.</li>
+<li>Для каждой радио-кнопки автоматически генерируется параметр <code>id</code>, если явно не задан во входных данных.</li>
+</ul>
+</div><div class="block__examples"><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:00-all:00-all"><a class="example__title" href="radiobox.examples/00-all/00-all.html" target="_blank">Все radiobox</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/00-all/00-all.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/00-all/00-all.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:10-radiobox:10-radiobox"><a class="example__title" href="radiobox.examples/10-radiobox/10-radiobox.html" target="_blank">Радио-группа</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/10-radiobox/10-radiobox.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/10-radiobox/10-radiobox.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:15-radiobox-cut:15-radiobox-cut"><a class="example__title" href="radiobox.examples/15-radiobox-cut/15-radiobox-cut.html" target="_blank">Разделенная радио-группа</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/15-radiobox-cut/15-radiobox-cut.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/15-radiobox-cut/15-radiobox-cut.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:20-radiobox-disabled:20-radiobox-disabled"><a class="example__title" href="radiobox.examples/20-radiobox-disabled/20-radiobox-disabled.html" target="_blank">Неактивная радио-группа</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/20-radiobox-disabled/20-radiobox-disabled.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/20-radiobox-disabled/20-radiobox-disabled.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:25-radiobox-disabled-radio:25-radiobox-disabled-radio"><a class="example__title" href="radiobox.examples/25-radiobox-disabled-radio/25-radiobox-disabled-radio.html" target="_blank">Неактивный только один элемент радио-группы</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/25-radiobox-disabled-radio/25-radiobox-disabled-radio.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/25-radiobox-disabled-radio/25-radiobox-disabled-radio.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:30-radiobox-size:30-radiobox-size"><a class="example__title" href="radiobox.examples/30-radiobox-size/30-radiobox-size.html" target="_blank">Размеры радио-группы</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/30-radiobox-size/30-radiobox-size.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/30-radiobox-size/30-radiobox-size.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:40-radiobox-different:40-radiobox-different"><a class="example__title" href="radiobox.examples/40-radiobox-different/40-radiobox-different.html" target="_blank">Состояния элементов радио-группы</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/40-radiobox-different/40-radiobox-different.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/40-radiobox-different/40-radiobox-different.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:50-radiobox-text:50-radiobox-text"><a class="example__title" href="radiobox.examples/50-radiobox-text/50-radiobox-text.html" target="_blank">Радио-группа внутри текста</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/50-radiobox-text/50-radiobox-text.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/50-radiobox-text/50-radiobox-text.html"></iframe></div><div class="example i-bem" onclick="return {&quot;example&quot;:{}}" id="radiobox:examples:60-radiobox-table:60-radiobox-table"><a class="example__title" href="radiobox.examples/60-radiobox-table/60-radiobox-table.html" target="_blank">Радио-группа внутри таблицы с вертикальным выравниванием</a><div class="example__source-switch"><span class="link link_pseudo_yes cut">Исходный код</span></div><iframe class="example__source" src="radiobox.examples/60-radiobox-table/60-radiobox-table.bemjson.js"></iframe><iframe class="example__live" src="radiobox.examples/60-radiobox-table/60-radiobox-table.html"></iframe></div></div><h3 class="headline headline_level_3">Модификаторы</h3><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">disabled</h4><div class="block__mod-title">Неактивное состояние</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">focused</h4><div class="block__mod-title">Состояние фокуса</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">size</h4><div class="block__mod-title">Размер</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">m</th><td class="block__mod-val-title">Размер шрифта 15px</td></tr><tr><th class="block__mod-val-name">s</th><td class="block__mod-val-title">Размер шрифта 13px</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">theme</h4><div class="block__mod-title">Темы</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">normal</th><td class="block__mod-val-title">Обычная</td></tr><tr><th class="block__mod-val-name">pseudo</th><td class="block__mod-val-title">Псевдо</td></tr></table></div><h3 class="headline headline_level_3">Элементы</h3><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">box</h4><div class="block__elem-title">Элемент, рисующий радио (нативная радио-кнопка скрыта)</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">control</h4><div class="block__elem-title">Нативный радиобокс</div></div><div class="block__elem"><h4 class="block__elem-name headline headline_level_4">radio</h4><div class="block__elem-title">Обрамляет контрол и его текст</div><h5 class="headline headline_level_5">Модификаторы элемента</h5><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">checked</h4><div class="block__mod-title">Выбранное состояние</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">disabled</h4><div class="block__mod-title">Неактивное состояние</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div><div class="block__mod"><h4 class="block__mod-name headline headline_level_4">focused</h4><div class="block__mod-title">Состояние фокуса</div><table class="block__mod-val-list"><tr><th class="block__mod-val-name">yes</th><td class="block__mod-val-title">Включено</td></tr></table></div></div></div></div></body></html>

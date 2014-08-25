@@ -1,0 +1,395 @@
+{
+    "blockName": "slider",
+    "description": "<p>Блок <code>slider</code> («слайдер») —  управляющий элемент интерфейса для удобного и наглядного выбора диапазона значений.\nПозволяет создавать слайдер с одним или двумя ползунками, равномерной или неравномерной шкалой.</p>\n\n\n\n",
+    "jsParams": [
+        {
+            "name": "params",
+            "description": "<p>JS-параметры блока.</p>",
+            "optional": true,
+            "types": [
+                "Object"
+            ]
+        },
+        {
+            "name": "params.min",
+            "description": "<p>Минимальное значение слайдера. Если не задано, будет использовано крайнее правое\nзначение шкалы.</p>",
+            "optional": true,
+            "types": [
+                "Number"
+            ]
+        },
+        {
+            "name": "params.max",
+            "description": "<p>Максимальное значение слайдера. Если не задано, будет использовано крайнее левое\nзначение шкалы.</p>",
+            "optional": true,
+            "types": [
+                "Number"
+            ]
+        },
+        {
+            "name": "params.scale",
+            "description": "<p>Массив объектов, описывающих деления шкалы. Каждый элемент массива - объект со\nследуюшими ключами:</p>\n<ul>\n<li><code>value</code> - Значение элемента шкалы.</li>\n<li><code>step</code> - Шаг изменения шкалы на заданном участке.</li>\n<li><code>percent</code> - Процент от общей ширины шкалы. Обязателен для всех значений, кроме первого и последнего.</li>\n<li><code>label</code> - Метка деления. Будет отображена в нижней части слайдера, в позиции, заданной параметром\n<code>percent</code>.</li>\n</ul>",
+            "optional": true,
+            "types": [
+                "Object[]"
+            ]
+        }
+    ],
+    "methods": [
+        {
+            "name": "toAllowedRange",
+            "description": "<p>Приводит значения выставляемое значение к допустимому диапазону.</p>\n<p>Переопределите этот метод для задания отличного от\n[min; max] диапазона.</p>\n",
+            "params": [
+                {
+                    "name": "idx",
+                    "description": "<p>Индекс ползунка, для которого выставляется значение.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                },
+                {
+                    "name": "val",
+                    "description": "<p>Текущее значение ползунка.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Значение, приведенное к допустимому диапазону (по умолчанию\n[min; max]).</p>",
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "protected",
+            "scope": "instance"
+        },
+        {
+            "name": "val",
+            "description": "<p>Устанавливает значение первого ползунка, если передан параметр\n<code>val</code>, или возвращает текущее значение, если параметр не передан.</p>\n<p>Если блок выключен, новое значение не будет уcтановлено.</p>\n",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "<p>Выставляемое значение.</p>",
+                    "optional": true,
+                    "types": [
+                        "Number"
+                    ]
+                },
+                {
+                    "name": "data",
+                    "description": "<p>Дополнительные данные, которые будут переданы в качестве параметра\nсгенерированному событию <code>change</code>.</p>",
+                    "optional": true,
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Текущее значение или сам блок, если значение устанавливается.</p>",
+                    "types": [
+                        "BEM.DOM",
+                        "Number"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "vals",
+            "description": "<p>Выставляет или получает текущее значение для одного или нескольких ползунков.</p>\n<p>Если блок выключен, новые значения не будут установлены.</p>\n<p>Выставить первый ползунок в значение 123:</p>\n<pre><code class=\"lang-javascript\">slider.vals(0, 123);\n</code></pre>\n<p>Выставить значения двух ползунков в 123 и 456:</p>\n<pre><code class=\"lang-javascript\">slider.vals([123, 456])\n</code></pre>\n<p>Получить текушие значения ползунков:</p>\n<pre><code class=\"lang-javascript\">slider.vals() //вернет массив [123, 456]\n</code></pre>\n<p>Получить текущее значение второго ползунка:</p>\n<pre><code class=\"lang-javascript\">slider.vals(1) //вернет значение 456\n</code></pre>\n<p>При установке значений, генерирует событие <code>change</code>.</p>\n",
+            "params": [
+                {
+                    "name": "idx",
+                    "description": "<p>Индекс ползунка для установки или получения значения.\nЕсли не передан, то val должен быть массивом, содержащим значения всех ползунков.\nИндексация начинается с 0.</p>",
+                    "optional": true,
+                    "types": [
+                        "Number"
+                    ],
+                    "default": "0"
+                },
+                {
+                    "name": "val",
+                    "description": "<p>Значение ползунка для установки. Если передан массив,\nбудут установлены значения для всех ползунков.</p>",
+                    "optional": true,
+                    "types": [
+                        "Number",
+                        "Array.<Number>"
+                    ]
+                },
+                {
+                    "name": "data",
+                    "description": "<p>дополнительные данные, которые будут переданны в обработчик\nсобытия change.</p>",
+                    "optional": true,
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Текущее значение одного ползунка, все значения или сам блок,\nесли значение устанавливается или блок заблокирован.</p>",
+                    "types": [
+                        "BEM.DOM",
+                        "Number",
+                        "Array.<Number>"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "min",
+            "description": "<p>Устанавливает минимально допустимое значение,\nесли передан параметр min, или возвращает текущее значение,\nесли параметр не передан.</p>\n",
+            "params": [
+                {
+                    "name": "min",
+                    "description": "<p>Устанавливаемое минимальное значение.</p>",
+                    "optional": true,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Текущее значение или сам блок, если значение устанавливается.</p>",
+                    "types": [
+                        "BEM.DOM",
+                        "Number"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "max",
+            "description": "<p>Устанавливает максимально допустимое значение,\nесли передан параметр max, или возвращает текущее значение,\nесли параметр не передан.</p>\n",
+            "params": [
+                {
+                    "name": "max",
+                    "description": "<p>Устанавливаемое максимальное значение.</p>",
+                    "optional": true,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>Текущее значение или сам блок, если значение устанавливается.</p>",
+                    "types": [
+                        "BEM.DOM",
+                        "Number"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "range",
+            "description": "<p>Устанавливает или возвращает диапазон допустимых значений.</p>\n",
+            "params": [
+                {
+                    "name": "min",
+                    "description": "<p>Минимально допустимое значение.</p>",
+                    "optional": true,
+                    "types": [
+                        "Number"
+                    ]
+                },
+                {
+                    "name": "max",
+                    "description": "<p>Максимально допустимое значение. Если значение\nне передано или оно меньше min, будет установлено максимально допусимое\nзначение текущей шкалы.</p>",
+                    "optional": true,
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "<p>текущие значения или сам блок, если значение устанавливается.</p>",
+                    "types": [
+                        "BEM.DOM",
+                        "Array.<Number>"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "isRunnerDisabled",
+            "description": "<p>Возвращает <code>true</code>, если ползунок выключен.</p>\n",
+            "params": [
+                {
+                    "name": "runner",
+                    "description": "<p>Индекс ползунка или его DOM-элемент.</p>",
+                    "optional": false,
+                    "types": [
+                        "Number",
+                        "jQuery"
+                    ]
+                }
+            ],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "isDisabled",
+            "description": "<p>Возвращает <code>true</code>, если слайдер выключен.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Boolean"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getInterval",
+            "description": "<p>Возвращает текущий интервал по шкале для активного ползунка.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Number"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getDefaultParams",
+            "description": "<p>Возвращает параметры по умолчанию.</p>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "",
+                    "types": [
+                        "Object"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        },
+        {
+            "name": "getOrientation",
+            "description": "<p>Возвращает ориентацию слайдера.</p>\n<p>Возможные значения:</p>\n<ul>\n<li><code>vert</code> - вертикальный слайдер</li>\n<li><code>hor</code> - горизонтальный слайдер</li>\n</ul>\n",
+            "params": [],
+            "returns": [
+                {
+                    "description": "<p>Ориентация слайдера.</p>",
+                    "types": [
+                        "String"
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "final": false,
+            "access": "public",
+            "scope": "instance"
+        }
+    ],
+    "properties": [],
+    "events": [
+        {
+            "name": "change",
+            "description": "<p>Генерируется при изменении значения любого ползунка.</p>",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "<p>Дополнительные данные о событии.</p>",
+                    "optional": true,
+                    "types": [
+                        "Object"
+                    ]
+                },
+                {
+                    "name": "data.source",
+                    "description": "<p>Источник изменения. Принимает\nзначение <code>drag</code>, если значение изменено перетаскиванием ползунка.</p>",
+                    "optional": true,
+                    "types": [
+                        "String"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "dragend",
+            "description": "<p>Генерируется при завершении перетаскивания ползунка (когда\nпользователь отпускает кнопку мыши).</p>",
+            "params": []
+        }
+    ],
+    "mods": [
+        {
+            "name": "interactive",
+            "value": "no",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": "<p>Слайдер, не выводящий значения на ползунках.</p>"
+        },
+        {
+            "name": "orientation",
+            "value": "horiz",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": "<p>Горизонтальный слайдер.</p>"
+        },
+        {
+            "name": "type",
+            "value": "range",
+            "methods": [],
+            "properties": [],
+            "events": [],
+            "description": "<p>Слайдер с двумя ползунками, предназначенный для выбора диапазона значений.</p>"
+        }
+    ]
+}

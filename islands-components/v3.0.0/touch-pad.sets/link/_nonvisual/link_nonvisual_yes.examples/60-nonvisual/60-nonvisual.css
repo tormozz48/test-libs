@@ -1,0 +1,6 @@
+@import url(../../../../../libs/bem-bl/blocks-touch/b-page/b-page.css);
+@import url(../../../../../libs/islands-romochka/touch.blocks/b-page/b-page.css);
+@import url(../../../../../libs/islands-romochka/common.blocks/b-page/_theme/b-page_theme_normal.css);
+@import url(../../../../../common.blocks/link/link.css);
+@import url(../../../../../common.blocks/link/_pseudo/link_pseudo_yes.css);
+@import url(../../../../../common.blocks/link/_nonvisual/link_nonvisual_yes.css);
